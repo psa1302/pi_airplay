@@ -34,11 +34,13 @@ install_display_driver() {
 
   grep -q "^dtparam=spi=on" "$CONFIG" || echo "dtparam=spi=on" >> "$CONFIG"
   grep -q "dtoverlay=waveshare35c" "$CONFIG" || {
-    printf "\n# Waveshare 3.5in LCD (C) - 24MHz keeps the touch chip alive\ndtoverlay=waveshare35c:rotate=90,speed=24000000\n" >> "$CONFIG"
+    printf "\n# Waveshare 3.5in LCD (C) - 24MHz keeps the touch chip alive; rotate=270 for the case\ndtoverlay=waveshare35c:rotate=90,speed=24000000\n" >> "$CONFIG"
   }
 
   # never blank the panel, and silence the console first-boot wizard it exposes
   grep -q consoleblank "$CMDLINE" || sed -i "1s/$/ consoleblank=0/" "$CMDLINE"
+  # panel is mounted upside-down in the case; the overlay cannot flip it
+  grep -q "fbcon=rotate" "$CMDLINE" || sed -i "1s/$/ fbcon=rotate:2/" "$CMDLINE"
   systemctl mask userconfig 2>/dev/null || true
 }
 

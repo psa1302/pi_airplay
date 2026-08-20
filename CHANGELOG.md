@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0] - 2026-08-20
+
+### Added
+- Theme mascots, now bundled and auto-deployed by install.sh: Terminal
+  renders any image at /opt/pi-speakers/mascot.png as phosphor-green line art
+  (white-canvas keying and dark-line inversion handled automatically), Neon
+  recolors mascot-neon.png into theme magenta/cyan with an ambient RGB-tear
+  glitch, Retro TV shows mascot-tv.png in its original colors.
+- Theme intros: Retro TV tunes in through analog static that resolves into
+  the picture; Neon locks its signal through a decaying glitch storm.
+- All four themes share the layout structure: top HUD (IP, SSID, WiFi,
+  playback source badge), icon + °C weather, and a music box with animated
+  bars, a title·artist marquee, and a live progress bar (vitals when idle).
+
+### Fixed
+- Display orientation is now global: fbcon=rotate:2 flips the console (the
+  overlay's rotate parameter cannot flip this panel - its init sequence pins
+  the scan direction) while the dashboard flips its own frames.
+- Source badge color matches each theme's WiFi icon.
+
 ## [0.2.0] - 2026-08-20
 
 ### Fixed

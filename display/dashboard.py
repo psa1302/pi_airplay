@@ -80,6 +80,8 @@ FONT_DIR = "/usr/share/fonts/truetype/dejavu"
 FONT_MONOFONTO = "/opt/pi-speakers/fonts/monofonto.otf"
 FONT_VT323 = "/opt/pi-speakers/fonts/VT323.ttf"
 MASCOT_FILE = Path("/opt/pi-speakers/mascot.png")
+NEON_MASCOT_FILE = Path("/opt/pi-speakers/mascot-neon.png")
+TV_MASCOT_FILE = Path("/opt/pi-speakers/mascot-tv.png")
 
 BOOT_LINES = ["PI-OS(R) V3.0 - PERSONAL AUDIO TERMINAL",
               "COPYRIGHT 2286 PI-TUNE INDUSTRIES",
@@ -90,6 +92,8 @@ BOOT_LINES = ["PI-OS(R) V3.0 - PERSONAL AUDIO TERMINAL",
               "",
               "> WELCOME, OVERSEER"]
 BOOT_SECONDS = 4.2
+TV_INTRO_SECONDS = 2.8
+NEON_INTRO_SECONDS = 3.2
 
 _fonts = {}
 
@@ -211,9 +215,10 @@ def send_remote(method):
                    capture_output=True, timeout=5)
 
 
-# Measured on this panel via corner taps: raw Y runs right-to-left across the
-# screen, raw X runs top-to-bottom. NOTE: display renders rotated 180 degrees,
-# so if touch is re-enabled both axes must be mirrored.
+# Measured via corner taps at rotate=90. The panel is mounted upside-down in
+# its case; the overlay's rotate param cannot flip it (fixed init sequence),
+# so the frame is flipped in software and fbcon=rotate:2 flips the console.
+# If touch is re-enabled, both axes of this mapping must be mirrored.
 RAW_Y_TO_COL = (470, 3700)
 RAW_X_TO_ROW = (575, 3610)
 
@@ -293,18 +298,16 @@ def draw_wifi_icon(pen, cx, cy, signal, ink, muted, strength_colors=True):
     pen.ellipse((cx - 2, cy - 2, cx + 2, cy + 2), fill=active)
 
 
-def draw_airplay_icon(pen, cx, cy, ink, bg):
-    pen.rounded_rectangle((cx - 12, cy - 11, cx + 12, cy + 4), radius=4, outline=ink, width=2)
-    pen.polygon(((cx, cy - 4), (cx + 10, cy + 12), (cx - 10, cy + 12)), fill=bg)
-    pen.polygon(((cx, cy - 2), (cx + 8, cy + 11), (cx - 8, cy + 11)), fill=ink)
-
-
-def draw_spotify_icon(pen, cx, cy, bg):
-    pen.ellipse((cx - 12, cy - 12, cx + 12, cy + 12), fill=(30, 185, 84))
-    center_y = cy + 13
-    for radius in (18, 13, 8):
-        pen.arc((cx - radius, center_y - radius, cx + radius, center_y + radius),
-                245, 295, fill=bg, width=2)
+def draw_source_badge(pen, x, y, source, ink, bg):
+    if source == "spotify":
+        pen.ellipse((x, y, x + 16, y + 16), fill=(30, 185, 84))
+        for radius in (11, 7):
+            pen.arc((x + 8 - radius, y + 17 - 2 * radius, x + 8 + radius, y + 17),
+                    245, 295, fill=bg, width=2)
+    else:
+        pen.rounded_rectangle((x, y, x + 16, y + 11), radius=3, outline=ink, width=1)
+        pen.polygon(((x + 8, y + 5), (x + 15, y + 17), (x + 1, y + 17)), fill=bg)
+        pen.polygon(((x + 8, y + 7), (x + 13, y + 16), (x + 3, y + 16)), fill=ink)
 
 
 def draw_cloud(pen, cx, cy, color):
@@ -408,6 +411,11 @@ class Panel:
         self.buzz_rect = None
         self._neon_bg = None
         self._mascot = None
+        self._neon_mascot = None
+        self.neon_mascot_rect = None
+        self._tv_mascot = None
+        self.tv_intro_until = 0
+        self.neon_intro_until = 0
 
     def refresh_weather(self):
         try:
@@ -438,6 +446,10 @@ class Panel:
         self.skin = read_skin()
         if self.skin == "terminal" and self.skin_prev != "terminal":
             self.boot_until = time.time() + BOOT_SECONDS
+        if self.skin == "retrotv" and self.skin_prev != "retrotv":
+            self.tv_intro_until = time.time() + TV_INTRO_SECONDS
+        if self.skin == "neon" and self.skin_prev != "neon":
+            self.neon_intro_until = time.time() + NEON_INTRO_SECONDS
         self.skin_prev = self.skin
 
     def marquee_offset(self, key, overflow):
@@ -477,43 +489,71 @@ class Panel:
         image = Image.new("RGB", SIZE, theme["bg"])
         pen = ImageDraw.Draw(image)
 
-        draw_clock(pen, 240, 118, font(96, bold=True), now, theme["ink"])
         track = read_nowplaying()
+        ssid, signal, _, ip = self.status_lines()
+        pen.text((20, 8), ip, font=font(13), fill=theme["muted"])
+        wifi_cx = 420 if track else 442
+        pen.text((wifi_cx - 18, 8), truncate(ssid, 18), font=font(13), fill=theme["muted"], anchor="ra")
+        draw_wifi_icon(pen, wifi_cx, 20, signal, theme["ink"], theme["muted"])
         if track:
-            airplay = track.get("source") != "spotify"
-            title = truncate(track["title"], 30)
-            byline = truncate(track.get("artist", ""), 38)
-            title_font, byline_font = font(16, bold=True), font(13)
+            draw_source_badge(pen, 440, 8, track.get("source"), theme["ink"], theme["bg"])
 
-            text_w = max(pen.textlength(title, font=title_font),
-                         pen.textlength(byline, font=byline_font) if byline else 0)
-            start = max(14, 240 - (38 + text_w) / 2)
-
-            if airplay:
-                draw_airplay_icon(pen, start + 14, 192, theme["ink"], theme["bg"])
-            else:
-                draw_spotify_icon(pen, start + 14, 192, theme["bg"])
-            pen.text((start + 38, 174), title, font=title_font, fill=theme["ink"])
-            pen.text((start + 38, 197), byline, font=byline_font, fill=theme["muted"])
-        else:
-            pen.text((240, 182), now.strftime("%A, %-d %B"), font=font(17), fill=theme["muted"], anchor="ma")
+        draw_clock(pen, 240, 118, font(96, bold=True), now, theme["ink"])
+        pen.text((240, 182), now.strftime("%A, %-d %B"), font=font(17), fill=theme["muted"], anchor="ma")
 
         pen.rounded_rectangle((20, 220, 235, 300), radius=16, fill=theme["card"])
         if self.temperature is not None:
-            text, kind, color = self.condition
+            _, kind, color = self.condition
             draw_weather_icon(pen, 52, 258, kind, color, night)
-            pen.text((84, 240), f"{self.temperature}°C", font=font(32, bold=True), fill=theme["ink"])
-            pen.text((148, 240), text, font=font(13), fill=color)
-            pen.text((148, 260), self.city or "", font=font(13), fill=theme["muted"])
+            pen.text((84, 236), f"{self.temperature}°C", font=font(30, bold=True), fill=theme["ink"])
+            pen.text((86, 272), self.city or "", font=font(13), fill=theme["muted"])
         else:
             pen.text((40, 250), "Weather unavailable", font=font(14), fill=theme["muted"])
 
         pen.rounded_rectangle((245, 220, 460, 300), radius=16, fill=theme["card"])
-        ssid, signal, eq_line, ip = self.status_lines()
-        pen.text((265, 232), ssid, font=font(14), fill=theme["ink"])
-        draw_wifi_icon(pen, 436, 244, signal, theme["ink"], theme["muted"])
-        pen.text((265, 254), eq_line, font=font(14), fill=theme["muted"])
-        pen.text((265, 276), ip, font=font(13), fill=theme["muted"])
+        if track:
+            self.step_vu()
+            for i, height in enumerate(self.vu):
+                x = 262 + i * 8
+                pen.rectangle((x, 254 - height, x + 5, 254), fill=theme["ink"])
+
+            artist = track.get("artist", "")
+            title = track["title"]
+            title_font, sub_font = font(16, bold=True), font(13)
+            region_w = 150
+
+            strip = Image.new("RGB", (region_w, 24), theme["card"])
+            strip_pen = ImageDraw.Draw(strip)
+            title_w = strip_pen.textlength(title, font=title_font)
+            sep_w = 15 if artist else 0
+            artist_w = strip_pen.textlength(artist, font=sub_font) if artist else 0
+
+            offset = self.marquee_offset(title + artist, title_w + sep_w + artist_w - region_w)
+            sx = -int(offset)
+            strip_pen.text((sx, 1), title, font=title_font, fill=theme["ink"])
+            if artist:
+                dot_x = sx + int(title_w) + 6
+                strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=theme["muted"])
+                strip_pen.text((dot_x + 9, 4), artist, font=sub_font, fill=theme["muted"])
+            image.paste(strip, (292, 232))
+
+            duration = track.get("duration") or 0
+            if duration:
+                elapsed = min(duration, (track.get("elapsed") or 0)
+                              + max(0.0, time.time() - (track.get("anchor") or time.time())))
+                clock = f"{int(elapsed // 60)}:{int(elapsed % 60):02d}/{int(duration // 60)}:{int(duration % 60):02d}"
+                small_font = font(12)
+                bar_end = int(442 - pen.textlength(clock, font=small_font) - 8)
+                pen.rectangle((262, 274, bar_end, 282), outline=theme["muted"], width=1)
+                pen.rectangle((264, 276, 264 + int((bar_end - 266) * elapsed / duration), 280), fill=theme["ink"])
+                pen.text((442, 278), clock, font=small_font, fill=theme["muted"], anchor="rm")
+        else:
+            temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
+            pen.text((262, 234), f"CPU {temp} · Up {self.uptime}", font=font(14), fill=theme["ink"])
+            pen.text((262, 264), "Vol", font=font(12), fill=theme["muted"])
+            pen.rectangle((300, 262, 442, 276), outline=theme["muted"], width=1)
+            if self.volume is not None:
+                pen.rectangle((302, 264, 302 + int(138 * self.volume / 100), 274), fill=theme["ink"])
 
         return image
 
@@ -559,15 +599,7 @@ class Panel:
         draw_wifi_icon(pen, wifi_cx, 19, signal, TERM_FG, TERM_DIM, strength_colors=False)
 
         if track:
-            if track.get("source") == "spotify":
-                pen.ellipse((442, 6, 458, 22), fill=(30, 185, 84))
-                for radius in (11, 7):
-                    pen.arc((450 - radius, 23 - 2 * radius, 450 + radius, 23),
-                            245, 295, fill=TERM_BG, width=2)
-            else:
-                pen.rounded_rectangle((442, 6, 458, 17), radius=3, outline=TERM_FG, width=1)
-                pen.polygon(((450, 11), (457, 23), (443, 23)), fill=TERM_BG)
-                pen.polygon(((450, 13), (455, 22), (445, 22)), fill=TERM_FG)
+            draw_source_badge(pen, 442, 6, track.get("source"), TERM_FG, TERM_BG)
 
         clock_font = face(FONT_MONOFONTO, 118)
         half = pen.textlength(":", font=clock_font) / 2
@@ -674,6 +706,37 @@ class Panel:
         self._mascot = (stamp, image)
         return image
 
+    def neon_mascot_image(self):
+        try:
+            stamp = NEON_MASCOT_FILE.stat().st_mtime
+        except OSError:
+            return None
+        if self._neon_mascot and self._neon_mascot[0] == stamp:
+            return self._neon_mascot[1]
+
+        image = Image.open(NEON_MASCOT_FILE).convert("RGBA")
+        pixels = np.asarray(image, dtype=np.uint8).copy()
+        if pixels[..., 3].min() >= 250:
+            # opaque art on a white canvas: key the white out, soft-edged
+            whiteness = pixels[..., :3].min(axis=2).astype(np.int16)
+            pixels[..., 3] = np.clip((225 - whiteness) * 6, 0, 255).astype(np.uint8)
+            image = Image.fromarray(pixels, "RGBA")
+
+        # recolor into the theme: warm tones become magenta, cool tones cyan
+        pixels = np.asarray(image, dtype=np.uint8).copy()
+        rgb = pixels[..., :3].astype(np.float32)
+        value = (rgb.max(axis=2) / 255) ** 0.8
+        warm = rgb[..., 0] > rgb[..., 2]
+        palette = np.where(warm[..., None],
+                           np.array(NEON_MAGENTA, np.float32),
+                           np.array(NEON_CYAN, np.float32))
+        pixels[..., :3] = np.clip(palette * value[..., None], 0, 255).astype(np.uint8)
+        image = Image.fromarray(pixels, "RGBA")
+
+        image.thumbnail((150, 190))
+        self._neon_mascot = (stamp, image)
+        return image
+
     # ---------- neon ----------
 
     def neon_background(self):
@@ -693,33 +756,103 @@ class Panel:
         image = self.neon_background()
         pen = ImageDraw.Draw(image)
 
+        track = read_nowplaying()
+        ssid, signal, _, ip = self.status_lines()
+        pen.text((22, 8), ip, font=font(12), fill=NEON_MUTED)
+        wifi_cx = 418 if track else 440
+        pen.text((wifi_cx - 18, 8), truncate(ssid, 18), font=font(12), fill=NEON_MUTED, anchor="ra")
+        draw_wifi_icon(pen, wifi_cx, 20, signal, NEON_CYAN, NEON_MUTED, strength_colors=False)
+        if track:
+            draw_source_badge(pen, 438, 8, track.get("source"), NEON_CYAN, image.getpixel((446, 16)))
+
+        self.neon_mascot_rect = None
+        mascot = self.neon_mascot_image()
+        if mascot:
+            left = 18 + (150 - mascot.width) // 2
+            image.paste(mascot, (left, 224 - mascot.height), mascot)
+            self.neon_mascot_rect = (left, 224 - mascot.height, left + mascot.width, 224)
+
         glow = 0.82 + 0.18 * (np.sin(time.time() * 1.8) * 0.5 + 0.5)
         cyan = tuple(int(c * glow) for c in NEON_CYAN)
-        draw_clock(pen, 240, 96, font(86, bold=True), now, cyan, colon_ink=NEON_MAGENTA)
-        pen.text((240, 156), now.strftime("%A, %-d %B"), font=font(16), fill=NEON_MUTED, anchor="ma")
-
-        track = read_nowplaying()
-        if track:
-            pen.text((240, 184), truncate(track["title"], 30), font=font(16, bold=True),
-                     fill=NEON_INK, anchor="ma")
-            pen.text((240, 205), truncate(track.get("artist", ""), 34), font=font(13),
-                     fill=NEON_MUTED, anchor="ma")
+        clock_font = font(86, bold=True)
+        half_colon = pen.textlength(":", font=clock_font) / 2
+        clock_cx = 452 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
+        draw_clock(pen, clock_cx, 96, clock_font, now, cyan, colon_ink=NEON_MAGENTA)
+        pen.text((452, 156), now.strftime("%A, %-d %B"), font=font(16), fill=NEON_MUTED, anchor="ra")
 
         self.neon_panel(pen, (20, 230, 225, 302), NEON_MAGENTA, (120, 25, 60))
         self.buzz_rect = (20, 230, 225, 302)
         if self.temperature is not None:
-            condition, city = self.weather_line()
-            pen.text((38, 242), f"{self.temperature}°C", font=font(30, bold=True), fill=NEON_YELLOW)
-            pen.text((104, 246), condition, font=font(13), fill=NEON_MUTED)
-            pen.text((104, 266), city, font=font(13), fill=NEON_MUTED)
+            _, kind, color = self.condition
+            draw_weather_icon(pen, 48, 262, kind, color, is_night(now.hour), moon_bg=NEON_PANEL)
+            pen.text((82, 240), f"{self.temperature}°C", font=font(28, bold=True), fill=NEON_YELLOW)
+            pen.text((84, 274), self.city or "", font=font(12), fill=NEON_MUTED)
 
         self.neon_panel(pen, (237, 230, 460, 302), NEON_CYAN, (20, 90, 105))
-        ssid, signal, eq_line, ip = self.status_lines()
-        pen.text((254, 240), ssid, font=font(13, bold=True), fill=NEON_INK)
-        draw_wifi_icon(pen, 438, 250, signal, NEON_CYAN, NEON_MUTED, strength_colors=False)
-        pen.text((254, 260), eq_line, font=font(12), fill=NEON_MUTED)
-        pen.text((254, 280), ip, font=font(12), fill=NEON_MUTED)
+        if track:
+            self.step_vu()
+            for i, height in enumerate(self.vu):
+                x = 254 + i * 8
+                pen.rectangle((x, 262 - height, x + 5, 262), fill=NEON_CYAN)
 
+            artist = track.get("artist", "")
+            title = track["title"]
+            title_font, sub_font = font(15, bold=True), font(12)
+            region_w = 150
+
+            strip = Image.new("RGB", (region_w, 24), NEON_PANEL)
+            strip_pen = ImageDraw.Draw(strip)
+            title_w = strip_pen.textlength(title, font=title_font)
+            sep_w = 15 if artist else 0
+            artist_w = strip_pen.textlength(artist, font=sub_font) if artist else 0
+
+            offset = self.marquee_offset(title + artist, title_w + sep_w + artist_w - region_w)
+            sx = -int(offset)
+            strip_pen.text((sx, 2), title, font=title_font, fill=NEON_INK)
+            if artist:
+                dot_x = sx + int(title_w) + 6
+                strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=NEON_MUTED)
+                strip_pen.text((dot_x + 9, 5), artist, font=sub_font, fill=NEON_MUTED)
+            image.paste(strip, (284, 240))
+
+            duration = track.get("duration") or 0
+            if duration:
+                elapsed = min(duration, (track.get("elapsed") or 0)
+                              + max(0.0, time.time() - (track.get("anchor") or time.time())))
+                clock = f"{int(elapsed // 60)}:{int(elapsed % 60):02d}/{int(duration // 60)}:{int(duration % 60):02d}"
+                small_font = font(11)
+                bar_end = int(446 - pen.textlength(clock, font=small_font) - 8)
+                pen.rectangle((254, 278, bar_end, 286), outline=(20, 90, 105), width=1)
+                pen.rectangle((256, 280, 256 + int((bar_end - 258) * elapsed / duration), 284), fill=NEON_CYAN)
+                pen.text((446, 282), clock, font=small_font, fill=NEON_MUTED, anchor="rm")
+        else:
+            temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
+            pen.text((254, 242), f"CPU {temp} · Up {self.uptime}", font=font(13), fill=NEON_INK)
+            pen.text((254, 270), "Vol", font=font(11), fill=NEON_MUTED)
+            pen.rectangle((292, 268, 446, 280), outline=(20, 90, 105), width=1)
+            if self.volume is not None:
+                pen.rectangle((294, 270, 294 + int(150 * self.volume / 100), 278), fill=NEON_CYAN)
+
+        return image
+
+    def tv_mascot_image(self):
+        try:
+            stamp = TV_MASCOT_FILE.stat().st_mtime
+        except OSError:
+            return None
+        if self._tv_mascot and self._tv_mascot[0] == stamp:
+            return self._tv_mascot[1]
+
+        image = Image.open(TV_MASCOT_FILE).convert("RGBA")
+        pixels = np.asarray(image, dtype=np.uint8).copy()
+        if pixels[..., 3].min() >= 250:
+            # opaque art on a white canvas: key the white out, soft-edged
+            whiteness = pixels[..., :3].min(axis=2).astype(np.int16)
+            pixels[..., 3] = np.clip((225 - whiteness) * 6, 0, 255).astype(np.uint8)
+            image = Image.fromarray(pixels, "RGBA")
+
+        image.thumbnail((122, 150))
+        self._tv_mascot = (stamp, image)
         return image
 
     # ---------- retro tv ----------
@@ -729,24 +862,33 @@ class Panel:
         pen = ImageDraw.Draw(image)
         pen.rounded_rectangle((8, 8, 472, 312), radius=18, fill=TV_BG)
 
-        osd_font = face(FONT_VT323, 24)
-        pen.text((26, 14), "AV-1", font=osd_font, fill=TV_GREEN)
-        pen.polygon(((414, 20), (414, 34), (426, 27)), fill=TV_INK)
-        pen.text((432, 14), "PLAY", font=osd_font, fill=TV_INK)
+        track = read_nowplaying()
+        ssid, signal, _, ip = self.status_lines()
+        pen.text((26, 12), "AV-1", font=face(FONT_VT323, 20), fill=TV_GREEN)
+        pen.text((80, 13), ip, font=face(FONT_VT323, 18), fill=TV_MUTED)
+
+        wifi_cx = 430 if track else 452
+        pen.text((wifi_cx - 18, 13), truncate(ssid.upper(), 15), font=face(FONT_VT323, 18),
+                 fill=TV_MUTED, anchor="ra")
+        draw_wifi_icon(pen, wifi_cx, 24, signal, TV_GREEN, TV_EDGE, strength_colors=False)
+
+        if track:
+            draw_source_badge(pen, 448, 12, track.get("source"), TV_GREEN, TV_BG)
+
+        mascot = self.tv_mascot_image()
+        if mascot:
+            image.paste(mascot, (28 + (122 - mascot.width) // 2,
+                                 34 + (198 - mascot.height) // 2), mascot)
 
         clock_font = face(FONT_VT323, 118)
         show_colon = now.second % 2 == 0
-        draw_clock(pen, 237, 92, clock_font, now, (120, 40, 40), show_colon=show_colon)
-        draw_clock(pen, 243, 92, clock_font, now, (40, 90, 110), show_colon=show_colon)
-        draw_clock(pen, 240, 92, clock_font, now, TV_INK, show_colon=show_colon)
-        pen.text((240, 152), now.strftime("%A, %-d %B").upper(), font=face(FONT_VT323, 22),
-                 fill=TV_MUTED, anchor="ma")
-
-        track = read_nowplaying()
-        if track:
-            byline = truncate(track.get("artist", ""), 24)
-            text = truncate(track["title"], 28) + (f" - {byline}" if byline else "")
-            pen.text((240, 182), text, font=face(FONT_VT323, 22), fill=TV_INK, anchor="ma")
+        half_colon = pen.textlength(":", font=clock_font) / 2
+        clock_cx = 448 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
+        draw_clock(pen, clock_cx - 3, 92, clock_font, now, (120, 40, 40), show_colon=show_colon)
+        draw_clock(pen, clock_cx + 3, 92, clock_font, now, (40, 90, 110), show_colon=show_colon)
+        draw_clock(pen, clock_cx, 92, clock_font, now, TV_INK, show_colon=show_colon)
+        pen.text((448, 152), now.strftime("%A, %-d %B").upper(), font=face(FONT_VT323, 22),
+                 fill=TV_MUTED, anchor="ra")
 
         bar_width = 432 / len(TV_BARS)
         for i, color in enumerate(TV_BARS):
@@ -756,16 +898,56 @@ class Panel:
             pen.rounded_rectangle(box, radius=8, fill=TV_BOX, outline=TV_EDGE, width=1)
 
         if self.temperature is not None:
-            condition, city = self.weather_line()
-            pen.text((40, 238), f"{self.temperature}°C", font=face(FONT_VT323, 44), fill=TV_INK)
-            pen.text((106, 242), condition.upper(), font=face(FONT_VT323, 20), fill=TV_MUTED)
-            pen.text((106, 266), city.upper(), font=face(FONT_VT323, 20), fill=TV_MUTED)
+            _, city = self.weather_line()
+            _, kind, _ = self.condition
+            draw_weather_icon(pen, 52, 264, kind, TV_INK, is_night(now.hour),
+                              moon_fill=TV_INK, moon_bg=TV_BOX, bolt_fill=TV_INK)
+            pen.text((86, 236), f"{self.temperature}°C", font=face(FONT_VT323, 40), fill=TV_INK)
+            pen.text((88, 276), city.upper(), font=face(FONT_VT323, 16), fill=TV_MUTED)
 
-        ssid, signal, eq_line, ip = self.status_lines()
-        pen.text((252, 236), truncate(ssid.upper(), 17), font=face(FONT_VT323, 20), fill=TV_INK)
-        draw_wifi_icon(pen, 436, 248, signal, TV_GREEN, TV_EDGE, strength_colors=False)
-        pen.text((252, 258), eq_line.upper(), font=face(FONT_VT323, 18), fill=TV_MUTED)
-        pen.text((252, 278), ip, font=face(FONT_VT323, 18), fill=TV_MUTED)
+        if track:
+            self.step_vu()
+            for i, height in enumerate(self.vu):
+                x = 250 + i * 8
+                pen.rectangle((x, 262 - height, x + 5, 262), fill=TV_GREEN)
+
+            artist = track.get("artist", "").upper()
+            title = track["title"].upper()
+            title_font, artist_font = face(FONT_VT323, 20), face(FONT_VT323, 18)
+            region_w = 164
+
+            strip = Image.new("RGB", (region_w, 24), TV_BOX)
+            strip_pen = ImageDraw.Draw(strip)
+            title_w = strip_pen.textlength(title, font=title_font)
+            sep_w = 15 if artist else 0
+            artist_w = strip_pen.textlength(artist, font=artist_font) if artist else 0
+
+            offset = self.marquee_offset(title + artist, title_w + sep_w + artist_w - region_w)
+            x = -int(offset)
+            strip_pen.text((x, 1), title, font=title_font, fill=TV_INK)
+            if artist:
+                dot_x = x + int(title_w) + 6
+                strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=TV_MUTED)
+                strip_pen.text((dot_x + 9, 3), artist, font=artist_font, fill=TV_MUTED)
+            image.paste(strip, (278, 240))
+
+            duration = track.get("duration") or 0
+            if duration:
+                elapsed = (track.get("elapsed") or 0) + max(0.0, time.time() - (track.get("anchor") or time.time()))
+                elapsed = min(duration, elapsed)
+                clock = f"{int(elapsed // 60)}:{int(elapsed % 60):02d}/{int(duration // 60)}:{int(duration % 60):02d}"
+                small_font = face(FONT_VT323, 16)
+                bar_end = int(448 - pen.textlength(clock, font=small_font) - 8)
+                pen.rectangle((250, 276, bar_end, 284), outline=TV_EDGE, width=1)
+                pen.rectangle((252, 278, 252 + int((bar_end - 254) * elapsed / duration), 282), fill=TV_GREEN)
+                pen.text((448, 280), clock, font=small_font, fill=TV_MUTED, anchor="rm")
+        else:
+            temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
+            pen.text((250, 240), f"CPU {temp} · UP {self.uptime}", font=face(FONT_VT323, 18), fill=TV_INK)
+            pen.text((250, 268), "VOL", font=face(FONT_VT323, 16), fill=TV_MUTED)
+            pen.rectangle((290, 268, 448, 280), outline=TV_EDGE, width=1)
+            if self.volume is not None:
+                pen.rectangle((292, 270, 292 + int(154 * self.volume / 100), 278), fill=TV_GREEN)
 
         return image
 
@@ -778,7 +960,15 @@ class Panel:
         if self.skin == "neon":
             return self.draw_neon(now)
         if self.skin == "retrotv":
-            return self.draw_retrotv(now)
+            image = self.draw_retrotv(now)
+            if time.time() < self.tv_intro_until:
+                progress = 1 - (self.tv_intro_until - time.time()) / TV_INTRO_SECONDS
+                mix = 0.0 if progress < 0.55 else (progress - 0.55) / 0.45
+                arr = np.asarray(image.convert("RGB"), dtype=np.float32)
+                noise = np.random.randint(0, 256, (304, 464, 1), dtype=np.uint8).astype(np.float32)
+                arr[8:312, 8:472] = noise * (1 - mix) + arr[8:312, 8:472] * mix
+                image = Image.fromarray(arr.astype(np.uint8))
+            return image
         return self.draw_classic(now)
 
     def apply_effects(self, arr):
@@ -794,11 +984,39 @@ class Panel:
             scanlines(arr, t, y0=8, y1=312, dark=0.78, speed=10)
             light_band(arr, (t * 95) % 420 - 50, 46, 22, y0=8, y1=312)
             light_band(arr, ((t * 95) + 210) % 420 - 50, 30, 12, y0=8, y1=312)
-        elif self.skin == "neon" and self.buzz_rect:
-            phase = t % 6.5
-            if 4.95 <= phase <= 5.08 or 5.22 <= phase <= 5.36:
-                x1, y1, x2, y2 = self.buzz_rect
-                arr[y1:y2, x1:x2] *= 0.66
+        elif self.skin == "neon":
+            if t < self.neon_intro_until:
+                p = 1 - (self.neon_intro_until - t) / NEON_INTRO_SECONDS
+                intensity = (1 - p) ** 1.4
+                shift = max(2, int(16 * intensity))
+                arr[..., 0] = np.roll(arr[..., 0], -random.randint(1, shift), axis=1)
+                arr[..., 2] = np.roll(arr[..., 2], random.randint(1, shift), axis=1)
+                for _ in range(2 + int(9 * intensity)):
+                    y = random.randint(0, 300)
+                    h = random.randint(4, 18)
+                    reach = int(6 + 40 * intensity)
+                    arr[y:y + h] = np.roll(arr[y:y + h], random.randint(-reach, reach), axis=1)
+                if random.random() < 0.45 * intensity:
+                    jump = int(8 + 30 * intensity)
+                    arr[:] = np.roll(arr, random.randint(-jump, jump), axis=0)
+                arr *= 1 - 0.30 * intensity * random.random()
+                return
+
+            if self.buzz_rect:
+                phase = t % 6.5
+                if 4.95 <= phase <= 5.08 or 5.22 <= phase <= 5.36:
+                    x1, y1, x2, y2 = self.buzz_rect
+                    arr[y1:y2, x1:x2] *= 0.66
+
+            if self.neon_mascot_rect and t % 4.5 < 0.42:
+                x1, y1, x2, y2 = self.neon_mascot_rect
+                region = arr[y1:y2, x1:x2]
+                region[..., 0] = np.roll(region[..., 0], -random.randint(2, 7), axis=1)
+                region[..., 2] = np.roll(region[..., 2], random.randint(2, 7), axis=1)
+                for _ in range(3):
+                    y = random.randint(0, max(1, (y2 - y1) - 14))
+                    h = random.randint(4, 12)
+                    region[y:y + h] = np.roll(region[y:y + h], random.randint(-16, 16), axis=1)
 
     def on_tap(self, x, y):
         for name, (x1, y1, x2, y2) in self.buttons.items():
@@ -825,7 +1043,7 @@ class Panel:
             self.fb.write_bytes(frame)
 
 
-CADENCE = {"terminal": 0.14, "retrotv": 0.14, "neon": 0.4}
+CADENCE = {"terminal": 0.14, "retrotv": 0.14, "neon": 0.18}
 
 
 def main():

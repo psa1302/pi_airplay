@@ -395,14 +395,13 @@ class Panel:
         self.wifi = ("", 0)
         self.ip = "—"
         self.eq = (0, 0)
+        self.vu = [8, 13, 6]
         self.buttons = {}
         self.dirty = threading.Event()
         self.fb = find_display_fb()
         self.skin = "classic"
         self.skin_prev = None
         self.boot_until = 0
-        self.vu = [8, 13, 6]
-        self.vu_bank = [10] * 14
         self.cpu_temp = None
         self.uptime = "—"
         self.volume = None
@@ -441,11 +440,25 @@ class Panel:
             self.boot_until = time.time() + BOOT_SECONDS
         self.skin_prev = self.skin
 
+    def marquee_offset(self, key, overflow):
+        if getattr(self, "_marquee_key", None) != key:
+            self._marquee_key = key
+            self._marquee_start = time.time()
+        if overflow <= 0:
+            return 0
+
+        pause_in, speed, pause_out = 2.0, 30.0, 1.5
+        cycle = pause_in + overflow / speed + pause_out
+        t = (time.time() - self._marquee_start) % cycle
+
+        if t < pause_in:
+            return 0
+        if t < pause_in + overflow / speed:
+            return (t - pause_in) * speed
+        return overflow
+
     def step_vu(self):
         self.vu = [max(4, min(18, v + random.randint(-4, 4))) for v in self.vu]
-
-    def step_vu_bank(self):
-        self.vu_bank = [max(4, min(54, v + random.randint(-9, 9))) for v in self.vu_bank]
 
     def weather_line(self):
         text, _, _ = self.condition
@@ -537,11 +550,24 @@ class Panel:
         if mascot:
             image.paste(mascot, (20 + (118 - mascot.width) // 2, 210 - mascot.height), mascot)
 
+        track = read_nowplaying()
         ssid, signal, _, ip = self.status_lines()
+        wifi_cx = 422 if track else 444
         pen.text((20, 6), ip, font=face(FONT_MONOFONTO, 17), fill=TERM_DIM)
-        pen.text((424, 6), truncate(ssid.upper(), 18), font=face(FONT_MONOFONTO, 17),
+        pen.text((wifi_cx - 18, 6), truncate(ssid.upper(), 16), font=face(FONT_MONOFONTO, 17),
                  fill=TERM_DIM, anchor="ra")
-        draw_wifi_icon(pen, 444, 16, signal, TERM_FG, TERM_DIM, strength_colors=False)
+        draw_wifi_icon(pen, wifi_cx, 19, signal, TERM_FG, TERM_DIM, strength_colors=False)
+
+        if track:
+            if track.get("source") == "spotify":
+                pen.ellipse((442, 6, 458, 22), fill=(30, 185, 84))
+                for radius in (11, 7):
+                    pen.arc((450 - radius, 23 - 2 * radius, 450 + radius, 23),
+                            245, 295, fill=TERM_BG, width=2)
+            else:
+                pen.rounded_rectangle((442, 6, 458, 17), radius=3, outline=TERM_FG, width=1)
+                pen.polygon(((450, 11), (457, 23), (443, 23)), fill=TERM_BG)
+                pen.polygon(((450, 13), (455, 22), (445, 22)), fill=TERM_FG)
 
         clock_font = face(FONT_MONOFONTO, 118)
         half = pen.textlength(":", font=clock_font) / 2
@@ -550,15 +576,9 @@ class Panel:
         pen.text((452, 158), now.strftime("%A, %-d %B").upper(), font=face(FONT_MONOFONTO, 22),
                  fill=TERM_DIM, anchor="ra")
 
-        track = read_nowplaying()
-        if track:
-            title = truncate(track["title"], 22).upper()
-            row_font = face(FONT_MONOFONTO, 20)
-            label = "PLAYING: "
-            start = 452 - pen.textlength(label + title, font=row_font)
-            pen.text((start, 188), label, font=row_font, fill=TERM_DIM)
-            pen.text((start + pen.textlength(label, font=row_font), 188), title,
-                     font=row_font, fill=TERM_FG)
+        if track and track.get("device"):
+            pen.text((452, 190), truncate(f"FROM {track['device']}", 26).upper(),
+                     font=face(FONT_MONOFONTO, 15), fill=TERM_DIM, anchor="ra")
 
         for box in ((20, 222, 225, 302), (237, 222, 460, 302)):
             pen.rectangle(box, outline=TERM_DIM, width=1)
@@ -568,14 +588,50 @@ class Panel:
             _, kind, _ = self.condition
             draw_weather_icon(pen, 48, 258, kind, TERM_FG, is_night(now.hour),
                               moon_fill=TERM_FG, moon_bg=TERM_BG, bolt_fill=TERM_FG)
-            pen.text((82, 228), f"{self.temperature}°C", font=face(FONT_MONOFONTO, 44), fill=TERM_FG)
-            pen.text((84, 274), city.upper(), font=face(FONT_MONOFONTO, 17), fill=TERM_DIM)
+            pen.text((82, 232), f"{self.temperature}°C", font=face(FONT_MONOFONTO, 44), fill=TERM_FG)
+            pen.text((84, 276), city.upper(), font=face(FONT_MONOFONTO, 17), fill=TERM_DIM)
 
         if track:
-            self.step_vu_bank()
-            for i, height in enumerate(self.vu_bank):
-                x = 254 + i * 14
-                pen.rectangle((x, 292 - height, x + 9, 292), fill=TERM_FG)
+            self.step_vu()
+            for i, height in enumerate(self.vu):
+                x = 254 + i * 8
+                pen.rectangle((x, 256 - height, x + 5, 256), fill=TERM_FG)
+
+            artist = track.get("artist", "").upper()
+            title = track["title"].upper()
+            title_font, artist_font = face(FONT_MONOFONTO, 18), face(FONT_MONOFONTO, 16)
+            region_w = 166
+
+            strip = Image.new("RGB", (region_w, 24), TERM_BG)
+            strip_pen = ImageDraw.Draw(strip)
+            title_w = strip_pen.textlength(title, font=title_font)
+            sep_w = 17 if artist else 0
+            artist_w = strip_pen.textlength(artist, font=artist_font) if artist else 0
+
+            total = int(title_w + sep_w + artist_w)
+            overflow = total - region_w
+            offset = self.marquee_offset(title + artist, overflow)
+
+            def draw_line(x):
+                strip_pen.text((x, 1), title, font=title_font, fill=TERM_FG)
+                if artist:
+                    dot_x = x + int(title_w) + 7
+                    strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=TERM_DIM)
+                    strip_pen.text((dot_x + 10, 4), artist, font=artist_font, fill=TERM_DIM)
+
+            draw_line(-int(offset))
+            image.paste(strip, (282, 236))
+
+            duration = track.get("duration") or 0
+            if duration:
+                elapsed = (track.get("elapsed") or 0) + max(0.0, time.time() - (track.get("anchor") or time.time()))
+                elapsed = min(duration, elapsed)
+                clock = f"{int(elapsed // 60)}:{int(elapsed % 60):02d}/{int(duration // 60)}:{int(duration % 60):02d}"
+                clock_font = face(FONT_MONOFONTO, 15)
+                bar_end = int(444 - pen.textlength(clock, font=clock_font) - 10)
+                pen.rectangle((252, 272, bar_end, 280), outline=TERM_DIM, width=1)
+                pen.rectangle((254, 274, 254 + int((bar_end - 256) * elapsed / duration), 278), fill=TERM_FG)
+                pen.text((444, 276), clock, font=clock_font, fill=TERM_DIM, anchor="rm")
         else:
             temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
             pen.text((252, 232), f"CPU {temp}  ·  UP {self.uptime}",

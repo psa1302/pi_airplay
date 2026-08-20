@@ -7,9 +7,15 @@ event = os.environ.get("PLAYER_EVENT", "")
 path = "/run/pi-speakers/nowplaying.json"
 
 if event in ("track_changed", "playing", "started"):
+    import time
     data = {"playing": True, "source": "spotify",
             "title": os.environ.get("NAME", ""),
-            "artist": os.environ.get("ARTISTS", "")}
+            "artist": os.environ.get("ARTISTS", ""),
+            "album": os.environ.get("ALBUM", ""),
+            "device": "",
+            "duration": int(os.environ.get("DURATION_MS", 0) or 0) / 1000,
+            "elapsed": int(os.environ.get("POSITION_MS", 0) or 0) / 1000,
+            "anchor": time.time()}
 elif event in ("paused", "stopped", "session_disconnected"):
     data = {"playing": False, "source": "spotify", "title": "", "artist": ""}
 else:

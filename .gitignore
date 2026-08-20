@@ -1,0 +1,12 @@
+# seeded design-canvas build output (regenerated from the .dc.html sources)
+design/pi-speakers-control.html
+
+# downloaded fonts (fetched at install time; Monofonto's licence forbids redistribution)
+design/VT323-Regular.ttf
+design/monofonto.zip
+design/monofonto_font/
+
+# copyrighted mascot art stays local
+**/mascot.png
+
+.DS_Store

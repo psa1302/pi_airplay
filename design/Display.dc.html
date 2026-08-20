@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif; }
+    a { color: #111114; } a:hover { color: #56585e; }
+  </style>
+</helmet>
+<div style="width: 480px; height: 320px; background: #ffffff; display: flex; flex-direction: column; align-items: center; padding: 14px 20px 20px; box-sizing: border-box; gap: 2px">
+  <span style="font-size: 78px; font-weight: 700; color: #111114; line-height: 1.05; margin-top: 26px">13:58</span>
+  <span style="font-size: 15px; color: #6b6f76">Wednesday, 19 August</span>
+  <div style="display: flex; gap: 10px; width: 100%; margin-top: auto">
+    <div style="flex: 1; background: #f2f3f5; border-radius: 16px; padding: 14px 18px; display: flex; align-items: center; gap: 14px">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7d8899" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 18a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.6A4 4 0 0 0 7 18z"></path></svg><span style="font-size: 30px; font-weight: 700; color: #111114">31°</span>
+      <span style="font-size: 13px; line-height: 1.4"><span style="color: #7d8899">Partly cloudy</span><br><span style="color: #6b6f76">Gurugram</span></span>
+    </div>
+    <div style="flex: 1; background: #f2f3f5; border-radius: 16px; padding: 12px 18px; display: flex; flex-direction: column; gap: 3px; justify-content: center">
+      <span style="display: flex; align-items: center; gap: 8px"><span style="font-size: 13px; color: #111114">Home WiFi</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f9e5f" stroke-width="1.8" stroke-linecap="round"><path d="M5 12.5a10 10 0 0 1 14 0"></path><path d="M8.5 15.5a5.5 5.5 0 0 1 7 0"></path><circle cx="12" cy="18.5" r="1" fill="#2f9e5f" stroke="none"></circle></svg></span>
+      <span style="font-size: 13px; color: #6b6f76">Bass +3 dB · Treble −2 dB</span>
+      <span style="font-size: 12px; color: #6b6f76">192.168.31.199</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":480,"height":320}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

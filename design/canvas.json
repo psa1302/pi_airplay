@@ -1,0 +1,16 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 1030, "title": "Mobile" },
+    { "file": "Desktop.dc.html", "x": 470, "y": 0, "w": 1100, "h": 860, "title": "Desktop" },
+    { "file": "Display.dc.html", "x": 470, "y": 1050, "w": 480, "h": 320, "title": "Home Screen · Day" },
+    { "file": "DisplayNight.dc.html", "x": 1010, "y": 1050, "w": 480, "h": 320, "title": "Home Screen · Night" },
+    { "file": "ThemeTerminal.dc.html", "x": 470, "y": 1440, "w": 480, "h": 320, "title": "Theme · Terminal" },
+    { "file": "ThemeNeon.dc.html", "x": 1010, "y": 1440, "w": 480, "h": 320, "title": "Theme · Neon" },
+    { "file": "ThemeRetroTV.dc.html", "x": 1550, "y": 1440, "w": 480, "h": 320, "title": "Theme · Retro TV" },
+    { "file": "TerminalBoot.dc.html", "x": 470, "y": 1830, "w": 480, "h": 320, "title": "Terminal · Boot Sequence" }
+  ],
+  "annotations": [
+    { "id": "theme-note", "x": 200, "y": 1440, "w": 240, "text": "LCD theme concepts:\nTerminal — phosphor CRT, scanlines, mono type.\nNeon — cyberpunk glow, chamfered panels, magenta/cyan.\nRetro TV — VHS OSD, color bars, chromatic fringe. Font: VT323.\nPicker lives in the web UI; Classic keeps day/night auto." }
+  ],
+  "launch": { "view": "canvas" }
+}

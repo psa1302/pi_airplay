@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif; background: #ffffff; }
+    a { color: #111114; } a:hover { color: #56585e; }
+  </style>
+</helmet>
+<div style="width: 390px; min-height: 720px; background: #ffffff; display: flex; flex-direction: column; gap: 24px; padding: 28px 20px; box-sizing: border-box">
+
+  <div style="display: flex; justify-content: center; align-items: center; padding: 8px 0; position: relative">
+    <svg width="22" height="22" viewBox="0 0 24 24" style="position: absolute; right: 0"><circle cx="12" cy="12" r="9" fill="none" stroke="#6b6f76" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="#6b6f76"></path></svg>
+    <span style="font-size: 17px; font-weight: 700; letter-spacing: 0.24em; color: #111114">PI&nbsp;SPEAKERS</span>
+  </div>
+
+  <div style="background: #f2f3f5; border-radius: 20px; display: flex; flex-direction: column; gap: 18px; padding: 28px 24px; align-items: center">
+    <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#9aa0a8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="7" y="3" width="10" height="18" rx="2.5"></rect>
+      <circle cx="12" cy="14.5" r="3.2"></circle>
+      <circle cx="12" cy="7.5" r="1.2"></circle>
+    </svg>
+    <div style="display: flex; flex-direction: column; gap: 6px; align-items: center">
+      <span style="font-size: 22px; font-weight: 700; color: #111114">Pi Speakers</span>
+      <span style="display: flex; gap: 14px; justify-content: center; align-items: center; color: #6b6f76"><span style="display: flex; width: 26px; height: 26px; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16.5A2.5 2.5 0 0 1 3 14V6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5V14a2.5 2.5 0 0 1-2 2.45"></path><path d="M12 14.5 17 20H7z" fill="currentColor" stroke="none"></path></svg></span><span style="display: flex; width: 26px; height: 26px; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M7.5 9.8c3-.8 6.3-.4 9 1.2"></path><path d="M8 12.8c2.4-.6 5-.3 7.2 1"></path><path d="M8.5 15.6c1.9-.5 3.9-.2 5.6.8"></path></svg></span><span style="display: flex; width: 26px; height: 26px; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8 17.5 16.5 12 20.5V3.5L17.5 7.5 6.5 16"></path></svg></span></span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 7px; background: #ffffff; border-radius: 999px; padding: 8px 14px">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #1fa653; display: inline-block"></span>
+      <span style="font-size: 13px; font-weight: 600; color: #111114">Online</span>
+    </div>
+  </div>
+
+  <div style="background: #f2f3f5; border-radius: 20px; display: flex; flex-direction: column; gap: 20px; padding: 24px">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #6b6f76">EQUALISER</span>
+      <span style="font-size: 14px; font-weight: 600; color: #111114; background: #ffffff; border-radius: 999px; padding: 10px 18px; cursor: pointer">Reset</span>
+    </div>
+
+    <div style="background: #ffffff; border-radius: 14px; display: flex; flex-direction: column; gap: 20px; padding: 20px 18px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <span style="font-size: 15px; font-weight: 600; color: #111114">Bass</span>
+          <span style="font-size: 14px; color: #6b6f76">{{bassLabel}}</span>
+        </div>
+        <div style="position: relative; height: 44px">
+          <div style="position: absolute; top: 20px; left: 0; right: 0; height: 4px; border-radius: 2px; background: #e3e5e9"></div>
+          <div style="{{bassFillStyle}}"></div>
+          <div style="{{bassThumbStyle}}"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <span style="font-size: 15px; font-weight: 600; color: #111114">Treble</span>
+          <span style="font-size: 14px; color: #6b6f76">{{trebleLabel}}</span>
+        </div>
+        <div style="position: relative; height: 44px">
+          <div style="position: absolute; top: 20px; left: 0; right: 0; height: 4px; border-radius: 2px; background: #e3e5e9"></div>
+          <div style="{{trebleFillStyle}}"></div>
+          <div style="{{trebleThumbStyle}}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #f2f3f5; border-radius: 20px; display: flex; flex-direction: column; gap: 16px; padding: 24px">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #6b6f76">WI-FI</span>
+      <span style="font-size: 14px; font-weight: 600; color: #111114; background: #ffffff; border-radius: 999px; padding: 10px 18px; cursor: pointer">Scan</span>
+    </div>
+
+    <div style="background: #ffffff; border-radius: 14px; display: flex; flex-direction: column; padding: 4px 0">
+      <div style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; padding: 6px 18px">
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 15px; font-weight: 600; color: #111114">Home WiFi</span>
+          <span style="font-size: 12px; font-weight: 600; color: #1fa653">Connected</span>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111114" stroke-width="1.6" stroke-linecap="round"><path d="M5 12.5a10 10 0 0 1 14 0"></path><path d="M8.5 15.5a5.5 5.5 0 0 1 7 0"></path><circle cx="12" cy="18.5" r="1" fill="#111114" stroke="none"></circle></svg>
+      </div>
+      <div style="height: 1px; background: #eef0f2; margin: 0 18px"></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 4px 18px">
+        <span style="font-size: 15px; color: #111114">Airtel_Lan Solo</span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a8" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0a8" stroke-width="1.6" stroke-linecap="round"><path d="M5 12.5a10 10 0 0 1 14 0"></path><path d="M8.5 15.5a5.5 5.5 0 0 1 7 0"></path><circle cx="12" cy="18.5" r="1" fill="#9aa0a8" stroke="none"></circle></svg>
+        </div>
+      </div>
+      <div style="height: 1px; background: #eef0f2; margin: 0 18px"></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 4px 18px">
+        <span style="font-size: 15px; color: #111114">Airtel_nevi_4525</span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a8" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0a8" stroke-width="1.6" stroke-linecap="round"><path d="M5 12.5a10 10 0 0 1 14 0"></path><path d="M8.5 15.5a5.5 5.5 0 0 1 7 0"></path><circle cx="12" cy="18.5" r="1" fill="#9aa0a8" stroke="none"></circle></svg>
+        </div>
+      </div>
+      <div style="height: 1px; background: #eef0f2; margin: 0 18px"></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 4px 18px">
+        <span style="font-size: 15px; color: #6b6f76">Other network…</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa0a8" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":1030}}'>
+class Component extends DCLogic {
+  sliderVals(prefix, value) {
+    const clamped = Math.max(-10, Math.min(10, value ?? 0));
+    const pct = ((clamped + 10) / 20) * 100;
+    const left = Math.min(50, pct);
+    const width = Math.abs(pct - 50);
+    return {
+      [prefix + 'Label']: (clamped > 0 ? '+' : '') + clamped + ' dB',
+      [prefix + 'FillStyle']: 'position: absolute; top: 20px; height: 4px; border-radius: 2px; background: #111114; left: ' + left + '%; width: ' + width + '%',
+      [prefix + 'ThumbStyle']: 'position: absolute; top: 8px; width: 28px; height: 28px; border-radius: 50%; background: #ffffff; border: 1px solid #d6d9de; box-shadow: 0 2px 6px rgba(17,17,20,0.14); box-sizing: border-box; left: calc(' + pct + '% - 14px)',
+    };
+  }
+  renderVals() {
+    return {
+      ...this.sliderVals('bass', this.props.bass),
+      ...this.sliderVals('treble', this.props.treble),
+    };
+  }
+}
+</script>
+</body>
+</html>

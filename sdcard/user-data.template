@@ -1,0 +1,23 @@
+#cloud-config
+hostname: airplay-pi
+manage_etc_hosts: true
+
+ssh_pwauth: true
+timezone: {{TIMEZONE}}
+
+# User creation runs via bootcmd (every boot, unconditional) because the
+# Trixie cloud-init images ship a disabled `pi` account with a nologin shell
+# and do not reliably re-run per-instance modules. Do not "simplify" this
+# back to the users: module - it silently fails on these images.
+bootcmd:
+- [ sh, -c, "getent passwd pi >/dev/null || useradd -m -s /bin/bash pi" ]
+- [ sh, -c, "usermod -s /bin/bash pi" ]
+- [ sh, -c, "usermod -U pi; true" ]
+- [ sh, -c, "test -d /home/pi || (mkdir -p /home/pi && cp -rT /etc/skel /home/pi && chown -R pi:pi /home/pi)" ]
+- [ sh, -c, "for g in sudo adm audio video plugdev netdev dialout input users; do getent group $g >/dev/null && usermod -aG $g pi; done; true" ]
+- [ sh, -c, "echo pi:{{PASSWORD}} | chpasswd" ]
+- [ sh, -c, "install -d -m 700 -o pi -g pi /home/pi/.ssh" ]
+- [ sh, -c, "echo {{SSH_KEY}} > /home/pi/.ssh/authorized_keys" ]
+- [ sh, -c, "chown pi:pi /home/pi/.ssh/authorized_keys && chmod 600 /home/pi/.ssh/authorized_keys" ]
+- [ sh, -c, "echo 'pi ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/010_pi-nopasswd && chmod 440 /etc/sudoers.d/010_pi-nopasswd" ]
+- [ sh, -c, "rm -f /etc/ssh/sshd_config.d/rename_user.conf" ]

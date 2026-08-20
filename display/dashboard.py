@@ -51,7 +51,7 @@ TERM_DIM = (18, 130, 42)
 NEON_PANEL = (18, 8, 31)
 NEON_MAGENTA = (255, 45, 120)
 NEON_CYAN = (0, 229, 255)
-NEON_YELLOW = (240, 225, 74)
+NEON_YELLOW = (253, 245, 0)        # rich lemon
 NEON_INK = (242, 238, 252)
 NEON_MUTED = (138, 127, 168)
 
@@ -79,9 +79,18 @@ WEATHER = {0: ("Clear", "sun", SUN), 1: ("Mostly clear", "sun", SUN),
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
 FONT_MONOFONTO = "/opt/pi-speakers/fonts/monofonto.otf"
 FONT_VT323 = "/opt/pi-speakers/fonts/VT323.ttf"
+FONT_JP = "/usr/share/fonts/truetype/vlgothic/VL-PGothic-Regular.ttf"
+FONT_RAJ_BOLD = "/opt/pi-speakers/fonts/Rajdhani-Bold.ttf"
+FONT_RAJ_MED = "/opt/pi-speakers/fonts/Rajdhani-Medium.ttf"
+
+WEEKDAY_KANJI = "月火水木金土日"
+KATAKANA_CITIES = {"New Delhi": "ニューデリー", "Delhi": "デリー", "Gurugram": "グルガオン",
+                   "Gurgaon": "グルガオン", "Noida": "ノイダ", "Mumbai": "ムンバイ",
+                   "Bengaluru": "ベンガルール", "Bangalore": "ベンガルール"}
 MASCOT_FILE = Path("/opt/pi-speakers/mascot.png")
 NEON_MASCOT_FILE = Path("/opt/pi-speakers/mascot-neon.png")
 TV_MASCOT_FILE = Path("/opt/pi-speakers/mascot-tv.png")
+SPOTIFY_LOGO = Path("/opt/pi-speakers/spotify-logo.png")
 
 BOOT_LINES = ["PI-OS(R) V3.0 - PERSONAL AUDIO TERMINAL",
               "COPYRIGHT 2286 PI-TUNE INDUSTRIES",
@@ -203,7 +212,11 @@ def read_skin():
 def read_nowplaying():
     try:
         data = json.loads(NOWPLAYING.read_text())
-        return data if data.get("playing") and data.get("title") else None
+        if not (data.get("playing") and data.get("title")):
+            return None
+        for key in ("title", "artist", "album", "device"):
+            data[key] = " ".join(str(data.get(key, "")).split())
+        return data if data["title"] else None
     except Exception:
         return None
 
@@ -298,16 +311,45 @@ def draw_wifi_icon(pen, cx, cy, signal, ink, muted, strength_colors=True):
     pen.ellipse((cx - 2, cy - 2, cx + 2, cy + 2), fill=active)
 
 
-def draw_source_badge(pen, x, y, source, ink, bg):
+_spotify_logo = [None]
+_spotify_tints = {}
+
+
+def spotify_logo_tinted(color):
+    if _spotify_logo[0] is None:
+        try:
+            source = Image.open(SPOTIFY_LOGO).convert("RGBA")
+            source.thumbnail((18, 18))
+            _spotify_logo[0] = source
+        except OSError:
+            _spotify_logo[0] = False
+    if not _spotify_logo[0]:
+        return None
+
+    if color not in _spotify_tints:
+        tinted = Image.new("RGBA", _spotify_logo[0].size, color)
+        tinted.putalpha(_spotify_logo[0].getchannel("A"))
+        _spotify_tints[color] = tinted
+    return _spotify_tints[color]
+
+
+def draw_source_badge(image, x, y, source, ink, bg):
+    pen = ImageDraw.Draw(image)
+
     if source == "spotify":
-        pen.ellipse((x, y, x + 16, y + 16), fill=(30, 185, 84))
-        for radius in (11, 7):
-            pen.arc((x + 8 - radius, y + 17 - 2 * radius, x + 8 + radius, y + 17),
-                    245, 295, fill=bg, width=2)
-    else:
-        pen.rounded_rectangle((x, y, x + 16, y + 11), radius=3, outline=ink, width=1)
-        pen.polygon(((x + 8, y + 5), (x + 15, y + 17), (x + 1, y + 17)), fill=bg)
-        pen.polygon(((x + 8, y + 7), (x + 13, y + 16), (x + 3, y + 16)), fill=ink)
+        logo = spotify_logo_tinted(tuple(ink))
+        if logo:
+            image.paste(logo, (x - 1, y - 1), logo)
+        else:
+            pen.ellipse((x, y, x + 16, y + 16), fill=ink)
+            for radius, apex in ((9, y + 4), (6, y + 9)):
+                pen.arc((x + 8 - radius, apex, x + 8 + radius, apex + 2 * radius),
+                        238, 302, fill=bg, width=2)
+        return
+
+    pen.rounded_rectangle((x, y, x + 16, y + 11), radius=3, outline=ink, width=1)
+    pen.polygon(((x + 8, y + 5), (x + 15, y + 17), (x + 1, y + 17)), fill=bg)
+    pen.polygon(((x + 8, y + 7), (x + 13, y + 16), (x + 3, y + 16)), fill=ink)
 
 
 def draw_cloud(pen, cx, cy, color):
@@ -496,7 +538,7 @@ class Panel:
         pen.text((wifi_cx - 18, 8), truncate(ssid, 18), font=font(13), fill=theme["muted"], anchor="ra")
         draw_wifi_icon(pen, wifi_cx, 20, signal, theme["ink"], theme["muted"])
         if track:
-            draw_source_badge(pen, 440, 8, track.get("source"), theme["ink"], theme["bg"])
+            draw_source_badge(image, 440, 8, track.get("source"), theme["ink"], theme["bg"])
 
         draw_clock(pen, 240, 118, font(96, bold=True), now, theme["ink"])
         pen.text((240, 182), now.strftime("%A, %-d %B"), font=font(17), fill=theme["muted"], anchor="ma")
@@ -530,12 +572,14 @@ class Panel:
 
             offset = self.marquee_offset(title + artist, title_w + sep_w + artist_w - region_w)
             sx = -int(offset)
-            strip_pen.text((sx, 1), title, font=title_font, fill=theme["ink"])
+            ascent = title_font.getmetrics()[0]
+            sub_ascent = sub_font.getmetrics()[0]
+            strip_pen.text((sx, 0), title, font=title_font, fill=theme["ink"])
             if artist:
                 dot_x = sx + int(title_w) + 6
-                strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=theme["muted"])
-                strip_pen.text((dot_x + 9, 4), artist, font=sub_font, fill=theme["muted"])
-            image.paste(strip, (292, 232))
+                strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=theme["muted"])
+                strip_pen.text((dot_x + 9, ascent - sub_ascent), artist, font=sub_font, fill=theme["muted"])
+            image.paste(strip, (292, 254 - ascent))
 
             duration = track.get("duration") or 0
             if duration:
@@ -599,7 +643,7 @@ class Panel:
         draw_wifi_icon(pen, wifi_cx, 19, signal, TERM_FG, TERM_DIM, strength_colors=False)
 
         if track:
-            draw_source_badge(pen, 442, 6, track.get("source"), TERM_FG, TERM_BG)
+            draw_source_badge(image, 442, 6, track.get("source"), TERM_FG, TERM_BG)
 
         clock_font = face(FONT_MONOFONTO, 118)
         half = pen.textlength(":", font=clock_font) / 2
@@ -644,15 +688,15 @@ class Panel:
             overflow = total - region_w
             offset = self.marquee_offset(title + artist, overflow)
 
-            def draw_line(x):
-                strip_pen.text((x, 1), title, font=title_font, fill=TERM_FG)
-                if artist:
-                    dot_x = x + int(title_w) + 7
-                    strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=TERM_DIM)
-                    strip_pen.text((dot_x + 10, 4), artist, font=artist_font, fill=TERM_DIM)
-
-            draw_line(-int(offset))
-            image.paste(strip, (282, 236))
+            ascent = title_font.getmetrics()[0]
+            sub_ascent = artist_font.getmetrics()[0]
+            sx = -int(offset)
+            strip_pen.text((sx, 0), title, font=title_font, fill=TERM_FG)
+            if artist:
+                dot_x = sx + int(title_w) + 7
+                strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=TERM_DIM)
+                strip_pen.text((dot_x + 10, ascent - sub_ascent), artist, font=artist_font, fill=TERM_DIM)
+            image.paste(strip, (282, 252 - ascent))
 
             duration = track.get("duration") or 0
             if duration:
@@ -758,12 +802,12 @@ class Panel:
 
         track = read_nowplaying()
         ssid, signal, _, ip = self.status_lines()
-        pen.text((22, 8), ip, font=font(12), fill=NEON_MUTED)
+        pen.text((22, 6), ip, font=face(FONT_RAJ_MED, 15), fill=NEON_MUTED)
         wifi_cx = 418 if track else 440
-        pen.text((wifi_cx - 18, 8), truncate(ssid, 18), font=font(12), fill=NEON_MUTED, anchor="ra")
+        pen.text((wifi_cx - 18, 6), truncate(ssid, 18), font=face(FONT_RAJ_MED, 15), fill=NEON_MUTED, anchor="ra")
         draw_wifi_icon(pen, wifi_cx, 20, signal, NEON_CYAN, NEON_MUTED, strength_colors=False)
         if track:
-            draw_source_badge(pen, 438, 8, track.get("source"), NEON_CYAN, image.getpixel((446, 16)))
+            draw_source_badge(image, 438, 8, track.get("source"), NEON_CYAN, image.getpixel((446, 16)))
 
         self.neon_mascot_rect = None
         mascot = self.neon_mascot_image()
@@ -774,19 +818,30 @@ class Panel:
 
         glow = 0.82 + 0.18 * (np.sin(time.time() * 1.8) * 0.5 + 0.5)
         cyan = tuple(int(c * glow) for c in NEON_CYAN)
-        clock_font = font(86, bold=True)
+        clock_font = face(FONT_RAJ_BOLD, 96)
         half_colon = pen.textlength(":", font=clock_font) / 2
         clock_cx = 452 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
         draw_clock(pen, clock_cx, 96, clock_font, now, cyan, colon_ink=NEON_MAGENTA)
-        pen.text((452, 156), now.strftime("%A, %-d %B"), font=font(16), fill=NEON_MUTED, anchor="ra")
+        date_font = face(FONT_JP, 19)
+        segments = (("【", (0, 150, 170)),
+                    (f"{now.month}月{now.day}日", (147, 112, 219)),
+                    ("・", NEON_CYAN),
+                    (WEEKDAY_KANJI[now.weekday()], NEON_MAGENTA),
+                    ("】", (0, 150, 170)))
+        seg_x = 452 - sum(pen.textlength(text, font=date_font) + 2 for text, _ in segments)
+        for text, color in segments:
+            pen.text((seg_x, 154), text, font=date_font, fill=color,
+                     stroke_width=1, stroke_fill=color)
+            seg_x += pen.textlength(text, font=date_font) + 2
 
         self.neon_panel(pen, (20, 230, 225, 302), NEON_MAGENTA, (120, 25, 60))
         self.buzz_rect = (20, 230, 225, 302)
         if self.temperature is not None:
             _, kind, color = self.condition
             draw_weather_icon(pen, 48, 262, kind, color, is_night(now.hour), moon_bg=NEON_PANEL)
-            pen.text((82, 240), f"{self.temperature}°C", font=font(28, bold=True), fill=NEON_YELLOW)
-            pen.text((84, 274), self.city or "", font=font(12), fill=NEON_MUTED)
+            pen.text((82, 238), f"{self.temperature}°C", font=face(FONT_RAJ_BOLD, 32), fill=NEON_YELLOW)
+            city = KATAKANA_CITIES.get(self.city or "", self.city or "")
+            pen.text((84, 274), city, font=face(FONT_JP, 16), fill=(147, 112, 219))
 
         self.neon_panel(pen, (237, 230, 460, 302), NEON_CYAN, (20, 90, 105))
         if track:
@@ -797,7 +852,7 @@ class Panel:
 
             artist = track.get("artist", "")
             title = track["title"]
-            title_font, sub_font = font(15, bold=True), font(12)
+            title_font, sub_font = face(FONT_RAJ_BOLD, 17), face(FONT_RAJ_MED, 14)
             region_w = 150
 
             strip = Image.new("RGB", (region_w, 24), NEON_PANEL)
@@ -808,27 +863,31 @@ class Panel:
 
             offset = self.marquee_offset(title + artist, title_w + sep_w + artist_w - region_w)
             sx = -int(offset)
-            strip_pen.text((sx, 2), title, font=title_font, fill=NEON_INK)
+            ascent = title_font.getmetrics()[0]
+            sub_ascent = sub_font.getmetrics()[0]
+            strip_pen.text((sx, 0), title, font=title_font, fill=NEON_INK)
             if artist:
                 dot_x = sx + int(title_w) + 6
-                strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=NEON_MUTED)
-                strip_pen.text((dot_x + 9, 5), artist, font=sub_font, fill=NEON_MUTED)
-            image.paste(strip, (284, 240))
+                strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=NEON_MUTED)
+                strip_pen.text((dot_x + 9, ascent - sub_ascent), artist, font=sub_font, fill=NEON_MUTED)
+            image.paste(strip, (284, 262 - ascent))
 
             duration = track.get("duration") or 0
             if duration:
                 elapsed = min(duration, (track.get("elapsed") or 0)
                               + max(0.0, time.time() - (track.get("anchor") or time.time())))
                 clock = f"{int(elapsed // 60)}:{int(elapsed % 60):02d}/{int(duration // 60)}:{int(duration % 60):02d}"
-                small_font = font(11)
+                small_font = face(FONT_RAJ_MED, 13)
                 bar_end = int(446 - pen.textlength(clock, font=small_font) - 8)
                 pen.rectangle((254, 278, bar_end, 286), outline=(20, 90, 105), width=1)
                 pen.rectangle((256, 280, 256 + int((bar_end - 258) * elapsed / duration), 284), fill=NEON_CYAN)
                 pen.text((446, 282), clock, font=small_font, fill=NEON_MUTED, anchor="rm")
         else:
             temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
-            pen.text((254, 242), f"CPU {temp} · Up {self.uptime}", font=font(13), fill=NEON_INK)
-            pen.text((254, 270), "Vol", font=font(11), fill=NEON_MUTED)
+            pen.text((254, 240), f"CPU {temp} ・ 稼働 {self.uptime}", font=face(FONT_JP, 15),
+                     fill=NEON_INK, stroke_width=1, stroke_fill=NEON_INK)
+            pen.text((254, 270), "音量", font=face(FONT_JP, 13), fill=NEON_MUTED,
+                     stroke_width=1, stroke_fill=NEON_MUTED)
             pen.rectangle((292, 268, 446, 280), outline=(20, 90, 105), width=1)
             if self.volume is not None:
                 pen.rectangle((294, 270, 294 + int(150 * self.volume / 100), 278), fill=NEON_CYAN)
@@ -873,7 +932,7 @@ class Panel:
         draw_wifi_icon(pen, wifi_cx, 24, signal, TV_GREEN, TV_EDGE, strength_colors=False)
 
         if track:
-            draw_source_badge(pen, 448, 12, track.get("source"), TV_GREEN, TV_BG)
+            draw_source_badge(image, 448, 12, track.get("source"), TV_GREEN, TV_BG)
 
         mascot = self.tv_mascot_image()
         if mascot:
@@ -924,12 +983,14 @@ class Panel:
 
             offset = self.marquee_offset(title + artist, title_w + sep_w + artist_w - region_w)
             x = -int(offset)
-            strip_pen.text((x, 1), title, font=title_font, fill=TV_INK)
+            ascent = title_font.getmetrics()[0]
+            sub_ascent = artist_font.getmetrics()[0]
+            strip_pen.text((x, 0), title, font=title_font, fill=TV_INK)
             if artist:
                 dot_x = x + int(title_w) + 6
-                strip_pen.ellipse((dot_x, 11, dot_x + 3, 14), fill=TV_MUTED)
-                strip_pen.text((dot_x + 9, 3), artist, font=artist_font, fill=TV_MUTED)
-            image.paste(strip, (278, 240))
+                strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=TV_MUTED)
+                strip_pen.text((dot_x + 9, ascent - sub_ascent), artist, font=artist_font, fill=TV_MUTED)
+            image.paste(strip, (278, 262 - ascent))
 
             duration = track.get("duration") or 0
             if duration:

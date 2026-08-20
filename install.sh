@@ -29,6 +29,7 @@ deploy_app_files() {
   install -m 644 "$HERE"/display/dashboard.py "$HERE"/display/nowplaying.py /opt/pi-speakers/
   install -m 755 "$HERE"/display/spotify-event.sh /opt/pi-speakers/
 
+  install -m 644 "$HERE"/assets/spotify-logo.png /opt/pi-speakers/
   for mascot in "$HERE"/assets/mascots/*.png; do
     [ -f "$mascot" ] && install -m 644 "$mascot" "/opt/pi-speakers/$(basename "$mascot")"
   done

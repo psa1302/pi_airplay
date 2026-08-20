@@ -9,7 +9,7 @@ CMDLINE=/boot/firmware/cmdline.txt
 
 install_packages() {
   apt-get install -y --no-install-recommends \
-    python3-pil python3-numpy python3-evdev fonts-dejavu-core unzip
+    python3-pil python3-numpy python3-evdev fonts-dejavu-core fonts-vlgothic unzip
 }
 
 install_fonts() {
@@ -20,6 +20,13 @@ install_fonts() {
       "https://github.com/google/fonts/raw/main/ofl/vt323/VT323-Regular.ttf" \
       || echo "WARN: VT323 download failed - Retro TV theme falls back to DejaVu"
   fi
+
+  for weight in Bold Medium; do
+    [ -f "/opt/pi-speakers/fonts/Rajdhani-$weight.ttf" ] || curl -sfL \
+      -o "/opt/pi-speakers/fonts/Rajdhani-$weight.ttf" \
+      "https://github.com/google/fonts/raw/main/ofl/rajdhani/Rajdhani-$weight.ttf" \
+      || echo "WARN: Rajdhani download failed - Neon theme falls back to DejaVu"
+  done
 
   if [ ! -f /opt/pi-speakers/fonts/monofonto.otf ]; then
     curl -sfL -A "Mozilla/5.0" -o /tmp/monofonto.zip "https://dl.dafont.com/dl/?f=monofonto" \

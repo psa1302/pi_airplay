@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.4.0] - 2026-08-20
+
+### Fixed
+- Spotify Connect now shows track info everywhere: its event hook writes a
+  dedicated state file and the now-playing daemon arbitrates between sources
+  (whichever actually plays wins) instead of clobbering it every poll. Events
+  without metadata merge with the previous state rather than blanking it.
+- Metadata text is sanitized before rendering - a track title containing a
+  newline crashed the dashboard's text renderer in a restart loop.
+- The Spotify badge renders from the official logo (bundled, theme-tinted);
+  the previous hand-drawn arcs sat outside the circle.
+- The song line's baseline now aligns exactly with the playing-indicator
+  bars in all four themes, using real font metrics.
+
+### Changed (Neon theme)
+- Latin text set in Rajdhani (the Cyberpunk 2077 UI face; fetched at install
+  time): clock, temperature, HUD, marquee, and progress times.
+- Japanese ambient text: bracket-style date readout with weekday accent,
+  katakana city names, vitals labels; VL Gothic installed for kanji.
+- Temperature in Rich Lemon; date and city in Blushing Purple.
+
 ## [0.3.0] - 2026-08-20
 
 ### Added

@@ -1,23 +1,37 @@
 #!/bin/sh
-# librespot --onevent hook: mirrors Spotify playback into nowplaying.json
+# librespot --onevent hook: mirrors Spotify playback into spotify.json
+# (nowplaying.py arbitrates between this and the AirPlay state)
+echo "$(date +%T) event=$PLAYER_EVENT name=$NAME pos=$POSITION_MS dur=$DURATION_MS" >> /run/pi-speakers/events.log
 python3 - <<'PY'
-import json, os
+import json, os, time
 
 event = os.environ.get("PLAYER_EVENT", "")
-path = "/run/pi-speakers/nowplaying.json"
+path = "/run/pi-speakers/spotify.json"
 
-if event in ("track_changed", "playing", "started"):
-    import time
+previous = {}
+try:
+    with open(path) as handle:
+        previous = json.load(handle)
+except Exception:
+    pass
+
+if event in ("track_changed", "playing", "started", "seeked"):
     data = {"playing": True, "source": "spotify",
-            "title": os.environ.get("NAME", ""),
-            "artist": os.environ.get("ARTISTS", ""),
-            "album": os.environ.get("ALBUM", ""),
-            "device": "",
-            "duration": int(os.environ.get("DURATION_MS", 0) or 0) / 1000,
-            "elapsed": int(os.environ.get("POSITION_MS", 0) or 0) / 1000,
-            "anchor": time.time()}
+            "title": os.environ.get("NAME") or previous.get("title", ""),
+            "artist": os.environ.get("ARTISTS") or previous.get("artist", ""),
+            "album": os.environ.get("ALBUM") or previous.get("album", ""),
+            "device": ""}
+    duration = os.environ.get("DURATION_MS")
+    data["duration"] = int(duration) / 1000 if duration else previous.get("duration", 0)
+    position = os.environ.get("POSITION_MS")
+    if position:
+        data["elapsed"] = int(position) / 1000
+        data["anchor"] = time.time()
+    else:
+        data["elapsed"] = previous.get("elapsed", 0)
+        data["anchor"] = previous.get("anchor", time.time())
 elif event in ("paused", "stopped", "session_disconnected"):
-    data = {"playing": False, "source": "spotify", "title": "", "artist": ""}
+    data = dict(previous, playing=False, source="spotify")
 else:
     raise SystemExit
 

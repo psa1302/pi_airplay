@@ -16,18 +16,37 @@ from pathlib import Path
 
 PIPE = Path("/tmp/shairport-sync-metadata")
 OUT = Path("/run/pi-speakers/nowplaying.json")
+SPOTIFY = Path("/run/pi-speakers/spotify.json")
 ITEM = re.compile(rb"<item><type>([0-9a-f]{8})</type><code>([0-9a-f]{8})</code>"
                   rb"<length>(\d+)</length>"
                   rb"(?:\s*<data encoding=\"base64\">\s*([A-Za-z0-9+/=\s]*?)</data>)?</item>")
 
 state = {"playing": False, "source": "airplay", "title": "", "artist": "",
-         "album": "", "device": "", "duration": 0, "elapsed": 0, "anchor": 0}
+         "album": "", "device": "", "duration": 0, "elapsed": 0, "anchor": 0,
+         "airplay_started": 0}
 lock = threading.Lock()
 
 
+PUBLIC_KEYS = ("playing", "source", "title", "artist", "album",
+               "device", "duration", "elapsed", "anchor")
+
+
 def write_state():
+    """Publish whichever source is actually playing; Spotify's own state file
+    wins while it plays and AirPlay is silent (or started earlier)."""
+    snapshot = {key: state[key] for key in PUBLIC_KEYS}
+    try:
+        spotify = json.loads(SPOTIFY.read_text())
+        spotify_at = SPOTIFY.stat().st_mtime
+    except Exception:
+        spotify = None
+
+    if spotify and spotify.get("playing"):
+        if not snapshot["playing"] or spotify_at > state["airplay_started"]:
+            snapshot = spotify
+
     OUT.parent.mkdir(mode=0o777, exist_ok=True)
-    OUT.write_text(json.dumps(state))
+    OUT.write_text(json.dumps(snapshot))
 
 
 def fourcc(hex_bytes):
@@ -65,6 +84,8 @@ def poll_active_track():
                 player = re.search(r'variant\s+string "([A-Za-z ]+)"', dbus_property("PlayerState"))
                 if player:
                     if player.group(1) == "Playing":
+                        if not state["playing"]:
+                            state["airplay_started"] = time.time()
                         state["playing"] = True
                     elif player.group(1) in ("Paused", "Stopped"):
                         state["playing"] = False
@@ -88,7 +109,7 @@ def handle(item_type, code, payload):
         if item_type == "ssnc" and code == "snam":
             state.update(device=text)
         elif item_type == "ssnc" and code in ("pbeg", "prsm"):
-            state.update(playing=True, source="airplay")
+            state.update(playing=True, source="airplay", airplay_started=time.time())
         elif item_type == "ssnc" and code in ("pend", "pfls"):
             state.update(playing=False)
         else:

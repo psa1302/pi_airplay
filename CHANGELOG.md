@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.0] - 2026-08-20
+
+### Changed (Retro TV theme)
+- All text now set in DotGothic16 (fetched at install time), Latin and
+  Japanese alike, replacing VT323: HUD, clock, date, weather, music box,
+  and vitals.
+- Japanese ambient elements on the Neon pattern: 8月20日（水）date readout
+  with the weekday in phosphor green, katakana city names, 稼働/音量 vitals
+  labels. Song info stays untouched.
+- Clock (82px), temperature (20px, phosphor green), date, city, and track
+  title carry a 1px faux-bold stroke; the chromatic clock ghosts keep their
+  offsets around the heavier face.
+- HUD icons realigned to the text midline: DotGothic leaves 6px of air above
+  its caps, so the wifi fan and source badge sat visibly high.
+- The SSID truncates with baseline dots - DotGothic16's ellipsis glyph
+  floats at the JIS center height.
+
 ## [0.4.0] - 2026-08-20
 
 ### Fixed

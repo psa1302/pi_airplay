@@ -82,6 +82,7 @@ FONT_VT323 = "/opt/pi-speakers/fonts/VT323.ttf"
 FONT_JP = "/usr/share/fonts/truetype/vlgothic/VL-PGothic-Regular.ttf"
 FONT_RAJ_BOLD = "/opt/pi-speakers/fonts/Rajdhani-Bold.ttf"
 FONT_RAJ_MED = "/opt/pi-speakers/fonts/Rajdhani-Medium.ttf"
+FONT_DOT = "/opt/pi-speakers/fonts/DotGothic16.ttf"
 
 WEEKDAY_KANJI = "月火水木金土日"
 KATAKANA_CITIES = {"New Delhi": "ニューデリー", "Delhi": "デリー", "Gurugram": "グルガオン",
@@ -283,8 +284,8 @@ def touch_loop(panel):
             time.sleep(3)
 
 
-def truncate(text, limit):
-    return text if len(text) <= limit else text[:limit - 1] + "…"
+def truncate(text, limit, dots="…"):
+    return text if len(text) <= limit else text[:limit - 1] + dots
 
 
 def signed(db):
@@ -387,15 +388,18 @@ def draw_weather_icon(pen, cx, cy, kind, color, night, moon_fill=MOON, moon_bg=N
                      cx + 5, cy + 12, cx + 1, cy + 12), fill=bolt_fill)
 
 
-def draw_clock(pen, cx, cy, clock_font, now, ink, colon_ink=None, show_colon=None):
+def draw_clock(pen, cx, cy, clock_font, now, ink, colon_ink=None, show_colon=None, stroke=0):
     if show_colon is None:
         show_colon = now.second % 2 == 0
     half = pen.textlength(":", font=clock_font) / 2
 
-    pen.text((cx - half, cy), now.strftime("%H"), font=clock_font, fill=ink, anchor="rm")
-    pen.text((cx + half, cy), now.strftime("%M"), font=clock_font, fill=ink, anchor="lm")
+    pen.text((cx - half, cy), now.strftime("%H"), font=clock_font, fill=ink, anchor="rm",
+             stroke_width=stroke, stroke_fill=ink)
+    pen.text((cx + half, cy), now.strftime("%M"), font=clock_font, fill=ink, anchor="lm",
+             stroke_width=stroke, stroke_fill=ink)
     if show_colon:
-        pen.text((cx, cy), ":", font=clock_font, fill=colon_ink or ink, anchor="mm")
+        pen.text((cx, cy), ":", font=clock_font, fill=colon_ink or ink, anchor="mm",
+                 stroke_width=stroke, stroke_fill=colon_ink or ink)
 
 
 def chamfer(x1, y1, x2, y2, cut=10):
@@ -923,31 +927,39 @@ class Panel:
 
         track = read_nowplaying()
         ssid, signal, _, ip = self.status_lines()
-        pen.text((26, 12), "AV-1", font=face(FONT_VT323, 20), fill=TV_GREEN)
-        pen.text((80, 13), ip, font=face(FONT_VT323, 18), fill=TV_MUTED)
+        pen.text((26, 12), "AV-1", font=face(FONT_DOT, 18), fill=TV_GREEN)
+        pen.text((84, 14), ip, font=face(FONT_DOT, 16), fill=TV_MUTED)
 
         wifi_cx = 430 if track else 452
-        pen.text((wifi_cx - 18, 13), truncate(ssid.upper(), 15), font=face(FONT_VT323, 18),
+        pen.text((wifi_cx - 18, 14), truncate(ssid.upper(), 12, dots="..."), font=face(FONT_DOT, 16),
                  fill=TV_MUTED, anchor="ra")
-        draw_wifi_icon(pen, wifi_cx, 24, signal, TV_GREEN, TV_EDGE, strength_colors=False)
+        draw_wifi_icon(pen, wifi_cx, 31, signal, TV_GREEN, TV_EDGE, strength_colors=False)
 
         if track:
-            draw_source_badge(image, 448, 12, track.get("source"), TV_GREEN, TV_BG)
+            draw_source_badge(image, 448, 18, track.get("source"), TV_GREEN, TV_BG)
 
         mascot = self.tv_mascot_image()
         if mascot:
             image.paste(mascot, (28 + (122 - mascot.width) // 2,
                                  34 + (198 - mascot.height) // 2), mascot)
 
-        clock_font = face(FONT_VT323, 118)
+        clock_font = face(FONT_DOT, 82)
         show_colon = now.second % 2 == 0
         half_colon = pen.textlength(":", font=clock_font) / 2
         clock_cx = 448 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
-        draw_clock(pen, clock_cx - 3, 92, clock_font, now, (120, 40, 40), show_colon=show_colon)
-        draw_clock(pen, clock_cx + 3, 92, clock_font, now, (40, 90, 110), show_colon=show_colon)
-        draw_clock(pen, clock_cx, 92, clock_font, now, TV_INK, show_colon=show_colon)
-        pen.text((448, 152), now.strftime("%A, %-d %B").upper(), font=face(FONT_VT323, 22),
-                 fill=TV_MUTED, anchor="ra")
+        draw_clock(pen, clock_cx - 3, 92, clock_font, now, (120, 40, 40), show_colon=show_colon, stroke=1)
+        draw_clock(pen, clock_cx + 3, 92, clock_font, now, (40, 90, 110), show_colon=show_colon, stroke=1)
+        draw_clock(pen, clock_cx, 92, clock_font, now, TV_INK, show_colon=show_colon, stroke=1)
+        date_font = face(FONT_DOT, 20)
+        segments = ((f"{now.month}月{now.day}日", TV_MUTED),
+                    ("（", TV_MUTED),
+                    (WEEKDAY_KANJI[now.weekday()], TV_GREEN),
+                    ("）", TV_MUTED))
+        seg_x = 448 - sum(pen.textlength(text, font=date_font) for text, _ in segments)
+        for text, color in segments:
+            pen.text((seg_x, 150), text, font=date_font, fill=color,
+                     stroke_width=1, stroke_fill=color)
+            seg_x += pen.textlength(text, font=date_font)
 
         bar_width = 432 / len(TV_BARS)
         for i, color in enumerate(TV_BARS):
@@ -961,8 +973,11 @@ class Panel:
             _, kind, _ = self.condition
             draw_weather_icon(pen, 52, 264, kind, TV_INK, is_night(now.hour),
                               moon_fill=TV_INK, moon_bg=TV_BOX, bolt_fill=TV_INK)
-            pen.text((86, 236), f"{self.temperature}°C", font=face(FONT_VT323, 40), fill=TV_INK)
-            pen.text((88, 276), city.upper(), font=face(FONT_VT323, 16), fill=TV_MUTED)
+            pen.text((86, 246), f"{self.temperature}°C", font=face(FONT_DOT, 20), fill=TV_GREEN,
+                     stroke_width=1, stroke_fill=TV_GREEN)
+            city_jp = KATAKANA_CITIES.get(city or "", (city or "").upper())
+            pen.text((88, 276), city_jp, font=face(FONT_DOT, 15), fill=TV_MUTED,
+                     stroke_width=1, stroke_fill=TV_MUTED)
 
         if track:
             self.step_vu()
@@ -972,7 +987,7 @@ class Panel:
 
             artist = track.get("artist", "").upper()
             title = track["title"].upper()
-            title_font, artist_font = face(FONT_VT323, 20), face(FONT_VT323, 18)
+            title_font, artist_font = face(FONT_DOT, 16), face(FONT_DOT, 15)
             region_w = 164
 
             strip = Image.new("RGB", (region_w, 24), TV_BOX)
@@ -985,7 +1000,8 @@ class Panel:
             x = -int(offset)
             ascent = title_font.getmetrics()[0]
             sub_ascent = artist_font.getmetrics()[0]
-            strip_pen.text((x, 0), title, font=title_font, fill=TV_INK)
+            strip_pen.text((x, 0), title, font=title_font, fill=TV_INK,
+                           stroke_width=1, stroke_fill=TV_INK)
             if artist:
                 dot_x = x + int(title_w) + 6
                 strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=TV_MUTED)
@@ -997,15 +1013,15 @@ class Panel:
                 elapsed = (track.get("elapsed") or 0) + max(0.0, time.time() - (track.get("anchor") or time.time()))
                 elapsed = min(duration, elapsed)
                 clock = f"{int(elapsed // 60)}:{int(elapsed % 60):02d}/{int(duration // 60)}:{int(duration % 60):02d}"
-                small_font = face(FONT_VT323, 16)
+                small_font = face(FONT_DOT, 14)
                 bar_end = int(448 - pen.textlength(clock, font=small_font) - 8)
                 pen.rectangle((250, 276, bar_end, 284), outline=TV_EDGE, width=1)
                 pen.rectangle((252, 278, 252 + int((bar_end - 254) * elapsed / duration), 282), fill=TV_GREEN)
                 pen.text((448, 280), clock, font=small_font, fill=TV_MUTED, anchor="rm")
         else:
             temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
-            pen.text((250, 240), f"CPU {temp} · UP {self.uptime}", font=face(FONT_VT323, 18), fill=TV_INK)
-            pen.text((250, 268), "VOL", font=face(FONT_VT323, 16), fill=TV_MUTED)
+            pen.text((250, 240), f"CPU {temp} ・ 稼働 {self.uptime}", font=face(FONT_DOT, 16), fill=TV_INK)
+            pen.text((250, 270), "音量", font=face(FONT_DOT, 14), fill=TV_MUTED)
             pen.rectangle((290, 268, 448, 280), outline=TV_EDGE, width=1)
             if self.volume is not None:
                 pen.rectangle((292, 270, 292 + int(154 * self.volume / 100), 278), fill=TV_GREEN)

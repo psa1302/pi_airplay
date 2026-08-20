@@ -21,6 +21,11 @@ install_fonts() {
       || echo "WARN: VT323 download failed - Retro TV theme falls back to DejaVu"
   fi
 
+  [ -f /opt/pi-speakers/fonts/DotGothic16.ttf ] || curl -sfL \
+    -o /opt/pi-speakers/fonts/DotGothic16.ttf \
+    "https://github.com/google/fonts/raw/main/ofl/dotgothic16/DotGothic16-Regular.ttf" \
+    || echo "WARN: DotGothic16 download failed - Retro TV Japanese falls back to DejaVu"
+
   for weight in Bold Medium; do
     [ -f "/opt/pi-speakers/fonts/Rajdhani-$weight.ttf" ] || curl -sfL \
       -o "/opt/pi-speakers/fonts/Rajdhani-$weight.ttf" \

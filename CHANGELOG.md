@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.1] - 2026-08-20
+
+### Fixed
+- Terminal: the song line's baseline lands on the VU bars' bottom edge.
+- Retro TV: the track title lost its faux-bold stroke - at 16px the stroke
+  closed the gaps of DotGothic16's dot matrix and smeared the glyphs.
+
+### Changed
+- Bigger clocks: Retro TV 82px → 96px, Neon 96px → 104px.
+
 ## [0.5.0] - 2026-08-20
 
 ### Changed (Retro TV theme)

@@ -700,7 +700,7 @@ class Panel:
                 dot_x = sx + int(title_w) + 7
                 strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=TERM_DIM)
                 strip_pen.text((dot_x + 10, ascent - sub_ascent), artist, font=artist_font, fill=TERM_DIM)
-            image.paste(strip, (282, 252 - ascent))
+            image.paste(strip, (282, 256 - ascent))
 
             duration = track.get("duration") or 0
             if duration:
@@ -822,7 +822,7 @@ class Panel:
 
         glow = 0.82 + 0.18 * (np.sin(time.time() * 1.8) * 0.5 + 0.5)
         cyan = tuple(int(c * glow) for c in NEON_CYAN)
-        clock_font = face(FONT_RAJ_BOLD, 96)
+        clock_font = face(FONT_RAJ_BOLD, 104)
         half_colon = pen.textlength(":", font=clock_font) / 2
         clock_cx = 452 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
         draw_clock(pen, clock_cx, 96, clock_font, now, cyan, colon_ink=NEON_MAGENTA)
@@ -943,7 +943,7 @@ class Panel:
             image.paste(mascot, (28 + (122 - mascot.width) // 2,
                                  34 + (198 - mascot.height) // 2), mascot)
 
-        clock_font = face(FONT_DOT, 82)
+        clock_font = face(FONT_DOT, 96)
         show_colon = now.second % 2 == 0
         half_colon = pen.textlength(":", font=clock_font) / 2
         clock_cx = 448 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
@@ -1000,8 +1000,7 @@ class Panel:
             x = -int(offset)
             ascent = title_font.getmetrics()[0]
             sub_ascent = artist_font.getmetrics()[0]
-            strip_pen.text((x, 0), title, font=title_font, fill=TV_INK,
-                           stroke_width=1, stroke_fill=TV_INK)
+            strip_pen.text((x, 0), title, font=title_font, fill=TV_INK)
             if artist:
                 dot_x = x + int(title_w) + 6
                 strip_pen.ellipse((dot_x, ascent - 5, dot_x + 3, ascent - 2), fill=TV_MUTED)

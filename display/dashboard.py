@@ -888,10 +888,9 @@ class Panel:
                 pen.text((446, 282), clock, font=small_font, fill=NEON_MUTED, anchor="rm")
         else:
             temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
-            pen.text((254, 240), f"CPU {temp} ・ 稼働 {self.uptime}", font=face(FONT_JP, 15),
-                     fill=NEON_INK, stroke_width=1, stroke_fill=NEON_INK)
-            pen.text((254, 270), "音量", font=face(FONT_JP, 13), fill=NEON_MUTED,
-                     stroke_width=1, stroke_fill=NEON_MUTED)
+            pen.text((254, 240), f"CPU {temp} ・ 稼働 {self.uptime}", font=face(FONT_JP, 16),
+                     fill=NEON_INK)
+            pen.text((254, 274), "音量", font=face(FONT_JP, 15), fill=NEON_MUTED, anchor="lm")
             pen.rectangle((292, 268, 446, 280), outline=(20, 90, 105), width=1)
             if self.volume is not None:
                 pen.rectangle((294, 270, 294 + int(150 * self.volume / 100), 278), fill=NEON_CYAN)
@@ -1020,7 +1019,7 @@ class Panel:
         else:
             temp = f"{self.cpu_temp}°C" if self.cpu_temp is not None else "—"
             pen.text((250, 240), f"CPU {temp} ・ 稼働 {self.uptime}", font=face(FONT_DOT, 16), fill=TV_INK)
-            pen.text((250, 270), "音量", font=face(FONT_DOT, 14), fill=TV_MUTED)
+            pen.text((250, 274), "音量", font=face(FONT_DOT, 14), fill=TV_MUTED, anchor="lm")
             pen.rectangle((290, 268, 448, 280), outline=TV_EDGE, width=1)
             if self.volume is not None:
                 pen.rectangle((292, 270, 292 + int(154 * self.volume / 100), 278), fill=TV_GREEN)

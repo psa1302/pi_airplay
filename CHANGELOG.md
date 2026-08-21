@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.2] - 2026-08-21
+
+### Fixed
+- Neon vitals kanji (稼働, 音量) lost their faux-bold stroke - dense kanji
+  blob at 15px with any thickening - and grew a point instead.
+- The 音量 label is vertically centered on the volume bar in Neon and
+  Retro TV.
+
 ## [0.5.1] - 2026-08-20
 
 ### Fixed

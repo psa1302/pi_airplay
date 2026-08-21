@@ -73,6 +73,33 @@
   .sp-retrotv::before { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 6px; background: linear-gradient(90deg, #c8c8c8 0 14%, #c8c832 0 28%, #32c8c8 0 42%, #32c832 0 57%, #c832c8 0 71%, #c83232 0 85%, #3232c8 0 100%); opacity: .8; }
   .sp-retrotv::after { content: "12:04"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, monospace; font-size: 17px; color: #f4f6f2; text-shadow: -1.5px 0 rgba(255,70,70,.6), 1.5px 0 rgba(70,200,255,.6); }
 
+  #settingsBtn { right: 48px; }
+  .pop-switch { margin-left: auto; width: 40px; height: 24px; border-radius: 12px; background: var(--track-off); position: relative; flex-shrink: 0; transition: background .2s; }
+  .pop-switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.3); transition: left .2s; }
+  .pop-item.on .pop-switch { background: #1fa653; }
+  #settingsPop { min-width: 250px; }
+  .pop-section { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--muted); padding: 10px 14px 4px; }
+  .pop-item + .pop-section, .pop-slider + .pop-section { border-top: 1px solid var(--divider); margin-top: 8px; padding-top: 14px; }
+  .pop-slider { display: flex; flex-direction: column; gap: 2px; padding: 2px 14px 10px; }
+  .pop-slider .slider-head b { font-size: 13px; font-weight: 600; letter-spacing: normal; }
+  .pop-slider .slider-head span { font-size: 13px; letter-spacing: normal; }
+  .pop-slider input[type=range] { height: 34px; }
+  .dual { position: relative; height: 34px; --fill: var(--track-off); }
+  .dual::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 10px; transform: translateY(-50%); border-radius: 5px; background: var(--fill); }
+  .dual input[type=range] { position: absolute; inset: 0; margin: 0; pointer-events: none; }
+  .dual input[type=range]::-webkit-slider-runnable-track { background: transparent; }
+  .dual input[type=range]::-moz-range-track { background: transparent; }
+  .dual input[type=range]::-webkit-slider-thumb { pointer-events: auto; width: 18px; height: 18px; margin-top: -7px; }
+  .dual input[type=range]::-moz-range-thumb { pointer-events: auto; width: 16px; height: 16px; }
+  .pop-item.on .pop-switch::after { left: 18px; }
+  .popover { position: absolute; top: 52px; right: 0; background: var(--panel); border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,.25); padding: 8px; display: none; flex-direction: column; min-width: 210px; z-index: 10; text-align: left; }
+  .popover.open { display: flex; }
+  .pop-item { display: flex; align-items: center; gap: 10px; border: none; background: none; font-family: inherit; font-size: 14px; font-weight: 600; letter-spacing: normal; color: var(--ink); padding: 13px 14px; border-radius: 10px; cursor: pointer; text-align: left; }
+  .pop-item svg { flex-shrink: 0; }
+  .pop-item:active { background: var(--press); }
+  .pop-item.armed { background: #c0392b; color: #fff; }
+  .pop-hint { font-size: 12px; font-weight: 400; letter-spacing: normal; color: var(--muted); padding: 8px 14px 6px; }
+
   .net-list { background: var(--panel); border-radius: 14px; padding: 4px 0; display: flex; flex-direction: column; transition: background .3s; }
   .net-row { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 6px 18px; cursor: pointer; border: none; background: none; font-family: inherit; text-align: left; width: 100%; color: inherit; }
   .net-row:active { background: var(--row-press); }
@@ -94,9 +121,13 @@
   .modal .note { font-size: 12px; color: var(--muted); margin: 0; }
 
   @media (min-width: 900px) {
-    .shell { max-width: 960px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: stretch; padding-top: 40px; }
+    .shell { max-width: 960px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding-top: 40px; }
     .wordmark { grid-column: 1 / -1; font-size: 20px; letter-spacing: 0.26em; }
-    .card.wifi { grid-column: 1 / -1; }
+    .card.speaker { grid-area: 2 / 1; }
+    .card.eq { grid-area: 2 / 2; }
+    .card.themes { grid-area: 3 / 1; }
+    .card.wifi { grid-area: 3 / 2; height: 0; min-height: 100%; }
+    .card.wifi .net-list { flex: 1 1 0; min-height: 0; overflow-y: auto; }
     .speaker { justify-content: center; }
   }
 </style>
@@ -104,7 +135,27 @@
 <body>
 <div class="shell">
   <div class="wordmark" style="position: relative">PI&nbsp;SPEAKERS
-    <button class="theme-btn" id="themeBtn" aria-label="Display theme"></button>
+    <button class="theme-btn" id="settingsBtn" aria-label="Settings"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.09a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.09a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"></path></svg></button>
+    <div class="popover" id="settingsPop">
+      <div class="pop-section">APPEARANCE</div>
+      <button class="pop-item" id="themeBtn"><span id="themeIco"></span><span id="themeLbl">Appearance</span></button>
+      <div class="pop-section">CHIME</div>
+      <button class="pop-item" id="chimeBtn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg><span>Hourly chime</span><span class="pop-switch"></span></button>
+      <button class="pop-item" id="quietBtn" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg><span>Quiet hours</span><span class="pop-switch"></span></button>
+      <div class="pop-slider" id="quietRange" style="display:none">
+        <div class="slider-head"><b>Window</b><span id="qVal">00:00 – 10:00</span></div>
+        <div class="dual" id="quietDual">
+          <input type="range" id="qs" min="0" max="23" step="1" value="0">
+          <input type="range" id="qe" min="0" max="23" step="1" value="10">
+        </div>
+      </div>
+    </div>
+    <button class="theme-btn" id="powerBtn" aria-label="Power"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v8"></path><path d="M7 5.5a8 8 0 1 0 10 0"></path></svg></button>
+    <div class="popover" id="powerPop">
+      <button class="pop-item" id="rebootBtn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"></path><path d="M21 3v6h-6"></path></svg><span>Restart</span></button>
+      <button class="pop-item" id="shutdownBtn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v8"></path><path d="M7 5.5a8 8 0 1 0 10 0"></path></svg><span>Shut down</span></button>
+      <div class="pop-hint" id="powerHint" style="display:none"></div>
+    </div>
   </div>
 
   <div class="card speaker">
@@ -126,7 +177,7 @@
     <div class="chip"><span class="dot" id="statusDot"></span><span id="statusText">Connecting…</span></div>
   </div>
 
-  <div class="card">
+  <div class="card eq">
     <div class="card-head">
       <span class="card-label">EQUALISER</span>
       <button class="pill" id="resetBtn">Reset</button>
@@ -143,7 +194,7 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card themes">
     <div class="card-head"><span class="card-label">DISPLAY THEME</span></div>
     <div class="skins" id="skins">
       <button class="skin-tile" data-skin="classic"><span class="skin-preview sp-classic"></span><span>Classic</span></button>
@@ -199,8 +250,8 @@ function resolvedTheme() {
 
 function applyTheme() {
   document.documentElement.dataset.theme = resolvedTheme();
-  $('themeBtn').innerHTML = themeIcons[themeState];
-  $('themeBtn').title = 'Display theme: ' + themeState;
+  $('themeIco').innerHTML = themeIcons[themeState];
+  $('themeLbl').textContent = themeState[0].toUpperCase() + themeState.slice(1);
 }
 
 $('themeBtn').addEventListener('click', async () => {
@@ -365,6 +416,115 @@ $('joinBtn').addEventListener('click', async () => {
   $('joinBtn').textContent = 'Join';
 });
 
+$('powerBtn').addEventListener('click', (event) => {
+  event.stopPropagation();
+  $('settingsPop').classList.remove('open');
+  $('powerPop').classList.toggle('open');
+});
+
+$('settingsBtn').addEventListener('click', (event) => {
+  event.stopPropagation();
+  $('powerPop').classList.remove('open');
+  $('settingsPop').classList.toggle('open');
+});
+
+function paintQuiet() {
+  const start = +$('qs').value, end = +$('qe').value;
+  const label = (h) => String(h).padStart(2, '0') + ':00';
+  $('qVal').textContent = label(start) + ' – ' + label(end);
+
+  const pct = (h) => (h / 23) * 100;
+  const on = 'var(--track-on)', off = 'var(--track-off)';
+  $('quietDual').style.setProperty('--fill', start <= end
+    ? `linear-gradient(to right, ${off} 0 ${pct(start)}%, ${on} ${pct(start)}% ${pct(end)}%, ${off} ${pct(end)}% 100%)`
+    : `linear-gradient(to right, ${on} 0 ${pct(end)}%, ${off} ${pct(end)}% ${pct(start)}%, ${on} ${pct(start)}% 100%)`);
+}
+
+function paintChime(data) {
+  $('chimeBtn').classList.toggle('on', data.on);
+  $('quietBtn').classList.toggle('on', data.quiet);
+  $('quietBtn').style.display = data.on ? '' : 'none';
+  if (data.quiet_start !== undefined) { $('qs').value = data.quiet_start; $('qe').value = data.quiet_end; }
+  paintQuiet();
+  $('quietRange').style.display = data.on && data.quiet ? '' : 'none';
+}
+
+let quietTimer;
+for (const id of ['qs', 'qe']) {
+  $(id).addEventListener('input', () => {
+    paintQuiet();
+    clearTimeout(quietTimer);
+    quietTimer = setTimeout(() => fetch('/api/chime', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ quiet_start: +$('qs').value, quiet_end: +$('qe').value }),
+    }).catch(() => {}), 300);
+  });
+}
+
+$('chimeBtn').addEventListener('click', async () => {
+  const on = !$('chimeBtn').classList.contains('on');
+  paintChime({ on, quiet: $('quietBtn').classList.contains('on') });
+  await fetch('/api/chime', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ on }) }).catch(() => {});
+});
+
+$('quietBtn').addEventListener('click', async () => {
+  const quiet = !$('quietBtn').classList.contains('on');
+  $('quietBtn').classList.toggle('on', quiet);
+  $('quietRange').style.display = quiet ? '' : 'none';
+  await fetch('/api/chime', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ quiet }) }).catch(() => {});
+});
+
+async function loadChime() {
+  try { paintChime(await (await fetch('/api/chime')).json()); } catch {}
+}
+
+document.addEventListener('click', (event) => {
+  if ($('settingsPop').classList.contains('open') && !$('settingsPop').contains(event.target)) {
+    $('settingsPop').classList.remove('open');
+  }
+  if (!$('powerPop').classList.contains('open') || $('powerPop').contains(event.target)) return;
+  $('powerPop').classList.remove('open');
+  for (const btn of [$('rebootBtn'), $('shutdownBtn')]) {
+    if (btn.disabled) continue;
+    btn.classList.remove('armed');
+    btn.querySelector('span').textContent = btn.dataset.label;
+  }
+});
+
+for (const [id, action, armedLabel] of [['rebootBtn', 'reboot', 'Confirm restart'],
+                                        ['shutdownBtn', 'shutdown', 'Confirm shut down']]) {
+  const btn = $(id);
+  const text = btn.querySelector('span');
+  btn.dataset.label = text.textContent;
+  let disarm;
+  btn.addEventListener('click', async (event) => {
+    event.stopPropagation();
+    if (!btn.classList.contains('armed')) {
+      btn.classList.add('armed');
+      text.textContent = armedLabel;
+      disarm = setTimeout(() => { btn.classList.remove('armed'); text.textContent = btn.dataset.label; }, 4000);
+      return;
+    }
+    clearTimeout(disarm);
+    btn.classList.remove('armed');
+    btn.disabled = true;
+    await fetch('/api/power', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ action }) }).catch(() => {});
+    text.textContent = action === 'reboot' ? 'Restarting…' : 'Shutting down…';
+    $('powerHint').style.display = '';
+    if (action === 'reboot') {
+      $('powerHint').textContent = 'The speaker is restarting — this page reloads when it returns.';
+      const probe = setInterval(async () => {
+        try { await fetch('/api/eq'); clearInterval(probe); location.reload(); } catch {}
+      }, 5000);
+    } else {
+      $('powerHint').textContent = 'Shut down — unplug and replug the power to start it again.';
+    }
+  });
+}
+
 renderSources(null);
 function markSkin(skin) {
   for (const tile of $('skins').children) tile.classList.toggle('active', tile.dataset.skin === skin);
@@ -385,6 +545,7 @@ for (const tile of $('skins').children) {
 applyTheme();
 loadTheme();
 loadSkin();
+loadChime();
 setInterval(applyTheme, 60000);
 loadEq();
 loadWifi(false);

@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.6.0] - 2026-08-21
+
+### Added
+- Hourly chime, Casio style: a double pip (2730 Hz piezo timbre) at the top
+  of every hour, mixed through the EQ so it plays over music. Toggle in the
+  web UI; quiet hours silence it (default 00:00-10:00, adjustable with a
+  dual-thumb range slider, overnight spans supported). During quiet hours
+  every LCD theme shows a crescent moon between the wifi and source icons,
+  in the theme's accent color.
+- Power menu in the web UI: a top-right icon opens a popover with Restart
+  and Shut down (two-tap confirm). Restart reloads the page when the
+  speaker returns; new /api/power endpoint.
+- Settings menu (gear icon): sectioned popover holding the page appearance
+  toggle and the chime/quiet-hours controls; new /api/chime endpoint.
+- Farewell screens: on a real reboot or shutdown the dashboard paints a
+  theme-styled goodbye (Retro TV: PLEASE STAND BY with color bars; Terminal:
+  SYSTEM HALTED; Neon: 再起動中/またね; Classic: plain words) so the frozen
+  panel no longer masquerades as a hang. Plain service restarts skip it.
+
+### Changed
+- Web UI desktop layout: explicit grid placement, equal-height rows, and
+  the wifi list scrolls inside its card instead of stretching the page.
+- The installer now disables wifi power save, pins the CPU governor to
+  performance, and turns off USB autosuspend for the DAC.
+
+### Fixed
+- WiFi power save made the Pi unreachable over IPv4 once a device's ARP
+  cache expired (the napping radio misses broadcast ARP/mDNS); documented
+  in the README and prevented by the installer change above.
+
 ## [0.5.2] - 2026-08-21
 
 ### Fixed

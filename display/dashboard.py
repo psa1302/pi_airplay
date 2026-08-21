@@ -3,9 +3,11 @@
 import json
 import random
 import re
+import signal
 import subprocess
 import threading
 import time
+import wave
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -147,6 +149,93 @@ def fetch_weather(lat, lon):
 
 def run(command):
     return subprocess.run(command, capture_output=True, text=True, timeout=10).stdout
+
+
+CHIME_FILE = Path("/var/lib/pi-speakers/chime")
+QUIET_FILE = Path("/var/lib/pi-speakers/quiet")
+QUIET_RANGE_FILE = Path("/var/lib/pi-speakers/quiet-range")
+CHIME_WAV = Path("/run/pi-speakers/chime.wav")
+
+
+def write_chime_wav():
+    rate = 44100
+    t = np.arange(int(rate * 0.06)) / rate
+    pip = np.sin(2 * np.pi * 2730 * t) + 0.25 * np.sin(2 * np.pi * 8190 * t)
+    attack, release = int(rate * 0.004), int(rate * 0.015)
+    pip[:attack] *= np.linspace(0, 1, attack)
+    pip[-release:] *= np.linspace(1, 0, release)
+    tone = np.concatenate([pip, np.zeros(int(rate * 0.06)), pip]) * 0.36
+    samples = (tone * 32767).astype("<i2")
+
+    with wave.open(str(CHIME_WAV), "wb") as out:
+        out.setnchannels(1)
+        out.setsampwidth(2)
+        out.setframerate(rate)
+        out.writeframes(samples.tobytes())
+
+
+def chime_enabled():
+    try:
+        return CHIME_FILE.read_text().strip() != "off"
+    except OSError:
+        return True
+
+
+def quiet_pref():
+    try:
+        return QUIET_FILE.read_text().strip() != "off"
+    except OSError:
+        return True
+
+
+def quiet_range():
+    try:
+        start, end = QUIET_RANGE_FILE.read_text().strip().split("-")
+        return int(start) % 24, int(end) % 24
+    except (OSError, ValueError):
+        return 0, 10
+
+
+def in_quiet_range(hour):
+    start, end = quiet_range()
+    if start <= end:
+        return start <= hour < end
+    return hour >= start or hour < end
+
+
+def quiet_hours(hour):
+    return quiet_pref() and in_quiet_range(hour)
+
+
+FAREWELL = {
+    "reboot": {"classic": ("Restarting…", "back in a moment"),
+               "terminal": ("> REBOOT INITIATED", "PLEASE STAND BY_"),
+               "neon": ("REBOOTING", "再起動中…"),
+               "retrotv": ("PLEASE STAND BY", "再起動中…")},
+    "shutdown": {"classic": ("Goodbye", "unplug and replug to restart"),
+                 "terminal": ("> SYSTEM HALTED", "SAFE TO POWER OFF_"),
+                 "neon": ("POWER OFF", "またね…"),
+                 "retrotv": ("SIGN OFF", "電源オフ")},
+}
+
+
+def shutdown_kind():
+    jobs = run(["systemctl", "list-jobs"])
+    if "reboot.target" in jobs:
+        return "reboot"
+    if "poweroff.target" in jobs or "halt.target" in jobs:
+        return "shutdown"
+    return None
+
+
+def install_farewell(panel):
+    def on_sigterm(signum, frame):
+        kind = shutdown_kind()
+        if kind:
+            panel.blit(panel.draw_farewell(kind))
+        raise SystemExit(0)
+
+    signal.signal(signal.SIGTERM, on_sigterm)
 
 
 def read_eq_db(band):
@@ -302,6 +391,14 @@ def signal_color(signal):
     return None
 
 
+def draw_moon_icon(image, cx, cy, color):
+    tile = Image.new("RGBA", (18, 18), (0, 0, 0, 0))
+    tile_pen = ImageDraw.Draw(tile)
+    tile_pen.ellipse((4, 0, 18, 14), fill=color)
+    tile_pen.ellipse((9, -5, 23, 9), fill=(0, 0, 0, 0))
+    image.paste(tile, (cx - 9, cy - 9), tile)
+
+
 def draw_wifi_icon(pen, cx, cy, signal, ink, muted, strength_colors=True):
     bars = 3 if signal >= 70 else 2 if signal >= 45 else 1 if signal >= 20 else 0
     active = (signal_color(signal) or muted) if strength_colors else (ink if bars else muted)
@@ -450,6 +547,7 @@ class Panel:
         self.fb = find_display_fb()
         self.skin = "classic"
         self.skin_prev = None
+        self.chimed_hour = None
         self.boot_until = 0
         self.cpu_temp = None
         self.uptime = "—"
@@ -488,6 +586,12 @@ class Panel:
             self.refresh_weather()
         if time.time() - self.slow_at > 30:
             self.refresh_slow()
+
+        now = datetime.now()
+        if now.minute == 0 and self.chimed_hour != now.hour:
+            self.chimed_hour = now.hour
+            if chime_enabled() and not quiet_hours(now.hour):
+                subprocess.Popen(["aplay", "-q", "-D", "equal", str(CHIME_WAV)])
 
         self.skin = read_skin()
         if self.skin == "terminal" and self.skin_prev != "terminal":
@@ -538,9 +642,12 @@ class Panel:
         track = read_nowplaying()
         ssid, signal, _, ip = self.status_lines()
         pen.text((20, 8), ip, font=font(13), fill=theme["muted"])
-        wifi_cx = 420 if track else 442
+        moon = quiet_hours(now.hour)
+        wifi_cx = (398 if moon else 420) if track else (420 if moon else 442)
         pen.text((wifi_cx - 18, 8), truncate(ssid, 18), font=font(13), fill=theme["muted"], anchor="ra")
         draw_wifi_icon(pen, wifi_cx, 20, signal, theme["ink"], theme["muted"])
+        if moon:
+            draw_moon_icon(image, wifi_cx + 26, 15, theme["ink"])
         if track:
             draw_source_badge(image, 440, 8, track.get("source"), theme["ink"], theme["bg"])
 
@@ -640,11 +747,14 @@ class Panel:
 
         track = read_nowplaying()
         ssid, signal, _, ip = self.status_lines()
-        wifi_cx = 422 if track else 444
+        moon = quiet_hours(now.hour)
+        wifi_cx = (400 if moon else 422) if track else (422 if moon else 444)
         pen.text((20, 6), ip, font=face(FONT_MONOFONTO, 17), fill=TERM_DIM)
         pen.text((wifi_cx - 18, 6), truncate(ssid.upper(), 16), font=face(FONT_MONOFONTO, 17),
                  fill=TERM_DIM, anchor="ra")
         draw_wifi_icon(pen, wifi_cx, 19, signal, TERM_FG, TERM_DIM, strength_colors=False)
+        if moon:
+            draw_moon_icon(image, wifi_cx + 26, 14, TERM_FG)
 
         if track:
             draw_source_badge(image, 442, 6, track.get("source"), TERM_FG, TERM_BG)
@@ -807,9 +917,12 @@ class Panel:
         track = read_nowplaying()
         ssid, signal, _, ip = self.status_lines()
         pen.text((22, 6), ip, font=face(FONT_RAJ_MED, 15), fill=NEON_MUTED)
-        wifi_cx = 418 if track else 440
+        moon = quiet_hours(now.hour)
+        wifi_cx = (396 if moon else 418) if track else (418 if moon else 440)
         pen.text((wifi_cx - 18, 6), truncate(ssid, 18), font=face(FONT_RAJ_MED, 15), fill=NEON_MUTED, anchor="ra")
         draw_wifi_icon(pen, wifi_cx, 20, signal, NEON_CYAN, NEON_MUTED, strength_colors=False)
+        if moon:
+            draw_moon_icon(image, wifi_cx + 26, 15, NEON_CYAN)
         if track:
             draw_source_badge(image, 438, 8, track.get("source"), NEON_CYAN, image.getpixel((446, 16)))
 
@@ -929,10 +1042,13 @@ class Panel:
         pen.text((26, 12), "AV-1", font=face(FONT_DOT, 18), fill=TV_GREEN)
         pen.text((84, 14), ip, font=face(FONT_DOT, 16), fill=TV_MUTED)
 
-        wifi_cx = 430 if track else 452
+        moon = quiet_hours(now.hour)
+        wifi_cx = (408 if moon else 430) if track else (430 if moon else 452)
         pen.text((wifi_cx - 18, 14), truncate(ssid.upper(), 12, dots="..."), font=face(FONT_DOT, 16),
                  fill=TV_MUTED, anchor="ra")
         draw_wifi_icon(pen, wifi_cx, 31, signal, TV_GREEN, TV_EDGE, strength_colors=False)
+        if moon:
+            draw_moon_icon(image, wifi_cx + 26, 26, TV_GREEN)
 
         if track:
             draw_source_badge(image, 448, 18, track.get("source"), TV_GREEN, TV_BG)
@@ -1104,8 +1220,47 @@ class Panel:
                 self.dirty.set()
                 return
 
+    def draw_farewell(self, kind):
+        title, sub = FAREWELL[kind][self.skin]
+        now = datetime.now()
+
+        if self.skin == "terminal":
+            image = Image.new("RGB", SIZE, TERM_BG)
+            pen = ImageDraw.Draw(image)
+            pen.text((240, 142), title, font=face(FONT_MONOFONTO, 30), fill=TERM_FG, anchor="mm")
+            pen.text((240, 184), sub, font=face(FONT_MONOFONTO, 17), fill=TERM_DIM, anchor="mm")
+        elif self.skin == "neon":
+            image = Image.new("RGB", SIZE, (10, 3, 22))
+            pen = ImageDraw.Draw(image)
+            pen.text((240, 140), title, font=face(FONT_RAJ_BOLD, 44), fill=NEON_CYAN, anchor="mm")
+            pen.text((240, 190), sub, font=face(FONT_JP, 20), fill=NEON_MAGENTA, anchor="mm")
+        elif self.skin == "retrotv":
+            image = Image.new("RGB", SIZE, TV_BEZEL)
+            pen = ImageDraw.Draw(image)
+            pen.rounded_rectangle((8, 8, 472, 312), radius=18, fill=TV_BG)
+            title_font = face(FONT_DOT, 30)
+            for dx, color in ((-3, (120, 40, 40)), (3, (40, 90, 110)), (0, TV_INK)):
+                pen.text((240 + dx, 136), title, font=title_font, fill=color, anchor="mm",
+                         stroke_width=1, stroke_fill=color)
+            pen.text((240, 180), sub, font=face(FONT_DOT, 18), fill=TV_MUTED, anchor="mm")
+            bar_width = 432 / len(TV_BARS)
+            for i, color in enumerate(TV_BARS):
+                pen.rectangle((24 + i * bar_width, 236, 24 + (i + 1) * bar_width, 262), fill=color)
+        else:
+            night = theme_mode() == "dark" or (theme_mode() == "auto" and is_night(now.hour))
+            theme = NIGHT if night else DAY
+            image = Image.new("RGB", SIZE, theme["bg"])
+            pen = ImageDraw.Draw(image)
+            pen.text((240, 145), title, font=font(30, bold=True), fill=theme["ink"], anchor="mm")
+            pen.text((240, 185), sub, font=font(16), fill=theme["muted"], anchor="mm")
+
+        return image
+
     def show(self):
-        arr = np.asarray(self.draw().convert("RGB"), dtype=np.float32)
+        self.blit(self.draw())
+
+    def blit(self, image):
+        arr = np.asarray(image.convert("RGB"), dtype=np.float32)
         self.apply_effects(arr)
         arr = np.clip(arr, 0, 255).astype(np.uint16)[::-1, ::-1]
 
@@ -1123,6 +1278,8 @@ CADENCE = {"terminal": 0.14, "retrotv": 0.14, "neon": 0.18}
 
 def main():
     panel = Panel()
+    write_chime_wav()
+    install_farewell(panel)
     threading.Thread(target=touch_loop, args=(panel,), daemon=True).start()
 
     while True:

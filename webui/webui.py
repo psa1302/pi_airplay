@@ -26,6 +26,45 @@ def read_theme():
     return {"mode": mode if mode in ("auto", "light", "dark") else "auto"}
 
 
+CHIME_FILE = Path("/var/lib/pi-speakers/chime")
+QUIET_FILE = Path("/var/lib/pi-speakers/quiet")
+QUIET_RANGE_FILE = Path("/var/lib/pi-speakers/quiet-range")
+
+
+def read_flag(path):
+    try:
+        return path.read_text().strip() != "off"
+    except OSError:
+        return True
+
+
+def read_quiet_range():
+    try:
+        start, end = QUIET_RANGE_FILE.read_text().strip().split("-")
+        return int(start) % 24, int(end) % 24
+    except (OSError, ValueError):
+        return 0, 10
+
+
+def read_chime():
+    start, end = read_quiet_range()
+    return {"on": read_flag(CHIME_FILE), "quiet": read_flag(QUIET_FILE),
+            "quiet_start": start, "quiet_end": end}
+
+
+def set_chime(body):
+    CHIME_FILE.parent.mkdir(exist_ok=True)
+    if "on" in body:
+        CHIME_FILE.write_text("on" if body["on"] else "off")
+    if "quiet" in body:
+        QUIET_FILE.write_text("on" if body["quiet"] else "off")
+    if "quiet_start" in body or "quiet_end" in body:
+        start, end = read_quiet_range()
+        start = int(body.get("quiet_start", start)) % 24
+        end = int(body.get("quiet_end", end)) % 24
+        QUIET_RANGE_FILE.write_text(f"{start}-{end}")
+
+
 SKIN_FILE = Path("/var/lib/pi-speakers/skin")
 SKINS = ("classic", "terminal", "neon", "retrotv")
 
@@ -149,6 +188,14 @@ def control_airplay(action):
     return result.returncode == 0, result.stderr.strip()
 
 
+def power(action):
+    if action not in ("reboot", "shutdown"):
+        raise ValueError("unknown action")
+
+    command = "reboot" if action == "reboot" else "poweroff"
+    subprocess.Popen(["sh", "-c", f"sleep 1; systemctl {command}"])
+
+
 def join_wifi(ssid, psk):
     args = ["dev", "wifi", "connect", ssid]
     if psk:
@@ -189,6 +236,8 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(read_theme())
         elif self.path.startswith("/api/skin"):
             self.reply(read_skin())
+        elif self.path.startswith("/api/chime"):
+            self.reply(read_chime())
         else:
             self.reply({"error": "not found"}, status=404)
 
@@ -211,6 +260,12 @@ class Handler(BaseHTTPRequestHandler):
             elif self.path.startswith("/api/control"):
                 ok, message = control_airplay(str(body.get("action", "")))
                 self.reply({"ok": ok, "message": message})
+            elif self.path.startswith("/api/power"):
+                power(str(body.get("action", "")))
+                self.reply({"ok": True})
+            elif self.path.startswith("/api/chime"):
+                set_chime(body)
+                self.reply(read_chime())
             else:
                 self.reply({"error": "not found"}, status=404)
         except Exception as error:

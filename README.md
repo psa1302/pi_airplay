@@ -71,6 +71,10 @@ shows the dashboard. `install.sh` is idempotent — rerun it to update.
   console wizard draws over the dashboard.
 - Choppy audio = check `vcgencmd get_throttled` — it's the power supply, not
   the CPU.
+- **WiFi power save makes the Pi unreachable over IPv4** from any device whose
+  ARP cache expired — the napping radio misses broadcast ARP and mDNS while
+  cached/unicast traffic (and IPv6 with a warm neighbor entry) keeps working.
+  The installer now disables it (`wifi.powersave = 2`).
 
 ## Everyday things
 

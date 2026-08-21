@@ -164,6 +164,33 @@ EOF
   systemctl enable --now bluealsa bluealsa-aplay bt-agent bt-discoverable
 }
 
+disable_power_saving() {
+  apt-get install -y --no-install-recommends iw iputils-arping
+
+  # a napping wifi radio misses broadcast ARP/mDNS - the Pi "disappears"
+  # from devices whose cache expired while unicast traffic keeps working
+  printf "[connection]\nwifi.powersave = 2\n" > /etc/NetworkManager/conf.d/wifi-powersave.conf
+  iw dev wlan0 set power_save off 2>/dev/null || true
+
+  cat > /etc/systemd/system/cpu-performance.service <<'UNIT'
+[Unit]
+Description=Pin the CPU governor to performance
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "for g in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $g; done"
+
+[Install]
+WantedBy=multi-user.target
+UNIT
+  systemctl daemon-reload
+  systemctl enable --now cpu-performance
+
+  # the USB DAC must never be power-managed
+  grep -q usbcore.autosuspend /boot/firmware/cmdline.txt \
+    || sed -i "1s/$/ usbcore.autosuspend=-1/" /boot/firmware/cmdline.txt
+}
+
 install_packages
 write_alsa_config
 seed_eq_state
@@ -171,5 +198,6 @@ verify_pipeline
 configure_shairport
 install_spotify_connect
 setup_bluetooth
+disable_power_saving
 
 echo "Stage 2 done: EQ pipeline + Spotify Connect + Bluetooth active"

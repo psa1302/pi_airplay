@@ -14,6 +14,10 @@ BASS_SHOULDER = "03. 250 Hz"
 TREBLE_BANDS = ["07. 4 kHz", "08. 8 kHz", "09. 16 kHz"]
 TREBLE_SHOULDER = "06. 2 kHz"
 PAGE = (Path(__file__).parent / "index.html").read_bytes()
+STATIC = {"/manifest.webmanifest": ("manifest.webmanifest", "application/manifest+json"),
+          "/icon-192.png": ("icon-192.png", "image/png"),
+          "/icon-512.png": ("icon-512.png", "image/png"),
+          "/apple-touch-icon.png": ("apple-touch-icon.png", "image/png")}
 NOWPLAYING = Path("/run/pi-speakers/nowplaying.json")
 THEME_MODE = Path("/var/lib/pi-speakers/theme")
 
@@ -226,6 +230,9 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/" or self.path.startswith("/index"):
             self.reply(PAGE, "text/html; charset=utf-8")
+        elif self.path in STATIC:
+            name, content_type = STATIC[self.path]
+            self.reply((Path(__file__).parent / name).read_bytes(), content_type)
         elif self.path.startswith("/api/eq"):
             self.reply(read_eq())
         elif self.path.startswith("/api/wifi"):

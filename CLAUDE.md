@@ -4,11 +4,16 @@ A Raspberry Pi 3B wireless speaker (AirPlay 2 + Spotify Connect + Bluetooth →
 shared EQ → USB DAC) with a web UI and a themeable 3.5" LCD dashboard. Read
 README.md for architecture and the hard-won gotchas; CHANGELOG.md for history.
 
-## The device
+## The devices
 
-- Hostname `airplay-pi`, user `pi`, key auth (`ssh -o BatchMode=yes` works).
-- mDNS `airplay-pi.local` usually resolves; when it doesn't, use the IP
-  (192.168.31.199 as of Aug 2026, DHCP) with `-o HostKeyAlias=airplay-pi.local`.
+- Pi Speakers (3B): hostname `airplay-pi`, user `pi`, key auth
+  (`ssh -o BatchMode=yes` works). mDNS usually resolves; when it doesn't, use
+  the IP (192.168.31.199 as of Aug 2026, DHCP) with
+  `-o HostKeyAlias=airplay-pi.local`.
+- Pi Speakers 2 (4B): hostname `airplay-pi2` (192.168.31.178), 640x480 HDMI
+  panel + USB capacitive touch, onboard jack or the shared USB DAC. Device
+  differences live in `/boot/firmware/pi-speakers.conf` (written by
+  sdcard/prepare-sd.sh, read by install.sh) - never hardcode them.
 - **There is another Pi on this network (a printer server). Never touch it.**
 - The Pi runs the code in `/opt/pi-speakers/` — the repo is the source of
   truth, but the device is updated by direct deploy, not git pull.
@@ -21,7 +26,9 @@ README.md for architecture and the hard-won gotchas; CHANGELOG.md for history.
 3. `sudo systemctl restart <service>` and check `systemctl is-active`.
 
 Services: `pi-speakers-display` (dashboard.py), `pi-speakers-web` (webui.py +
-index.html, port 80), `pi-speakers-nowplaying` (nowplaying.py), plus
+index.html, port 80), `pi-speakers-nowplaying` (nowplaying.py),
+`pi-speakers-net-announce` (gratuitous-ARP beacon — the wifi firmware loses
+broadcast RX; without it the IP goes dark for every device, see README), plus
 `shairport-sync`, `raspotify`, `bluealsa-aplay`.
 
 The user iterates live on the device — small change, deploy, they look at the
@@ -43,7 +50,10 @@ LCD or browser, next tweak. Reverts are common and expected. Be quick.
   `quiet`, `quiet-range` ("start-end" hours). Missing file = default on.
 - Runtime: `/run/pi-speakers/` — `nowplaying.json` (written by nowplaying.py,
   which arbitrates Shairport D-Bus vs `spotify.json` from the raspotify event
-  hook), `chime.wav` (generated at dashboard startup).
+  hook), `chime.wav` (generated at dashboard startup), `announce` (write a
+  wav path here and the dashboard plays it with the speech ripple).
+- Hourly voice: `/opt/pi-speakers/voice/hour-NN.wav` — generated on the Mac
+  (`say -v Kyoko` + ffmpeg chorus/echo chain), committed in assets/voice/.
 - Fonts on the Pi: `/opt/pi-speakers/fonts/` — monofonto.otf (Terminal),
   Rajdhani-Bold/Medium (Neon Latin), DotGothic16 (ALL Retro TV text + its JP),
   VT323 (legacy); VL Gothic system font is Neon's Japanese.

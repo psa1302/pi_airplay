@@ -47,7 +47,7 @@ shows the dashboard. `install.sh` is idempotent — rerun it to update.
 | `setup/02-audio-stack.sh` | ALSA pipeline (source → alsaequal EQ → dmix → USB DAC), Spotify Connect (raspotify), Bluetooth sink (bluez-alsa, auto-pairing) |
 | `setup/03-display.sh` | LCD overlay + config, CRT fonts, systemd services |
 | `webui/` | Control panel on port 80: EQ sliders, WiFi manager, theme picker, transport, now playing. Light/dark aware. |
-| `display/` | LCD dashboard with four themes — Classic (auto day/night), Terminal (Fallout-style: scanlines, glitch, boot sequence, marquee now-playing with progress bar, vitals panel, per-theme mascots in `assets/mascots/`), Neon (glitch-storm intro, recolored glitching mascot), Retro TV (static tune-in intro, astronaut mascot). All themes share the HUD/music-box structure; now-playing state comes from Shairport's D-Bus (see CHANGELOG) |
+| `display/` | LCD dashboard with four themes; hourly Japanese time announcements (pips + processed Kyoko voice from `assets/voice/`) with a speech-ripple animation — Classic (auto day/night), Terminal (Fallout-style: scanlines, glitch, boot sequence, marquee now-playing with progress bar, vitals panel, per-theme mascots in `assets/mascots/`), Neon (glitch-storm intro, recolored glitching mascot), Retro TV (static tune-in intro, astronaut mascot). All themes share the HUD/music-box structure; now-playing state comes from Shairport's D-Bus (see CHANGELOG) |
 | `sdcard/` | First-boot templates + the Mac-side prep script |
 
 ## Hard-won gotchas (why this repo looks the way it does)
@@ -75,6 +75,15 @@ shows the dashboard. `install.sh` is idempotent — rerun it to update.
   ARP cache expired — the napping radio misses broadcast ARP and mDNS while
   cached/unicast traffic (and IPv6 with a warm neighbor entry) keeps working.
   The installer now disables it (`wifi.powersave = 2`).
+- **Even with power save off, the Pi 3B wifi stops *receiving* broadcast
+  frames hours after association**: the in-firmware WPA supplicant botches
+  the AP's group-key rekey, after which the chip can't decrypt
+  broadcast/multicast (unicast keeps working — same symptom, all devices at
+  once, ARP and mDNS dead). Fix: `options brcmfmac roamoff=1
+  feature_disable=0x282000` in `/etc/modprobe.d/brcmfmac.conf` (what newer
+  RPi firmware packages now ship by default). The
+  `pi-speakers-net-announce` service (gratuitous ARP every 10s + avahi kick)
+  stays as belt-and-braces.
 
 ## Everyday things
 

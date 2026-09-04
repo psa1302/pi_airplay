@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.7.0] - 2026-09-04
+
+### Added
+- Japanese time announcements: at the top of each hour the Casio pips are
+  followed by a spoken 「時刻、午後4時」-style readout (Kyoko voice, comms
+  chirp intro, light chorus/echo processing; 24 pre-generated WAVs in
+  assets/voice/, no runtime TTS). Rides the chime toggle and quiet hours.
+  A small speech ripple animates in every theme while the voice plays, and
+  /run/pi-speakers/announce lets anything trigger an announcement.
+- Second speaker support: sdcard/prepare-sd.sh takes hostname, speaker
+  name, audio card, and display kind, and writes a pi-speakers.conf device
+  profile that install.sh reads - "Pi Speakers 2" runs on a Pi 4B with a
+  640x480 HDMI panel and the onboard jack or the USB DAC (one-line switch).
+- The dashboard renders on any framebuffer: size and depth are detected,
+  non-native panels get stretch scaling (16 and 32 bit paths), USB
+  capacitive touchscreens work alongside the SPI panel.
+- The web UI is a home-screen app: web manifest, generated icons, Apple
+  meta tags, standalone display on iOS/Android.
+
+### Fixed
+- The Pi 3B wifi went deaf to broadcast (ARP/mDNS) hours after
+  association even with power save off: the in-firmware WPA supplicant
+  mishandles the AP group-key rekey. Fixed with
+  `brcmfmac roamoff=1 feature_disable=0x282000`; a net-announce service
+  (gratuitous ARP + avahi kick) stays as belt-and-braces.
+- SD prep now writes the `ssh` boot flag - cloud-init's ssh module does
+  not reliably run on Trixie images.
+- The audio-stage pipeline check no longer aborts the install when
+  bcm2835 hangs in the final drain (timeout exit tolerated).
+
 ## [0.6.0] - 2026-08-21
 
 ### Added

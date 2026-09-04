@@ -22,10 +22,16 @@ def find_display_fb():
     for node in sorted(Path("/sys/class/graphics").glob("fb*")):
         try:
             if "ili9486" in (node / "name").read_text():
-                return Path("/dev") / node.name
+                return Path("/dev") / node.name, True
         except OSError:
             continue
-    return Path("/dev/fb0")
+    return Path("/dev/fb0"), False
+
+
+def fb_geometry(fb):
+    node = Path("/sys/class/graphics") / fb.name
+    width, height = map(int, (node / "virtual_size").read_text().split(","))
+    return width, height, int((node / "bits_per_pixel").read_text())
 
 
 NIGHT_HOURS = range(0, 7)          # plus 21-23, see is_night()
@@ -152,6 +158,8 @@ def run(command):
 
 
 CHIME_FILE = Path("/var/lib/pi-speakers/chime")
+ANNOUNCE_TRIGGER = Path("/run/pi-speakers/announce")
+VOICE_DIR = Path("/opt/pi-speakers/voice")
 QUIET_FILE = Path("/var/lib/pi-speakers/quiet")
 QUIET_RANGE_FILE = Path("/var/lib/pi-speakers/quiet-range")
 CHIME_WAV = Path("/run/pi-speakers/chime.wav")
@@ -172,6 +180,14 @@ def write_chime_wav():
         out.setsampwidth(2)
         out.setframerate(rate)
         out.writeframes(samples.tobytes())
+
+
+def announce_duration(path):
+    try:
+        with wave.open(path, "rb") as clip:
+            return clip.getnframes() / clip.getframerate()
+    except (OSError, wave.Error, EOFError):
+        return 2.5
 
 
 def chime_enabled():
@@ -336,10 +352,23 @@ def touch_to_screen(raw_x, raw_y):
     return min(max(x, 0), SIZE[0]), min(max(y, 0), SIZE[1])
 
 
+def find_touch_device():
+    import evdev
+
+    devices = [evdev.InputDevice(p) for p in evdev.list_devices()]
+    for dev in devices:
+        if "ADS7846" in dev.name:
+            return dev, "spi"
+    for dev in devices:
+        if evdev.ecodes.BTN_TOUCH in dev.capabilities().get(evdev.ecodes.EV_KEY, []):
+            return dev, "usb"
+    return None, None
+
+
 def touch_loop(panel):
     import evdev
 
-    device = None
+    device = kind = None
     raw_x = raw_y = None
     touching = False
     last_tap = 0.0
@@ -347,18 +376,16 @@ def touch_loop(panel):
     while True:
         try:
             if device is None:
-                path = next((p for p in evdev.list_devices()
-                             if "ADS7846" in evdev.InputDevice(p).name), None)
-                if not path:
+                device, kind = find_touch_device()
+                if device is None:
                     time.sleep(5)
                     continue
-                device = evdev.InputDevice(path)
 
             for event in device.read_loop():
                 if event.type == evdev.ecodes.EV_ABS:
-                    if event.code == evdev.ecodes.ABS_X:
+                    if event.code in (evdev.ecodes.ABS_X, evdev.ecodes.ABS_MT_POSITION_X):
                         raw_x = event.value
-                    elif event.code == evdev.ecodes.ABS_Y:
+                    elif event.code in (evdev.ecodes.ABS_Y, evdev.ecodes.ABS_MT_POSITION_Y):
                         raw_y = event.value
                 elif event.type == evdev.ecodes.EV_KEY and event.code == evdev.ecodes.BTN_TOUCH:
                     touching = event.value == 1
@@ -366,7 +393,8 @@ def touch_loop(panel):
                       and raw_x is not None and raw_y is not None
                       and time.time() - last_tap > 0.4):
                     last_tap = time.time()
-                    x, y = touch_to_screen(raw_x, raw_y)
+                    x, y = (touch_to_screen(raw_x, raw_y) if kind == "spi"
+                            else panel.absolute_to_design(device, raw_x, raw_y))
                     panel.on_tap(x, y)
         except Exception:
             device = None
@@ -544,10 +572,12 @@ class Panel:
         self.vu = [8, 13, 6]
         self.buttons = {}
         self.dirty = threading.Event()
-        self.fb = find_display_fb()
+        self.fb, self.spi_panel = find_display_fb()
+        self.fb_w, self.fb_h, self.fb_bpp = fb_geometry(self.fb)
         self.skin = "classic"
         self.skin_prev = None
         self.chimed_hour = None
+        self.announcing_until = 0.0
         self.boot_until = 0
         self.cpu_temp = None
         self.uptime = "—"
@@ -587,11 +617,26 @@ class Panel:
         if time.time() - self.slow_at > 30:
             self.refresh_slow()
 
+        try:
+            announce_wav = ANNOUNCE_TRIGGER.read_text().strip()
+            ANNOUNCE_TRIGGER.unlink()
+        except OSError:
+            announce_wav = ""
+        if announce_wav:
+            self.announcing_until = time.time() + announce_duration(announce_wav)
+            subprocess.Popen(["aplay", "-q", "-D", "equal", announce_wav])
+
         now = datetime.now()
         if now.minute == 0 and self.chimed_hour != now.hour:
             self.chimed_hour = now.hour
             if chime_enabled() and not quiet_hours(now.hour):
-                subprocess.Popen(["aplay", "-q", "-D", "equal", str(CHIME_WAV)])
+                voice = VOICE_DIR / f"hour-{now.hour:02d}.wav"
+                if voice.exists():
+                    self.announcing_until = time.time() + 0.9 + announce_duration(str(voice))
+                    subprocess.Popen(["sh", "-c",
+                                      f"aplay -q -D equal {CHIME_WAV}; sleep 0.35; aplay -q -D equal {voice}"])
+                else:
+                    subprocess.Popen(["aplay", "-q", "-D", "equal", str(CHIME_WAV)])
 
         self.skin = read_skin()
         if self.skin == "terminal" and self.skin_prev != "terminal":
@@ -653,6 +698,7 @@ class Panel:
 
         draw_clock(pen, 240, 118, font(96, bold=True), now, theme["ink"])
         pen.text((240, 182), now.strftime("%A, %-d %B"), font=font(17), fill=theme["muted"], anchor="ma")
+        self.draw_speech_ripple(pen, 154, 220, theme["muted"])
 
         pen.rounded_rectangle((20, 220, 235, 300), radius=16, fill=theme["card"])
         if self.temperature is not None:
@@ -763,6 +809,7 @@ class Panel:
         half = pen.textlength(":", font=clock_font) / 2
         clock_cx = 452 - half - pen.textlength(now.strftime("%M"), font=clock_font)
         draw_clock(pen, clock_cx, 92, clock_font, now, TERM_FG)
+        self.draw_speech_ripple(pen, 272, 185, TERM_DIM)
         pen.text((452, 158), now.strftime("%A, %-d %B").upper(), font=face(FONT_MONOFONTO, 22),
                  fill=TERM_DIM, anchor="ra")
 
@@ -939,6 +986,7 @@ class Panel:
         half_colon = pen.textlength(":", font=clock_font) / 2
         clock_cx = 452 - half_colon - pen.textlength(now.strftime("%M"), font=clock_font)
         draw_clock(pen, clock_cx, 96, clock_font, now, cyan, colon_ink=NEON_MAGENTA)
+        self.draw_speech_ripple(pen, 272, 200, NEON_MAGENTA)
         date_font = face(FONT_JP, 19)
         segments = (("【", (0, 150, 170)),
                     (f"{now.month}月{now.day}日", (147, 112, 219)),
@@ -1076,6 +1124,7 @@ class Panel:
                      stroke_width=1, stroke_fill=color)
             seg_x += pen.textlength(text, font=date_font)
 
+        self.draw_speech_ripple(pen, 264, 195, TV_GREEN)
         bar_width = 432 / len(TV_BARS)
         for i, color in enumerate(TV_BARS):
             pen.rectangle((24 + i * bar_width, 214, 24 + (i + 1) * bar_width, 222), fill=color)
@@ -1259,17 +1308,49 @@ class Panel:
     def show(self):
         self.blit(self.draw())
 
+    def draw_speech_ripple(self, pen, x0, cy, color):
+        if time.time() >= self.announcing_until:
+            return
+
+        for i in range(24):
+            x = x0 + i * 7.5
+            rise = 2 + 4 * abs(np.sin(time.time() * 7 + i * 0.9))
+            pen.line((x, cy - rise, x, cy + rise), fill=color, width=2)
+
+    def absolute_to_design(self, device, raw_x, raw_y):
+        import evdev
+
+        info_x = device.absinfo(evdev.ecodes.ABS_X)
+        info_y = device.absinfo(evdev.ecodes.ABS_Y)
+        x = (raw_x - info_x.min) / max(1, info_x.max - info_x.min) * SIZE[0]
+        y = (raw_y - info_y.min) / max(1, info_y.max - info_y.min) * SIZE[1]
+
+        return min(max(x, 0), SIZE[0]), min(max(y, 0), SIZE[1])
+
     def blit(self, image):
         arr = np.asarray(image.convert("RGB"), dtype=np.float32)
         self.apply_effects(arr)
-        arr = np.clip(arr, 0, 255).astype(np.uint16)[::-1, ::-1]
+        arr = np.clip(arr, 0, 255).astype(np.uint8)
 
-        r, g, b = arr[..., 0], arr[..., 1], arr[..., 2]
-        frame = (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3)).astype("<u2").tobytes()
+        if self.spi_panel:
+            arr = arr[::-1, ::-1]  # panel is mounted upside-down in the 3B case
+
+        if (self.fb_w, self.fb_h) != SIZE:
+            arr = np.asarray(Image.fromarray(arr).resize((self.fb_w, self.fb_h), Image.BILINEAR))
+
+        if self.fb_bpp == 32:
+            frame = np.zeros((arr.shape[0], arr.shape[1], 4), dtype=np.uint8)
+            frame[..., 0], frame[..., 1], frame[..., 2] = arr[..., 2], arr[..., 1], arr[..., 0]
+            frame = frame.tobytes()
+        else:
+            wide = arr.astype(np.uint16)
+            r, g, b = wide[..., 0], wide[..., 1], wide[..., 2]
+            frame = (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3)).astype("<u2").tobytes()
+
         try:
             self.fb.write_bytes(frame)
         except OSError:
-            self.fb = find_display_fb()
+            self.fb, self.spi_panel = find_display_fb()
             self.fb.write_bytes(frame)
 
 

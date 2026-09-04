@@ -42,6 +42,13 @@ install_fonts() {
 }
 
 install_display_driver() {
+  if [ "${DISPLAY_KIND:-spi}" = "hdmi" ]; then
+    # HDMI panel: KMS reads the mode from EDID; nothing to overlay.
+    grep -q consoleblank "$CMDLINE" || sed -i "1s/$/ consoleblank=0/" "$CMDLINE"
+    systemctl mask userconfig 2>/dev/null || true
+    return
+  fi
+
   install -m 644 "$HERE/../assets/overlays/waveshare35c.dtbo" /boot/firmware/overlays/
 
   grep -q "^dtparam=spi=on" "$CONFIG" || echo "dtparam=spi=on" >> "$CONFIG"

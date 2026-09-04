@@ -10,26 +10,36 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 
+# device profile written to the boot partition by sdcard/prepare-sd.sh;
+# absent on the original Pi 3B speaker, whose values are the defaults
+PROFILE=/boot/firmware/pi-speakers.conf
+[ -f "$PROFILE" ] && . "$PROFILE"
+export AIRPLAY_NAME AUDIO_CARD DISPLAY_KIND
+
 require_root() {
   [ "$(id -u)" -eq 0 ] || { echo "Run with sudo: sudo bash install.sh" >&2; exit 1; }
 }
 
 refuse_wrong_machine() {
-  [ "$(hostname)" = "airplay-pi" ] && return
+  [ "$(hostname)" = "${SPEAKER_HOSTNAME:-airplay-pi}" ] && return
   [ "${FORCE:-0}" = "1" ] && return
 
-  echo "This machine is '$(hostname)', not 'airplay-pi' - refusing to run." >&2
+  echo "This machine is '$(hostname)', not '${SPEAKER_HOSTNAME:-airplay-pi}' - refusing to run." >&2
   echo "If this really is the speaker Pi, re-run with FORCE=1." >&2
   exit 1
 }
 
 deploy_app_files() {
   install -d /opt/pi-speakers
-  install -m 644 "$HERE"/webui/webui.py "$HERE"/webui/index.html /opt/pi-speakers/
+  install -m 644 "$HERE"/webui/webui.py "$HERE"/webui/index.html \
+    "$HERE"/webui/manifest.webmanifest /opt/pi-speakers/
+  install -m 644 "$HERE"/assets/pwa/*.png /opt/pi-speakers/
   install -m 644 "$HERE"/display/dashboard.py "$HERE"/display/nowplaying.py /opt/pi-speakers/
   install -m 755 "$HERE"/display/spotify-event.sh /opt/pi-speakers/
 
   install -m 644 "$HERE"/assets/spotify-logo.png /opt/pi-speakers/
+  install -d /opt/pi-speakers/voice
+  install -m 644 "$HERE"/assets/voice/*.wav /opt/pi-speakers/voice/
   for mascot in "$HERE"/assets/mascots/*.png; do
     [ -f "$mascot" ] && install -m 644 "$mascot" "/opt/pi-speakers/$(basename "$mascot")"
   done

@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pi Speakers</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pi Speakers">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08080a" media="(prefers-color-scheme: dark)">
 <style>
   :root {
     --bg: #ffffff; --ink: #111114; --muted: #6b6f76; --card: #f2f3f5; --panel: #ffffff;
@@ -21,7 +28,7 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif; transition: background .3s, color .3s; }
-  .shell { max-width: 560px; margin: 0 auto; padding: 28px 20px 48px; display: flex; flex-direction: column; gap: 24px; }
+  .shell { max-width: 560px; margin: 0 auto; padding: calc(28px + env(safe-area-inset-top)) 20px calc(48px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 24px; }
   .wordmark { text-align: center; font-size: 17px; font-weight: 700; letter-spacing: 0.24em; padding: 8px 0; }
   .card { background: var(--card); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px; transition: background .3s; }
   .card-head { display: flex; justify-content: space-between; align-items: center; }

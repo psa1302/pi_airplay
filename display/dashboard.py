@@ -632,9 +632,8 @@ class Panel:
             if chime_enabled() and not quiet_hours(now.hour):
                 voice = VOICE_DIR / f"hour-{now.hour:02d}.wav"
                 if voice.exists():
-                    self.announcing_until = time.time() + 0.9 + announce_duration(str(voice))
-                    subprocess.Popen(["sh", "-c",
-                                      f"aplay -q -D equal {CHIME_WAV}; sleep 0.35; aplay -q -D equal {voice}"])
+                    self.announcing_until = time.time() + announce_duration(str(voice))
+                    subprocess.Popen(["aplay", "-q", "-D", "equal", str(voice)])
                 else:
                     subprocess.Popen(["aplay", "-q", "-D", "equal", str(CHIME_WAV)])
 

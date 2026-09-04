@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.1] - 2026-09-04
+
+### Changed
+- The hourly signal is the voice announcement alone - the Casio pips are
+  retired from the top of the hour (they remain the fallback when voice
+  files are absent, and the chime toggle still gates everything).
+- Announcement volume normalized: every voice file now peaks at -1.5 dB
+  (they sat ~10 dB low).
+
 ## [0.7.0] - 2026-09-04
 
 ### Added

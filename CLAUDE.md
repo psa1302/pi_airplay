@@ -53,7 +53,11 @@ LCD or browser, next tweak. Reverts are common and expected. Be quick.
   hook), `chime.wav` (generated at dashboard startup), `announce` (write a
   wav path here and the dashboard plays it with the speech ripple).
 - Hourly voice: `/opt/pi-speakers/voice/hour-NN.wav` — generated on the Mac
-  (`say -v Kyoko` + ffmpeg chorus/echo chain), committed in assets/voice/.
+  by `assets/voice/generate.sh` (`say -v Kyoko` + ffmpeg; voice gained by
+  measured mean level, tanh soft-clipped, lifted to -1.5 dBFS ≈ -10 LUFS —
+  peak-normalizing speech next to a pure-tone chirp leaves it ~10 dB too
+  quiet), committed in assets/voice/. Deploy: scp to /tmp, sudo mv into
+  /opt/pi-speakers/voice/, test via the `announce` trigger.
 - Fonts on the Pi: `/opt/pi-speakers/fonts/` — monofonto.otf (Terminal),
   Rajdhani-Bold/Medium (Neon Latin), DotGothic16 (ALL Retro TV text + its JP),
   VT323 (legacy); VL Gothic system font is Neon's Japanese.

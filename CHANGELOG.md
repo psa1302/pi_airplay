@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.2] - 2026-09-05
+
+### Changed
+- Announcements are loudness-matched to the chirp: the voice is gained by
+  measurement to a hot mean level, tanh soft-clipped (PA-system density),
+  and lifted to -1.5 dBFS (-10 LUFS, was -15); the chirp sits at 0.45
+  amplitude. Peak-normalizing speech next to a pure tone had left the voice
+  sounding ~10 dB quieter than the beep.
+- The recipe lives in assets/voice/generate.sh (Mac: `say` Kyoko + ffmpeg)
+  instead of an ad-hoc shell history.
+
 ## [0.7.1] - 2026-09-04
 
 ### Changed

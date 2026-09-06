@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.3] - 2026-09-06
+
+### Fixed
+- The USB DAC's hardware level no longer reverts on reboot: alsactl restores
+  mixer state before the USB card enumerates, so it came up at whatever it
+  last saved. A `pi-speakers-dac-level` oneshot waits for the DAC and pins
+  it to full scale (the speaker knob is the ceiling by design).
+
 ## [0.7.2] - 2026-09-05
 
 ### Changed

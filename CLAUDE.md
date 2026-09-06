@@ -28,8 +28,11 @@ README.md for architecture and the hard-won gotchas; CHANGELOG.md for history.
 Services: `pi-speakers-display` (dashboard.py), `pi-speakers-web` (webui.py +
 index.html, port 80), `pi-speakers-nowplaying` (nowplaying.py),
 `pi-speakers-net-announce` (gratuitous-ARP beacon — the wifi firmware loses
-broadcast RX; without it the IP goes dark for every device, see README), plus
-`shairport-sync`, `raspotify`, `bluealsa-aplay`.
+broadcast RX; without it the IP goes dark for every device, see README),
+`pi-speakers-dac-level` (oneshot: pins the USB DAC to 100% once it enumerates —
+gain staging is DAC at full scale, speaker knob as the ceiling; alsactl alone
+restores too early for USB), plus `shairport-sync`, `raspotify`,
+`bluealsa-aplay`.
 
 The user iterates live on the device — small change, deploy, they look at the
 LCD or browser, next tweak. Reverts are common and expected. Be quick.

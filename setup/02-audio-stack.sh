@@ -239,6 +239,28 @@ UNIT
   systemctl enable --now pi-speakers-net-announce
 }
 
+pin_dac_level() {
+  [ "$AUDIO_CARD" = "Creation" ] || return 0
+
+  # alsactl restores mixer state before the USB DAC enumerates, so the card
+  # boots at whatever it last saved; the DAC is meant to sit at full scale
+  # (gain staging: the speaker knob is the ceiling), so pin it once it appears
+  cat > /etc/systemd/system/pi-speakers-dac-level.service <<'UNIT'
+[Unit]
+Description=Pin the USB DAC hardware level to full scale
+After=sound.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'for i in $(seq 1 30); do amixer -q -c Creation sset Speaker 100% unmute && exit 0; sleep 1; done; exit 1'
+
+[Install]
+WantedBy=multi-user.target
+UNIT
+  systemctl daemon-reload
+  systemctl enable --now pi-speakers-dac-level
+}
+
 install_packages
 write_alsa_config
 seed_eq_state
@@ -248,5 +270,6 @@ install_spotify_connect
 setup_bluetooth
 disable_power_saving
 install_net_announcer
+pin_dac_level
 
 echo "Stage 2 done: EQ pipeline + Spotify Connect + Bluetooth active"

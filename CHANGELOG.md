@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.1] - 2026-09-07
+
+### Changed
+- Vocabulary card readings are no longer grey: the word's reading and the
+  example's reading use the skin's ink (lemon yellow on Neon, with the
+  English meaning and translation in magenta) - the muted purple was
+  unreadable on the panel.
+
 ## [0.8.0] - 2026-09-07
 
 ### Added

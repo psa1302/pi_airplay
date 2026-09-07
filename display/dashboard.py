@@ -117,11 +117,11 @@ NEON_INTRO_SECONDS = 3.2
 
 CARD_STYLE = {
     "classic": {"latin": f"{FONT_DIR}/DejaVuSans.ttf", "jp": FONT_JP},
-    "terminal": {"ink": TERM_FG, "muted": TERM_DIM, "accent": TERM_FG,
+    "terminal": {"ink": TERM_FG, "muted": TERM_DIM, "accent": TERM_FG, "reading": TERM_FG,
                  "latin": FONT_MONOFONTO, "jp": FONT_JP},
-    "neon": {"ink": NEON_INK, "muted": NEON_MUTED, "accent": NEON_CYAN,
-             "latin": FONT_RAJ_MED, "jp": FONT_JP},
-    "retrotv": {"ink": TV_INK, "muted": TV_MUTED, "accent": TV_GREEN,
+    "neon": {"ink": NEON_INK, "muted": NEON_MUTED, "accent": NEON_CYAN, "reading": NEON_YELLOW,
+             "gloss": NEON_MAGENTA, "translation": NEON_MAGENTA, "latin": FONT_RAJ_MED, "jp": FONT_JP},
+    "retrotv": {"ink": TV_INK, "muted": TV_MUTED, "accent": TV_GREEN, "reading": TV_INK,
                 "latin": FONT_DOT, "jp": FONT_DOT},
 }
 
@@ -1321,7 +1321,7 @@ class Panel:
 
         theme = classic_theme(now.hour)
         style = {**CARD_STYLE["classic"], "ink": theme["ink"], "muted": theme["muted"],
-                 "accent": theme["ink"]}
+                 "accent": theme["ink"], "reading": theme["ink"]}
         return Image.new("RGB", SIZE, theme["bg"]), style
 
     def draw_card(self, now):
@@ -1337,16 +1337,16 @@ class Panel:
         pen.text((240, 82), card["word"], font=fit_text(pen, card["word"], jp, 54, 432),
                  fill=style["accent"], anchor="mm")
         if card["kana"]:
-            pen.text((240, 124), card["kana"], font=fit_text(pen, card["kana"], jp, 20, 432),
-                     fill=style["muted"], anchor="mm")
-        draw_lines(pen, card["english"], latin, 19, 140, style["ink"])
+            pen.text((240, 124), card["kana"], font=fit_text(pen, card["kana"], jp, 22, 432),
+                     fill=style["reading"], anchor="mm")
+        draw_lines(pen, card["english"], latin, 19, 140, style.get("gloss", style["ink"]))
 
         pen.line((40, 188, 440, 188), fill=style["muted"], width=1)
         pen.text((240, 213), card["example"], font=fit_text(pen, card["example"], jp, 28, 440),
                  fill=style["ink"], anchor="mm")
         pen.text((240, 244), card["example_kana"], font=fit_text(pen, card["example_kana"], jp, 17, 440),
-                 fill=style["muted"], anchor="mm")
-        draw_lines(pen, card["example_english"], latin, 16, 262, style["muted"])
+                 fill=style["reading"], anchor="mm")
+        draw_lines(pen, card["example_english"], latin, 16, 262, style.get("translation", style["muted"]))
         self.draw_speech_ripple(pen, 150, 308, style["accent"])
 
         return image

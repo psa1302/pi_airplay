@@ -156,6 +156,10 @@
           <input type="range" id="qe" min="0" max="23" step="1" value="10">
         </div>
       </div>
+      <div class="pop-slider" id="announceVol" style="display:none">
+        <div class="slider-head"><b>Volume</b><span id="avVal">100%</span></div>
+        <input type="range" id="av" min="0" max="100" step="5" value="100">
+      </div>
     </div>
     <button class="theme-btn" id="powerBtn" aria-label="Power"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v8"></path><path d="M7 5.5a8 8 0 1 0 10 0"></path></svg></button>
     <div class="popover" id="powerPop">
@@ -447,6 +451,13 @@ function paintQuiet() {
     : `linear-gradient(to right, ${on} 0 ${pct(end)}%, ${off} ${pct(end)}% ${pct(start)}%, ${on} ${pct(start)}% 100%)`);
 }
 
+function paintVolume() {
+  const pct = +$('av').value;
+  $('avVal').textContent = pct + '%';
+  $('av').style.setProperty('--track',
+    `linear-gradient(to right, var(--track-on) 0 ${pct}%, var(--track-off) ${pct}% 100%)`);
+}
+
 function paintChime(data) {
   $('chimeBtn').classList.toggle('on', data.on);
   $('quietBtn').classList.toggle('on', data.quiet);
@@ -454,7 +465,27 @@ function paintChime(data) {
   if (data.quiet_start !== undefined) { $('qs').value = data.quiet_start; $('qe').value = data.quiet_end; }
   paintQuiet();
   $('quietRange').style.display = data.on && data.quiet ? '' : 'none';
+  if (data.volume !== undefined) $('av').value = data.volume;
+  paintVolume();
+  $('announceVol').style.display = data.on ? '' : 'none';
 }
+
+let volumeTimer;
+$('av').addEventListener('input', () => {
+  paintVolume();
+  clearTimeout(volumeTimer);
+  volumeTimer = setTimeout(() => fetch('/api/chime', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ volume: +$('av').value }),
+  }).catch(() => {}), 200);
+});
+
+// releasing the slider plays the current hour at the new level
+$('av').addEventListener('change', () => {
+  clearTimeout(volumeTimer);
+  fetch('/api/chime', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ volume: +$('av').value, preview: true }) }).catch(() => {});
+});
 
 let quietTimer;
 for (const id of ['qs', 'qe']) {

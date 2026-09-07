@@ -182,12 +182,34 @@ def write_chime_wav():
         out.writeframes(samples.tobytes())
 
 
-def announce_duration(path):
+ANNOUNCE_VOLUME_FILE = Path("/var/lib/pi-speakers/announce-volume")
+SCALED_WAV = Path("/run/pi-speakers/announce-scaled.wav")
+
+
+def announce_gain():
     try:
-        with wave.open(path, "rb") as clip:
-            return clip.getnframes() / clip.getframerate()
+        percent = min(100, max(0, int(ANNOUNCE_VOLUME_FILE.read_text().strip())))
+    except (OSError, ValueError):
+        percent = 100
+    return (percent / 100) ** 2      # square law: slider steps sound roughly even
+
+
+def play_announcement(path):
+    """Scale the clip by the announcement volume and play it; returns its length."""
+    try:
+        with wave.open(str(path), "rb") as clip:
+            params = clip.getparams()
+            frames = clip.readframes(params.nframes)
     except (OSError, wave.Error, EOFError):
         return 2.5
+
+    scaled = (np.frombuffer(frames, dtype="<i2") * announce_gain()).astype("<i2")
+    with wave.open(str(SCALED_WAV), "wb") as out:
+        out.setparams(params)
+        out.writeframes(scaled.tobytes())
+    subprocess.Popen(["aplay", "-q", "-D", "equal", str(SCALED_WAV)])
+
+    return params.nframes / params.framerate
 
 
 def chime_enabled():
@@ -623,8 +645,7 @@ class Panel:
         except OSError:
             announce_wav = ""
         if announce_wav:
-            self.announcing_until = time.time() + announce_duration(announce_wav)
-            subprocess.Popen(["aplay", "-q", "-D", "equal", announce_wav])
+            self.announcing_until = time.time() + play_announcement(announce_wav)
 
         now = datetime.now()
         if now.minute == 0 and self.chimed_hour != now.hour:
@@ -632,10 +653,9 @@ class Panel:
             if chime_enabled() and not quiet_hours(now.hour):
                 voice = VOICE_DIR / f"hour-{now.hour:02d}.wav"
                 if voice.exists():
-                    self.announcing_until = time.time() + announce_duration(str(voice))
-                    subprocess.Popen(["aplay", "-q", "-D", "equal", str(voice)])
+                    self.announcing_until = time.time() + play_announcement(voice)
                 else:
-                    subprocess.Popen(["aplay", "-q", "-D", "equal", str(CHIME_WAV)])
+                    play_announcement(CHIME_WAV)
 
         self.skin = read_skin()
         if self.skin == "terminal" and self.skin_prev != "terminal":

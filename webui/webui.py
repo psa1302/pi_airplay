@@ -50,10 +50,22 @@ def read_quiet_range():
         return 0, 10
 
 
+ANNOUNCE_VOLUME_FILE = Path("/var/lib/pi-speakers/announce-volume")
+ANNOUNCE_TRIGGER = Path("/run/pi-speakers/announce")
+VOICE_DIR = Path("/opt/pi-speakers/voice")
+
+
+def read_announce_volume():
+    try:
+        return min(100, max(0, int(ANNOUNCE_VOLUME_FILE.read_text().strip())))
+    except (OSError, ValueError):
+        return 100
+
+
 def read_chime():
     start, end = read_quiet_range()
     return {"on": read_flag(CHIME_FILE), "quiet": read_flag(QUIET_FILE),
-            "quiet_start": start, "quiet_end": end}
+            "quiet_start": start, "quiet_end": end, "volume": read_announce_volume()}
 
 
 def set_chime(body):
@@ -67,6 +79,10 @@ def set_chime(body):
         start = int(body.get("quiet_start", start)) % 24
         end = int(body.get("quiet_end", end)) % 24
         QUIET_RANGE_FILE.write_text(f"{start}-{end}")
+    if "volume" in body:
+        ANNOUNCE_VOLUME_FILE.write_text(str(min(100, max(0, int(body["volume"])))))
+    if body.get("preview"):
+        ANNOUNCE_TRIGGER.write_text(str(VOICE_DIR / f"hour-{time.localtime().tm_hour:02d}.wav"))
 
 
 SKIN_FILE = Path("/var/lib/pi-speakers/skin")

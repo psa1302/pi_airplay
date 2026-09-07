@@ -117,6 +117,21 @@
   .net-icons { display: flex; align-items: center; gap: 10px; }
   .hint { font-size: 13px; color: var(--muted); text-align: center; }
 
+  .vocab-panel { text-align: center; gap: 4px; }
+  .vocab-panel > :empty { display: none; }
+  .vocab-panel.off > :not(.vocab-foot) { opacity: .4; }
+  .vocab-word { font-size: 42px; font-weight: 700; line-height: 1.25; }
+  .vocab-kana { font-size: 15px; color: var(--muted); }
+  .vocab-english { font-size: 15px; }
+  .vocab-divider { height: 1px; background: var(--divider); margin: 12px 0 10px; }
+  .vocab-example { font-size: 22px; font-weight: 600; line-height: 1.45; }
+  .vocab-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; }
+  .vocab-foot span { font-size: 12px; color: var(--muted); text-align: left; }
+  .pill:disabled { opacity: .4; cursor: default; }
+  .seg { display: flex; background: var(--track-off); border-radius: 999px; padding: 3px; margin-top: 8px; }
+  .seg button { flex: 1; border: none; background: none; border-radius: 999px; padding: 9px 0; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; }
+  .seg button.active { background: var(--track-on); color: var(--bg); }
+
   .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: none; align-items: center; justify-content: center; padding: 20px; }
   .overlay.open { display: flex; }
   .modal { background: var(--panel); border-radius: 20px; padding: 24px; width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 14px; }
@@ -135,6 +150,8 @@
     .card.themes { grid-area: 3 / 1; }
     .card.wifi { grid-area: 3 / 2; height: 0; min-height: 100%; }
     .card.wifi .net-list { flex: 1 1 0; min-height: 0; overflow-y: auto; }
+    .card.vocab { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+    .card.vocab .card-head, .card.vocab .hint { grid-column: 1 / -1; }
     .speaker { justify-content: center; }
   }
 </style>
@@ -221,6 +238,36 @@
       <button class="pill" id="scanBtn">Scan</button>
     </div>
     <div class="net-list" id="netList"><div class="hint" style="padding:18px">Loading networks…</div></div>
+  </div>
+
+  <div class="card vocab">
+    <div class="card-head">
+      <span class="card-label">JAPANESE</span>
+      <button class="pill" id="vocabBtn">On</button>
+    </div>
+    <div class="panel vocab-panel" id="vocabPanel">
+      <div class="vocab-word" id="vWord" lang="ja">—</div>
+      <div class="vocab-kana" id="vKana" lang="ja"></div>
+      <div class="vocab-english" id="vEnglish">No card yet.</div>
+      <div id="vExampleBlock" hidden>
+        <div class="vocab-divider"></div>
+        <div class="vocab-example" id="vExample" lang="ja"></div>
+        <div class="vocab-kana" id="vExampleKana" lang="ja"></div>
+        <div class="vocab-english" id="vExampleEnglish"></div>
+      </div>
+      <div class="vocab-foot"><span id="vMeta"></span><button class="pill" id="againBtn" disabled>Say again</button></div>
+    </div>
+    <div class="panel">
+      <div class="slider-row">
+        <div class="slider-head"><b>Every</b><span id="vIntervalVal">15 min</span></div>
+        <div class="seg" id="vInterval"><button data-min="15">15</button><button data-min="30">30</button><button data-min="60">60</button></div>
+      </div>
+      <div class="slider-row">
+        <div class="slider-head"><b>New words a day</b><span id="vNewVal">10</span></div>
+        <input type="range" id="vNew" min="0" max="30" step="1" value="10">
+      </div>
+    </div>
+    <div class="hint" id="vStats"></div>
   </div>
 </div>
 
@@ -580,10 +627,86 @@ for (const tile of $('skins').children) {
   });
 }
 
+async function postVocab(body) {
+  try {
+    const response = await fetch('/api/vocab', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                                 body: JSON.stringify(body) });
+    if (response.ok) paintVocab(await response.json());
+  } catch {}
+}
+
+const clock = (seconds) => {
+  const d = new Date(seconds * 1000);
+  return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+};
+
+function paintNewWords() {
+  const value = +$('vNew').value;
+  const pct = (value / 30) * 100;
+  $('vNewVal').textContent = value;
+  $('vNew').style.setProperty('--track',
+    `linear-gradient(to right, var(--track-on) 0 ${pct}%, var(--track-off) ${pct}% 100%)`);
+}
+
+function paintVocabCard(card, data) {
+  $('vExampleBlock').hidden = !card;
+  $('againBtn').disabled = !card;
+  if (!card) {
+    $('vWord').textContent = '—';
+    $('vKana').textContent = '';
+    $('vEnglish').textContent = data.on ? `No card yet · first one at ${data.next_at}.` : 'No card yet.';
+    $('vMeta').textContent = '';
+    return;
+  }
+  $('vWord').textContent = card.word;
+  $('vKana').textContent = card.kana;
+  $('vEnglish').textContent = card.english;
+  $('vExample').textContent = card.example;
+  $('vExampleKana').textContent = card.example_kana;
+  $('vExampleEnglish').textContent = card.example_english;
+  $('vMeta').textContent = (card.new ? 'New word' : `Review ${card.step}/${card.steps}`) + ' · ' + clock(card.shown_at);
+}
+
+let newWordsTimer;
+
+function paintVocab(data) {
+  $('vocabBtn').classList.toggle('on', data.on);
+  $('vocabBtn').textContent = data.on ? 'On' : 'Off';
+  $('vocabPanel').classList.toggle('off', !data.on);
+  for (const btn of $('vInterval').children) btn.classList.toggle('active', +btn.dataset.min === data.interval);
+  $('vIntervalVal').textContent = data.interval + ' min';
+  if (!newWordsTimer) { $('vNew').value = data.new_per_day; paintNewWords(); }
+  paintVocabCard(data.card, data);
+  const s = data.stats;
+  $('vStats').textContent = `${s.new_today} new today · ${s.due} due · ${s.seen} of ${s.total} seen`
+    + (data.on ? ` · next card ${data.next_at}` : ' · paused');
+}
+
+async function loadVocab() {
+  try {
+    const response = await fetch('/api/vocab');
+    if (response.ok) paintVocab(await response.json());
+  } catch {}
+}
+
+$('vocabBtn').addEventListener('click', () => postVocab({ on: !$('vocabBtn').classList.contains('on') }));
+$('againBtn').addEventListener('click', () => postVocab({ again: true }));
+for (const btn of $('vInterval').children) {
+  btn.addEventListener('click', () => postVocab({ interval: +btn.dataset.min }));
+}
+
+$('vNew').addEventListener('input', () => {
+  paintNewWords();
+  clearTimeout(newWordsTimer);
+  newWordsTimer = setTimeout(() => { newWordsTimer = null; postVocab({ new_per_day: +$('vNew').value }); }, 300);
+});
+
 applyTheme();
 loadTheme();
 loadSkin();
 loadChime();
+loadVocab();
+setInterval(loadVocab, 10000);
 setInterval(applyTheme, 60000);
 loadEq();
 loadWifi(false);

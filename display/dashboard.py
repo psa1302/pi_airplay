@@ -15,6 +15,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+import vocab
+
 SIZE = (480, 320)
 
 
@@ -112,6 +114,16 @@ BOOT_LINES = ["PI-OS(R) V3.0 - PERSONAL AUDIO TERMINAL",
 BOOT_SECONDS = 4.2
 TV_INTRO_SECONDS = 2.8
 NEON_INTRO_SECONDS = 3.2
+
+CARD_STYLE = {
+    "classic": {"latin": f"{FONT_DIR}/DejaVuSans.ttf", "jp": FONT_JP},
+    "terminal": {"ink": TERM_FG, "muted": TERM_DIM, "accent": TERM_FG,
+                 "latin": FONT_MONOFONTO, "jp": FONT_JP},
+    "neon": {"ink": NEON_INK, "muted": NEON_MUTED, "accent": NEON_CYAN,
+             "latin": FONT_RAJ_MED, "jp": FONT_JP},
+    "retrotv": {"ink": TV_INK, "muted": TV_MUTED, "accent": TV_GREEN,
+                "latin": FONT_DOT, "jp": FONT_DOT},
+}
 
 _fonts = {}
 
@@ -349,6 +361,17 @@ def read_nowplaying():
         return None
 
 
+def audio_streaming():
+    """True while anything plays through a sound card (Bluetooth included, which now-playing cannot see)."""
+    for status in Path("/proc/asound").glob("card*/pcm*p/sub*/status"):
+        try:
+            if "RUNNING" in status.read_text():
+                return True
+        except OSError:
+            continue
+    return False
+
+
 def send_remote(method):
     subprocess.run(["dbus-send", "--system", "--type=method_call",
                     "--dest=org.gnome.ShairportSync", "/org/gnome/ShairportSync",
@@ -425,6 +448,36 @@ def touch_loop(panel):
 
 def truncate(text, limit, dots="…"):
     return text if len(text) <= limit else text[:limit - 1] + dots
+
+
+def classic_theme(hour):
+    night = theme_mode() == "dark" or (theme_mode() == "auto" and is_night(hour))
+    return NIGHT if night else DAY
+
+
+def fit_text(pen, text, path, size, max_width, floor=12):
+    while size > floor and pen.textlength(text, font=face(path, size)) > max_width:
+        size -= 1
+    return face(path, size)
+
+
+def wrap_words(pen, text, text_font, max_width):
+    lines, line = [], ""
+    for word in text.split():
+        trial = f"{line} {word}".strip()
+        if line and pen.textlength(trial, font=text_font) > max_width:
+            lines.append(line)
+            line = word
+        else:
+            line = trial
+    return lines + [line] if line else lines
+
+
+def draw_lines(pen, text, path, size, y, color):
+    text_font = fit_text(pen, text, path, size, 440, floor=size - 4)
+    for line in wrap_words(pen, text, text_font, 440)[:2]:
+        pen.text((240, y), line, font=text_font, fill=color, anchor="ma")
+        y += text_font.size + 4
 
 
 def signed(db):
@@ -612,6 +665,9 @@ class Panel:
         self._tv_mascot = None
         self.tv_intro_until = 0
         self.neon_intro_until = 0
+        self.vocab_words = vocab.load_words()
+        self.card = vocab.load_card()
+        self.vocab_slot = vocab.card_slot(self.card, vocab.interval())
 
     def refresh_weather(self):
         try:
@@ -657,6 +713,8 @@ class Panel:
                 else:
                     play_announcement(CHIME_WAV)
 
+        self.vocab_tick(now)
+
         self.skin = read_skin()
         if self.skin == "terminal" and self.skin_prev != "terminal":
             self.boot_until = time.time() + BOOT_SECONDS
@@ -698,8 +756,8 @@ class Panel:
     # ---------- classic ----------
 
     def draw_classic(self, now):
-        night = theme_mode() == "dark" or (theme_mode() == "auto" and is_night(now.hour))
-        theme = NIGHT if night else DAY
+        theme = classic_theme(now.hour)
+        night = theme is NIGHT
         image = Image.new("RGB", SIZE, theme["bg"])
         pen = ImageDraw.Draw(image)
 
@@ -1210,10 +1268,95 @@ class Panel:
 
         return image
 
+    # ---------- vocabulary card ----------
+
+    def vocab_tick(self, now):
+        command = vocab.take_command()
+        if time.time() < self.announcing_until:
+            command = None
+        slot = vocab.slot_key(now, vocab.interval())
+        slot_due = slot is not None and slot != self.vocab_slot
+        if slot_due:
+            self.vocab_slot = slot
+
+        if command == "again" and self.card:
+            self.show_card(self.card)
+        elif command == "next" or (slot_due and self.card_wanted(now)):
+            self.show_next_card(now)
+
+    def card_wanted(self, now):
+        return (vocab.enabled() and not quiet_hours(now.hour) and not read_nowplaying()
+                and not audio_streaming() and time.time() >= self.announcing_until)
+
+    def show_next_card(self, now):
+        state = vocab.load_state()
+        word, is_new = vocab.pick(self.vocab_words, state, now, vocab.new_per_day())
+        if not word:
+            return
+
+        vocab.record_showing(state, word["id"], now, is_new)
+        vocab.save_state(state)
+        self.show_card(vocab.card_for(word, is_new, state))
+
+    def show_card(self, card):
+        self.card = vocab.stamp(card, time.time())
+        vocab.publish_card(self.card)
+        clip = vocab.audio_path(card)
+        if clip.exists():
+            self.announcing_until = time.time() + play_announcement(clip)
+
+    def card_showing(self):
+        return bool(self.card) and time.time() < self.card["until"] and not read_nowplaying()
+
+    def card_canvas(self, now):
+        if self.skin == "neon":
+            self.buzz_rect = self.neon_mascot_rect = None
+            return self.neon_background(), CARD_STYLE["neon"]
+        if self.skin == "retrotv":
+            image = Image.new("RGB", SIZE, TV_BEZEL)
+            ImageDraw.Draw(image).rounded_rectangle((8, 8, 472, 312), radius=18, fill=TV_BG)
+            return image, CARD_STYLE["retrotv"]
+        if self.skin == "terminal":
+            return Image.new("RGB", SIZE, TERM_BG), CARD_STYLE["terminal"]
+
+        theme = classic_theme(now.hour)
+        style = {**CARD_STYLE["classic"], "ink": theme["ink"], "muted": theme["muted"],
+                 "accent": theme["ink"]}
+        return Image.new("RGB", SIZE, theme["bg"]), style
+
+    def draw_card(self, now):
+        image, style = self.card_canvas(now)
+        pen = ImageDraw.Draw(image)
+        card = self.card
+        latin, jp = style["latin"], style["jp"]
+
+        kind = "NEW WORD" if card["new"] else f"REVIEW {card['step']}/{card['steps']}"
+        pen.text((24, 14), f"N4 · {kind}", font=face(latin, 15), fill=style["muted"])
+        pen.text((456, 14), now.strftime("%H:%M"), font=face(latin, 15), fill=style["muted"], anchor="ra")
+
+        pen.text((240, 82), card["word"], font=fit_text(pen, card["word"], jp, 54, 432),
+                 fill=style["accent"], anchor="mm")
+        if card["kana"]:
+            pen.text((240, 124), card["kana"], font=fit_text(pen, card["kana"], jp, 20, 432),
+                     fill=style["muted"], anchor="mm")
+        draw_lines(pen, card["english"], latin, 19, 140, style["ink"])
+
+        pen.line((40, 188, 440, 188), fill=style["muted"], width=1)
+        pen.text((240, 213), card["example"], font=fit_text(pen, card["example"], jp, 28, 440),
+                 fill=style["ink"], anchor="mm")
+        pen.text((240, 244), card["example_kana"], font=fit_text(pen, card["example_kana"], jp, 17, 440),
+                 fill=style["muted"], anchor="mm")
+        draw_lines(pen, card["example_english"], latin, 16, 262, style["muted"])
+        self.draw_speech_ripple(pen, 150, 308, style["accent"])
+
+        return image
+
     # ---------- pipeline ----------
 
     def draw(self):
         now = datetime.now()
+        if self.card_showing():
+            return self.draw_card(now)
         if self.skin == "terminal":
             return self.draw_terminal(now)
         if self.skin == "neon":
@@ -1315,8 +1458,7 @@ class Panel:
             for i, color in enumerate(TV_BARS):
                 pen.rectangle((24 + i * bar_width, 236, 24 + (i + 1) * bar_width, 262), fill=color)
         else:
-            night = theme_mode() == "dark" or (theme_mode() == "auto" and is_night(now.hour))
-            theme = NIGHT if night else DAY
+            theme = classic_theme(now.hour)
             image = Image.new("RGB", SIZE, theme["bg"])
             pen = ImageDraw.Draw(image)
             pen.text((240, 145), title, font=font(30, bold=True), fill=theme["ink"], anchor="mm")

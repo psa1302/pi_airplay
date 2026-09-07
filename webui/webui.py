@@ -4,8 +4,11 @@ import json
 import re
 import subprocess
 import time
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+
+import vocab
 
 FLAT_UNITS = 200 / 3          # amixer value for 0 dB (0-100 spans -48..+24 dB)
 UNITS_PER_DB = 100 / 72
@@ -83,6 +86,42 @@ def set_chime(body):
         ANNOUNCE_VOLUME_FILE.write_text(str(min(100, max(0, int(body["volume"])))))
     if body.get("preview"):
         ANNOUNCE_TRIGGER.write_text(str(VOICE_DIR / f"hour-{time.localtime().tm_hour:02d}.wav"))
+
+
+VOCAB_WORDS = vocab.load_words()
+
+
+def quiet_at(hour):
+    start, end = read_quiet_range()
+    if not read_flag(QUIET_FILE):
+        return False
+    return start <= hour < end if start <= end else hour >= start or hour < end
+
+
+def next_card_at(now, minutes):
+    slot = vocab.next_slot(now, minutes)
+    while quiet_at(slot.hour):
+        slot = vocab.next_slot(slot, minutes)
+    return slot
+
+
+def read_vocab():
+    now = datetime.now()
+    minutes = vocab.interval()
+    return {"on": vocab.enabled(), "interval": minutes, "new_per_day": vocab.new_per_day(),
+            "card": vocab.load_card(), "stats": vocab.stats(VOCAB_WORDS, vocab.load_state(), now),
+            "next_at": next_card_at(now, minutes).strftime("%H:%M")}
+
+
+def set_vocab(body):
+    if "on" in body:
+        vocab.set_enabled(bool(body["on"]))
+    if "interval" in body:
+        vocab.set_interval(int(body["interval"]))
+    if "new_per_day" in body:
+        vocab.set_new_per_day(int(body["new_per_day"]))
+    if body.get("again"):
+        vocab.send_command("again")
 
 
 SKIN_FILE = Path("/var/lib/pi-speakers/skin")
@@ -261,6 +300,8 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(read_skin())
         elif self.path.startswith("/api/chime"):
             self.reply(read_chime())
+        elif self.path.startswith("/api/vocab"):
+            self.reply(read_vocab())
         else:
             self.reply({"error": "not found"}, status=404)
 
@@ -289,6 +330,9 @@ class Handler(BaseHTTPRequestHandler):
             elif self.path.startswith("/api/chime"):
                 set_chime(body)
                 self.reply(read_chime())
+            elif self.path.startswith("/api/vocab"):
+                set_vocab(body)
+                self.reply(read_vocab())
             else:
                 self.reply({"error": "not found"}, status=404)
         except Exception as error:

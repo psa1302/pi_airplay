@@ -50,11 +50,25 @@ LCD or browser, next tweak. Reverts are common and expected. Be quick.
 
 - State files (web UI ↔ dashboard): `/var/lib/pi-speakers/` — `theme`
   (auto/light/dark), `skin` (classic/terminal/neon/retrotv), `chime`,
-  `quiet`, `quiet-range` ("start-end" hours). Missing file = default on.
+  `quiet`, `quiet-range` ("start-end" hours), `announce-volume` (0–100),
+  `vocab` (on/off), `vocab-interval` (15/30/60), `vocab-new-per-day`,
+  `vocab-srs.json` (per-word step/due/seen). Missing file = default on.
 - Runtime: `/run/pi-speakers/` — `nowplaying.json` (written by nowplaying.py,
   which arbitrates Shairport D-Bus vs `spotify.json` from the raspotify event
   hook), `chime.wav` (generated at dashboard startup), `announce` (write a
-  wav path here and the dashboard plays it with the speech ripple).
+  wav path here and the dashboard plays it with the speech ripple),
+  `vocab.json` (the current card, published by the dashboard), `vocab-cmd`
+  (`again` / `next`, consumed by the dashboard).
+- Vocabulary: `display/vocab.py` (schedule + SRS, imported by dashboard.py
+  and webui.py — both live flat in /opt/pi-speakers/), data in
+  `/opt/pi-speakers/vocab/n4.json` + `audio/NNNN.wav` (word, 3 s, sentence;
+  22 kHz mono, ~180 MB, gitignored — rendered by `assets/vocab/generate.sh`
+  and rsync'd, see README). Sentences are hand-authored in
+  `assets/vocab/examples/part-NN.json` and must pass `build.py --lint`
+  (N5 + list vocabulary, initial-N4 grammar only). Slots: 15 → :15/:30/:45,
+  30 → :15/:45, 60 → :30 (never :00 — time signal); skipped in quiet hours,
+  while anything streams to the DAC (/proc/asound status, catches Bluetooth),
+  and during an announcement. New words pause while > 8 reviews are overdue.
 - Hourly voice: `/opt/pi-speakers/voice/hour-NN.wav` — generated on the Mac
   by `assets/voice/generate.sh` (`say -v Kyoko` + ffmpeg; voice gained by
   measured mean level, tanh soft-clipped, lifted to -1.5 dBFS ≈ -10 LUFS —

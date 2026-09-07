@@ -47,8 +47,9 @@ shows the dashboard. `install.sh` is idempotent — rerun it to update.
 | `setup/02-audio-stack.sh` | ALSA pipeline (source → alsaequal EQ → dmix → USB DAC), Spotify Connect (raspotify), Bluetooth sink (bluez-alsa, auto-pairing) |
 | `setup/03-display.sh` | LCD overlay + config, CRT fonts, systemd services |
 | `webui/` | Control panel on port 80: EQ sliders, WiFi manager, theme picker, transport, now playing. Light/dark aware. |
-| `display/` | LCD dashboard with four themes; hourly Japanese time announcements (pips + processed Kyoko voice from `assets/voice/`) with a speech-ripple animation — Classic (auto day/night), Terminal (Fallout-style: scanlines, glitch, boot sequence, marquee now-playing with progress bar, vitals panel, per-theme mascots in `assets/mascots/`), Neon (glitch-storm intro, recolored glitching mascot), Retro TV (static tune-in intro, astronaut mascot). All themes share the HUD/music-box structure; now-playing state comes from Shairport's D-Bus (see CHANGELOG) |
+| `display/` | LCD dashboard with four themes; hourly Japanese time announcements (pips + processed Kyoko voice from `assets/voice/`) with a speech-ripple animation; N4 vocabulary cards every quarter hour (`vocab.py`: passive spaced repetition, Kyoko clips from `assets/vocab/`) — Classic (auto day/night), Terminal (Fallout-style: scanlines, glitch, boot sequence, marquee now-playing with progress bar, vitals panel, per-theme mascots in `assets/mascots/`), Neon (glitch-storm intro, recolored glitching mascot), Retro TV (static tune-in intro, astronaut mascot). All themes share the HUD/music-box structure; now-playing state comes from Shairport's D-Bus (see CHANGELOG) |
 | `sdcard/` | First-boot templates + the Mac-side prep script |
+| `assets/vocab/` | The Shin Kanzen Master N4 list merged with hand-written, linted example sentences (`build.py` → `n4.json`); `generate.sh` renders the word + sentence clips on a Mac (kept out of git) |
 
 ## Hard-won gotchas (why this repo looks the way it does)
 
@@ -90,6 +91,10 @@ shows the dashboard. `install.sh` is idempotent — rerun it to update.
 - **Rename the speaker:** `AIRPLAY_NAME="New Name" sudo -E bash setup/02-audio-stack.sh`
 - **Logs:** `journalctl -u shairport-sync -u raspotify -u pi-speakers-display -f`
 - **EQ from the shell:** `amixer -D equal scontrols` (0–100, flat = 66)
+- **Vocabulary audio:** `assets/vocab/generate.sh` on the Mac (needs the Kyoko
+  voice + ffmpeg, resumable), then rsync `assets/vocab/audio/` to
+  `/opt/pi-speakers/vocab/audio/`. `echo next > /run/pi-speakers/vocab-cmd`
+  shows the next card immediately; `again` replays the current one.
 - **Known open issue:** AirPlay transport commands (play/pause/next from the
   web UI) reach Shairport's D-Bus interface but the sender ignores them on
   most sessions; parked.

@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.8.0] - 2026-09-07
+
+### Added
+- Japanese vocabulary cards: every 15 minutes (30 or 60 as a setting; never
+  at :00, which belongs to the time signal; not in quiet hours; not while
+  anything plays through the DAC) the LCD shows one Shin Kanzen Master N4 word for 45 s - word,
+  reading, meaning, an example sentence with its reading and translation -
+  while Kyoko says the word, pauses three seconds, and says the sentence.
+  Audio is Japanese only; the English stays on the screen. Passive spaced
+  repetition, no grading and no touch: up to 10 new words a day (setting),
+  interleaved with reviews that come back after 1 h, 4 h, 1 d, 3 d, 1 w,
+  2 w and 1 m; new words wait while more than eight reviews are overdue, so
+  the review load stays within the slots available. The card is drawn in each skin's fonts and colours (VL Gothic
+  carries the Japanese on Terminal and Classic, DotGothic on Retro TV).
+  State lives in /var/lib/pi-speakers/vocab-srs.json.
+- Web UI "Japanese" card: on/off, interval, new words a day, the current
+  card, Say again, and new today / due / seen counts (new /api/vocab; the
+  dashboard publishes the card to /run/pi-speakers/vocab.json and takes
+  `again` / `next` through /run/pi-speakers/vocab-cmd).
+- The 736 example sentences (assets/vocab/examples/) are written to stay
+  inside N5 plus this list's vocabulary and initial-N4 grammar, and
+  assets/vocab/build.py lints them (length, polite ending, kana-only
+  reading, forbidden patterns) before merging the list into n4.json.
+  assets/vocab/generate.sh renders the clips on a Mac (say Kyoko + ffmpeg,
+  loudness-matched to the hourly announcements); ~180 MB of 22 kHz audio
+  stays out of git and is rsync'd to /opt/pi-speakers/vocab/audio/.
+- Announcement volume slider under the chime settings (0-100 %, square law;
+  releasing it plays the current hour as a preview). Vocabulary cards use it
+  too.
+
 ## [0.7.3] - 2026-09-06
 
 ### Fixed

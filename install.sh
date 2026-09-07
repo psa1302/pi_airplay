@@ -34,12 +34,17 @@ deploy_app_files() {
   install -m 644 "$HERE"/webui/webui.py "$HERE"/webui/index.html \
     "$HERE"/webui/manifest.webmanifest /opt/pi-speakers/
   install -m 644 "$HERE"/assets/pwa/*.png /opt/pi-speakers/
-  install -m 644 "$HERE"/display/dashboard.py "$HERE"/display/nowplaying.py /opt/pi-speakers/
+  install -m 644 "$HERE"/display/dashboard.py "$HERE"/display/nowplaying.py \
+    "$HERE"/display/vocab.py /opt/pi-speakers/
   install -m 755 "$HERE"/display/spotify-event.sh /opt/pi-speakers/
 
   install -m 644 "$HERE"/assets/spotify-logo.png /opt/pi-speakers/
   install -d /opt/pi-speakers/voice
   install -m 644 "$HERE"/assets/voice/*.wav /opt/pi-speakers/voice/
+  install -d /opt/pi-speakers/vocab/audio
+  install -m 644 "$HERE"/assets/vocab/n4.json /opt/pi-speakers/vocab/
+  # clips are rendered on a Mac by assets/vocab/generate.sh and kept out of git
+  cp "$HERE"/assets/vocab/audio/*.wav /opt/pi-speakers/vocab/audio/ 2>/dev/null || true
   for mascot in "$HERE"/assets/mascots/*.png; do
     [ -f "$mascot" ] && install -m 644 "$mascot" "/opt/pi-speakers/$(basename "$mascot")"
   done

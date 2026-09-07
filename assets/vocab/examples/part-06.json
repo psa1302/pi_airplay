@@ -1,0 +1,462 @@
+{
+ "0461": {
+  "example": "昨日の晩ご飯はまずかったです。",
+  "example_kana": "きのうのばんごはんはまずかったです。",
+  "example_english": "Last night's dinner tasted bad."
+ },
+ "0462": {
+  "example": "大学で科学を勉強しています。",
+  "example_kana": "だいがくでかがくをべんきょうしています。",
+  "example_english": "I am studying science at university."
+ },
+ "0463": {
+  "example": "姉は日本文学の先生です。",
+  "example_kana": "あねはにほんぶんがくのせんせいです。",
+  "example_english": "My older sister is a teacher of Japanese literature."
+ },
+ "0464": {
+  "example": "テストで90点を取りました。",
+  "example_kana": "テストできゅうじゅってんをとりました。",
+  "example_english": "I got 90 points on the test."
+ },
+ "0465": {
+  "example": "白い線の後ろで待ってください。",
+  "example_kana": "しろいせんのうしろでまってください。",
+  "example_english": "Please wait behind the white line."
+ },
+ "0466": {
+  "example": "このゲームは18歳以上です。",
+  "example_kana": "このゲームはじゅうはっさいいじょうです。",
+  "example_english": "This game is for ages 18 and over."
+ },
+ "0467": {
+  "example": "500円以下の物を買います。",
+  "example_kana": "ごひゃくえんいかのものをかいます。",
+  "example_english": "I will buy something that costs 500 yen or less."
+ },
+ "0468": {
+  "example": "会社で新しい人を教育しました。",
+  "example_kana": "かいしゃであたらしいひとをきょういくしました。",
+  "example_english": "I trained the new people at the company."
+ },
+ "0469": {
+  "example": "試験の前に緊張しました。",
+  "example_kana": "しけんのまえにきんちょうしました。",
+  "example_english": "I got nervous before the exam."
+ },
+ "0470": {
+  "example": "娘は4月に小学校に入学します。",
+  "example_kana": "むすめはしがつにしょうがっこうににゅうがくします。",
+  "example_english": "My daughter starts primary school in April."
+ },
+ "0471": {
+  "example": "兄は去年大学を卒業しました。",
+  "example_kana": "あにはきょねんだいがくをそつぎょうしました。",
+  "example_english": "My older brother graduated from university last year."
+ },
+ "0472": {
+  "example": "雨で試合を中止しました。",
+  "example_kana": "あめでしあいをちゅうししました。",
+  "example_english": "We cancelled the match because of the rain."
+ },
+ "0473": {
+  "example": "この言葉はどう発音しますか。",
+  "example_kana": "このことばはどうはつおんしますか。",
+  "example_english": "How do you pronounce this word?"
+ },
+ "0474": {
+  "example": "妹は試験に合格しました。",
+  "example_kana": "いもうとはしけんにごうかくしました。",
+  "example_english": "My younger sister passed the exam."
+ },
+ "0475": {
+  "example": "財布が机から落ちました。",
+  "example_kana": "さいふがつくえからおちました。",
+  "example_english": "The wallet fell off the desk."
+ },
+ "0476": {
+  "example": "なぜ昨日来ませんでしたか。",
+  "example_kana": "なぜきのうきませんでしたか。",
+  "example_english": "Why didn't you come yesterday?"
+ },
+ "0477": {
+  "example": "明日、友達のお見舞いに行きます。",
+  "example_kana": "あした、ともだちのおみまいにいきます。",
+  "example_english": "Tomorrow I am going to visit my friend in hospital."
+ },
+ "0478": {
+  "example": "今日は体の具合が悪いです。",
+  "example_kana": "きょうはからだのぐあいがわるいです。",
+  "example_english": "I am not feeling well today."
+ },
+ "0479": {
+  "example": "祖父は先週入院しました。",
+  "example_kana": "そふはせんしゅうにゅういんしました。",
+  "example_english": "My grandfather went into hospital last week."
+ },
+ "0480": {
+  "example": "父は来週退院します。",
+  "example_kana": "ちちはらいしゅうたいいんします。",
+  "example_english": "My father leaves hospital next week."
+ },
+ "0481": {
+  "example": "赤ちゃんがずっと泣いています。",
+  "example_kana": "あかちゃんがずっとないています。",
+  "example_english": "The baby has been crying the whole time."
+ },
+ "0482": {
+  "example": "友達と映画を見て笑いました。",
+  "example_kana": "ともだちとえいがをみてわらいました。",
+  "example_english": "I watched a film with my friend and laughed."
+ },
+ "0483": {
+  "example": "車の音がおかしいです。",
+  "example_kana": "くるまのおとがおかしいです。",
+  "example_english": "The car is making a strange sound."
+ },
+ "0484": {
+  "example": "夜の道は暗くて怖いです。",
+  "example_kana": "よるのみちはくらくてこわいです。",
+  "example_english": "The road at night is dark and scary."
+ },
+ "0485": {
+  "example": "午後はいつも眠くなります。",
+  "example_kana": "ごごはいつもねむくなります。",
+  "example_english": "I always get sleepy in the afternoon."
+ },
+ "0486": {
+  "example": "太いペンで書いてください。",
+  "example_kana": "ふといペンでかいてください。",
+  "example_english": "Please write with a thick pen."
+ },
+ "0487": {
+  "example": "友達は指が長くて細いです。",
+  "example_kana": "ともだちはゆびがながくてほそいです。",
+  "example_english": "My friend has long, thin fingers."
+ },
+ "0488": {
+  "example": "丈夫な靴を買いました。",
+  "example_kana": "じょうぶなくつをかいました。",
+  "example_english": "I bought a sturdy pair of shoes."
+ },
+ "0489": {
+  "example": "急に電車が止まりました。",
+  "example_kana": "きゅうにでんしゃがとまりました。",
+  "example_english": "The train stopped suddenly."
+ },
+ "0490": {
+  "example": "やっと仕事が終わりました。",
+  "example_kana": "やっとしごとがおわりました。",
+  "example_english": "The work is finally finished."
+ },
+ "0491": {
+  "example": "父は政治の話が好きです。",
+  "example_kana": "ちちはせいじのはなしがすきです。",
+  "example_english": "My father likes talking about politics."
+ },
+ "0492": {
+  "example": "日本の文化に興味があります。",
+  "example_kana": "にほんのぶんかにきょうみがあります。",
+  "example_english": "I am interested in Japanese culture."
+ },
+ "0493": {
+  "example": "この国の法律は厳しいです。",
+  "example_kana": "このくにのほうりつはきびしいです。",
+  "example_english": "This country's laws are strict."
+ },
+ "0494": {
+  "example": "この町の人口は5万人です。",
+  "example_kana": "このまちのじんこうはごまんにんです。",
+  "example_english": "The population of this town is 50,000."
+ },
+ "0495": {
+  "example": "事故の原因を調べています。",
+  "example_kana": "じこのげんいんをしらべています。",
+  "example_english": "They are investigating the cause of the accident."
+ },
+ "0496": {
+  "example": "図書館をよく利用します。",
+  "example_kana": "としょかんをよくりようします。",
+  "example_english": "I often use the library."
+ },
+ "0497": {
+  "example": "明日会議室を使用します。",
+  "example_kana": "あしたかいぎしつをしようします。",
+  "example_english": "I will use the meeting room tomorrow."
+ },
+ "0498": {
+  "example": "昔、この国は戦争をしました。",
+  "example_kana": "むかし、このくにはせんそうをしました。",
+  "example_english": "Long ago, this country went to war."
+ },
+ "0499": {
+  "example": "野菜の値段が上がりました。",
+  "example_kana": "やさいのねだんがあがりました。",
+  "example_english": "The price of vegetables went up."
+ },
+ "0500": {
+  "example": "今日は熱が下がりました。",
+  "example_kana": "きょうはねつがさがりました。",
+  "example_english": "My fever went down today."
+ },
+ "0501": {
+  "example": "最近仕事が増えました。",
+  "example_kana": "さいきんしごとがふえました。",
+  "example_english": "My work has increased recently."
+ },
+ "0502": {
+  "example": "この村は子供が減っています。",
+  "example_kana": "このむらはこどもがへっています。",
+  "example_english": "The number of children in this village is decreasing."
+ },
+ "0503": {
+  "example": "安全な所で待ちましょう。",
+  "example_kana": "あんぜんなところでまちましょう。",
+  "example_english": "Let's wait in a safe place."
+ },
+ "0504": {
+  "example": "この川は深くて危険です。",
+  "example_kana": "このかわはふかくてきけんです。",
+  "example_english": "This river is deep and dangerous."
+ },
+ "0505": {
+  "example": "日本語を話す機会が少ないです。",
+  "example_kana": "にほんごをはなすきかいがすくないです。",
+  "example_english": "I have few chances to speak Japanese."
+ },
+ "0506": {
+  "example": "学生時代によく旅行しました。",
+  "example_kana": "がくせいじだいによくりょこうしました。",
+  "example_english": "I travelled a lot in my student days."
+ },
+ "0507": {
+  "example": "雨の日は家で本を読みます。",
+  "example_kana": "あめのひはいえでほんをよみます。",
+  "example_english": "On rainy days I read books at home."
+ },
+ "0508": {
+  "example": "これから買い物に行きます。",
+  "example_kana": "これからかいものにいきます。",
+  "example_english": "I am going shopping now."
+ },
+ "0509": {
+  "example": "今度一緒に映画を見ませんか。",
+  "example_kana": "こんどいっしょにえいがをみませんか。",
+  "example_english": "Shall we watch a film together next time?"
+ },
+ "0510": {
+  "example": "たまに友達とお酒を飲みます。",
+  "example_kana": "たまにともだちとおさけをのみます。",
+  "example_english": "I sometimes drink with friends."
+ },
+ "0511": {
+  "example": "すぐ医者に電話してください。",
+  "example_kana": "すぐいしゃにでんわしてください。",
+  "example_english": "Please call the doctor right away."
+ },
+ "0512": {
+  "example": "まず手を洗ってください。",
+  "example_kana": "まずてをあらってください。",
+  "example_english": "First of all, please wash your hands."
+ },
+ "0513": {
+  "example": "この間、佐藤さんに会いました。",
+  "example_kana": "このあいだ、さとうさんにあいました。",
+  "example_english": "I met Mr. Sato the other day."
+ },
+ "0514": {
+  "example": "さっき電話がありました。",
+  "example_kana": "さっきでんわがありました。",
+  "example_english": "There was a phone call a short while ago."
+ },
+ "0515": {
+  "example": "うちで犬を2匹飼っています。",
+  "example_kana": "うちでいぬをにひきかっています。",
+  "example_english": "We keep two dogs at home."
+ },
+ "0516": {
+  "example": "田中さんのお嬢さんは医者です。",
+  "example_kana": "たなかさんのおじょうさんはいしゃです。",
+  "example_english": "Mr. Tanaka's daughter is a doctor."
+ },
+ "0517": {
+  "example": "女性のお客さんが多いです。",
+  "example_kana": "じょせいのおきゃくさんがおおいです。",
+  "example_english": "There are many female customers."
+ },
+ "0518": {
+  "example": "あの背が高い男性は誰ですか。",
+  "example_kana": "あのせがたかいだんせいはだれですか。",
+  "example_english": "Who is that tall man?"
+ },
+ "0519": {
+  "example": "家庭では英語を話しています。",
+  "example_kana": "かていではえいごをはなしています。",
+  "example_english": "At home, we speak English."
+ },
+ "0520": {
+  "example": "お金持ちになりたいです。",
+  "example_kana": "おかねもちになりたいです。",
+  "example_english": "I want to become rich."
+ },
+ "0521": {
+  "example": "祖母は心が優しい人です。",
+  "example_kana": "そぼはこころがやさしいひとです。",
+  "example_english": "My grandmother is a kind-hearted person."
+ },
+ "0522": {
+  "example": "5人のグループで勉強します。",
+  "example_kana": "ごにんのグループでべんきょうします。",
+  "example_english": "We study in a group of five."
+ },
+ "0523": {
+  "example": "チームのメンバーは10人です。",
+  "example_kana": "チームのメンバーはじゅうにんです。",
+  "example_english": "The team has ten members."
+ },
+ "0524": {
+  "example": "どんなタイプの車が好きですか。",
+  "example_kana": "どんなタイプのくるまがすきですか。",
+  "example_english": "What type of car do you like?"
+ },
+ "0525": {
+  "example": "弟をいじめないでください。",
+  "example_kana": "おとうとをいじめないでください。",
+  "example_english": "Please don't bully your little brother."
+ },
+ "0526": {
+  "example": "息子は私によく似ています。",
+  "example_kana": "むすこはわたしによくにています。",
+  "example_english": "My son looks a lot like me."
+ },
+ "0527": {
+  "example": "山田さんは歌がうまいです。",
+  "example_kana": "やまださんはうたがうまいです。",
+  "example_english": "Mr. Yamada is good at singing."
+ },
+ "0528": {
+  "example": "うちの猫はおとなしいです。",
+  "example_kana": "うちのねこはおとなしいです。",
+  "example_english": "Our cat is quiet."
+ },
+ "0529": {
+  "example": "駅の前に立派な建物があります。",
+  "example_kana": "えきのまえにりっぱなたてものがあります。",
+  "example_english": "There is a splendid building in front of the station."
+ },
+ "0530": {
+  "example": "友達といい関係を続けたいです。",
+  "example_kana": "ともだちといいかんけいをつづけたいです。",
+  "example_english": "I want to keep a good relationship with my friends."
+ },
+ "0531": {
+  "example": "先生にお礼を言いました。",
+  "example_kana": "せんせいにおれいをいいました。",
+  "example_english": "I thanked the teacher."
+ },
+ "0532": {
+  "example": "友達から贈り物が届きました。",
+  "example_kana": "ともだちからおくりものがとどきました。",
+  "example_english": "A present arrived from my friend."
+ },
+ "0533": {
+  "example": "別の店で買いましょう。",
+  "example_kana": "べつのみせでかいましょう。",
+  "example_english": "Let's buy it at a different shop."
+ },
+ "0534": {
+  "example": "コミュニケーションは大切です。",
+  "example_kana": "コミュニケーションはたいせつです。",
+  "example_english": "Communication is important."
+ },
+ "0535": {
+  "example": "社長におじぎをしました。",
+  "example_kana": "しゃちょうにおじぎをしました。",
+  "example_english": "I bowed to the company president."
+ },
+ "0536": {
+  "example": "どうぞ、遠慮しないでください。",
+  "example_kana": "どうぞ、えんりょしないでください。",
+  "example_english": "Please, don't hold back."
+ },
+ "0537": {
+  "example": "先生にお土産を差し上げました。",
+  "example_kana": "せんせいにおみやげをさしあげました。",
+  "example_english": "I gave the teacher a souvenir."
+ },
+ "0538": {
+  "example": "新しい住所を母に知らせました。",
+  "example_kana": "あたらしいじゅうしょをははにしらせました。",
+  "example_english": "I let my mother know my new address."
+ },
+ "0539": {
+  "example": "日曜日におばさんを訪ねました。",
+  "example_kana": "にちようびにおばさんをたずねました。",
+  "example_english": "I visited my aunt on Sunday."
+ },
+ "0540": {
+  "example": "遅れて、友達に謝りました。",
+  "example_kana": "おくれて、ともだちにあやまりました。",
+  "example_english": "I was late and apologised to my friend."
+ },
+ "0541": {
+  "example": "弟はすぐ怒ります。",
+  "example_kana": "おとうとはすぐおこります。",
+  "example_english": "My little brother gets angry easily."
+ },
+ "0542": {
+  "example": "手紙を読んで驚きました。",
+  "example_kana": "てがみをよんでおどろきました。",
+  "example_english": "I was surprised when I read the letter."
+ },
+ "0543": {
+  "example": "丁寧な言葉で話してください。",
+  "example_kana": "ていねいなことばではなしてください。",
+  "example_english": "Please speak with polite language."
+ },
+ "0544": {
+  "example": "夏の旅行はいい思い出です。",
+  "example_kana": "なつのりょこうはいいおもいでです。",
+  "example_english": "The summer trip is a good memory."
+ },
+ "0545": {
+  "example": "写真をアルバムに入れました。",
+  "example_kana": "しゃしんをアルバムにいれました。",
+  "example_english": "I put the photos in an album."
+ },
+ "0546": {
+  "example": "毎週ジムで運動しています。",
+  "example_kana": "まいしゅうジムでうんどうしています。",
+  "example_english": "I work out at the gym every week."
+ },
+ "0547": {
+  "example": "私のチームが試合に勝ちました。",
+  "example_kana": "わたしのチームがしあいにかちました。",
+  "example_english": "My team won the match."
+ },
+ "0548": {
+  "example": "会社のルールを守ってください。",
+  "example_kana": "かいしゃのルールをまもってください。",
+  "example_english": "Please follow the company rules."
+ },
+ "0549": {
+  "example": "スクリーンの字が小さいです。",
+  "example_kana": "スクリーンのじがちいさいです。",
+  "example_english": "The letters on the screen are small."
+ },
+ "0550": {
+  "example": "重いスーツケースを運びました。",
+  "example_kana": "おもいスーツケースをはこびました。",
+  "example_english": "I carried the heavy suitcase."
+ },
+ "0551": {
+  "example": "祭りのプログラムを見ました。",
+  "example_kana": "まつりのプログラムをみました。",
+  "example_english": "I looked at the festival programme."
+ },
+ "0552": {
+  "example": "弟と競争して泳ぎました。",
+  "example_kana": "おとうとときょうそうしておよぎました。",
+  "example_english": "I raced my little brother swimming."
+ }
+}

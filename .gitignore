@@ -6,4 +6,8 @@ design/VT323-Regular.ttf
 design/monofonto.zip
 design/monofonto_font/
 
+# vocabulary audio (rendered on the Mac by assets/vocab/generate.sh, ~180 MB)
+assets/vocab/audio/
+__pycache__/
+
 .DS_Store

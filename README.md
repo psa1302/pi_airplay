@@ -1,4 +1,18 @@
-# Pi Speakers
+<div align="center">
+
+# <img src="assets/pwa/icon-192.png" alt="" height="40" valign="middle" /> Pi Speakers
+
+**A Raspberry Pi turned into a proper wireless speaker: AirPlay 2, Spotify Connect, and Bluetooth through one EQ, with a web UI and an LCD dashboard.**
+
+<a href="https://www.raspberrypi.com/"><img src="https://img.shields.io/badge/Raspberry_Pi-A22846?logo=raspberrypi&logoColor=white" alt="Raspberry Pi" /></a>
+<a href="https://github.com/mikebrady/shairport-sync"><img src="https://img.shields.io/badge/AirPlay_2-000000?logo=apple&logoColor=white" alt="AirPlay 2" /></a>
+<a href="https://github.com/dtcooper/raspotify"><img src="https://img.shields.io/badge/Spotify_Connect-1DB954?logo=spotify&logoColor=white" alt="Spotify Connect" /></a>
+<a href="https://github.com/arkq/bluez-alsa"><img src="https://img.shields.io/badge/Bluetooth-0082FC?logo=bluetooth&logoColor=white" alt="Bluetooth" /></a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python" /></a>
+
+</div>
+
+---
 
 A Raspberry Pi 3B turned into a proper wireless speaker: **AirPlay 2**,
 **Spotify Connect**, and **Bluetooth**, all flowing through a shared

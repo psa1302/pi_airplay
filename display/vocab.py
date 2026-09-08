@@ -14,7 +14,7 @@ CARD_FILE = Path("/run/pi-speakers/vocab.json")
 COMMAND_FILE = Path("/run/pi-speakers/vocab-cmd")
 
 HOUR, DAY = 3600, 86400
-STEPS = (HOUR, 4 * HOUR, DAY, 3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY)
+STEPS = (DAY, 3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY)      # a word is heard at most once a day
 SLOT_MINUTES = {15: (15, 30, 45), 30: (15, 45), 60: (30,)}      # :00 belongs to the time signal
 MAX_NEW_PER_DAY = 30
 REVIEW_BACKLOG_LIMIT = 8          # new words wait while more reviews than this are overdue

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.2] - 2026-09-08
+
+### Changed
+- Vocabulary reviews start at one day: a word comes back after 1 d, 3 d,
+  1 w, 2 w and 1 m (the 1 h and 4 h steps are gone), so it is heard at most
+  once a day instead of three times on its first evening.
+
 ## [0.8.1] - 2026-09-07
 
 ### Changed

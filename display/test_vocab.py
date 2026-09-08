@@ -59,11 +59,11 @@ class Picking(unittest.TestCase):
             picked.append(word and word["id"])
         self.assertEqual(picked, ["0001", "0002", None, None])
 
-    def test_a_shown_word_comes_back_after_an_hour_as_a_review(self):
+    def test_a_shown_word_comes_back_after_a_day_as_a_review(self):
         state = vocab.empty_state()
         shown(state, "0001", T0, is_new=True)
-        self.assertEqual(vocab.pick(WORDS, state, at(minutes=45), quota=0), (None, False))
-        word, is_new = vocab.pick(WORDS, state, at(hours=1), quota=0)
+        self.assertEqual(vocab.pick(WORDS, state, at(hours=23), quota=0), (None, False))
+        word, is_new = vocab.pick(WORDS, state, at(hours=24), quota=0)
         self.assertEqual((word["id"], is_new), ("0001", False))
 
     def test_reviews_and_new_words_interleave(self):
@@ -79,8 +79,8 @@ class Picking(unittest.TestCase):
 
     def test_earliest_due_review_first(self):
         state = vocab.empty_state()
-        shown(state, "0003", at(hours=-3))
-        shown(state, "0002", at(hours=-5))
+        shown(state, "0003", at(hours=-27))
+        shown(state, "0002", at(hours=-29))
         word, _ = vocab.pick(WORDS, state, T0, quota=0)
         self.assertEqual(word["id"], "0002")
 
@@ -107,12 +107,12 @@ class Spacing(unittest.TestCase):
     def test_intervals_expand_and_cap(self):
         state = vocab.empty_state()
         waits = []
-        for step in range(9):
+        for step in range(7):
             shown(state, "0001", T0)
             waits.append(state["cards"]["0001"]["due"] - T0.timestamp())
-        self.assertEqual(waits[:7], list(vocab.STEPS))
-        self.assertEqual(waits[7:], [vocab.STEPS[-1]] * 2)
-        self.assertEqual(state["cards"]["0001"]["seen"], 9)
+        self.assertEqual(waits[:5], list(vocab.STEPS))
+        self.assertEqual(waits[5:], [vocab.STEPS[-1]] * 2)
+        self.assertEqual(state["cards"]["0001"]["seen"], 7)
 
     def test_new_quota_resets_each_day(self):
         state = vocab.empty_state()
@@ -124,10 +124,10 @@ class Spacing(unittest.TestCase):
 
     def test_stats_are_a_pure_read(self):
         state = vocab.empty_state()
-        shown(state, "0001", at(hours=-2), is_new=True)
+        shown(state, "0001", at(hours=-25))
         shown(state, "0002", T0, is_new=True)
         before = dict(state)
-        self.assertEqual(vocab.stats(WORDS, state, T0), {"new_today": 2, "due": 1, "seen": 2, "total": 5})
+        self.assertEqual(vocab.stats(WORDS, state, T0), {"new_today": 1, "due": 1, "seen": 2, "total": 5})
         self.assertEqual(vocab.stats(WORDS, state, at(hours=24))["new_today"], 0)
         self.assertEqual(state, before)
 
@@ -167,7 +167,7 @@ class Files(unittest.TestCase):
         vocab.publish_card(card)
         self.assertEqual(vocab.load_card(), card)
         self.assertEqual(card["until"] - card["shown_at"], vocab.CARD_SECONDS)
-        self.assertEqual((card["step"], card["steps"], card["new"], card["kana"]), (0, 7, True, "k1"))
+        self.assertEqual((card["step"], card["steps"], card["new"], card["kana"]), (0, 5, True, "k1"))
 
     def test_kana_is_blank_when_it_repeats_the_word(self):
         state = vocab.empty_state()

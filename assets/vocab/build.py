@@ -12,6 +12,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 SOURCE = HERE / "shinkanzen-vocab-n4.md"        # snapshot of the study list; ids are row positions
 EXAMPLES = HERE / "examples"
+N5_WORDS = HERE / "n5.txt"
 OUTPUT = HERE / "n4.json"
 
 PAGE = re.compile(r"^## .*p\.(\d+)")
@@ -139,14 +140,25 @@ def report(findings):
     print("\n".join(findings + [f"{len(findings)} finding(s)"]))
 
 
+def load_n5_words():
+    lines = N5_WORDS.read_text().splitlines()
+    return {line.strip() for line in lines if line.strip() and not line.startswith("#")}
+
+
 def build(words, examples):
     missing = [word["id"] for word in words if word["id"] not in examples]
     if missing:
         sys.exit(f"{len(missing)} words have no example, first: {missing[:8]}")
 
-    merged = [{**word, **examples[word["id"]]} for word in words]
+    n5 = load_n5_words()
+    unknown = n5 - {dedupe_variants(word["word"]) for word in words} - {word["word"] for word in words}
+    if unknown:
+        sys.exit(f"n5.txt names words that are not on the list: {sorted(unknown)}")
+
+    merged = [{**word, **examples[word["id"]]} for word in words
+              if word["word"] not in n5 and dedupe_variants(word["word"]) not in n5]
     OUTPUT.write_text(json.dumps(merged, ensure_ascii=False, indent=1) + "\n")
-    print(f"{len(merged)} words written to {OUTPUT}")
+    print(f"{len(merged)} words written to {OUTPUT} ({len(words) - len(merged)} N5 review words left out)")
 
 
 def main(argv):

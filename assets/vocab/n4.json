@@ -72,18 +72,6 @@
   "example_english": "I have a fever, so I'm taking today off."
  },
  {
-  "id": "0007",
-  "page": 2,
-  "word": "（ご）主人",
-  "kana": "（ご）しゅじん",
-  "romaji": "(go)shujin",
-  "english": "husband",
-  "speech": "しゅじん",
-  "example": "ご主人はお元気ですか。",
-  "example_kana": "ごしゅじんはおげんきですか。",
-  "example_english": "Is your husband well?"
- },
- {
   "id": "0008",
   "page": 2,
   "word": "紹介",
@@ -154,18 +142,6 @@
   "example": "ちょっと手伝ってください。",
   "example_kana": "ちょっとてつだってください。",
   "example_english": "Could you help me for a moment?"
- },
- {
-  "id": "0014",
-  "page": 2,
-  "word": "若い",
-  "kana": "わかい",
-  "romaji": "wakai",
-  "english": "young",
-  "speech": "わかい",
-  "example": "あの先生はまだ若いです。",
-  "example_kana": "あのせんせいはまだわかいです。",
-  "example_english": "That teacher is still young."
  },
  {
   "id": "0015",
@@ -672,30 +648,6 @@
   "example_english": "I threw away the old newspapers."
  },
  {
-  "id": "0057",
-  "page": 8,
-  "word": "つける",
-  "kana": "つける",
-  "romaji": "tsukeru",
-  "english": "to turn [switch] on; to spread, to put (vt.)",
-  "speech": "つける",
-  "example": "暗いから、電気をつけてください。",
-  "example_kana": "くらいから、でんきをつけてください。",
-  "example_english": "It's dark, so please turn on the light."
- },
- {
-  "id": "0058",
-  "page": 8,
-  "word": "消す",
-  "kana": "けす",
-  "romaji": "kesu",
-  "english": "to turn [switch] off, to erase (vt.)",
-  "speech": "けす",
-  "example": "寝る前に電気を消します。",
-  "example_kana": "ねるまえにでんきをけします。",
-  "example_english": "I turn off the light before going to bed."
- },
- {
   "id": "0059",
   "page": 8,
   "word": "すてき（な）",
@@ -828,18 +780,6 @@
   "example_english": "I'll withdraw money at the bank."
  },
  {
-  "id": "0070",
-  "page": 10,
-  "word": "押す",
-  "kana": "おす",
-  "romaji": "osu",
-  "english": "to press",
-  "speech": "おす",
-  "example": "このボタンを押してください。",
-  "example_kana": "このボタンをおしてください。",
-  "example_english": "Please press this button."
- },
- {
   "id": "0071",
   "page": 10,
   "word": "払う",
@@ -900,42 +840,6 @@
   "example_english": "My son is a first-year student in high school."
  },
  {
-  "id": "0076",
-  "page": 12,
-  "word": "学校",
-  "kana": "がっこう",
-  "romaji": "gakkou",
-  "english": "school",
-  "speech": "がっこう",
-  "example": "子供は歩いて学校へ行きます。",
-  "example_kana": "こどもはあるいてがっこうへいきます。",
-  "example_english": "My child walks to school."
- },
- {
-  "id": "0077",
-  "page": 12,
-  "word": "大学",
-  "kana": "だいがく",
-  "romaji": "daigaku",
-  "english": "university",
-  "speech": "だいがく",
-  "example": "来年、大学に入ります。",
-  "example_kana": "らいねん、だいがくにはいります。",
-  "example_english": "I'm entering university next year."
- },
- {
-  "id": "0078",
-  "page": 12,
-  "word": "留学生",
-  "kana": "りゅうがくせい",
-  "romaji": "ryuugakusei",
-  "english": "international student",
-  "speech": "りゅうがくせい",
-  "example": "私の大学には留学生が多いです。",
-  "example_kana": "わたしのだいがくにはりゅうがくせいがおおいです。",
-  "example_english": "There are many international students at my university."
- },
- {
   "id": "0079",
   "page": 12,
   "word": "ホームステイ",
@@ -946,18 +850,6 @@
   "example": "日本でホームステイをしました。",
   "example_kana": "にほんでホームステイをしました。",
   "example_english": "I did a homestay in Japan."
- },
- {
-  "id": "0080",
-  "page": 12,
-  "word": "字",
-  "kana": "じ",
-  "romaji": "ji",
-  "english": "letter, character",
-  "speech": "じ",
-  "example": "この字は何と読みますか。",
-  "example_kana": "このじはなんとよみますか。",
-  "example_english": "How do you read this character?"
  },
  {
   "id": "0081",
@@ -982,18 +874,6 @@
   "example": "消しゴムを貸してください。",
   "example_kana": "けしゴムをかしてください。",
   "example_english": "Please lend me your eraser."
- },
- {
-  "id": "0083",
-  "page": 12,
-  "word": "意味",
-  "kana": "いみ",
-  "romaji": "imi",
-  "english": "meaning",
-  "speech": "いみ",
-  "example": "この言葉の意味は何ですか。",
-  "example_kana": "このことばのいみはなんですか。",
-  "example_english": "What does this word mean?"
  },
  {
   "id": "0084",
@@ -1236,18 +1116,6 @@
   "example_english": "Today's homework was easy."
  },
  {
-  "id": "0104",
-  "page": 14,
-  "word": "大変（な）",
-  "kana": "たいへん（な）",
-  "romaji": "taihen(na)",
-  "english": "hard, terrible",
-  "speech": "たいへん",
-  "example": "子供が3人いて、毎日大変です。",
-  "example_kana": "こどもがさんにんいて、まいにちたいへんです。",
-  "example_english": "I have three children, so every day is hard."
- },
- {
   "id": "0105",
   "page": 14,
   "word": "失礼（な）",
@@ -1260,30 +1128,6 @@
   "example_english": "His words were rude."
  },
  {
-  "id": "0106",
-  "page": 16,
-  "word": "建物",
-  "kana": "たてもの",
-  "romaji": "tatemono",
-  "english": "building",
-  "speech": "たてもの",
-  "example": "あの白い建物は病院です。",
-  "example_kana": "あのしろいたてものはびょういんです。",
-  "example_english": "That white building is a hospital."
- },
- {
-  "id": "0107",
-  "page": 16,
-  "word": "交差点",
-  "kana": "こうさてん",
-  "romaji": "kousaten",
-  "english": "crossing",
-  "speech": "こうさてん",
-  "example": "この交差点は車が多いです。",
-  "example_kana": "このこうさてんはくるまがおおいです。",
-  "example_english": "This intersection has a lot of traffic."
- },
- {
   "id": "0108",
   "page": 16,
   "word": "駐車場",
@@ -1294,18 +1138,6 @@
   "example": "駐車場に車を止めました。",
   "example_kana": "ちゅうしゃじょうにくるまをとめました。",
   "example_english": "I parked the car in the car park."
- },
- {
-  "id": "0109",
-  "page": 16,
-  "word": "角",
-  "kana": "かど",
-  "romaji": "kado",
-  "english": "corner",
-  "speech": "かど",
-  "example": "郵便局は二つ目の角にあります。",
-  "example_kana": "ゆうびんきょくはふたつめのかどにあります。",
-  "example_english": "The post office is at the second corner."
  },
  {
   "id": "0110",
@@ -1404,30 +1236,6 @@
   "example_english": "My sister went out wearing a kimono."
  },
  {
-  "id": "0118",
-  "page": 16,
-  "word": "曲がる",
-  "kana": "まがる",
-  "romaji": "magaru",
-  "english": "to turn",
-  "speech": "まがる",
-  "example": "次の角を左に曲がってください。",
-  "example_kana": "つぎのかどをひだりにまがってください。",
-  "example_english": "Please turn left at the next corner."
- },
- {
-  "id": "0119",
-  "page": 16,
-  "word": "渡る",
-  "kana": "わたる",
-  "romaji": "wataru",
-  "english": "to cross",
-  "speech": "わたる",
-  "example": "橋を渡って、学校へ行きます。",
-  "example_kana": "はしをわたって、がっこうへいきます。",
-  "example_english": "I cross the bridge and go to school."
- },
- {
   "id": "0120",
   "page": 16,
   "word": "不便（な）",
@@ -1474,18 +1282,6 @@
   "example": "ペットを飼っていますか。",
   "example_kana": "ペットをかっていますか。",
   "example_english": "Do you have a pet?"
- },
- {
-  "id": "0124",
-  "page": 20,
-  "word": "声",
-  "kana": "こえ",
-  "romaji": "koe",
-  "english": "voice",
-  "speech": "こえ",
-  "example": "山田さんは声が大きいです。",
-  "example_kana": "やまださんはこえがおおきいです。",
-  "example_english": "Mr. Yamada has a loud voice."
  },
  {
   "id": "0125",
@@ -1678,18 +1474,6 @@
   "example": "毎朝30分運動しています。",
   "example_kana": "まいあささんじゅっぷんうんどうしています。",
   "example_english": "I exercise for thirty minutes every morning."
- },
- {
-  "id": "0141",
-  "page": 22,
-  "word": "練習",
-  "kana": "れんしゅう",
-  "romaji": "renshuu",
-  "english": "to practise (する)",
-  "speech": "れんしゅう",
-  "example": "日本語の会話を練習しました。",
-  "example_kana": "にほんごのかいわをれんしゅうしました。",
-  "example_english": "I practised Japanese conversation."
  },
  {
   "id": "0142",
@@ -2100,18 +1884,6 @@
   "example_english": "I'll chill the beer in the fridge."
  },
  {
-  "id": "0176",
-  "page": 26,
-  "word": "たいてい",
-  "kana": "たいてい",
-  "romaji": "taitei",
-  "english": "usually",
-  "speech": "たいてい",
-  "example": "日曜日はたいてい家にいます。",
-  "example_kana": "にちようびはたいていいえにいます。",
-  "example_english": "On Sundays I'm usually at home."
- },
- {
   "id": "0177",
   "page": 26,
   "word": "なかなか",
@@ -2230,30 +2002,6 @@
   "example": "押したら、電気がつくと思います。",
   "example_kana": "おしたら、でんきがつくとおもいます。",
   "example_english": "I think the light will come on if you press it."
- },
- {
-  "id": "0187",
-  "page": 28,
-  "word": "はく",
-  "kana": "はく",
-  "romaji": "haku",
-  "english": "to wear, to put on (pants, shoes, etc.)",
-  "speech": "はく",
-  "example": "靴をはく前に、靴下をはきます。",
-  "example_kana": "くつをはくまえに、くつしたをはきます。",
-  "example_english": "I put on my socks before putting on my shoes."
- },
- {
-  "id": "0188",
-  "page": 28,
-  "word": "引く",
-  "kana": "ひく",
-  "romaji": "hiku",
-  "english": "to pull",
-  "speech": "ひく",
-  "example": "ドアは引いて開けてください。",
-  "example_kana": "ドアはひいてあけてください。",
-  "example_english": "Please pull the door to open it."
  },
  {
   "id": "0189",
@@ -2484,18 +2232,6 @@
   "example_english": "The cup fell and broke."
  },
  {
-  "id": "0208",
-  "page": 32,
-  "word": "財布",
-  "kana": "さいふ",
-  "romaji": "saifu",
-  "english": "wallet",
-  "speech": "さいふ",
-  "example": "新しい財布が欲しいです。",
-  "example_kana": "あたらしいさいふがほしいです。",
-  "example_english": "I want a new wallet."
- },
- {
   "id": "0209",
   "page": 32,
   "word": "品物",
@@ -2590,30 +2326,6 @@
   "example": "母の誕生日の花を選びました。",
   "example_kana": "ははのたんじょうびのはなをえらびました。",
   "example_english": "I chose flowers for my mother's birthday."
- },
- {
-  "id": "0217",
-  "page": 32,
-  "word": "閉まる",
-  "kana": "しまる",
-  "romaji": "shimaru",
-  "english": "to close (vi.)",
-  "speech": "しまる",
-  "example": "銀行は3時に閉まります。",
-  "example_kana": "ぎんこうはさんじにしまります。",
-  "example_english": "The bank closes at 3 o'clock."
- },
- {
-  "id": "0218",
-  "page": 32,
-  "word": "なくす",
-  "kana": "なくす",
-  "romaji": "nakusu",
-  "english": "to lose (vt.)",
-  "speech": "なくす",
-  "example": "大切なかぎをなくしました。",
-  "example_kana": "たいせつなかぎをなくしました。",
-  "example_english": "I lost an important key."
  },
  {
   "id": "0219",
@@ -2746,18 +2458,6 @@
   "example": "失敗して、部長に謝りました。",
   "example_kana": "しっぱいして、ぶちょうにあやまりました。",
   "example_english": "I made a mistake and apologized to my manager."
- },
- {
-  "id": "0230",
-  "page": 34,
-  "word": "出す",
-  "kana": "だす",
-  "romaji": "dasu",
-  "english": "to give, to hand in, to produce, to let out (vt.)",
-  "speech": "だす",
-  "example": "宿題を先生に出しました。",
-  "example_kana": "しゅくだいをせんせいにだしました。",
-  "example_english": "I handed in my homework to the teacher."
  },
  {
   "id": "0231",
@@ -2928,18 +2628,6 @@
   "example_english": "I repaired the broken clock."
  },
  {
-  "id": "0245",
-  "page": 36,
-  "word": "並べる",
-  "kana": "ならべる",
-  "romaji": "naraberu",
-  "english": "to arrange, to line up (vt.)",
-  "speech": "ならべる",
-  "example": "テーブルにお皿を並べました。",
-  "example_kana": "テーブルにおさらをならべました。",
-  "example_english": "I set the plates out on the table."
- },
- {
   "id": "0246",
   "page": 36,
   "word": "間違える",
@@ -3060,66 +2748,6 @@
   "example_english": "The view from the top of the mountain is wonderful."
  },
  {
-  "id": "0256",
-  "page": 38,
-  "word": "緑",
-  "kana": "みどり",
-  "romaji": "midori",
-  "english": "green, greenery",
-  "speech": "みどり",
-  "example": "春は山の緑がきれいです。",
-  "example_kana": "はるはやまのみどりがきれいです。",
-  "example_english": "In spring the green of the mountains is beautiful."
- },
- {
-  "id": "0257",
-  "page": 38,
-  "word": "南",
-  "kana": "みなみ",
-  "romaji": "minami",
-  "english": "south",
-  "speech": "みなみ",
-  "example": "南の島へ旅行に行きたいです。",
-  "example_kana": "みなみのしまへりょこうにいきたいです。",
-  "example_english": "I want to take a trip to a southern island."
- },
- {
-  "id": "0258",
-  "page": 38,
-  "word": "北",
-  "kana": "きた",
-  "romaji": "kita",
-  "english": "north",
-  "speech": "きた",
-  "example": "北から冷たい風が吹いています。",
-  "example_kana": "きたからつめたいかぜがふいています。",
-  "example_english": "A cold wind is blowing from the north."
- },
- {
-  "id": "0259",
-  "page": 38,
-  "word": "東",
-  "kana": "ひがし",
-  "romaji": "higashi",
-  "english": "east",
-  "speech": "ひがし",
-  "example": "東の空が明るくなりました。",
-  "example_kana": "ひがしのそらがあかるくなりました。",
-  "example_english": "The eastern sky has become bright."
- },
- {
-  "id": "0260",
-  "page": 38,
-  "word": "西",
-  "kana": "にし",
-  "romaji": "nishi",
-  "english": "west",
-  "speech": "にし",
-  "example": "駅の西側にスーパーがあります。",
-  "example_kana": "えきのにしがわにスーパーがあります。",
-  "example_english": "There is a supermarket on the west side of the station."
- },
- {
   "id": "0261",
   "page": 38,
   "word": "形",
@@ -3154,30 +2782,6 @@
   "example": "午後は店がすくと思います。",
   "example_kana": "ごごはみせがすくとおもいます。",
   "example_english": "I think the store will be less crowded in the afternoon."
- },
- {
-  "id": "0264",
-  "page": 38,
-  "word": "晴れる",
-  "kana": "はれる",
-  "romaji": "hareru",
-  "english": "to be clear [fine]",
-  "speech": "はれる",
-  "example": "昼から晴れて、暖かくなりました。",
-  "example_kana": "ひるからはれて、あたたかくなりました。",
-  "example_english": "It cleared up at noon and got warm."
- },
- {
-  "id": "0265",
-  "page": 38,
-  "word": "曇る",
-  "kana": "くもる",
-  "romaji": "kumoru",
-  "english": "to become cloudy",
-  "speech": "くもる",
-  "example": "午後から空が曇りました。",
-  "example_kana": "ごごからそらがくもりました。",
-  "example_english": "The sky clouded over in the afternoon."
  },
  {
   "id": "0266",
@@ -3250,30 +2854,6 @@
   "example": "祖母は今年80歳になります。",
   "example_kana": "そぼはことしはちじゅっさいになります。",
   "example_english": "My grandmother turns 80 this year."
- },
- {
-  "id": "0272",
-  "page": 42,
-  "word": "おばさん",
-  "kana": "おばさん",
-  "romaji": "obasan",
-  "english": "aunt",
-  "speech": "おばさん",
-  "example": "おばさんは大阪に住んでいます。",
-  "example_kana": "おばさんはおおさかにすんでいます。",
-  "example_english": "My aunt lives in Osaka."
- },
- {
-  "id": "0273",
-  "page": 42,
-  "word": "おじさん",
-  "kana": "おじさん",
-  "romaji": "ojisan",
-  "english": "uncle",
-  "speech": "おじさん",
-  "example": "おじさんに時計をもらいました。",
-  "example_kana": "おじさんにとけいをもらいました。",
-  "example_english": "I got a watch from my uncle."
  },
  {
   "id": "0274",
@@ -3430,18 +3010,6 @@
   "example": "港で大きい船を見ました。",
   "example_kana": "みなとでおおきいふねをみました。",
   "example_english": "I saw a big ship at the port."
- },
- {
-  "id": "0287",
-  "page": 44,
-  "word": "村",
-  "kana": "むら",
-  "romaji": "mura",
-  "english": "village",
-  "speech": "むら",
-  "example": "祖母は小さい村に住んでいます。",
-  "example_kana": "そぼはちいさいむらにすんでいます。",
-  "example_english": "My grandmother lives in a small village."
  },
  {
   "id": "0288",
@@ -3672,30 +3240,6 @@
   "example_english": "I have a habit of running every morning."
  },
  {
-  "id": "0307",
-  "page": 46,
-  "word": "磨く",
-  "kana": "みがく",
-  "romaji": "migaku",
-  "english": "to brush (one's teeth)",
-  "speech": "みがく",
-  "example": "食事の後で歯を磨きましょう。",
-  "example_kana": "しょくじのあとではをみがきましょう。",
-  "example_english": "Let's brush our teeth after meals."
- },
- {
-  "id": "0308",
-  "page": 46,
-  "word": "困る",
-  "kana": "こまる",
-  "romaji": "komaru",
-  "english": "to be in trouble",
-  "speech": "こまる",
-  "example": "財布をなくして困っています。",
-  "example_kana": "さいふをなくしてこまっています。",
-  "example_english": "I lost my wallet and I'm in trouble."
- },
- {
   "id": "0309",
   "page": 46,
   "word": "気がつく",
@@ -3706,18 +3250,6 @@
   "example": "駅で忘れ物に気がつきました。",
   "example_kana": "えきでわすれものにきがつきました。",
   "example_english": "At the station I noticed I had left something behind."
- },
- {
-  "id": "0310",
-  "page": 46,
-  "word": "さす",
-  "kana": "さす",
-  "romaji": "sasu",
-  "english": "to open (an umbrella)",
-  "speech": "さす",
-  "example": "雨の日は傘をさす人が多いです。",
-  "example_kana": "あめのひはかさをさすひとがおおいです。",
-  "example_english": "On rainy days, many people put up umbrellas."
  },
  {
   "id": "0311",
@@ -4104,18 +3636,6 @@
   "example_english": "We had a lot of customers today."
  },
  {
-  "id": "0343",
-  "page": 52,
-  "word": "大勢",
-  "kana": "おおぜい",
-  "romaji": "oozei",
-  "english": "great number of people",
-  "speech": "おおぜい",
-  "example": "お祭りに大勢の人が来ました。",
-  "example_kana": "おまつりにおおぜいのひとがきました。",
-  "example_english": "A great number of people came to the festival."
- },
- {
   "id": "0344",
   "page": 52,
   "word": "指輪",
@@ -4282,18 +3802,6 @@
   "example": "祖父は歴史の本をよく読みます。",
   "example_kana": "そふはれきしのほんをよくよみます。",
   "example_english": "My grandfather often reads history books."
- },
- {
-  "id": "0358",
-  "page": 54,
-  "word": "英語",
-  "kana": "えいご",
-  "romaji": "eigo",
-  "english": "English",
-  "speech": "えいご",
-  "example": "会社で英語を使いますか。",
-  "example_kana": "かいしゃでえいごをつかいますか。",
-  "example_english": "Do you use English at work?"
  },
  {
   "id": "0359",
@@ -4584,30 +4092,6 @@
   "example_english": "The exam will be held at school on Saturday."
  },
  {
-  "id": "0383",
-  "page": 56,
-  "word": "頼む",
-  "kana": "たのむ",
-  "romaji": "tanomu",
-  "english": "to ask",
-  "speech": "たのむ",
-  "example": "友達に買い物を頼みました。",
-  "example_kana": "ともだちにかいものをたのみました。",
-  "example_english": "I asked a friend to do the shopping."
- },
- {
-  "id": "0384",
-  "page": 56,
-  "word": "始める",
-  "kana": "はじめる",
-  "romaji": "hajimeru",
-  "english": "to start (vt.)",
-  "speech": "はじめる",
-  "example": "来月から英語の勉強を始めます。",
-  "example_kana": "らいげつからえいごのべんきょうをはじめます。",
-  "example_english": "I will start studying English next month."
- },
- {
   "id": "0385",
   "page": 56,
   "word": "数える",
@@ -4764,102 +4248,6 @@
   "example_english": "This town has changed a lot."
  },
  {
-  "id": "0398",
-  "page": 58,
-  "word": "咲く",
-  "kana": "さく",
-  "romaji": "saku",
-  "english": "to bloom",
-  "speech": "さく",
-  "example": "庭の花がきれいに咲きました。",
-  "example_kana": "にわのはながきれいにさきました。",
-  "example_english": "The flowers in the garden bloomed beautifully."
- },
- {
-  "id": "0399",
-  "page": 58,
-  "word": "茶色い",
-  "kana": "ちゃいろい",
-  "romaji": "chairoi",
-  "english": "brown",
-  "speech": "ちゃいろい",
-  "example": "昨日、茶色い靴を買いました。",
-  "example_kana": "きのう、ちゃいろいくつをかいました。",
-  "example_english": "I bought brown shoes yesterday."
- },
- {
-  "id": "0400",
-  "page": 58,
-  "word": "赤い",
-  "kana": "あかい",
-  "romaji": "akai",
-  "english": "red",
-  "speech": "あかい",
-  "example": "赤いりんごを3つください。",
-  "example_kana": "あかいりんごをみっつください。",
-  "example_english": "Three red apples, please."
- },
- {
-  "id": "0401",
-  "page": 58,
-  "word": "白い",
-  "kana": "しろい",
-  "romaji": "shiroi",
-  "english": "white",
-  "speech": "しろい",
-  "example": "白いシャツを着て、出かけます。",
-  "example_kana": "しろいシャツをきて、でかけます。",
-  "example_english": "I will put on a white shirt and go out."
- },
- {
-  "id": "0402",
-  "page": 58,
-  "word": "黒い",
-  "kana": "くろい",
-  "romaji": "kuroi",
-  "english": "black",
-  "speech": "くろい",
-  "example": "黒い猫が道を渡っています。",
-  "example_kana": "くろいねこがみちをわたっています。",
-  "example_english": "A black cat is crossing the road."
- },
- {
-  "id": "0403",
-  "page": 58,
-  "word": "黄色い",
-  "kana": "きいろい",
-  "romaji": "kiiroi",
-  "english": "yellow",
-  "speech": "きいろい",
-  "example": "娘は黄色い傘を持っています。",
-  "example_kana": "むすめはきいろいかさをもっています。",
-  "example_english": "My daughter has a yellow umbrella."
- },
- {
-  "id": "0404",
-  "page": 58,
-  "word": "青い",
-  "kana": "あおい",
-  "romaji": "aoi",
-  "english": "blue",
-  "speech": "あおい",
-  "example": "今日は空が青いですね。",
-  "example_kana": "きょうはそらがあおいですね。",
-  "example_english": "The sky is blue today, isn't it?"
- },
- {
-  "id": "0405",
-  "page": 58,
-  "word": "緑色",
-  "kana": "みどりいろ",
-  "romaji": "midoriiro",
-  "english": "green",
-  "speech": "みどりいろ",
-  "example": "緑色のセーターがほしいです。",
-  "example_kana": "みどりいろのセーターがほしいです。",
-  "example_english": "I want a green sweater."
- },
- {
   "id": "0406",
   "page": 62,
   "word": "会話",
@@ -4954,18 +4342,6 @@
   "example": "今朝、母から手紙が届きました。",
   "example_kana": "けさ、ははからてがみがとどきました。",
   "example_english": "A letter from my mother arrived this morning."
- },
- {
-  "id": "0414",
-  "page": 62,
-  "word": "渡す",
-  "kana": "わたす",
-  "romaji": "watasu",
-  "english": "to hand",
-  "speech": "わたす",
-  "example": "この本を先生に渡してください。",
-  "example_kana": "このほんをせんせいにわたしてください。",
-  "example_english": "Please hand this book to the teacher."
  },
  {
   "id": "0415",
@@ -5232,18 +4608,6 @@
   "example_english": "I slept well last night."
  },
  {
-  "id": "0437",
-  "page": 66,
-  "word": "並ぶ",
-  "kana": "ならぶ",
-  "romaji": "narabu",
-  "english": "to be in a queue [line], to be arranged (vi.)",
-  "speech": "ならぶ",
-  "example": "切符を買う人が並んでいます。",
-  "example_kana": "きっぷをかうひとがならんでいます。",
-  "example_english": "People buying tickets are standing in line."
- },
- {
   "id": "0438",
   "page": 66,
   "word": "届ける",
@@ -5328,18 +4692,6 @@
   "example_english": "We have run out of milk, so I will buy some."
  },
  {
-  "id": "0445",
-  "page": 66,
-  "word": "嫌（な）",
-  "kana": "いや（な）",
-  "romaji": "iya(na)",
-  "english": "unpleasant, reluctant",
-  "speech": "いや",
-  "example": "今日は嫌な天気ですね。",
-  "example_kana": "きょうはいやなてんきですね。",
-  "example_english": "Unpleasant weather today, isn't it?"
- },
- {
   "id": "0446",
   "page": 66,
   "word": "自由（な）",
@@ -5410,18 +4762,6 @@
   "example": "肉の値段が倍になりました。",
   "example_kana": "にくのねだんがばいになりました。",
   "example_english": "The price of meat doubled."
- },
- {
-  "id": "0452",
-  "page": 68,
-  "word": "半分",
-  "kana": "はんぶん",
-  "romaji": "hanbun",
-  "english": "half",
-  "speech": "はんぶん",
-  "example": "宿題はもう半分終わりました。",
-  "example_kana": "しゅくだいはもうはんぶんおわりました。",
-  "example_english": "I have already finished half of my homework."
  },
  {
   "id": "0453",
@@ -5506,30 +4846,6 @@
   "example": "この辞書は厚くて、重いです。",
   "example_kana": "このじしょはあつくて、おもいです。",
   "example_english": "This dictionary is thick and heavy."
- },
- {
-  "id": "0460",
-  "page": 68,
-  "word": "薄い",
-  "kana": "うすい",
-  "romaji": "usui",
-  "english": "thin, weak",
-  "speech": "うすい",
-  "example": "このお茶はちょっと薄いですね。",
-  "example_kana": "このおちゃはちょっとうすいですね。",
-  "example_english": "This tea is a bit weak, isn't it?"
- },
- {
-  "id": "0461",
-  "page": 68,
-  "word": "まずい",
-  "kana": "まずい",
-  "romaji": "mazui",
-  "english": "bad tasting",
-  "speech": "まずい",
-  "example": "昨日の晩ご飯はまずかったです。",
-  "example_kana": "きのうのばんごはんはまずかったです。",
-  "example_english": "Last night's dinner tasted bad."
  },
  {
   "id": "0462",
@@ -5700,18 +5016,6 @@
   "example_english": "The wallet fell off the desk."
  },
  {
-  "id": "0476",
-  "page": 70,
-  "word": "なぜ",
-  "kana": "なぜ",
-  "romaji": "naze",
-  "english": "why",
-  "speech": "なぜ",
-  "example": "なぜ昨日来ませんでしたか。",
-  "example_kana": "なぜきのうきませんでしたか。",
-  "example_english": "Why didn't you come yesterday?"
- },
- {
   "id": "0477",
   "page": 72,
   "word": "（お）見舞い",
@@ -5818,42 +5122,6 @@
   "example": "午後はいつも眠くなります。",
   "example_kana": "ごごはいつもねむくなります。",
   "example_english": "I always get sleepy in the afternoon."
- },
- {
-  "id": "0486",
-  "page": 72,
-  "word": "太い",
-  "kana": "ふとい",
-  "romaji": "futoi",
-  "english": "thick",
-  "speech": "ふとい",
-  "example": "太いペンで書いてください。",
-  "example_kana": "ふといペンでかいてください。",
-  "example_english": "Please write with a thick pen."
- },
- {
-  "id": "0487",
-  "page": 72,
-  "word": "細い",
-  "kana": "ほそい",
-  "romaji": "hosoi",
-  "english": "thin",
-  "speech": "ほそい",
-  "example": "友達は指が長くて細いです。",
-  "example_kana": "ともだちはゆびがながくてほそいです。",
-  "example_english": "My friend has long, thin fingers."
- },
- {
-  "id": "0488",
-  "page": 72,
-  "word": "丈夫（な）",
-  "kana": "じょうぶ（な）",
-  "romaji": "joubu(na)",
-  "english": "strong, solid",
-  "speech": "じょうぶ",
-  "example": "丈夫な靴を買いました。",
-  "example_kana": "じょうぶなくつをかいました。",
-  "example_english": "I bought a sturdy pair of shoes."
  },
  {
   "id": "0489",
@@ -6120,18 +5388,6 @@
   "example_english": "I sometimes drink with friends."
  },
  {
-  "id": "0511",
-  "page": 76,
-  "word": "すぐ",
-  "kana": "すぐ",
-  "romaji": "sugu",
-  "english": "immediately",
-  "speech": "すぐ",
-  "example": "すぐ医者に電話してください。",
-  "example_kana": "すぐいしゃにでんわしてください。",
-  "example_english": "Please call the doctor right away."
- },
- {
   "id": "0512",
   "page": 76,
   "word": "まず",
@@ -6334,18 +5590,6 @@
   "example": "うちの猫はおとなしいです。",
   "example_kana": "うちのねこはおとなしいです。",
   "example_english": "Our cat is quiet."
- },
- {
-  "id": "0529",
-  "page": 80,
-  "word": "立派（な）",
-  "kana": "りっぱ（な）",
-  "romaji": "rippa(na)",
-  "english": "good, splendid",
-  "speech": "りっぱ",
-  "example": "駅の前に立派な建物があります。",
-  "example_kana": "えきのまえにりっぱなたてものがあります。",
-  "example_english": "There is a splendid building in front of the station."
  },
  {
   "id": "0530",
@@ -6984,18 +6228,6 @@
   "example_english": "It was hot, so I turned on the air conditioner."
  },
  {
-  "id": "0583",
-  "page": 90,
-  "word": "ストーブ",
-  "kana": "ストーブ",
-  "romaji": "sutoobu",
-  "english": "stove, heater",
-  "speech": "ストーブ",
-  "example": "冬はストーブを使います。",
-  "example_kana": "ふゆはストーブをつかいます。",
-  "example_english": "In winter we use a heater."
- },
- {
   "id": "0584",
   "page": 90,
   "word": "リモコン",
@@ -7210,18 +6442,6 @@
   "example": "朝早く電話が鳴りました。",
   "example_kana": "あさはやくでんわがなりました。",
   "example_english": "The phone rang early in the morning."
- },
- {
-  "id": "0602",
-  "page": 92,
-  "word": "下りる",
-  "kana": "おりる",
-  "romaji": "oriru",
-  "english": "to go down",
-  "speech": "おりる",
-  "example": "ゆっくり階段を下りてください。",
-  "example_kana": "ゆっくりかいだんをおりてください。",
-  "example_english": "Please go down the stairs slowly."
  },
  {
   "id": "0603",
@@ -7522,18 +6742,6 @@
   "example": "仕事が済んでから、帰ります。",
   "example_kana": "しごとがすんでから、かえります。",
   "example_english": "I'll go home after work is finished."
- },
- {
-  "id": "0628",
-  "page": 96,
-  "word": "勤める",
-  "kana": "つとめる",
-  "romaji": "tsutomeru",
-  "english": "to work",
-  "speech": "つとめる",
-  "example": "兄は銀行に勤めています。",
-  "example_kana": "あにはぎんこうにつとめています。",
-  "example_english": "My older brother works at a bank."
  },
  {
   "id": "0629",
@@ -7848,18 +7056,6 @@
   "example_english": "Snow piled up last night."
  },
  {
-  "id": "0655",
-  "page": 100,
-  "word": "吹く",
-  "kana": "ふく",
-  "romaji": "fuku",
-  "english": "to blow",
-  "speech": "ふく",
-  "example": "今日は強い風が吹いています。",
-  "example_kana": "きょうはつよいかぜがふいています。",
-  "example_english": "A strong wind is blowing today."
- },
- {
   "id": "0656",
   "page": 100,
   "word": "捕まえる",
@@ -7944,42 +7140,6 @@
   "example_english": "My son is 170 centimetres tall."
  },
  {
-  "id": "0663",
-  "page": 104,
-  "word": "～杯",
-  "kana": "～はい、～ぱい、～ばい",
-  "romaji": "~hai,~pai,~bai",
-  "english": "～ cup, ～ glass",
-  "speech": "はい、ぱい、ばい",
-  "example": "毎朝、コーヒーを2杯飲みます。",
-  "example_kana": "まいあさ、コーヒーをにはいのみます。",
-  "example_english": "I drink two cups of coffee every morning."
- },
- {
-  "id": "0664",
-  "page": 104,
-  "word": "～匹",
-  "kana": "～ひき、～びき、～ぴき",
-  "romaji": "~hiki,~biki,~piki",
-  "english": "～ animal",
-  "speech": "ひき、びき、ぴき",
-  "example": "うちには猫が3匹います。",
-  "example_kana": "うちにはねこがさんびきいます。",
-  "example_english": "We have three cats at home."
- },
- {
-  "id": "0665",
-  "page": 104,
-  "word": "～台",
-  "kana": "～だい",
-  "romaji": "~dai",
-  "english": "～ car, ～ machine",
-  "speech": "だい",
-  "example": "駐車場に車が5台あります。",
-  "example_kana": "ちゅうしゃじょうにくるまがごだいあります。",
-  "example_english": "There are five cars in the car park."
- },
- {
   "id": "0666",
   "page": 104,
   "word": "～軒",
@@ -8002,18 +7162,6 @@
   "example": "今日は日本に来て3日目です。",
   "example_kana": "きょうはにほんにきてみっかめです。",
   "example_english": "Today is my third day in Japan."
- },
- {
-  "id": "0668",
-  "page": 104,
-  "word": "～月",
-  "kana": "～つき",
-  "romaji": "~tsuki",
-  "english": "～ month",
-  "speech": "つき",
-  "example": "ひと月に一度、母に電話します。",
-  "example_kana": "ひとつきにいちど、ははにでんわします。",
-  "example_english": "I call my mother once a month."
  },
  {
   "id": "0669",
@@ -8194,18 +7342,6 @@
   "example": "今月は電気代が高かったです。",
   "example_kana": "こんげつはでんきだいがたかかったです。",
   "example_english": "The electricity bill was high this month."
- },
- {
-  "id": "0684",
-  "page": 105,
-  "word": "～側",
-  "kana": "～がわ",
-  "romaji": "~gawa",
-  "english": "～ side",
-  "speech": "がわ",
-  "example": "駅の東側に銀行があります。",
-  "example_kana": "えきのひがしがわにぎんこうがあります。",
-  "example_english": "There is a bank on the east side of the station."
  },
  {
   "id": "0685",
@@ -8746,89 +7882,5 @@
   "example": "なるほど、よく分かりました。",
   "example_kana": "なるほど、よくわかりました。",
   "example_english": "I see, now I understand."
- },
- {
-  "id": "0730",
-  "page": 117,
-  "word": "開ける",
-  "kana": "あける",
-  "romaji": "akeru",
-  "english": "to open (something) (vt.)",
-  "speech": "あける",
-  "example": "暑いから、窓を開けました。",
-  "example_kana": "あついから、まどをあけました。",
-  "example_english": "It was hot, so I opened the window."
- },
- {
-  "id": "0731",
-  "page": 117,
-  "word": "閉める",
-  "kana": "しめる",
-  "romaji": "shimeru",
-  "english": "to close (something) (vt.)",
-  "speech": "しめる",
-  "example": "寝る前にカーテンを閉めます。",
-  "example_kana": "ねるまえにカーテンをしめます。",
-  "example_english": "I close the curtains before going to bed."
- },
- {
-  "id": "0732",
-  "page": 117,
-  "word": "始まる",
-  "kana": "はじまる",
-  "romaji": "hajimaru",
-  "english": "(something) begins (vi.)",
-  "speech": "はじまる",
-  "example": "映画は7時に始まります。",
-  "example_kana": "えいがはしちじにはじまります。",
-  "example_english": "The movie starts at seven o'clock."
- },
- {
-  "id": "0733",
-  "page": 117,
-  "word": "止まる",
-  "kana": "とまる",
-  "romaji": "tomaru",
-  "english": "(something) stops (vi.)",
-  "speech": "とまる",
-  "example": "私の時計は止まっています。",
-  "example_kana": "わたしのとけいはとまっています。",
-  "example_english": "My watch has stopped."
- },
- {
-  "id": "0734",
-  "page": 117,
-  "word": "入る",
-  "kana": "はいる",
-  "romaji": "hairu",
-  "english": "to enter; (something) goes inside (vi.)",
-  "speech": "はいる",
-  "example": "先生が教室に入りました。",
-  "example_kana": "せんせいがきょうしつにはいりました。",
-  "example_english": "The teacher entered the classroom."
- },
- {
-  "id": "0735",
-  "page": 117,
-  "word": "入れる",
-  "kana": "いれる",
-  "romaji": "ireru",
-  "english": "to put (something) in (vt.)",
-  "speech": "いれる",
-  "example": "コーヒーに砂糖を入れますか。",
-  "example_kana": "コーヒーにさとうをいれますか。",
-  "example_english": "Do you put sugar in your coffee?"
- },
- {
-  "id": "0736",
-  "page": 117,
-  "word": "出る",
-  "kana": "でる",
-  "romaji": "deru",
-  "english": "to exit (vi.)",
-  "speech": "でる",
-  "example": "毎朝8時に家を出ます。",
-  "example_kana": "まいあさはちじにいえをでます。",
-  "example_english": "I leave the house at eight every morning."
  }
 ]

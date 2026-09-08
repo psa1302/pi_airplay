@@ -65,7 +65,8 @@ LCD or browser, next tweak. Reverts are common and expected. Be quick.
   22 kHz mono, ~180 MB, gitignored — rendered by `assets/vocab/generate.sh`
   and rsync'd, see README). Sentences are hand-authored in
   `assets/vocab/examples/part-NN.json` and must pass `build.py --lint`
-  (N5 + list vocabulary, initial-N4 grammar only). Slots: 15 → :15/:30/:45,
+  (N5 + list vocabulary, initial-N4 grammar only); `n5.txt` lists the
+  list's N5 review words, which build.py leaves out (657 of 736 remain). Slots: 15 → :15/:30/:45,
   30 → :15/:45, 60 → :30 (never :00 — time signal); skipped in quiet hours,
   while anything streams to the DAC (/proc/asound status, catches Bluetooth),
   and during an announcement. New words pause while > 8 reviews are overdue.

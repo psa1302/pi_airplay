@@ -49,7 +49,7 @@ shows the dashboard. `install.sh` is idempotent — rerun it to update.
 | `webui/` | Control panel on port 80: EQ sliders, WiFi manager, theme picker, transport, now playing. Light/dark aware. |
 | `display/` | LCD dashboard with four themes; hourly Japanese time announcements (pips + processed Kyoko voice from `assets/voice/`) with a speech-ripple animation; N4 vocabulary cards every quarter hour (`vocab.py`: passive spaced repetition, Kyoko clips from `assets/vocab/`) — Classic (auto day/night), Terminal (Fallout-style: scanlines, glitch, boot sequence, marquee now-playing with progress bar, vitals panel, per-theme mascots in `assets/mascots/`), Neon (glitch-storm intro, recolored glitching mascot), Retro TV (static tune-in intro, astronaut mascot). All themes share the HUD/music-box structure; now-playing state comes from Shairport's D-Bus (see CHANGELOG) |
 | `sdcard/` | First-boot templates + the Mac-side prep script |
-| `assets/vocab/` | The Shin Kanzen Master N4 list merged with hand-written, linted example sentences (`build.py` → `n4.json`); `generate.sh` renders the word + sentence clips on a Mac (kept out of git) |
+| `assets/vocab/` | The Shin Kanzen Master N4 list (minus the N5 review words in `n5.txt`) merged with hand-written, linted example sentences (`build.py` → `n4.json`); `generate.sh` renders the word + sentence clips on a Mac (kept out of git) |
 
 ## Hard-won gotchas (why this repo looks the way it does)
 

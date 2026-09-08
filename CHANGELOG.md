@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.3] - 2026-09-08
+
+### Changed
+- The drill skips the 79 words on the Shin Kanzen list that are already
+  JLPT N5 vocabulary (colours, the transitive/intransitive review page,
+  学校/大学/英語 and the like): assets/vocab/n5.txt lists them and build.py
+  leaves them out of n4.json. 657 words remain; ids are unchanged.
+
 ## [0.8.2] - 2026-09-08
 
 ### Changed

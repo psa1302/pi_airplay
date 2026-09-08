@@ -14,12 +14,12 @@
 
 <table align="center">
   <tr>
-    <td align="center" width="50%"><img src="assets/screenshots/theme-classic.png" alt="Classic theme" width="460" /><br /><sub><b>Classic</b> — the default. Clock, date, weather, and now playing; switches to a dark palette after sunset.</sub></td>
+    <td align="center" width="50%"><img src="assets/screenshots/theme-neon.png" alt="Neon theme" width="460" /><br /><sub><b>Neon</b> — cyberpunk oni mascot with glitch effects, Rajdhani and VL Gothic type, and the date in Japanese.</sub></td>
     <td align="center" width="50%"><img src="assets/screenshots/theme-terminal.png" alt="Terminal theme" width="460" /><br /><sub><b>Terminal</b> — green phosphor with scanlines, VT323 and Monofonto type, a Vault Boy mascot, and a fake BIOS boot sequence.</sub></td>
   </tr>
   <tr>
     <td align="center" width="50%"><img src="assets/screenshots/theme-retrotv.png" alt="Retro TV theme" width="460" /><br /><sub><b>Retro TV</b> — CRT bezel and channel badge, rainbow bars, DotGothic16 pixel clock, and a static-to-picture intro.</sub></td>
-    <td align="center" width="50%"><img src="assets/screenshots/vocab-card-neon.png" alt="Vocabulary card in the Neon theme" width="460" /><br /><sub><b>Neon, showing a vocabulary card</b> — between songs the LCD drills JLPT N4 words: kanji, reading, meaning, and an example sentence, styled per theme.</sub></td>
+    <td align="center" width="50%"><img src="assets/screenshots/vocab-card-neon.png" alt="Vocabulary card in the Neon theme" width="460" /><br /><sub><b>Vocabulary card</b> — between songs the LCD drills JLPT N4 words: kanji, reading, meaning, and an example sentence, styled to match the active theme.</sub></td>
   </tr>
 </table>
 

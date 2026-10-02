@@ -55,7 +55,8 @@ def parse_words(text):
 def make_word(number, page, word, kana, romaji, english):
     return {"id": f"{number:04d}", "page": page, "word": dedupe_variants(word),
             "kana": kana, "romaji": romaji, "english": clean_english(english),
-            "speech": speech_form(kana)}
+            "speech": speech_form(kana),
+            "english_speech": spoken_english(dedupe_variants(word), clean_english(english))}
 
 
 def dedupe_variants(word):
@@ -70,6 +71,30 @@ def clean_english(english):
     english = english.replace("<br>", "; ")
     english = re.sub(r"\S*?\[(\S+?)\](\S*?)：", r"\1\2: ", english)
     return re.sub(r"^する：(.+)$", r"\1 (する)", english)
+
+
+SPOKEN_ENGLISH = {              # glosses whose written form does not read aloud
+    "開く": "to open, or to hold an event",
+    "申す": "to say, humbly; my name is",
+    "～以上": "or more", "～以下": "or less", "～以外": "apart from, except for", "～以内": "within",
+    "～パーセント": "percent", "～点": "points, as a score", "～度": "degrees", "～センチ": "centimetres",
+    "～軒": "counter for houses", "～目": "ordinal suffix: first, second, third",
+    "～年間": "for a number of years", "～泊": "counter for nights of a stay",
+    "～くん": "informal title after a boy's name", "～ちゃん": "affectionate title after a child's name",
+    "～様": "formal Mr or Ms", "～年生": "school year, grade", "～員": "employee, member",
+    "～家": "suffix for a specialist, as in musician", "～式": "ceremony", "～番": "number, as in number three",
+    "～ずつ": "each, at a time", "～製": "made in", "～方": "how to, the way of doing", "～中": "all, throughout",
+    "～代": "fare, bill", "～用": "for the use of", "～始める": "start to do", "～終わる": "finish doing",
+}
+
+
+def spoken_english(word, english):
+    if word in SPOKEN_ENGLISH:
+        return SPOKEN_ENGLISH[word]
+    spoken = re.sub(r"\s*\((?:する|vi\.|vt\.|formal)\)", "", english)
+    spoken = re.sub(r"\s*\[[^\]]*\]", "", spoken)
+    spoken = re.sub(r"[()]", "", spoken)
+    return re.sub(r"\s+", " ", spoken).strip()
 
 
 def conjugable(base):

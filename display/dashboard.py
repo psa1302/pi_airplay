@@ -1334,20 +1334,20 @@ class Panel:
         pen.text((24, 14), f"N4 · {kind}", font=face(latin, 15), fill=style["muted"])
         pen.text((456, 14), now.strftime("%H:%M"), font=face(latin, 15), fill=style["muted"], anchor="ra")
 
-        pen.text((240, 82), card["word"], font=fit_text(pen, card["word"], jp, 54, 432),
+        pen.text((240, 72), card["word"], font=fit_text(pen, card["word"], jp, 54, 432),
                  fill=style["accent"], anchor="mm")
         if card["kana"]:
-            pen.text((240, 124), card["kana"], font=fit_text(pen, card["kana"], jp, 22, 432),
+            pen.text((240, 114), card["kana"], font=fit_text(pen, card["kana"], jp, 22, 432),
                      fill=style["reading"], anchor="mm")
-        draw_lines(pen, card["english"], latin, 19, 140, style.get("gloss", style["ink"]))
+        draw_lines(pen, card["english"], latin, 26, 132, style.get("gloss", style["ink"]))
 
-        pen.line((40, 188, 440, 188), fill=style["muted"], width=1)
-        pen.text((240, 213), card["example"], font=fit_text(pen, card["example"], jp, 28, 440),
+        pen.line((40, 200, 440, 200), fill=style["muted"], width=1)
+        pen.text((240, 224), card["example"], font=fit_text(pen, card["example"], jp, 26, 440),
                  fill=style["ink"], anchor="mm")
-        pen.text((240, 244), card["example_kana"], font=fit_text(pen, card["example_kana"], jp, 17, 440),
+        pen.text((240, 251), card["example_kana"], font=fit_text(pen, card["example_kana"], jp, 16, 440),
                  fill=style["reading"], anchor="mm")
-        draw_lines(pen, card["example_english"], latin, 16, 262, style.get("translation", style["muted"]))
-        self.draw_speech_ripple(pen, 150, 308, style["accent"])
+        draw_lines(pen, card["example_english"], latin, 15, 265, style.get("translation", style["muted"]))
+        self.draw_speech_ripple(pen, 150, 311, style["accent"])
 
         return image
 

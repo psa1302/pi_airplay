@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.0] - 2026-10-02
+
+### Changed
+- Each vocabulary clip now speaks the English meaning too, in the same
+  Kyoko voice (a second voice sounded odd): the word, a second's pause, the
+  meaning, two and a half seconds, then the example sentence. Glosses that do not read
+  aloud as written (counters, suffixes, bracketed notes) get hand-written
+  spoken forms in build.py. Clips are ~8 s, ~180 MB for the set.
+- The English meaning on the LCD card is drawn at 26 px (was 19) so it is
+  readable from across the room; the lower block is re-spaced to fit.
+
 ## [0.8.3] - 2026-09-08
 
 ### Changed

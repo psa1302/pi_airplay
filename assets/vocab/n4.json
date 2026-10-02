@@ -7,6 +7,7 @@
   "romaji": "otto",
   "english": "husband",
   "speech": "おっと",
+  "english_speech": "husband",
   "example": "夫は銀行で働いています。",
   "example_kana": "おっとはぎんこうではたらいています。",
   "example_english": "My husband works at a bank."
@@ -19,6 +20,7 @@
   "romaji": "tsuma",
   "english": "wife",
   "speech": "つま",
+  "english_speech": "wife",
   "example": "妻と一緒に買い物に行きます。",
   "example_kana": "つまといっしょにかいものにいきます。",
   "example_english": "I'm going shopping with my wife."
@@ -31,6 +33,7 @@
   "romaji": "boku",
   "english": "I (used by men)",
   "speech": "ぼく",
+  "english_speech": "I used by men",
   "example": "僕は毎朝6時に起きます。",
   "example_kana": "ぼくはまいあさろくじにおきます。",
   "example_english": "I get up at six every morning."
@@ -43,6 +46,7 @@
   "romaji": "kami",
   "english": "hair",
   "speech": "かみ",
+  "english_speech": "hair",
   "example": "妹は髪が長いです。",
   "example_kana": "いもうとはかみがながいです。",
   "example_english": "My younger sister has long hair."
@@ -55,6 +59,7 @@
   "romaji": "nodo",
   "english": "throat",
   "speech": "のど",
+  "english_speech": "throat",
   "example": "風邪でのどが痛いです。",
   "example_kana": "かぜでのどがいたいです。",
   "example_english": "I have a cold and my throat hurts."
@@ -67,6 +72,7 @@
   "romaji": "netsu",
   "english": "fever",
   "speech": "ねつ",
+  "english_speech": "fever",
   "example": "熱があるから、今日は休みます。",
   "example_kana": "ねつがあるから、きょうはやすみます。",
   "example_english": "I have a fever, so I'm taking today off."
@@ -79,6 +85,7 @@
   "romaji": "shoukai",
   "english": "to introduce (する)",
   "speech": "しょうかい",
+  "english_speech": "to introduce",
   "example": "友達に兄を紹介しました。",
   "example_kana": "ともだちにあにをしょうかいしました。",
   "example_english": "I introduced my older brother to my friend."
@@ -91,6 +98,7 @@
   "romaji": "shinpai",
   "english": "to worry (する)",
   "speech": "しんぱい",
+  "english_speech": "to worry",
   "example": "母は私の体を心配しています。",
   "example_kana": "はははわたしのからだをしんぱいしています。",
   "example_english": "My mother is worried about my health."
@@ -103,6 +111,7 @@
   "romaji": "morau",
   "english": "to receive",
   "speech": "もらう",
+  "english_speech": "to receive",
   "example": "父に時計をもらいました。",
   "example_kana": "ちちにとけいをもらいました。",
   "example_english": "I received a watch from my father."
@@ -115,6 +124,7 @@
   "romaji": "kureru",
   "english": "to give",
   "speech": "くれる",
+  "english_speech": "to give",
   "example": "姉が本をくれました。",
   "example_kana": "あねがほんをくれました。",
   "example_english": "My older sister gave me a book."
@@ -127,6 +137,7 @@
   "romaji": "tsureteiku",
   "english": "to take (someone)",
   "speech": "つれていく",
+  "english_speech": "to take someone",
   "example": "子供を公園に連れて行きます。",
   "example_kana": "こどもをこうえんにつれていきます。",
   "example_english": "I'm taking my child to the park."
@@ -139,6 +150,7 @@
   "romaji": "tetsudau",
   "english": "to help",
   "speech": "てつだう",
+  "english_speech": "to help",
   "example": "ちょっと手伝ってください。",
   "example_kana": "ちょっとてつだってください。",
   "example_english": "Could you help me for a moment?"
@@ -151,6 +163,7 @@
   "romaji": "sabishii",
   "english": "lonely",
   "speech": "さびしい",
+  "english_speech": "lonely",
   "example": "家族がいないから、寂しいです。",
   "example_kana": "かぞくがいないから、さびしいです。",
   "example_english": "My family isn't here, so I feel lonely."
@@ -163,6 +176,7 @@
   "romaji": "shumi",
   "english": "hobby",
   "speech": "しゅみ",
+  "english_speech": "hobby",
   "example": "趣味は何ですか。",
   "example_kana": "しゅみはなんですか。",
   "example_english": "What is your hobby?"
@@ -175,6 +189,7 @@
   "romaji": "bijutsukan",
   "english": "art museum [gallery]",
   "speech": "びじゅつかん",
+  "english_speech": "art museum",
   "example": "日曜日に美術館へ行きました。",
   "example_kana": "にちようびにびじゅつかんへいきました。",
   "example_english": "I went to the art museum on Sunday."
@@ -187,6 +202,7 @@
   "romaji": "(o)hanami",
   "english": "cherry-blossom viewing",
   "speech": "はなみ",
+  "english_speech": "cherry-blossom viewing",
   "example": "来週、友達とお花見をします。",
   "example_kana": "らいしゅう、ともだちとおはなみをします。",
   "example_english": "Next week I'm going cherry-blossom viewing with friends."
@@ -199,6 +215,7 @@
   "romaji": "konsaato",
   "english": "concert",
   "speech": "コンサート",
+  "english_speech": "concert",
   "example": "明日コンサートに行きませんか。",
   "example_kana": "あしたコンサートにいきませんか。",
   "example_english": "Would you like to go to the concert tomorrow?"
@@ -211,6 +228,7 @@
   "romaji": "dansu",
   "english": "dance",
   "speech": "ダンス",
+  "english_speech": "dance",
   "example": "娘はダンスが上手です。",
   "example_kana": "むすめはダンスがじょうずです。",
   "example_english": "My daughter is good at dancing."
@@ -223,6 +241,7 @@
   "romaji": "sukii",
   "english": "skiing",
   "speech": "スキー",
+  "english_speech": "skiing",
   "example": "冬に友達とスキーをしました。",
   "example_kana": "ふゆにともだちとスキーをしました。",
   "example_english": "I went skiing with friends in the winter."
@@ -235,6 +254,7 @@
   "romaji": "bideo",
   "english": "video",
   "speech": "ビデオ",
+  "english_speech": "video",
   "example": "旅行のビデオを家族と見ました。",
   "example_kana": "りょこうのビデオをかぞくとみました。",
   "example_english": "I watched the video of our trip with my family."
@@ -247,6 +267,7 @@
   "romaji": "anime",
   "english": "anime, animation",
   "speech": "アニメ",
+  "english_speech": "anime, animation",
   "example": "弟は日本のアニメが大好きです。",
   "example_kana": "おとうとはにほんのアニメがだいすきです。",
   "example_english": "My younger brother loves Japanese anime."
@@ -259,6 +280,7 @@
   "romaji": "manga",
   "english": "manga, comic",
   "speech": "マンガ",
+  "english_speech": "manga, comic",
   "example": "電車でマンガを読みます。",
   "example_kana": "でんしゃでマンガをよみます。",
   "example_english": "I read manga on the train."
@@ -271,6 +293,7 @@
   "romaji": "nikki",
   "english": "diary",
   "speech": "にっき",
+  "english_speech": "diary",
   "example": "毎晩日本語で日記を書きます。",
   "example_kana": "まいばんにほんごでにっきをかきます。",
   "example_english": "I write my diary in Japanese every night."
@@ -283,6 +306,7 @@
   "romaji": "shiai",
   "english": "to play (in a match) (する)",
   "speech": "しあい",
+  "english_speech": "to play in a match",
   "example": "土曜日にテニスの試合をします。",
   "example_kana": "どようびにテニスのしあいをします。",
   "example_english": "We're playing a tennis match on Saturday."
@@ -295,6 +319,7 @@
   "romaji": "housou",
   "english": "to broadcast (する)",
   "speech": "ほうそう",
+  "english_speech": "to broadcast",
   "example": "7時からニュースを放送します。",
   "example_kana": "しちじからニュースをほうそうします。",
   "example_english": "They broadcast the news from seven o'clock."
@@ -307,6 +332,7 @@
   "romaji": "atsumeru",
   "english": "to collect (vt.)",
   "speech": "あつめる",
+  "english_speech": "to collect",
   "example": "父は古い切手を集めています。",
   "example_kana": "ちちはふるいきってをあつめています。",
   "example_english": "My father collects old stamps."
@@ -319,6 +345,7 @@
   "romaji": "zehi",
   "english": "definitely",
   "speech": "ぜひ",
+  "english_speech": "definitely",
   "example": "ぜひ日本に来てください。",
   "example_kana": "ぜひにほんにきてください。",
   "example_english": "Please do come to Japan."
@@ -331,6 +358,7 @@
   "romaji": "ichido",
   "english": "once",
   "speech": "いちど",
+  "english_speech": "once",
   "example": "もう一度言ってください。",
   "example_kana": "もういちどいってください。",
   "example_english": "Please say it once more."
@@ -343,6 +371,7 @@
   "romaji": "fune",
   "english": "ship",
   "speech": "ふね",
+  "english_speech": "ship",
   "example": "大きい船で島へ行きました。",
   "example_kana": "おおきいふねでしまへいきました。",
   "example_english": "I went to the island on a big ship."
@@ -355,6 +384,7 @@
   "romaji": "kuukou",
   "english": "airport",
   "speech": "くうこう",
+  "english_speech": "airport",
   "example": "空港まで1時間かかります。",
   "example_kana": "くうこうまでいちじかんかかります。",
   "example_english": "It takes an hour to get to the airport."
@@ -367,6 +397,7 @@
   "romaji": "kyuukou",
   "english": "express train",
   "speech": "きゅうこう",
+  "english_speech": "express train",
   "example": "急行は次の駅に止まりません。",
   "example_kana": "きゅうこうはつぎのえきにとまりません。",
   "example_english": "The express train doesn't stop at the next station."
@@ -379,6 +410,7 @@
   "romaji": "koutsuu",
   "english": "transportation",
   "speech": "こうつう",
+  "english_speech": "transportation",
   "example": "この町は交通が便利です。",
   "example_kana": "このまちはこうつうがべんりです。",
   "example_english": "This town has convenient transportation."
@@ -391,6 +423,7 @@
   "romaji": "jinja",
   "english": "shrine",
   "speech": "じんじゃ",
+  "english_speech": "shrine",
   "example": "駅の近くに古い神社があります。",
   "example_kana": "えきのちかくにふるいじんじゃがあります。",
   "example_english": "There's an old shrine near the station."
@@ -403,6 +436,7 @@
   "romaji": "sekai",
   "english": "world",
   "speech": "せかい",
+  "english_speech": "world",
   "example": "世界で一番高い山は何ですか。",
   "example_kana": "せかいでいちばんたかいやまはなんですか。",
   "example_english": "What is the highest mountain in the world?"
@@ -415,6 +449,7 @@
   "romaji": "yoyaku",
   "english": "to reserve (する)",
   "speech": "よやく",
+  "english_speech": "to reserve",
   "example": "ホテルを予約しましたか。",
   "example_kana": "ホテルをよやくしましたか。",
   "example_english": "Did you reserve the hotel?"
@@ -427,6 +462,7 @@
   "romaji": "annai",
   "english": "to show (someone) around (する)",
   "speech": "あんない",
+  "english_speech": "to show someone around",
   "example": "友達に東京を案内しました。",
   "example_kana": "ともだちにとうきょうをあんないしました。",
   "example_english": "I showed my friend around Tokyo."
@@ -439,6 +475,7 @@
   "romaji": "junbi",
   "english": "to prepare (する)",
   "speech": "じゅんび",
+  "english_speech": "to prepare",
   "example": "今、旅行の準備をしています。",
   "example_kana": "いま、りょこうのじゅんびをしています。",
   "example_english": "I'm preparing for the trip right now."
@@ -451,6 +488,7 @@
   "romaji": "ugoku",
   "english": "to move, to work",
   "speech": "うごく",
+  "english_speech": "to move, to work",
   "example": "この時計は動きません。",
   "example_kana": "このとけいはうごきません。",
   "example_english": "This clock doesn't work."
@@ -463,6 +501,7 @@
   "romaji": "tomaru",
   "english": "to stay",
   "speech": "とまる",
+  "english_speech": "to stay",
   "example": "友達のうちに泊まりました。",
   "example_kana": "ともだちのうちにとまりました。",
   "example_english": "I stayed at a friend's house."
@@ -475,6 +514,7 @@
   "romaji": "norikaeru",
   "english": "to transfer",
   "speech": "のりかえる",
+  "english_speech": "to transfer",
   "example": "東京駅で地下鉄に乗り換えます。",
   "example_kana": "とうきょうえきでちかてつにのりかえます。",
   "example_english": "I transfer to the subway at Tokyo Station."
@@ -487,6 +527,7 @@
   "romaji": "tomeru",
   "english": "to stop, to park (vt.)",
   "speech": "とめる",
+  "english_speech": "to stop, to park",
   "example": "ここに車を止めてはいけません。",
   "example_kana": "ここにくるまをとめてはいけません。",
   "example_english": "You mustn't park your car here."
@@ -499,6 +540,7 @@
   "romaji": "zannen(na)",
   "english": "regrettable",
   "speech": "ざんねん",
+  "english_speech": "regrettable",
   "example": "残念ですが、今日は休みです。",
   "example_kana": "ざんねんですが、きょうはやすみです。",
   "example_english": "Unfortunately, we're closed today."
@@ -511,6 +553,7 @@
   "romaji": "mousugu",
   "english": "soon",
   "speech": "もうすぐ",
+  "english_speech": "soon",
   "example": "バスはもうすぐ来ます。",
   "example_kana": "バスはもうすぐきます。",
   "example_english": "The bus is coming soon."
@@ -523,6 +566,7 @@
   "romaji": "tana",
   "english": "shelf",
   "speech": "たな",
+  "english_speech": "shelf",
   "example": "その本を棚に置いてください。",
   "example_kana": "そのほんをたなにおいてください。",
   "example_english": "Please put that book on the shelf."
@@ -535,6 +579,7 @@
   "romaji": "suitchi",
   "english": "switch",
   "speech": "スイッチ",
+  "english_speech": "switch",
   "example": "電気のスイッチはどこですか。",
   "example_kana": "でんきのスイッチはどこですか。",
   "example_english": "Where is the light switch?"
@@ -547,6 +592,7 @@
   "romaji": "pasokon",
   "english": "personal computer, PC",
   "speech": "パソコン",
+  "english_speech": "personal computer, PC",
   "example": "毎日パソコンで仕事をします。",
   "example_kana": "まいにちパソコンでしごとをします。",
   "example_english": "I work on a computer every day."
@@ -559,6 +605,7 @@
   "romaji": "futon",
   "english": "futon",
   "speech": "ふとん",
+  "english_speech": "futon",
   "example": "旅館では布団で寝ました。",
   "example_kana": "りょかんではふとんでねました。",
   "example_english": "At the inn, I slept on a futon."
@@ -571,6 +618,7 @@
   "romaji": "gomi",
   "english": "rubbish",
   "speech": "ごみ",
+  "english_speech": "rubbish",
   "example": "火曜日にごみを出します。",
   "example_kana": "かようびにごみをだします。",
   "example_english": "I put the rubbish out on Tuesdays."
@@ -583,6 +631,7 @@
   "romaji": "juusho",
   "english": "address",
   "speech": "じゅうしょ",
+  "english_speech": "address",
   "example": "名前と住所を書いてください。",
   "example_kana": "なまえとじゅうしょをかいてください。",
   "example_english": "Please write your name and address."
@@ -595,6 +644,7 @@
   "romaji": "shuuri",
   "english": "to repair (する)",
   "speech": "しゅうり",
+  "english_speech": "to repair",
   "example": "自転車を修理しました。",
   "example_kana": "じてんしゃをしゅうりしました。",
   "example_english": "I repaired my bicycle."
@@ -607,6 +657,7 @@
   "romaji": "koshou",
   "english": "to break down (する)",
   "speech": "こしょう",
+  "english_speech": "to break down",
   "example": "エレベーターが故障しています。",
   "example_kana": "エレベーターがこしょうしています。",
   "example_english": "The elevator is out of order."
@@ -619,6 +670,7 @@
   "romaji": "hikkoshi",
   "english": "to move (する)",
   "speech": "ひっこし",
+  "english_speech": "to move",
   "example": "来月大阪に引っ越しします。",
   "example_kana": "らいげつおおさかにひっこしします。",
   "example_english": "I'm moving to Osaka next month."
@@ -631,6 +683,7 @@
   "romaji": "yakunitatsu",
   "english": "to be useful",
   "speech": "やくにたつ",
+  "english_speech": "to be useful",
   "example": "この本は仕事に役に立ちます。",
   "example_kana": "このほんはしごとにやくにたちます。",
   "example_english": "This book is useful for my work."
@@ -643,6 +696,7 @@
   "romaji": "suteru",
   "english": "to throw away",
   "speech": "すてる",
+  "english_speech": "to throw away",
   "example": "古い新聞を捨てました。",
   "example_kana": "ふるいしんぶんをすてました。",
   "example_english": "I threw away the old newspapers."
@@ -655,6 +709,7 @@
   "romaji": "suteki(na)",
   "english": "wonderful",
   "speech": "すてき",
+  "english_speech": "wonderful",
   "example": "すてきな服ですね。",
   "example_kana": "すてきなふくですね。",
   "example_english": "What lovely clothes!"
@@ -667,6 +722,7 @@
   "romaji": "sorosoro",
   "english": "about time to",
   "speech": "そろそろ",
+  "english_speech": "about time to",
   "example": "そろそろ帰りましょう。",
   "example_kana": "そろそろかえりましょう。",
   "example_english": "It's about time we went home."
@@ -679,6 +735,7 @@
   "romaji": "kaado",
   "english": "credit card",
   "speech": "カード",
+  "english_speech": "credit card",
   "example": "カードで払うことができますか。",
   "example_kana": "カードではらうことができますか。",
   "example_english": "Can I pay by credit card?"
@@ -691,6 +748,7 @@
   "romaji": "otsuri",
   "english": "change",
   "speech": "おつり",
+  "english_speech": "change",
   "example": "お釣りは500円です。",
   "example_kana": "おつりはごひゃくえんです。",
   "example_english": "Your change is 500 yen."
@@ -703,6 +761,7 @@
   "romaji": "oku",
   "english": "one hundred million",
   "speech": "おく",
+  "english_speech": "one hundred million",
   "example": "この家は1億円です。",
   "example_kana": "このいえはいちおくえんです。",
   "example_english": "This house costs one hundred million yen."
@@ -715,6 +774,7 @@
   "romaji": "saizu",
   "english": "size",
   "speech": "サイズ",
+  "english_speech": "size",
   "example": "大きいサイズはありますか。",
   "example_kana": "おおきいサイズはありますか。",
   "example_english": "Do you have a bigger size?"
@@ -727,6 +787,7 @@
   "romaji": "uriba",
   "english": "department, sales area",
   "speech": "うりば",
+  "english_speech": "department, sales area",
   "example": "靴の売り場は3階です。",
   "example_kana": "くつのうりばはさんがいです。",
   "example_english": "The shoe department is on the third floor."
@@ -739,6 +800,7 @@
   "romaji": "esukareetaa",
   "english": "escalator",
   "speech": "エスカレーター",
+  "english_speech": "escalator",
   "example": "エスカレーターに乗りましょう。",
   "example_kana": "エスカレーターにのりましょう。",
   "example_english": "Let's take the escalator."
@@ -751,6 +813,7 @@
   "romaji": "saabisu",
   "english": "service",
   "speech": "サービス",
+  "english_speech": "service",
   "example": "あの店はサービスがいいです。",
   "example_kana": "あのみせはサービスがいいです。",
   "example_english": "That shop has good service."
@@ -763,6 +826,7 @@
   "romaji": "(o)miyage",
   "english": "souvenir",
   "speech": "みやげ",
+  "english_speech": "souvenir",
   "example": "母にお土産を買いました。",
   "example_kana": "ははにおみやげをかいました。",
   "example_english": "I bought a souvenir for my mother."
@@ -775,6 +839,7 @@
   "romaji": "orosu",
   "english": "to take down, to withdraw",
   "speech": "おろす",
+  "english_speech": "to take down, to withdraw",
   "example": "銀行でお金を下ろします。",
   "example_kana": "ぎんこうでおかねをおろします。",
   "example_english": "I'll withdraw money at the bank."
@@ -787,6 +852,7 @@
   "romaji": "harau",
   "english": "to pay",
   "speech": "はらう",
+  "english_speech": "to pay",
   "example": "今日は私が払います。",
   "example_kana": "きょうはわたしがはらいます。",
   "example_english": "Today I'll pay."
@@ -799,6 +865,7 @@
   "romaji": "sawaru",
   "english": "to touch",
   "speech": "さわる",
+  "english_speech": "to touch",
   "example": "絵に触らないでください。",
   "example_kana": "えにさわらないでください。",
   "example_english": "Please don't touch the paintings."
@@ -811,6 +878,7 @@
   "romaji": "komakai",
   "english": "small",
   "speech": "こまかい",
+  "english_speech": "small",
   "example": "細かいお金がありますか。",
   "example_kana": "こまかいおかねがありますか。",
   "example_english": "Do you have any small change?"
@@ -823,6 +891,7 @@
   "romaji": "repooto",
   "english": "report, paper",
   "speech": "レポート",
+  "english_speech": "report, paper",
   "example": "レポートをまだ書いていません。",
   "example_kana": "レポートをまだかいていません。",
   "example_english": "I haven't written the report yet."
@@ -835,6 +904,7 @@
   "romaji": "koukou",
   "english": "high school",
   "speech": "こうこう",
+  "english_speech": "high school",
   "example": "息子は高校の1年生です。",
   "example_kana": "むすこはこうこうのいちねんせいです。",
   "example_english": "My son is a first-year student in high school."
@@ -847,6 +917,7 @@
   "romaji": "hoomusutei",
   "english": "homestay",
   "speech": "ホームステイ",
+  "english_speech": "homestay",
   "example": "日本でホームステイをしました。",
   "example_kana": "にほんでホームステイをしました。",
   "example_english": "I did a homestay in Japan."
@@ -859,6 +930,7 @@
   "romaji": "kotae",
   "english": "answer",
   "speech": "こたえ",
+  "english_speech": "answer",
   "example": "この問題の答えが分かりません。",
   "example_kana": "このもんだいのこたえがわかりません。",
   "example_english": "I don't know the answer to this question."
@@ -871,6 +943,7 @@
   "romaji": "keshigomu",
   "english": "eraser",
   "speech": "けしゴム",
+  "english_speech": "eraser",
   "example": "消しゴムを貸してください。",
   "example_kana": "けしゴムをかしてください。",
   "example_english": "Please lend me your eraser."
@@ -883,6 +956,7 @@
   "romaji": "shiken",
   "english": "examination",
   "speech": "しけん",
+  "english_speech": "examination",
   "example": "来週日本語の試験があります。",
   "example_kana": "らいしゅうにほんごのしけんがあります。",
   "example_english": "There's a Japanese exam next week."
@@ -895,6 +969,7 @@
   "romaji": "setsumei",
   "english": "to explain (する)",
   "speech": "せつめい",
+  "english_speech": "to explain",
   "example": "先生が文法を説明しました。",
   "example_kana": "せんせいがぶんぽうをせつめいしました。",
   "example_english": "The teacher explained the grammar."
@@ -907,6 +982,7 @@
   "romaji": "kenkyuu",
   "english": "to research (する)",
   "speech": "けんきゅう",
+  "english_speech": "to research",
   "example": "大学で経済を研究しています。",
   "example_kana": "だいがくでけいざいをけんきゅうしています。",
   "example_english": "I do research on economics at university."
@@ -919,6 +995,7 @@
   "romaji": "kangaeru",
   "english": "to think",
   "speech": "かんがえる",
+  "english_speech": "to think",
   "example": "少し考えてから、答えます。",
   "example_kana": "すこしかんがえてから、こたえます。",
   "example_english": "I'll think for a moment and then answer."
@@ -931,6 +1008,7 @@
   "romaji": "shiraberu",
   "english": "to look up",
   "speech": "しらべる",
+  "english_speech": "to look up",
   "example": "辞書でこの言葉を調べました。",
   "example_kana": "じしょでこのことばをしらべました。",
   "example_english": "I looked this word up in the dictionary."
@@ -943,6 +1021,7 @@
   "romaji": "daitai",
   "english": "mostly",
   "speech": "だいたい",
+  "english_speech": "mostly",
   "example": "宿題はだいたい終わりました。",
   "example_kana": "しゅくだいはだいたいおわりました。",
   "example_english": "The homework is mostly finished."
@@ -955,6 +1034,7 @@
   "romaji": "zenzen",
   "english": "not at all",
   "speech": "ぜんぜん",
+  "english_speech": "not at all",
   "example": "昨日は全然寝ませんでした。",
   "example_kana": "きのうはぜんぜんねませんでした。",
   "example_english": "I didn't sleep at all last night."
@@ -967,6 +1047,7 @@
   "romaji": "shachou",
   "english": "company president",
   "speech": "しゃちょう",
+  "english_speech": "company president",
   "example": "社長は毎朝早く会社に来ます。",
   "example_kana": "しゃちょうはまいあさはやくかいしゃにきます。",
   "example_english": "The president comes to the office early every morning."
@@ -979,6 +1060,7 @@
   "romaji": "buchou",
   "english": "general manager",
   "speech": "ぶちょう",
+  "english_speech": "general manager",
   "example": "部長は今、出かけています。",
   "example_kana": "ぶちょうはいま、でかけています。",
   "example_english": "The manager is out at the moment."
@@ -991,6 +1073,7 @@
   "romaji": "arubaito",
   "english": "part-time work",
   "speech": "アルバイト",
+  "english_speech": "part-time work",
   "example": "本屋でアルバイトをしています。",
   "example_kana": "ほんやでアルバイトをしています。",
   "example_english": "I work part-time at a bookshop."
@@ -1003,6 +1086,7 @@
   "romaji": "uketsuke",
   "english": "reception",
   "speech": "うけつけ",
+  "english_speech": "reception",
   "example": "受付で名前を書いてください。",
   "example_kana": "うけつけでなまえをかいてください。",
   "example_english": "Please write your name at the reception desk."
@@ -1015,6 +1099,7 @@
   "romaji": "jimusho",
   "english": "office",
   "speech": "じむしょ",
+  "english_speech": "office",
   "example": "事務所に電話をかけました。",
   "example_kana": "じむしょにでんわをかけました。",
   "example_english": "I phoned the office."
@@ -1027,6 +1112,7 @@
   "romaji": "kaigishitsu",
   "english": "meeting room",
   "speech": "かいぎしつ",
+  "english_speech": "meeting room",
   "example": "会議室でお客さんを待ちます。",
   "example_kana": "かいぎしつでおきゃくさんをまちます。",
   "example_english": "I'll wait for the customer in the meeting room."
@@ -1039,6 +1125,7 @@
   "romaji": "hiruyasumi",
   "english": "lunch break",
   "speech": "ひるやすみ",
+  "english_speech": "lunch break",
   "example": "昼休みに公園を散歩します。",
   "example_kana": "ひるやすみにこうえんをさんぽします。",
   "example_english": "I take a walk in the park during my lunch break."
@@ -1051,6 +1138,7 @@
   "romaji": "suutsu",
   "english": "suit",
   "speech": "スーツ",
+  "english_speech": "suit",
   "example": "スーツを着て、会議に行きます。",
   "example_kana": "スーツをきて、かいぎにいきます。",
   "example_english": "I'll put on a suit and go to the meeting."
@@ -1063,6 +1151,7 @@
   "romaji": "konpyuutaa",
   "english": "computer",
   "speech": "コンピューター",
+  "english_speech": "computer",
   "example": "毎日コンピューターを使います。",
   "example_kana": "まいにちコンピューターをつかいます。",
   "example_english": "I use a computer every day."
@@ -1075,6 +1164,7 @@
   "romaji": "keizai",
   "english": "economy, economics",
   "speech": "けいざい",
+  "english_speech": "economy, economics",
   "example": "大学で経済を勉強しました。",
   "example_kana": "だいがくでけいざいをべんきょうしました。",
   "example_english": "I studied economics at university."
@@ -1087,6 +1177,7 @@
   "romaji": "kaigi",
   "english": "to have a meeting (する)",
   "speech": "かいぎ",
+  "english_speech": "to have a meeting",
   "example": "午後3時から会議をします。",
   "example_kana": "ごごさんじからかいぎをします。",
   "example_english": "We'll have a meeting from 3 p.m."
@@ -1099,6 +1190,7 @@
   "romaji": "okuru",
   "english": "to send",
   "speech": "おくる",
+  "english_speech": "to send",
   "example": "友達に写真を送りました。",
   "example_kana": "ともだちにしゃしんをおくりました。",
   "example_english": "I sent a photo to my friend."
@@ -1111,6 +1203,7 @@
   "romaji": "kantan(na)",
   "english": "easy",
   "speech": "かんたん",
+  "english_speech": "easy",
   "example": "今日の宿題は簡単でした。",
   "example_kana": "きょうのしゅくだいはかんたんでした。",
   "example_english": "Today's homework was easy."
@@ -1123,6 +1216,7 @@
   "romaji": "shitsurei(na)",
   "english": "rude",
   "speech": "しつれい",
+  "english_speech": "rude",
   "example": "彼の言葉は失礼でした。",
   "example_kana": "かれのことばはしつれいでした。",
   "example_english": "His words were rude."
@@ -1135,6 +1229,7 @@
   "romaji": "chuushajou",
   "english": "car park [parking lot]",
   "speech": "ちゅうしゃじょう",
+  "english_speech": "car park",
   "example": "駐車場に車を止めました。",
   "example_kana": "ちゅうしゃじょうにくるまをとめました。",
   "example_english": "I parked the car in the car park."
@@ -1147,6 +1242,7 @@
   "romaji": "(o)tera",
   "english": "temple",
   "speech": "てら",
+  "english_speech": "temple",
   "example": "駅の前に古いお寺があります。",
   "example_kana": "えきのまえにふるいおてらがあります。",
   "example_english": "There is an old temple in front of the station."
@@ -1159,6 +1255,7 @@
   "romaji": "haisha",
   "english": "dentist",
   "speech": "はいしゃ",
+  "english_speech": "dentist",
   "example": "歯医者の予約をしました。",
   "example_kana": "はいしゃのよやくをしました。",
   "example_english": "I made an appointment with the dentist."
@@ -1171,6 +1268,7 @@
   "romaji": "ken",
   "english": "prefecture",
   "speech": "けん",
+  "english_speech": "prefecture",
   "example": "この県は魚がおいしいです。",
   "example_kana": "このけんはさかながおいしいです。",
   "example_english": "The fish in this prefecture is delicious."
@@ -1183,6 +1281,7 @@
   "romaji": "(o)shougatsu",
   "english": "New Year",
   "speech": "しょうがつ",
+  "english_speech": "New Year",
   "example": "お正月は会社が休みです。",
   "example_kana": "おしょうがつはかいしゃがやすみです。",
   "example_english": "The company is closed over New Year."
@@ -1195,6 +1294,7 @@
   "romaji": "(o)matsuri",
   "english": "festival",
   "speech": "まつり",
+  "english_speech": "festival",
   "example": "町のお祭りはにぎやかでした。",
   "example_kana": "まちのおまつりはにぎやかでした。",
   "example_english": "The town festival was lively."
@@ -1207,6 +1307,7 @@
   "romaji": "inaka",
   "english": "countryside",
   "speech": "いなか",
+  "english_speech": "countryside",
   "example": "祖母は田舎に住んでいます。",
   "example_kana": "そぼはいなかにすんでいます。",
   "example_english": "My grandmother lives in the countryside."
@@ -1219,6 +1320,7 @@
   "romaji": "kisetsu",
   "english": "season",
   "speech": "きせつ",
+  "english_speech": "season",
   "example": "どの季節が一番好きですか。",
   "example_kana": "どのきせつがいちばんすきですか。",
   "example_english": "Which season do you like best?"
@@ -1231,6 +1333,7 @@
   "romaji": "kimono",
   "english": "kimono",
   "speech": "きもの",
+  "english_speech": "kimono",
   "example": "姉は着物を着て出かけました。",
   "example_kana": "あねはきものをきてでかけました。",
   "example_english": "My sister went out wearing a kimono."
@@ -1243,6 +1346,7 @@
   "romaji": "fuben(na)",
   "english": "inconvenient",
   "speech": "ふべん",
+  "english_speech": "inconvenient",
   "example": "うちは駅が遠くて不便です。",
   "example_kana": "うちはえきがとおくてふべんです。",
   "example_english": "My house is far from the station, which is inconvenient."
@@ -1255,6 +1359,7 @@
   "romaji": "musuko",
   "english": "son",
   "speech": "むすこ",
+  "english_speech": "son",
   "example": "息子は今年大学に入りました。",
   "example_kana": "むすこはことしだいがくにはいりました。",
   "example_english": "My son entered university this year."
@@ -1267,6 +1372,7 @@
   "romaji": "musume",
   "english": "daughter",
   "speech": "むすめ",
+  "english_speech": "daughter",
   "example": "娘と一緒に料理を作りました。",
   "example_kana": "むすめといっしょにりょうりをつくりました。",
   "example_english": "I cooked together with my daughter."
@@ -1279,6 +1385,7 @@
   "romaji": "petto",
   "english": "pet",
   "speech": "ペット",
+  "english_speech": "pet",
   "example": "ペットを飼っていますか。",
   "example_kana": "ペットをかっていますか。",
   "example_english": "Do you have a pet?"
@@ -1291,6 +1398,7 @@
   "romaji": "chikara",
   "english": "strength",
   "speech": "ちから",
+  "english_speech": "strength",
   "example": "力を入れてドアを押しました。",
   "example_kana": "ちからをいれてドアをおしました。",
   "example_english": "I put some strength into it and pushed the door."
@@ -1303,6 +1411,7 @@
   "romaji": "uso",
   "english": "lie",
   "speech": "うそ",
+  "english_speech": "lie",
   "example": "うそを言わないでください。",
   "example_kana": "うそをいわないでください。",
   "example_english": "Please don't tell lies."
@@ -1315,6 +1424,7 @@
   "romaji": "yume",
   "english": "dream",
   "speech": "ゆめ",
+  "english_speech": "dream",
   "example": "昨日の夜、怖い夢を見ました。",
   "example_kana": "きのうのよる、こわいゆめをみました。",
   "example_english": "Last night I had a scary dream."
@@ -1327,6 +1437,7 @@
   "romaji": "futsuu",
   "english": "ordinary, usually",
   "speech": "ふつう",
+  "english_speech": "ordinary, usually",
   "example": "普通、朝はパンを食べます。",
   "example_kana": "ふつう、あさはパンをたべます。",
   "example_english": "I usually eat bread in the morning."
@@ -1339,6 +1450,7 @@
   "romaji": "shourai",
   "english": "future",
   "speech": "しょうらい",
+  "english_speech": "future",
   "example": "将来、医者になりたいです。",
   "example_kana": "しょうらい、いしゃになりたいです。",
   "example_english": "In the future, I want to be a doctor."
@@ -1351,6 +1463,7 @@
   "romaji": "kimeru",
   "english": "to decide (vt.)",
   "speech": "きめる",
+  "english_speech": "to decide",
   "example": "家族で旅行の日を決めました。",
   "example_kana": "かぞくでりょこうのひをきめました。",
   "example_english": "Our family decided the date of the trip."
@@ -1363,6 +1476,7 @@
   "romaji": "erai",
   "english": "admirable, eminent",
   "speech": "えらい",
+  "english_speech": "admirable, eminent",
   "example": "一人で料理をして、偉いですね。",
   "example_kana": "ひとりでりょうりをして、えらいですね。",
   "example_english": "You cook all by yourself; that's admirable."
@@ -1375,6 +1489,7 @@
   "romaji": "sugoi",
   "english": "wonderful",
   "speech": "すごい",
+  "english_speech": "wonderful",
   "example": "田中さんの絵はすごいですね。",
   "example_kana": "たなかさんのえはすごいですね。",
   "example_english": "Your painting is amazing, Mr. Tanaka."
@@ -1387,6 +1502,7 @@
   "romaji": "hisashiburi",
   "english": "after a long time",
   "speech": "ひさしぶり",
+  "english_speech": "after a long time",
   "example": "久しぶりに友達に会いました。",
   "example_kana": "ひさしぶりにともだちにあいました。",
   "example_english": "I met a friend for the first time in ages."
@@ -1399,6 +1515,7 @@
   "romaji": "shousetsu",
   "english": "novel",
   "speech": "しょうせつ",
+  "english_speech": "novel",
   "example": "電車で小説を読んでいます。",
   "example_kana": "でんしゃでしょうせつをよんでいます。",
   "example_english": "I'm reading a novel on the train."
@@ -1411,6 +1528,7 @@
   "romaji": "tenrankai",
   "english": "exhibition",
   "speech": "てんらんかい",
+  "english_speech": "exhibition",
   "example": "絵の展覧会へ行きませんか。",
   "example_kana": "えのてんらんかいへいきませんか。",
   "example_english": "Won't you come to the art exhibition?"
@@ -1423,6 +1541,7 @@
   "romaji": "bangumi",
   "english": "TV programme",
   "speech": "ばんぐみ",
+  "english_speech": "TV programme",
   "example": "この番組は毎週見ています。",
   "example_kana": "このばんぐみはまいしゅうみています。",
   "example_english": "I watch this programme every week."
@@ -1435,6 +1554,7 @@
   "romaji": "dorama",
   "english": "TV drama",
   "speech": "ドラマ",
+  "english_speech": "TV drama",
   "example": "夜はドラマを見てから寝ます。",
   "example_kana": "よるはドラマをみてからねます。",
   "example_english": "At night I watch a drama and then go to bed."
@@ -1447,6 +1567,7 @@
   "romaji": "geemu",
   "english": "game",
   "speech": "ゲーム",
+  "english_speech": "game",
   "example": "週末は家でゲームをします。",
   "example_kana": "しゅうまつはいえでゲームをします。",
   "example_english": "On weekends I play games at home."
@@ -1459,6 +1580,7 @@
   "romaji": "konya",
   "english": "this evening",
   "speech": "こんや",
+  "english_speech": "this evening",
   "example": "今夜は早く寝るつもりです。",
   "example_kana": "こんやははやくねるつもりです。",
   "example_english": "I intend to go to bed early tonight."
@@ -1471,6 +1593,7 @@
   "romaji": "undou",
   "english": "to exercise (する)",
   "speech": "うんどう",
+  "english_speech": "to exercise",
   "example": "毎朝30分運動しています。",
   "example_kana": "まいあささんじゅっぷんうんどうしています。",
   "example_english": "I exercise for thirty minutes every morning."
@@ -1483,6 +1606,7 @@
   "romaji": "kega",
   "english": "to be injured (する)",
   "speech": "けが",
+  "english_speech": "to be injured",
   "example": "サッカーで足にけがをしました。",
   "example_kana": "サッカーであしにけがをしました。",
   "example_english": "I injured my leg playing football."
@@ -1495,6 +1619,7 @@
   "romaji": "odoru",
   "english": "to dance",
   "speech": "おどる",
+  "english_speech": "to dance",
   "example": "お祭りでみんなと踊りました。",
   "example_kana": "おまつりでみんなとおどりました。",
   "example_english": "I danced with everyone at the festival."
@@ -1507,6 +1632,7 @@
   "romaji": "nageru",
   "english": "to throw",
   "speech": "なげる",
+  "english_speech": "to throw",
   "example": "子供が川に石を投げています。",
   "example_kana": "こどもがかわにいしをなげています。",
   "example_english": "A child is throwing stones into the river."
@@ -1519,6 +1645,7 @@
   "romaji": "katsu",
   "english": "to win",
   "speech": "かつ",
+  "english_speech": "to win",
   "example": "昨日の試合に勝ちました。",
   "example_kana": "きのうのしあいにかちました。",
   "example_english": "We won yesterday's match."
@@ -1531,6 +1658,7 @@
   "romaji": "makeru",
   "english": "to lose",
   "speech": "まける",
+  "english_speech": "to lose",
   "example": "テニスで弟に負けました。",
   "example_kana": "テニスでおとうとにまけました。",
   "example_english": "I lost to my younger brother at tennis."
@@ -1543,6 +1671,7 @@
   "romaji": "subarashii",
   "english": "wonderful",
   "speech": "すばらしい",
+  "english_speech": "wonderful",
   "example": "山の景色はすばらしかったです。",
   "example_kana": "やまのけしきはすばらしかったです。",
   "example_english": "The mountain scenery was wonderful."
@@ -1555,6 +1684,7 @@
   "romaji": "ataru",
   "english": "to hit",
   "speech": "あたる",
+  "english_speech": "to hit",
   "example": "傘が隣の人に当たりました。",
   "example_kana": "かさがとなりのひとにあたりました。",
   "example_english": "My umbrella hit the person next to me."
@@ -1567,6 +1697,7 @@
   "romaji": "doubutsuen",
   "english": "zoo",
   "speech": "どうぶつえん",
+  "english_speech": "zoo",
   "example": "日曜日に動物園へ行きました。",
   "example_kana": "にちようびにどうぶつえんへいきました。",
   "example_english": "I went to the zoo on Sunday."
@@ -1579,6 +1710,7 @@
   "romaji": "hoshi",
   "english": "star",
   "speech": "ほし",
+  "english_speech": "star",
   "example": "田舎では星がたくさん見えます。",
   "example_kana": "いなかではほしがたくさんみえます。",
   "example_english": "In the countryside you can see lots of stars."
@@ -1591,6 +1723,7 @@
   "romaji": "enjin",
   "english": "engine",
   "speech": "エンジン",
+  "english_speech": "engine",
   "example": "エンジンを止めてください。",
   "example_kana": "エンジンをとめてください。",
   "example_english": "Please turn off the engine."
@@ -1603,6 +1736,7 @@
   "romaji": "basho",
   "english": "location",
   "speech": "ばしょ",
+  "english_speech": "location",
   "example": "パーティーの場所はどこですか。",
   "example_kana": "パーティーのばしょはどこですか。",
   "example_english": "Where is the party being held?"
@@ -1615,6 +1749,7 @@
   "romaji": "kaeri",
   "english": "returning home",
   "speech": "かえり",
+  "english_speech": "returning home",
   "example": "帰りに牛乳を買いました。",
   "example_kana": "かえりにぎゅうにゅうをかいました。",
   "example_english": "I bought milk on the way home."
@@ -1627,6 +1762,7 @@
   "romaji": "kibun",
   "english": "feeling",
   "speech": "きぶん",
+  "english_speech": "feeling",
   "example": "気分が悪くて、早く帰りました。",
   "example_kana": "きぶんがわるくて、はやくかえりました。",
   "example_english": "I felt unwell, so I went home early."
@@ -1639,6 +1775,7 @@
   "romaji": "tsugou",
   "english": "convenience, reason",
   "speech": "つごう",
+  "english_speech": "convenience, reason",
   "example": "土曜日は都合が悪いです。",
   "example_kana": "どようびはつごうがわるいです。",
   "example_english": "Saturday isn't convenient for me."
@@ -1651,6 +1788,7 @@
   "romaji": "yotei",
   "english": "plan",
   "speech": "よてい",
+  "english_speech": "plan",
   "example": "夏休みの予定はありますか。",
   "example_kana": "なつやすみのよていはありますか。",
   "example_english": "Do you have any plans for the summer holidays?"
@@ -1663,6 +1801,7 @@
   "romaji": "yakusoku",
   "english": "to promise, to have an appointment (する)",
   "speech": "やくそく",
+  "english_speech": "to promise, to have an appointment",
   "example": "母と早く帰る約束をしました。",
   "example_kana": "ははとはやくかえるやくそくをしました。",
   "example_english": "I promised my mother I'd come home early."
@@ -1675,6 +1814,7 @@
   "romaji": "mukaeru",
   "english": "to go to meet",
   "speech": "むかえる",
+  "english_speech": "to go to meet",
   "example": "空港へ友達を迎えに行きました。",
   "example_kana": "くうこうへともだちをむかえにいきました。",
   "example_english": "I went to the airport to meet my friend."
@@ -1687,6 +1827,7 @@
   "romaji": "modoru",
   "english": "to return",
   "speech": "もどる",
+  "english_speech": "to return",
   "example": "食事の後で会社に戻ります。",
   "example_kana": "しょくじのあとでかいしゃにもどります。",
   "example_english": "After the meal I'll go back to the office."
@@ -1699,6 +1840,7 @@
   "romaji": "kakaru",
   "english": "to lock, to start (vi.)",
   "speech": "かかる",
+  "english_speech": "to lock, to start",
   "example": "ドアにかぎがかかっています。",
   "example_kana": "ドアにかぎがかかっています。",
   "example_english": "The door is locked."
@@ -1711,6 +1853,7 @@
   "romaji": "kikoeru",
   "english": "to be heard",
   "speech": "きこえる",
+  "english_speech": "to be heard",
   "example": "隣の部屋から音楽が聞こえます。",
   "example_kana": "となりのへやからおんがくがきこえます。",
   "example_english": "I can hear music from the next room."
@@ -1723,6 +1866,7 @@
   "romaji": "mieru",
   "english": "to be seen",
   "speech": "みえる",
+  "english_speech": "to be seen",
   "example": "ホテルの窓から海が見えます。",
   "example_kana": "ホテルのまどからうみがみえます。",
   "example_english": "You can see the sea from the hotel window."
@@ -1735,6 +1879,7 @@
   "romaji": "sawagu",
   "english": "to be noisy",
   "speech": "さわぐ",
+  "english_speech": "to be noisy",
   "example": "子供が外で騒いでいます。",
   "example_kana": "こどもがそとでさわいでいます。",
   "example_english": "The children are being noisy outside."
@@ -1747,6 +1892,7 @@
   "romaji": "sandoitchi",
   "english": "sandwich",
   "speech": "サンドイッチ",
+  "english_speech": "sandwich",
   "example": "昼はサンドイッチを食べました。",
   "example_kana": "ひるはサンドイッチをたべました。",
   "example_english": "I had a sandwich for lunch."
@@ -1759,6 +1905,7 @@
   "romaji": "gamu",
   "english": "gum",
   "speech": "ガム",
+  "english_speech": "gum",
   "example": "スーパーでガムを買いました。",
   "example_kana": "スーパーでガムをかいました。",
   "example_english": "I bought some gum at the supermarket."
@@ -1771,6 +1918,7 @@
   "romaji": "miruku",
   "english": "milk",
   "speech": "ミルク",
+  "english_speech": "milk",
   "example": "コーヒーにミルクを入れますか。",
   "example_kana": "コーヒーにミルクをいれますか。",
   "example_english": "Do you take milk in your coffee?"
@@ -1783,6 +1931,7 @@
   "romaji": "(o)yu",
   "english": "hot water",
   "speech": "ゆ",
+  "english_speech": "hot water",
   "example": "お風呂のお湯が熱いです。",
   "example_kana": "おふろのおゆがあついです。",
   "example_english": "The bath water is hot."
@@ -1795,6 +1944,7 @@
   "romaji": "aji",
   "english": "taste",
   "speech": "あじ",
+  "english_speech": "taste",
   "example": "この料理は味が濃いです。",
   "example_kana": "このりょうりはあじがこいです。",
   "example_english": "This dish has a strong flavour."
@@ -1807,6 +1957,7 @@
   "romaji": "gasu",
   "english": "gas",
   "speech": "ガス",
+  "english_speech": "gas",
   "example": "ガスを消してから出かけます。",
   "example_kana": "ガスをけしてからでかけます。",
   "example_english": "I turn off the gas before going out."
@@ -1819,6 +1970,7 @@
   "romaji": "gochisou",
   "english": "to feast, to treat (する)",
   "speech": "ごちそう",
+  "english_speech": "to feast, to treat",
   "example": "父に晩ご飯をごちそうしました。",
   "example_kana": "ちちにばんごはんをごちそうしました。",
   "example_english": "I treated my father to dinner."
@@ -1831,6 +1983,7 @@
   "romaji": "shokuji",
   "english": "to dine (する)",
   "speech": "しょくじ",
+  "english_speech": "to dine",
   "example": "会社の人と食事しました。",
   "example_kana": "かいしゃのひととしょくじしました。",
   "example_english": "I had a meal with people from work."
@@ -1843,6 +1996,7 @@
   "romaji": "katazukeru",
   "english": "to put away, to clean up",
   "speech": "かたづける",
+  "english_speech": "to put away, to clean up",
   "example": "子供のおもちゃを片付けました。",
   "example_kana": "こどものおもちゃをかたづけました。",
   "example_english": "I put away the children's toys."
@@ -1855,6 +2009,7 @@
   "romaji": "kamu",
   "english": "to chew, to bite",
   "speech": "かむ",
+  "english_speech": "to chew, to bite",
   "example": "よくかんで食べてください。",
   "example_kana": "よくかんでたべてください。",
   "example_english": "Please chew well when you eat."
@@ -1867,6 +2022,7 @@
   "romaji": "nokoru",
   "english": "to be left",
   "speech": "のこる",
+  "english_speech": "to be left",
   "example": "ご飯が少し残っています。",
   "example_kana": "ごはんがすこしのこっています。",
   "example_english": "There is a little rice left."
@@ -1879,6 +2035,7 @@
   "romaji": "hiyasu",
   "english": "to cool (vt.)",
   "speech": "ひやす",
+  "english_speech": "to cool",
   "example": "ビールを冷蔵庫で冷やします。",
   "example_kana": "ビールをれいぞうこでひやします。",
   "example_english": "I'll chill the beer in the fridge."
@@ -1891,6 +2048,7 @@
   "romaji": "nakanaka",
   "english": "not readily, rather",
   "speech": "なかなか",
+  "english_speech": "not readily, rather",
   "example": "バスがなかなか来ません。",
   "example_kana": "バスがなかなかきません。",
   "example_english": "The bus just isn't coming."
@@ -1903,6 +2061,7 @@
   "romaji": "jaketto",
   "english": "jacket",
   "speech": "ジャケット",
+  "english_speech": "jacket",
   "example": "寒いから、ジャケットを着ます。",
   "example_kana": "さむいから、ジャケットをきます。",
   "example_english": "It's cold, so I'll put on a jacket."
@@ -1915,6 +2074,7 @@
   "romaji": "shitagi",
   "english": "underwear",
   "speech": "したぎ",
+  "english_speech": "underwear",
   "example": "下着とタオルを洗いました。",
   "example_kana": "したぎとタオルをあらいました。",
   "example_english": "I washed the underwear and the towels."
@@ -1927,6 +2087,7 @@
   "romaji": "dougu",
   "english": "tool",
   "speech": "どうぐ",
+  "english_speech": "tool",
   "example": "この道具は何に使いますか。",
   "example_kana": "このどうぐはなににつかいますか。",
   "example_english": "What is this tool used for?"
@@ -1939,6 +2100,7 @@
   "romaji": "wasuremono",
   "english": "something left behind",
   "speech": "わすれもの",
+  "english_speech": "something left behind",
   "example": "電車の中に忘れ物をしました。",
   "example_kana": "でんしゃのなかにわすれものをしました。",
   "example_english": "I left something behind on the train."
@@ -1951,6 +2113,7 @@
   "romaji": "kuriiningu",
   "english": "to clean (at a cleaner's) (する)",
   "speech": "クリーニング",
+  "english_speech": "to clean at a cleaner's",
   "example": "コートをクリーニングしました。",
   "example_kana": "コートをクリーニングしました。",
   "example_english": "I had my coat cleaned at the cleaner's."
@@ -1963,6 +2126,7 @@
   "romaji": "seikatsu",
   "english": "to live (する)",
   "speech": "せいかつ",
+  "english_speech": "to live",
   "example": "東京で一人で生活しています。",
   "example_kana": "とうきょうでひとりでせいかつしています。",
   "example_english": "I live alone in Tokyo."
@@ -1975,6 +2139,7 @@
   "romaji": "ueru",
   "english": "to plant",
   "speech": "うえる",
+  "english_speech": "to plant",
   "example": "父と庭に木を植えました。",
   "example_kana": "ちちとにわにきをうえました。",
   "example_english": "I planted a tree in the garden with my father."
@@ -1987,6 +2152,7 @@
   "romaji": "kieru",
   "english": "to be off, to go out (vi.)",
   "speech": "きえる",
+  "english_speech": "to be off, to go out",
   "example": "急に部屋の電気が消えました。",
   "example_kana": "きゅうにへやのでんきがきえました。",
   "example_english": "Suddenly the light in the room went out."
@@ -1999,6 +2165,7 @@
   "romaji": "tsuku",
   "english": "to be on (vi.)",
   "speech": "つく",
+  "english_speech": "to be on",
   "example": "押したら、電気がつくと思います。",
   "example_kana": "おしたら、でんきがつくとおもいます。",
   "example_english": "I think the light will come on if you press it."
@@ -2011,6 +2178,7 @@
   "romaji": "hirou",
   "english": "to pick up",
   "speech": "ひろう",
+  "english_speech": "to pick up",
   "example": "公園でごみを拾いましょう。",
   "example_kana": "こうえんでごみをひろいましょう。",
   "example_english": "Let's pick up the litter in the park."
@@ -2023,6 +2191,7 @@
   "romaji": "yogoreru",
   "english": "to become dirty, to be a mess",
   "speech": "よごれる",
+  "english_speech": "to become dirty, to be a mess",
   "example": "雨で靴が汚れました。",
   "example_kana": "あめでくつがよごれました。",
   "example_english": "My shoes got dirty in the rain."
@@ -2035,6 +2204,7 @@
   "romaji": "kiwotsukeru",
   "english": "to be careful",
   "speech": "きをつける",
+  "english_speech": "to be careful",
   "example": "車に気をつけてください。",
   "example_kana": "くるまにきをつけてください。",
   "example_english": "Please be careful of cars."
@@ -2047,6 +2217,7 @@
   "romaji": "juubun(na)",
   "english": "enough",
   "speech": "じゅうぶん",
+  "english_speech": "enough",
   "example": "パンは3つで十分です。",
   "example_kana": "パンはみっつでじゅうぶんです。",
   "example_english": "Three pieces of bread are enough."
@@ -2059,6 +2230,7 @@
   "romaji": "kagami",
   "english": "mirror",
   "speech": "かがみ",
+  "english_speech": "mirror",
   "example": "鏡を見ながら、歯を磨きます。",
   "example_kana": "かがみをみながら、はをみがきます。",
   "example_english": "I brush my teeth while looking in the mirror."
@@ -2071,6 +2243,7 @@
   "romaji": "ningyou",
   "english": "doll, figure, stuffed animal",
   "speech": "にんぎょう",
+  "english_speech": "doll, figure, stuffed animal",
   "example": "娘に人形を買いました。",
   "example_kana": "むすめににんぎょうをかいました。",
   "example_english": "I bought a doll for my daughter."
@@ -2083,6 +2256,7 @@
   "romaji": "hikidashi",
   "english": "drawer",
   "speech": "ひきだし",
+  "english_speech": "drawer",
   "example": "かぎを引き出しに入れました。",
   "example_kana": "かぎをひきだしにいれました。",
   "example_english": "I put the key in the drawer."
@@ -2095,6 +2269,7 @@
   "romaji": "eda",
   "english": "branch",
   "speech": "えだ",
+  "english_speech": "branch",
   "example": "庭の木の枝を切りました。",
   "example_kana": "にわのきのえだをきりました。",
   "example_english": "I cut a branch off the tree in the garden."
@@ -2107,6 +2282,7 @@
   "romaji": "garasu",
   "english": "glass",
   "speech": "ガラス",
+  "english_speech": "glass",
   "example": "ガラスの花瓶に花を入れました。",
   "example_kana": "ガラスのかびんにはなをいれました。",
   "example_english": "I put the flowers in the glass vase."
@@ -2119,6 +2295,7 @@
   "romaji": "mannaka",
   "english": "the middle",
   "speech": "まんなか",
+  "english_speech": "the middle",
   "example": "町の真ん中に公園があります。",
   "example_kana": "まちのまんなかにこうえんがあります。",
   "example_english": "There is a park in the middle of town."
@@ -2131,6 +2308,7 @@
   "romaji": "sumi",
   "english": "corner",
   "speech": "すみ",
+  "english_speech": "corner",
   "example": "猫は部屋の隅で寝ています。",
   "example_kana": "ねこはへやのすみでねています。",
   "example_english": "The cat is sleeping in the corner of the room."
@@ -2143,6 +2321,7 @@
   "romaji": "otosu",
   "english": "to drop, to lose (vt.)",
   "speech": "おとす",
+  "english_speech": "to drop, to lose",
   "example": "駅で財布を落としました。",
   "example_kana": "えきでさいふをおとしました。",
   "example_english": "I dropped my wallet at the station."
@@ -2155,6 +2334,7 @@
   "romaji": "kaeru",
   "english": "to change (vt.)",
   "speech": "かえる",
+  "english_speech": "to change",
   "example": "髪の色を変えたいです。",
   "example_kana": "かみのいろをかえたいです。",
   "example_english": "I want to change my hair color."
@@ -2167,6 +2347,7 @@
   "romaji": "kakeru",
   "english": "to hang, to pour, to sprinkle (vt.)",
   "speech": "かける",
+  "english_speech": "to hang, to pour, to sprinkle",
   "example": "部屋の壁に絵をかけました。",
   "example_kana": "へやのかべにえをかけました。",
   "example_english": "I hung a picture on the wall of my room."
@@ -2179,6 +2360,7 @@
   "romaji": "kazaru",
   "english": "to decorate",
   "speech": "かざる",
+  "english_speech": "to decorate",
   "example": "玄関に写真を飾っています。",
   "example_kana": "げんかんにしゃしんをかざっています。",
   "example_english": "I have photos displayed in the entryway."
@@ -2191,6 +2373,7 @@
   "romaji": "torikaeru",
   "english": "to exchange, to replace",
   "speech": "とりかえる",
+  "english_speech": "to exchange, to replace",
   "example": "花の水を取り替えました。",
   "example_kana": "はなのみずをとりかえました。",
   "example_english": "I changed the water for the flowers."
@@ -2203,6 +2386,7 @@
   "romaji": "oreru",
   "english": "to break, to snap (vi.)",
   "speech": "おれる",
+  "english_speech": "to break, to snap",
   "example": "強い風で木の枝が折れました。",
   "example_kana": "つよいかぜできのえだがおれました。",
   "example_english": "A tree branch snapped in the strong wind."
@@ -2215,6 +2399,7 @@
   "romaji": "kowareru",
   "english": "to be broken, to break down (vi.)",
   "speech": "こわれる",
+  "english_speech": "to be broken, to break down",
   "example": "このパソコンは壊れていますか。",
   "example_kana": "このパソコンはこわれていますか。",
   "example_english": "Is this computer broken?"
@@ -2227,6 +2412,7 @@
   "romaji": "wareru",
   "english": "to be broken",
   "speech": "われる",
+  "english_speech": "to be broken",
   "example": "コップが落ちて、割れました。",
   "example_kana": "コップがおちて、われました。",
   "example_english": "The cup fell and broke."
@@ -2239,6 +2425,7 @@
   "romaji": "shinamono",
   "english": "goods, things",
   "speech": "しなもの",
+  "english_speech": "goods, things",
   "example": "この店の品物は安いです。",
   "example_kana": "このみせのしなものはやすいです。",
   "example_english": "The goods in this store are cheap."
@@ -2251,6 +2438,7 @@
   "romaji": "nedan",
   "english": "price",
   "speech": "ねだん",
+  "english_speech": "price",
   "example": "この靴の値段はいくらですか。",
   "example_kana": "このくつのねだんはいくらですか。",
   "example_english": "What is the price of these shoes?"
@@ -2263,6 +2451,7 @@
   "romaji": "boonasu",
   "english": "bonus",
   "speech": "ボーナス",
+  "english_speech": "bonus",
   "example": "ボーナスで新しい車を買います。",
   "example_kana": "ボーナスであたらしいくるまをかいます。",
   "example_english": "I will buy a new car with my bonus."
@@ -2275,6 +2464,7 @@
   "romaji": "heijitsu",
   "english": "weekday",
   "speech": "へいじつ",
+  "english_speech": "weekday",
   "example": "平日の朝は道が込みます。",
   "example_kana": "へいじつのあさはみちがこみます。",
   "example_english": "The roads get crowded on weekday mornings."
@@ -2287,6 +2477,7 @@
   "romaji": "memo",
   "english": "to make a note (する)",
   "speech": "メモ",
+  "english_speech": "to make a note",
   "example": "先生の電話番号をメモしました。",
   "example_kana": "せんせいのでんわばんごうをメモしました。",
   "example_english": "I made a note of the teacher's phone number."
@@ -2299,6 +2490,7 @@
   "romaji": "aku,hiraku",
   "english": "あく: to open (vi.); ひらく: to open, to hold",
   "speech": "あく、ひらく",
+  "english_speech": "to open, or to hold an event",
   "example": "この店は朝9時に開きます。",
   "example_kana": "このみせはあさくじにあきます。",
   "example_english": "This store opens at 9 in the morning."
@@ -2311,6 +2503,7 @@
   "romaji": "ureru",
   "english": "to be sold, to sell",
   "speech": "うれる",
+  "english_speech": "to be sold, to sell",
   "example": "この本はよく売れています。",
   "example_kana": "このほんはよくうれています。",
   "example_english": "This book is selling well."
@@ -2323,6 +2516,7 @@
   "romaji": "erabu",
   "english": "to choose",
   "speech": "えらぶ",
+  "english_speech": "to choose",
   "example": "母の誕生日の花を選びました。",
   "example_kana": "ははのたんじょうびのはなをえらびました。",
   "example_english": "I chose flowers for my mother's birthday."
@@ -2335,6 +2529,7 @@
   "romaji": "tariru",
   "english": "to be enough",
   "speech": "たりる",
+  "english_speech": "to be enough",
   "example": "ジュースが1本足りません。",
   "example_kana": "ジュースがいっぽんたりません。",
   "example_english": "We are one bottle of juice short."
@@ -2347,6 +2542,7 @@
   "romaji": "mitsukeru",
   "english": "to find (vt.)",
   "speech": "みつける",
+  "english_speech": "to find",
   "example": "近くでいい店を見つけました。",
   "example_kana": "ちかくでいいみせをみつけました。",
   "example_english": "I found a good shop nearby."
@@ -2359,6 +2555,7 @@
   "romaji": "muda(na)",
   "english": "useless, unnecessary, wasted",
   "speech": "むだ",
+  "english_speech": "useless, unnecessary, wasted",
   "example": "時間をむだにしないでください。",
   "example_kana": "じかんをむだにしないでください。",
   "example_english": "Please don't waste time."
@@ -2371,6 +2568,7 @@
   "romaji": "kougi",
   "english": "lecture",
   "speech": "こうぎ",
+  "english_speech": "lecture",
   "example": "今日の講義は4時に終わります。",
   "example_kana": "きょうのこうぎはよじにおわります。",
   "example_english": "Today's lecture ends at 4 o'clock."
@@ -2383,6 +2581,7 @@
   "romaji": "seki",
   "english": "seat",
   "speech": "せき",
+  "english_speech": "seat",
   "example": "窓の近くの席をお願いします。",
   "example_kana": "まどのちかくのせきをおねがいします。",
   "example_english": "A seat near the window, please."
@@ -2395,6 +2594,7 @@
   "romaji": "shusseki",
   "english": "to attend (する)",
   "speech": "しゅっせき",
+  "english_speech": "to attend",
   "example": "明日の会議に出席します。",
   "example_kana": "あしたのかいぎにしゅっせきします。",
   "example_english": "I will attend tomorrow's meeting."
@@ -2407,6 +2607,7 @@
   "romaji": "henji",
   "english": "to reply (する)",
   "speech": "へんじ",
+  "english_speech": "to reply",
   "example": "田中さんにすぐ返事しました。",
   "example_kana": "たなかさんにすぐへんじしました。",
   "example_english": "I replied to Mr. Tanaka right away."
@@ -2419,6 +2620,7 @@
   "romaji": "yoshuu",
   "english": "to prepare for a lesson (する)",
   "speech": "よしゅう",
+  "english_speech": "to prepare for a lesson",
   "example": "毎晩、次の日の授業を予習します。",
   "example_kana": "まいばん、つぎのひのじゅぎょうをよしゅうします。",
   "example_english": "Every night I prepare for the next day's lesson."
@@ -2431,6 +2633,7 @@
   "romaji": "fukushuu",
   "english": "to review (する)",
   "speech": "ふくしゅう",
+  "english_speech": "to review",
   "example": "テストの前に、漢字を復習します。",
   "example_kana": "テストのまえに、かんじをふくしゅうします。",
   "example_english": "I review kanji before the test."
@@ -2443,6 +2646,7 @@
   "romaji": "renraku",
   "english": "to contact (する)",
   "speech": "れんらく",
+  "english_speech": "to contact",
   "example": "着いたら、連絡してください。",
   "example_kana": "ついたら、れんらくしてください。",
   "example_english": "Please contact me when you arrive."
@@ -2455,6 +2659,7 @@
   "romaji": "shippai",
   "english": "to fail (する)",
   "speech": "しっぱい",
+  "english_speech": "to fail",
   "example": "失敗して、部長に謝りました。",
   "example_kana": "しっぱいして、ぶちょうにあやまりました。",
   "example_english": "I made a mistake and apologized to my manager."
@@ -2467,6 +2672,7 @@
   "romaji": "ukeru",
   "english": "to take (an examination, a class, etc.)",
   "speech": "うける",
+  "english_speech": "to take an examination, a class, etc.",
   "example": "来月、日本語の試験を受けます。",
   "example_kana": "らいげつ、にほんごのしけんをうけます。",
   "example_english": "Next month I will take a Japanese exam."
@@ -2479,6 +2685,7 @@
   "romaji": "kayou",
   "english": "to go to and from, to commute",
   "speech": "かよう",
+  "english_speech": "to go to and from, to commute",
   "example": "自転車で会社に通っています。",
   "example_kana": "じてんしゃでかいしゃにかよっています。",
   "example_english": "I commute to work by bicycle."
@@ -2491,6 +2698,7 @@
   "romaji": "isogu",
   "english": "to hurry",
   "speech": "いそぐ",
+  "english_speech": "to hurry",
   "example": "電車が来ますから、急ぎましょう。",
   "example_kana": "でんしゃがきますから、いそぎましょう。",
   "example_english": "The train is coming, so let's hurry."
@@ -2503,6 +2711,7 @@
   "romaji": "maniau",
   "english": "to be in time",
   "speech": "まにあう",
+  "english_speech": "to be in time",
   "example": "走って、電車に間に合いました。",
   "example_kana": "はしって、でんしゃにまにあいました。",
   "example_english": "I ran and made it in time for the train."
@@ -2515,6 +2724,7 @@
   "romaji": "okureru",
   "english": "to be late",
   "speech": "おくれる",
+  "english_speech": "to be late",
   "example": "今朝、会社に10分遅れました。",
   "example_kana": "けさ、かいしゃにじゅっぷんおくれました。",
   "example_english": "I was ten minutes late for work this morning."
@@ -2527,6 +2737,7 @@
   "romaji": "majime(na)",
   "english": "serious",
   "speech": "まじめ",
+  "english_speech": "serious",
   "example": "弟はまじめな学生です。",
   "example_kana": "おとうとはまじめながくせいです。",
   "example_english": "My younger brother is a serious student."
@@ -2539,6 +2750,7 @@
   "romaji": "rouka",
   "english": "corridor",
   "speech": "ろうか",
+  "english_speech": "corridor",
   "example": "廊下を走らないでください。",
   "example_kana": "ろうかをはしらないでください。",
   "example_english": "Please don't run in the corridor."
@@ -2551,6 +2763,7 @@
   "romaji": "oto",
   "english": "noise, sound",
   "speech": "おと",
+  "english_speech": "noise, sound",
   "example": "外から変な音が聞こえます。",
   "example_kana": "そとからへんなおとがきこえます。",
   "example_english": "I can hear a strange noise from outside."
@@ -2563,6 +2776,7 @@
   "romaji": "kisoku",
   "english": "rule",
   "speech": "きそく",
+  "english_speech": "rule",
   "example": "この会社には規則が多いです。",
   "example_kana": "このかいしゃにはきそくがおおいです。",
   "example_english": "This company has a lot of rules."
@@ -2575,6 +2789,7 @@
   "romaji": "iken",
   "english": "opinion",
   "speech": "いけん",
+  "english_speech": "opinion",
   "example": "会議で意見を言いました。",
   "example_kana": "かいぎでいけんをいいました。",
   "example_english": "I gave my opinion at the meeting."
@@ -2587,6 +2802,7 @@
   "romaji": "chuui",
   "english": "to warn, to pay attention (する)",
   "speech": "ちゅうい",
+  "english_speech": "to warn, to pay attention",
   "example": "先生は騒ぐ学生に注意しました。",
   "example_kana": "せんせいはさわぐがくせいにちゅういしました。",
   "example_english": "The teacher warned the noisy students."
@@ -2599,6 +2815,7 @@
   "romaji": "omoidasu",
   "english": "to remember",
   "speech": "おもいだす",
+  "english_speech": "to remember",
   "example": "あの人の名前を思い出しました。",
   "example_kana": "あのひとのなまえをおもいだしました。",
   "example_english": "I remembered that person's name."
@@ -2611,6 +2828,7 @@
   "romaji": "tsuzukeru",
   "english": "to continue (vt.)",
   "speech": "つづける",
+  "english_speech": "to continue",
   "example": "来年も勉強を続けるつもりです。",
   "example_kana": "らいねんもべんきょうをつづけるつもりです。",
   "example_english": "I intend to keep studying next year too."
@@ -2623,6 +2841,7 @@
   "romaji": "naosu",
   "english": "to repair, to correct (vt.)",
   "speech": "なおす",
+  "english_speech": "to repair, to correct",
   "example": "壊れた時計を直しました。",
   "example_kana": "こわれたとけいをなおしました。",
   "example_english": "I repaired the broken clock."
@@ -2635,6 +2854,7 @@
   "romaji": "machigaeru",
   "english": "to make a mistake",
   "speech": "まちがえる",
+  "english_speech": "to make a mistake",
   "example": "テストで漢字を間違えました。",
   "example_kana": "テストでかんじをまちがえました。",
   "example_english": "I got a kanji wrong on the test."
@@ -2647,6 +2867,7 @@
   "romaji": "mamoru",
   "english": "to keep, to protect",
   "speech": "まもる",
+  "english_speech": "to keep, to protect",
   "example": "約束は必ず守ります。",
   "example_kana": "やくそくはかならずまもります。",
   "example_english": "I always keep my promises."
@@ -2659,6 +2880,7 @@
   "romaji": "yameru",
   "english": "to quit, to stop",
   "speech": "やめる",
+  "english_speech": "to quit, to stop",
   "example": "去年、たばこをやめました。",
   "example_kana": "きょねん、たばこをやめました。",
   "example_english": "I quit smoking last year."
@@ -2671,6 +2893,7 @@
   "romaji": "nesshin(na)",
   "english": "enthusiastic, avid",
   "speech": "ねっしん",
+  "english_speech": "enthusiastic, avid",
   "example": "山田さんは熱心な先生です。",
   "example_kana": "やまださんはねっしんなせんせいです。",
   "example_english": "Ms. Yamada is an enthusiastic teacher."
@@ -2683,6 +2906,7 @@
   "romaji": "muri(na)",
   "english": "impossible",
   "speech": "むり",
+  "english_speech": "impossible",
   "example": "その仕事は1日では無理です。",
   "example_kana": "そのしごとはいちにちではむりです。",
   "example_english": "That job is impossible to do in one day."
@@ -2695,6 +2919,7 @@
   "romaji": "zutto",
   "english": "the whole time, far",
   "speech": "ずっと",
+  "english_speech": "the whole time, far",
   "example": "朝からずっと雨が降っています。",
   "example_kana": "あさからずっとあめがふっています。",
   "example_english": "It has been raining nonstop since this morning."
@@ -2707,6 +2932,7 @@
   "romaji": "gominopoisute",
   "english": "littering rubbish [trash]",
   "speech": "ごみのポイすて",
+  "english_speech": "littering rubbish",
   "example": "ごみのポイ捨てをやめましょう。",
   "example_kana": "ごみのポイすてをやめましょう。",
   "example_english": "Let's stop littering."
@@ -2719,6 +2945,7 @@
   "romaji": "tsuki",
   "english": "moon",
   "speech": "つき",
+  "english_speech": "moon",
   "example": "今夜は月がきれいですね。",
   "example_kana": "こんやはつきがきれいですね。",
   "example_english": "The moon is beautiful tonight, isn't it?"
@@ -2731,6 +2958,7 @@
   "romaji": "kyoukai",
   "english": "church",
   "speech": "きょうかい",
+  "english_speech": "church",
   "example": "毎週日曜日に教会へ行きます。",
   "example_kana": "まいしゅうにちようびにきょうかいへいきます。",
   "example_english": "I go to church every Sunday."
@@ -2743,6 +2971,7 @@
   "romaji": "keshiki",
   "english": "view",
   "speech": "けしき",
+  "english_speech": "view",
   "example": "山の上の景色はすばらしいです。",
   "example_kana": "やまのうえのけしきはすばらしいです。",
   "example_english": "The view from the top of the mountain is wonderful."
@@ -2755,6 +2984,7 @@
   "romaji": "katachi",
   "english": "shape",
   "speech": "かたち",
+  "english_speech": "shape",
   "example": "面白い形の建物ですね。",
   "example_kana": "おもしろいかたちのたてものですね。",
   "example_english": "That building has an interesting shape, doesn't it?"
@@ -2767,6 +2997,7 @@
   "romaji": "komu",
   "english": "to be busy, to be crowded",
   "speech": "こむ",
+  "english_speech": "to be busy, to be crowded",
   "example": "朝の電車はいつも込んでいます。",
   "example_kana": "あさのでんしゃはいつもこんでいます。",
   "example_english": "The morning train is always crowded."
@@ -2779,6 +3010,7 @@
   "romaji": "suku",
   "english": "to be empty, to be not crowded",
   "speech": "すく",
+  "english_speech": "to be empty, to be not crowded",
   "example": "午後は店がすくと思います。",
   "example_kana": "ごごはみせがすくとおもいます。",
   "example_english": "I think the store will be less crowded in the afternoon."
@@ -2791,6 +3023,7 @@
   "romaji": "yamu",
   "english": "to stop",
   "speech": "やむ",
+  "english_speech": "to stop",
   "example": "雨はすぐやむと思います。",
   "example_kana": "あめはすぐやむとおもいます。",
   "example_english": "I think the rain will stop soon."
@@ -2803,6 +3036,7 @@
   "romaji": "tsuzuku",
   "english": "to continue (vi.)",
   "speech": "つづく",
+  "english_speech": "to continue",
   "example": "暑い日が続いていますね。",
   "example_kana": "あついひがつづいていますね。",
   "example_english": "The hot days are continuing, aren't they?"
@@ -2815,6 +3049,7 @@
   "romaji": "tateru",
   "english": "to build",
   "speech": "たてる",
+  "english_speech": "to build",
   "example": "父は去年、家を建てました。",
   "example_kana": "ちちはきょねん、いえをたてました。",
   "example_english": "My father built a house last year."
@@ -2827,6 +3062,7 @@
   "romaji": "hakkiri",
   "english": "clearly",
   "speech": "はっきり",
+  "english_speech": "clearly",
   "example": "もっとはっきり言ってください。",
   "example_kana": "もっとはっきりいってください。",
   "example_english": "Please say it more clearly."
@@ -2839,6 +3075,7 @@
   "romaji": "sofu",
   "english": "grandfather",
   "speech": "そふ",
+  "english_speech": "grandfather",
   "example": "祖父は毎朝、公園を散歩します。",
   "example_kana": "そふはまいあさ、こうえんをさんぽします。",
   "example_english": "My grandfather takes a walk in the park every morning."
@@ -2851,6 +3088,7 @@
   "romaji": "sobo",
   "english": "grandmother",
   "speech": "そぼ",
+  "english_speech": "grandmother",
   "example": "祖母は今年80歳になります。",
   "example_kana": "そぼはことしはちじゅっさいになります。",
   "example_english": "My grandmother turns 80 this year."
@@ -2863,6 +3101,7 @@
   "romaji": "okosan",
   "english": "(someone's) child",
   "speech": "おこさん",
+  "english_speech": "someone's child",
   "example": "お子さんは何歳ですか。",
   "example_kana": "おこさんはなんさいですか。",
   "example_english": "How old is your child?"
@@ -2875,6 +3114,7 @@
   "romaji": "akachan",
   "english": "baby",
   "speech": "あかちゃん",
+  "english_speech": "baby",
   "example": "赤ちゃんがよく寝ています。",
   "example_kana": "あかちゃんがよくねています。",
   "example_english": "The baby is sleeping soundly."
@@ -2887,6 +3127,7 @@
   "romaji": "otaku",
   "english": "(someone's) house",
   "speech": "おたく",
+  "english_speech": "someone's house",
   "example": "明日、先生のお宅へ行きます。",
   "example_kana": "あした、せんせいのおたくへいきます。",
   "example_english": "Tomorrow I am going to my teacher's house."
@@ -2899,6 +3140,7 @@
   "romaji": "kimochi",
   "english": "feeling",
   "speech": "きもち",
+  "english_speech": "feeling",
   "example": "山の空気は気持ちがいいです。",
   "example_kana": "やまのくうきはきもちがいいです。",
   "example_english": "The mountain air feels good."
@@ -2911,6 +3153,7 @@
   "romaji": "oiwai",
   "english": "congratulatory gift",
   "speech": "おいわい",
+  "english_speech": "congratulatory gift",
   "example": "友だちにお祝いをあげました。",
   "example_kana": "ともだちにおいわいをあげました。",
   "example_english": "I gave my friend a congratulatory gift."
@@ -2923,6 +3166,7 @@
   "romaji": "anshin",
   "english": "to feel relieved (する)",
   "speech": "あんしん",
+  "english_speech": "to feel relieved",
   "example": "母の声を聞いて安心しました。",
   "example_kana": "ははのこえをきいてあんしんしました。",
   "example_english": "I felt relieved when I heard my mother's voice."
@@ -2935,6 +3179,7 @@
   "romaji": "homeru",
   "english": "to praise",
   "speech": "ほめる",
+  "english_speech": "to praise",
   "example": "先生は私の作文を褒めました。",
   "example_kana": "せんせいはわたしのさくぶんをほめました。",
   "example_english": "The teacher praised my essay."
@@ -2947,6 +3192,7 @@
   "romaji": "bikkuri",
   "english": "to be surprised (する)",
   "speech": "びっくり",
+  "english_speech": "to be surprised",
   "example": "大きい音にびっくりしました。",
   "example_kana": "おおきいおとにびっくりしました。",
   "example_english": "I was startled by a loud noise."
@@ -2959,6 +3205,7 @@
   "romaji": "sodateru",
   "english": "to bring up, to grow",
   "speech": "そだてる",
+  "english_speech": "to bring up, to grow",
   "example": "庭で野菜を育てています。",
   "example_kana": "にわでやさいをそだてています。",
   "example_english": "I am growing vegetables in the garden."
@@ -2971,6 +3218,7 @@
   "romaji": "shinsetsu(na)",
   "english": "kind",
   "speech": "しんせつ",
+  "english_speech": "kind",
   "example": "駅で親切な人に会いました。",
   "example_kana": "えきでしんせつなひとにあいました。",
   "example_english": "I met a kind person at the station."
@@ -2983,6 +3231,7 @@
   "romaji": "ryokan",
   "english": "Japanese-style inn",
   "speech": "りょかん",
+  "english_speech": "Japanese-style inn",
   "example": "古い旅館に一泊しました。",
   "example_kana": "ふるいりょかんにいっぱくしました。",
   "example_english": "I stayed one night at an old Japanese inn."
@@ -2995,6 +3244,7 @@
   "romaji": "rasshu",
   "english": "rush hour",
   "speech": "ラッシュ",
+  "english_speech": "rush hour",
   "example": "朝のラッシュは電車が込みます。",
   "example_kana": "あさのラッシュはでんしゃがこみます。",
   "example_english": "Trains get crowded during the morning rush hour."
@@ -3007,6 +3257,7 @@
   "romaji": "minato",
   "english": "port",
   "speech": "みなと",
+  "english_speech": "port",
   "example": "港で大きい船を見ました。",
   "example_kana": "みなとでおおきいふねをみました。",
   "example_english": "I saw a big ship at the port."
@@ -3019,6 +3270,7 @@
   "romaji": "shima",
   "english": "island",
   "speech": "しま",
+  "english_speech": "island",
   "example": "夏休みに島へ旅行しました。",
   "example_kana": "なつやすみにしまへりょこうしました。",
   "example_english": "I took a trip to an island during summer vacation."
@@ -3031,6 +3283,7 @@
   "romaji": "kaigan",
   "english": "shore, coast",
   "speech": "かいがん",
+  "english_speech": "shore, coast",
   "example": "海岸を歩きながら話しました。",
   "example_kana": "かいがんをあるきながらはなしました。",
   "example_english": "We talked while walking along the shore."
@@ -3043,6 +3296,7 @@
   "romaji": "tenkiyohou",
   "english": "weather forecast",
   "speech": "てんきよほう",
+  "english_speech": "weather forecast",
   "example": "出かける前に天気予報を見ます。",
   "example_kana": "でかけるまえにてんきよほうをみます。",
   "example_english": "I check the weather forecast before going out."
@@ -3055,6 +3309,7 @@
   "romaji": "kaijou",
   "english": "venue",
   "speech": "かいじょう",
+  "english_speech": "venue",
   "example": "パーティーの会場はどこですか。",
   "example_kana": "パーティーのかいじょうはどこですか。",
   "example_english": "Where is the party venue?"
@@ -3067,6 +3322,7 @@
   "romaji": "shuppatsu",
   "english": "to depart (する)",
   "speech": "しゅっぱつ",
+  "english_speech": "to depart",
   "example": "バスは9時に出発します。",
   "example_kana": "バスはくじにしゅっぱつします。",
   "example_english": "The bus departs at nine."
@@ -3079,6 +3335,7 @@
   "romaji": "haikingu",
   "english": "to hike (する)",
   "speech": "ハイキング",
+  "english_speech": "to hike",
   "example": "山でハイキングしませんか。",
   "example_kana": "やまでハイキングしませんか。",
   "example_english": "Won't you go hiking in the mountains?"
@@ -3091,6 +3348,7 @@
   "romaji": "tooru",
   "english": "to pass",
   "speech": "とおる",
+  "english_speech": "to pass",
   "example": "毎日、家の前を電車が通ります。",
   "example_kana": "まいにち、いえのまえをでんしゃがとおります。",
   "example_english": "Every day, trains pass in front of my house."
@@ -3103,6 +3361,7 @@
   "romaji": "sasou",
   "english": "to invite",
   "speech": "さそう",
+  "english_speech": "to invite",
   "example": "友だちを映画に誘いました。",
   "example_kana": "ともだちをえいがにさそいました。",
   "example_english": "I invited a friend to a movie."
@@ -3115,6 +3374,7 @@
   "romaji": "utsukushii",
   "english": "beautiful",
   "speech": "うつくしい",
+  "english_speech": "beautiful",
   "example": "美しい景色を写真に撮りました。",
   "example_kana": "うつくしいけしきをしゃしんにとりました。",
   "example_english": "I took a photo of the beautiful scenery."
@@ -3127,6 +3387,7 @@
   "romaji": "hitsuyou(na)",
   "english": "necessary",
   "speech": "ひつよう",
+  "english_speech": "necessary",
   "example": "この仕事には車が必要です。",
   "example_kana": "このしごとにはくるまがひつようです。",
   "example_english": "A car is necessary for this job."
@@ -3139,6 +3400,7 @@
   "romaji": "tokubetsu(na)",
   "english": "special",
   "speech": "とくべつ",
+  "english_speech": "special",
   "example": "母に特別な料理を作りました。",
   "example_kana": "ははにとくべつなりょうりをつくりました。",
   "example_english": "I made a special meal for my mother."
@@ -3151,6 +3413,7 @@
   "romaji": "taoru",
   "english": "towel",
   "speech": "タオル",
+  "english_speech": "towel",
   "example": "新しいタオルを3枚買いました。",
   "example_kana": "あたらしいタオルをさんまいかいました。",
   "example_english": "I bought three new towels."
@@ -3163,6 +3426,7 @@
   "romaji": "reibou",
   "english": "air conditioner",
   "speech": "れいぼう",
+  "english_speech": "air conditioner",
   "example": "暑いから冷房をつけましょう。",
   "example_kana": "あついかられいぼうをつけましょう。",
   "example_english": "It's hot, so let's turn on the air conditioner."
@@ -3175,6 +3439,7 @@
   "romaji": "danbou",
   "english": "heating",
   "speech": "だんぼう",
+  "english_speech": "heating",
   "example": "寝る前に暖房を消してください。",
   "example_kana": "ねるまえにだんぼうをけしてください。",
   "example_english": "Please turn off the heating before going to bed."
@@ -3187,6 +3452,7 @@
   "romaji": "tebukuro",
   "english": "gloves",
   "speech": "てぶくろ",
+  "english_speech": "gloves",
   "example": "冬は手袋をして出かけます。",
   "example_kana": "ふゆはてぶくろをしてでかけます。",
   "example_english": "In winter I go out wearing gloves."
@@ -3199,6 +3465,7 @@
   "romaji": "omote",
   "english": "front",
   "speech": "おもて",
+  "english_speech": "front",
   "example": "紙の表に名前を書いてください。",
   "example_kana": "かみのおもてになまえをかいてください。",
   "example_english": "Please write your name on the front of the paper."
@@ -3211,6 +3478,7 @@
   "romaji": "ura",
   "english": "back",
   "speech": "うら",
+  "english_speech": "back",
   "example": "店の裏に駐車場があります。",
   "example_kana": "みせのうらにちゅうしゃじょうがあります。",
   "example_english": "There is a parking lot behind the shop."
@@ -3223,6 +3491,7 @@
   "romaji": "kaaten",
   "english": "curtain",
   "speech": "カーテン",
+  "english_speech": "curtain",
   "example": "窓に青いカーテンをつけました。",
   "example_kana": "まどにあおいカーテンをつけました。",
   "example_english": "I put up blue curtains on the window."
@@ -3235,6 +3504,7 @@
   "romaji": "shuukan",
   "english": "habit, custom",
   "speech": "しゅうかん",
+  "english_speech": "habit, custom",
   "example": "毎朝走る習慣があります。",
   "example_kana": "まいあさはしるしゅうかんがあります。",
   "example_english": "I have a habit of running every morning."
@@ -3247,6 +3517,7 @@
   "romaji": "kigatsuku",
   "english": "to notice",
   "speech": "きがつく",
+  "english_speech": "to notice",
   "example": "駅で忘れ物に気がつきました。",
   "example_kana": "えきでわすれものにきがつきました。",
   "example_english": "At the station I noticed I had left something behind."
@@ -3259,6 +3530,7 @@
   "romaji": "nareru",
   "english": "to be used to",
   "speech": "なれる",
+  "english_speech": "to be used to",
   "example": "もう新しい仕事に慣れましたか。",
   "example_kana": "もうあたらしいしごとになれましたか。",
   "example_english": "Have you gotten used to your new job yet?"
@@ -3271,6 +3543,7 @@
   "romaji": "(o)kome",
   "english": "rice",
   "speech": "こめ",
+  "english_speech": "rice",
   "example": "お米を5キロ買いました。",
   "example_kana": "おこめをごキロかいました。",
   "example_english": "I bought five kilos of rice."
@@ -3283,6 +3556,7 @@
   "romaji": "chiizu",
   "english": "cheese",
   "speech": "チーズ",
+  "english_speech": "cheese",
   "example": "朝はパンとチーズを食べます。",
   "example_kana": "あさはパンとチーズをたべます。",
   "example_english": "In the morning I eat bread and cheese."
@@ -3295,6 +3569,7 @@
   "romaji": "soosu",
   "english": "sauce",
   "speech": "ソース",
+  "english_speech": "sauce",
   "example": "このソースは少し辛いです。",
   "example_kana": "このソースはすこしからいです。",
   "example_english": "This sauce is a little spicy."
@@ -3307,6 +3582,7 @@
   "romaji": "suidou",
   "english": "tap",
   "speech": "すいどう",
+  "english_speech": "tap",
   "example": "水道が壊れて水が出ません。",
   "example_kana": "すいどうがこわれてみずがでません。",
   "example_english": "The tap is broken and no water comes out."
@@ -3319,6 +3595,7 @@
   "romaji": "ondo",
   "english": "temperature",
   "speech": "おんど",
+  "english_speech": "temperature",
   "example": "お風呂の温度は40度です。",
   "example_kana": "おふろのおんどはよんじゅうどです。",
   "example_english": "The bath temperature is 40 degrees."
@@ -3331,6 +3608,7 @@
   "romaji": "deeto",
   "english": "to date, to go on a date (する)",
   "speech": "デート",
+  "english_speech": "to date, to go on a date",
   "example": "日曜日に公園でデートしました。",
   "example_kana": "にちようびにこうえんでデートしました。",
   "example_english": "On Sunday we went on a date in the park."
@@ -3343,6 +3621,7 @@
   "romaji": "yakeru",
   "english": "to be baked [roasted] (vi.)",
   "speech": "やける",
+  "english_speech": "to be baked",
   "example": "パンが焼けたから、食べましょう。",
   "example_kana": "パンがやけたから、たべましょう。",
   "example_english": "The bread is baked, so let's eat."
@@ -3355,6 +3634,7 @@
   "romaji": "ageru",
   "english": "to increase (vt.)",
   "speech": "あげる",
+  "english_speech": "to increase",
   "example": "テレビの音を上げてください。",
   "example_kana": "テレビのおとをあげてください。",
   "example_english": "Please turn up the TV volume."
@@ -3367,6 +3647,7 @@
   "romaji": "sageru",
   "english": "to reduce, to lower (vt.)",
   "speech": "さげる",
+  "english_speech": "to reduce, to lower",
   "example": "あの店は値段を下げました。",
   "example_kana": "あのみせはねだんをさげました。",
   "example_english": "That shop lowered its prices."
@@ -3379,6 +3660,7 @@
   "romaji": "au",
   "english": "to fit, to match",
   "speech": "あう",
+  "english_speech": "to fit, to match",
   "example": "この靴は私の足に合いません。",
   "example_kana": "このくつはわたしのあしにあいません。",
   "example_english": "These shoes don't fit my feet."
@@ -3391,6 +3673,7 @@
   "romaji": "futoru",
   "english": "to get fat",
   "speech": "ふとる",
+  "english_speech": "to get fat",
   "example": "冬に3キロ太りました。",
   "example_kana": "ふゆにさんキロふとりました。",
   "example_english": "I gained three kilos over the winter."
@@ -3403,6 +3686,7 @@
   "romaji": "yaseru",
   "english": "to get thin",
   "speech": "やせる",
+  "english_speech": "to get thin",
   "example": "毎日運動して、少しやせました。",
   "example_kana": "まいにちうんどうして、すこしやせました。",
   "example_english": "I exercised every day and lost a little weight."
@@ -3415,6 +3699,7 @@
   "romaji": "katai",
   "english": "tough, hard",
   "speech": "かたい",
+  "english_speech": "tough, hard",
   "example": "旅館の布団は固かったです。",
   "example_kana": "りょかんのふとんはかたかったです。",
   "example_english": "The futon at the inn was hard."
@@ -3427,6 +3712,7 @@
   "romaji": "yawarakai",
   "english": "soft, tender",
   "speech": "やわらかい",
+  "english_speech": "soft, tender",
   "example": "赤ちゃんの手はやわらかいです。",
   "example_kana": "あかちゃんのてはやわらかいです。",
   "example_english": "A baby's hands are soft."
@@ -3439,6 +3725,7 @@
   "romaji": "nigai",
   "english": "bitter",
   "speech": "にがい",
+  "english_speech": "bitter",
   "example": "薬が苦くて、飲みたくないです。",
   "example_kana": "くすりがにがくて、のみたくないです。",
   "example_english": "The medicine is bitter and I don't want to take it."
@@ -3451,6 +3738,7 @@
   "romaji": "taifuu",
   "english": "typhoon",
   "speech": "たいふう",
+  "english_speech": "typhoon",
   "example": "台風で電車が止まりました。",
   "example_kana": "たいふうででんしゃがとまりました。",
   "example_english": "The trains stopped because of the typhoon."
@@ -3463,6 +3751,7 @@
   "romaji": "jishin",
   "english": "earthquake",
   "speech": "じしん",
+  "english_speech": "earthquake",
   "example": "今朝大きい地震がありました。",
   "example_kana": "けさおおきいじしんがありました。",
   "example_english": "There was a big earthquake this morning."
@@ -3475,6 +3764,7 @@
   "romaji": "kaji",
   "english": "fire",
   "speech": "かじ",
+  "english_speech": "fire",
   "example": "火事に気をつけてください。",
   "example_kana": "かじにきをつけてください。",
   "example_english": "Please be careful about fire."
@@ -3487,6 +3777,7 @@
   "romaji": "dorobou",
   "english": "thief, burglar",
   "speech": "どろぼう",
+  "english_speech": "thief, burglar",
   "example": "夕べ泥棒が家に入りました。",
   "example_kana": "ゆうべどろぼうがいえにはいりました。",
   "example_english": "A burglar got into the house last night."
@@ -3499,6 +3790,7 @@
   "romaji": "jiko",
   "english": "accident",
   "speech": "じこ",
+  "english_speech": "accident",
   "example": "事故で道が込んでいます。",
   "example_kana": "じこでみちがこんでいます。",
   "example_english": "The road is congested because of an accident."
@@ -3511,6 +3803,7 @@
   "romaji": "keisatsu",
   "english": "police station, police",
   "speech": "けいさつ",
+  "english_speech": "police station, police",
   "example": "すぐ警察に電話してください。",
   "example_kana": "すぐけいさつにでんわしてください。",
   "example_english": "Please call the police right away."
@@ -3523,6 +3816,7 @@
   "romaji": "kenka",
   "english": "to argue, to fight (する)",
   "speech": "けんか",
+  "english_speech": "to argue, to fight",
   "example": "昨日、弟とけんかしました。",
   "example_kana": "きのう、おとうととけんかしました。",
   "example_english": "Yesterday I had a fight with my younger brother."
@@ -3535,6 +3829,7 @@
   "romaji": "mitsukaru",
   "english": "to be found (vi.)",
   "speech": "みつかる",
+  "english_speech": "to be found",
   "example": "なくしたかぎが見つかりました。",
   "example_kana": "なくしたかぎがみつかりました。",
   "example_english": "The key I lost was found."
@@ -3547,6 +3842,7 @@
   "romaji": "taoreru",
   "english": "to collapse, to fall over",
   "speech": "たおれる",
+  "english_speech": "to collapse, to fall over",
   "example": "強い風で木が倒れました。",
   "example_kana": "つよいかぜできがたおれました。",
   "example_english": "A tree fell over in the strong wind."
@@ -3559,6 +3855,7 @@
   "romaji": "nigeru",
   "english": "to escape, to run away",
   "speech": "にげる",
+  "english_speech": "to escape, to run away",
   "example": "猫が窓から逃げました。",
   "example_kana": "ねこがまどからにげました。",
   "example_english": "The cat escaped through the window."
@@ -3571,6 +3868,7 @@
   "romaji": "fumu",
   "english": "to step on",
   "speech": "ふむ",
+  "english_speech": "to step on",
   "example": "電車の中で人の足を踏みました。",
   "example_kana": "でんしゃのなかでひとのあしをふみました。",
   "example_english": "I stepped on someone's foot on the train."
@@ -3583,6 +3881,7 @@
   "romaji": "naoru",
   "english": "to be fixed (vi.)",
   "speech": "なおる",
+  "english_speech": "to be fixed",
   "example": "壊れた時計が直りました。",
   "example_kana": "こわれたとけいがなおりました。",
   "example_english": "The broken watch has been fixed."
@@ -3595,6 +3894,7 @@
   "romaji": "okoru",
   "english": "to occur",
   "speech": "おこる",
+  "english_speech": "to occur",
   "example": "この町でよく地震が起こります。",
   "example_kana": "このまちでよくじしんがおこります。",
   "example_english": "Earthquakes often occur in this town."
@@ -3607,6 +3907,7 @@
   "romaji": "kanashii",
   "english": "sad",
   "speech": "かなしい",
+  "english_speech": "sad",
   "example": "悲しい映画を見て泣きました。",
   "example_kana": "かなしいえいがをみてなきました。",
   "example_english": "I watched a sad movie and cried."
@@ -3619,6 +3920,7 @@
   "romaji": "konogoro",
   "english": "these days",
   "speech": "このごろ",
+  "english_speech": "these days",
   "example": "このごろ仕事が忙しいです。",
   "example_kana": "このごろしごとがいそがしいです。",
   "example_english": "Work has been busy these days."
@@ -3631,6 +3933,7 @@
   "romaji": "okyakusan",
   "english": "guest, customer",
   "speech": "おきゃくさん",
+  "english_speech": "guest, customer",
   "example": "今日はお客さんが多かったです。",
   "example_kana": "きょうはおきゃくさんがおおかったです。",
   "example_english": "We had a lot of customers today."
@@ -3643,6 +3946,7 @@
   "romaji": "yubiwa",
   "english": "ring",
   "speech": "ゆびわ",
+  "english_speech": "ring",
   "example": "妻の誕生日に指輪を買いました。",
   "example_kana": "つまのたんじょうびにゆびわをかいました。",
   "example_english": "I bought a ring for my wife's birthday."
@@ -3655,6 +3959,7 @@
   "romaji": "kizu",
   "english": "bruise, flaw",
   "speech": "きず",
+  "english_speech": "bruise, flaw",
   "example": "手の傷がまだ痛いです。",
   "example_kana": "てのきずがまだいたいです。",
   "example_english": "The wound on my hand still hurts."
@@ -3667,6 +3972,7 @@
   "romaji": "kinjo",
   "english": "neighbourhood",
   "speech": "きんじょ",
+  "english_speech": "neighbourhood",
   "example": "近所の人にあいさつしました。",
   "example_kana": "きんじょのひとにあいさつしました。",
   "example_english": "I greeted someone from the neighborhood."
@@ -3679,6 +3985,7 @@
   "romaji": "reji",
   "english": "cash register",
   "speech": "レジ",
+  "english_speech": "cash register",
   "example": "レジに人が並んでいます。",
   "example_kana": "レジにひとがならんでいます。",
   "example_english": "People are lining up at the cash register."
@@ -3691,6 +3998,7 @@
   "romaji": "reshiito",
   "english": "receipt",
   "speech": "レシート",
+  "english_speech": "receipt",
   "example": "レシートは財布に入れました。",
   "example_kana": "レシートはさいふにいれました。",
   "example_english": "I put the receipt in my wallet."
@@ -3703,6 +4011,7 @@
   "romaji": "ten'in",
   "english": "salesperson",
   "speech": "てんいん",
+  "english_speech": "salesperson",
   "example": "店員にサイズを聞きました。",
   "example_kana": "てんいんにサイズをききました。",
   "example_english": "I asked the salesperson about the size."
@@ -3715,6 +4024,7 @@
   "romaji": "chansu",
   "english": "(good) chance",
   "speech": "チャンス",
+  "english_speech": "good chance",
   "example": "いいチャンスだと思います。",
   "example_kana": "いいチャンスだとおもいます。",
   "example_english": "I think it's a good chance."
@@ -3727,6 +4037,7 @@
   "romaji": "yushutsu",
   "english": "to export (する)",
   "speech": "ゆしゅつ",
+  "english_speech": "to export",
   "example": "日本は車を輸出しています。",
   "example_kana": "にほんはくるまをゆしゅつしています。",
   "example_english": "Japan exports cars."
@@ -3739,6 +4050,7 @@
   "romaji": "yunyuu",
   "english": "to import (する)",
   "speech": "ゆにゅう",
+  "english_speech": "to import",
   "example": "外国から果物を輸入します。",
   "example_kana": "がいこくからくだものをゆにゅうします。",
   "example_english": "We import fruit from abroad."
@@ -3751,6 +4063,7 @@
   "romaji": "hakobu",
   "english": "to carry",
   "speech": "はこぶ",
+  "english_speech": "to carry",
   "example": "重い荷物を車で運びました。",
   "example_kana": "おもいにもつをくるまではこびました。",
   "example_english": "I carried the heavy luggage by car."
@@ -3763,6 +4076,7 @@
   "romaji": "ureshii",
   "english": "happy, pleased",
   "speech": "うれしい",
+  "english_speech": "happy, pleased",
   "example": "試験に合格して、うれしいです。",
   "example_kana": "しけんにごうかくして、うれしいです。",
   "example_english": "I passed the exam and I'm happy."
@@ -3775,6 +4089,7 @@
   "romaji": "shougakkou",
   "english": "primary school",
   "speech": "しょうがっこう",
+  "english_speech": "primary school",
   "example": "娘は来年小学校に入ります。",
   "example_kana": "むすめはらいねんしょうがっこうにはいります。",
   "example_english": "My daughter starts primary school next year."
@@ -3787,6 +4102,7 @@
   "romaji": "chuugakkou",
   "english": "junior high school",
   "speech": "ちゅうがっこう",
+  "english_speech": "junior high school",
   "example": "息子は中学校に通っています。",
   "example_kana": "むすこはちゅうがっこうにかよっています。",
   "example_english": "My son goes to junior high school."
@@ -3799,6 +4115,7 @@
   "romaji": "rekishi",
   "english": "history",
   "speech": "れきし",
+  "english_speech": "history",
   "example": "祖父は歴史の本をよく読みます。",
   "example_kana": "そふはれきしのほんをよくよみます。",
   "example_english": "My grandfather often reads history books."
@@ -3811,6 +4128,7 @@
   "romaji": "suugaku",
   "english": "mathematics",
   "speech": "すうがく",
+  "english_speech": "mathematics",
   "example": "数学の試験は難しかったです。",
   "example_kana": "すうがくのしけんはむずかしかったです。",
   "example_english": "The math exam was difficult."
@@ -3823,6 +4141,7 @@
   "romaji": "shakai",
   "english": "society",
   "speech": "しゃかい",
+  "english_speech": "society",
   "example": "社会のルールを守りましょう。",
   "example_kana": "しゃかいのルールをまもりましょう。",
   "example_english": "Let's follow society's rules."
@@ -3835,6 +4154,7 @@
   "romaji": "chiri",
   "english": "geography",
   "speech": "ちり",
+  "english_speech": "geography",
   "example": "地理の授業で地図を見ます。",
   "example_kana": "ちりのじゅぎょうでちずをみます。",
   "example_english": "We look at maps in geography class."
@@ -3847,6 +4167,7 @@
   "romaji": "bunpou",
   "english": "grammar",
   "speech": "ぶんぽう",
+  "english_speech": "grammar",
   "example": "毎日文法の復習をしています。",
   "example_kana": "まいにちぶんぽうのふくしゅうをしています。",
   "example_english": "I review grammar every day."
@@ -3859,6 +4180,7 @@
   "romaji": "suiei",
   "english": "swimming",
   "speech": "すいえい",
+  "english_speech": "swimming",
   "example": "水泳は体にいいです。",
   "example_kana": "すいえいはからだにいいです。",
   "example_english": "Swimming is good for the body."
@@ -3871,6 +4193,7 @@
   "romaji": "sanka",
   "english": "to take part (する)",
   "speech": "さんか",
+  "english_speech": "to take part",
   "example": "来月のマラソンに参加します。",
   "example_kana": "らいげつのマラソンにさんかします。",
   "example_english": "I'll take part in next month's marathon."
@@ -3883,6 +4206,7 @@
   "romaji": "shikaru",
   "english": "to tell off",
   "speech": "しかる",
+  "english_speech": "to tell off",
   "example": "先生は学生をしかりました。",
   "example_kana": "せんせいはがくせいをしかりました。",
   "example_english": "The teacher told off the student."
@@ -3895,6 +4219,7 @@
   "romaji": "tashikameru",
   "english": "to check",
   "speech": "たしかめる",
+  "english_speech": "to check",
   "example": "出発の時間を確かめました。",
   "example_kana": "しゅっぱつのじかんをたしかめました。",
   "example_english": "I checked the departure time."
@@ -3907,6 +4232,7 @@
   "romaji": "tadashii",
   "english": "to correct",
   "speech": "ただしい",
+  "english_speech": "to correct",
   "example": "正しい答えを選んでください。",
   "example_kana": "ただしいこたえをえらんでください。",
   "example_english": "Please choose the correct answer."
@@ -3919,6 +4245,7 @@
   "romaji": "hazukashii",
   "english": "embarrassed",
   "speech": "はずかしい",
+  "english_speech": "embarrassed",
   "example": "名前を間違えて恥ずかしいです。",
   "example_kana": "なまえをまちがえてはずかしいです。",
   "example_english": "I got the name wrong and I'm embarrassed."
@@ -3931,6 +4258,7 @@
   "romaji": "kuwashii",
   "english": "detailed",
   "speech": "くわしい",
+  "english_speech": "detailed",
   "example": "もっと詳しい地図がほしいです。",
   "example_kana": "もっとくわしいちずがほしいです。",
   "example_english": "I want a more detailed map."
@@ -3943,6 +4271,7 @@
   "romaji": "fukuzatsu(na)",
   "english": "complicated, mixed up",
   "speech": "ふくざつ",
+  "english_speech": "complicated, mixed up",
   "example": "日本語の文法は複雑です。",
   "example_kana": "にほんごのぶんぽうはふくざつです。",
   "example_english": "Japanese grammar is complicated."
@@ -3955,6 +4284,7 @@
   "romaji": "kanarazu",
   "english": "surely, certainly",
   "speech": "かならず",
+  "english_speech": "surely, certainly",
   "example": "明日は必ず来てください。",
   "example_kana": "あしたはかならずきてください。",
   "example_english": "Please be sure to come tomorrow."
@@ -3967,6 +4297,7 @@
   "romaji": "dekirudake",
   "english": "as much as possible",
   "speech": "できるだけ",
+  "english_speech": "as much as possible",
   "example": "できるだけ早く帰ります。",
   "example_kana": "できるだけはやくかえります。",
   "example_english": "I will go home as early as possible."
@@ -3979,6 +4310,7 @@
   "romaji": "gakkari",
   "english": "to be disappointed (する)",
   "speech": "がっかり",
+  "english_speech": "to be disappointed",
   "example": "試合に負けて、がっかりしました。",
   "example_kana": "しあいにまけて、がっかりしました。",
   "example_english": "We lost the match and I was disappointed."
@@ -3991,6 +4323,7 @@
   "romaji": "boranteia",
   "english": "volunteer",
   "speech": "ボランティア",
+  "english_speech": "volunteer",
   "example": "日曜日にボランティアをします。",
   "example_kana": "にちようびにボランティアをします。",
   "example_english": "I do volunteer work on Sundays."
@@ -4003,6 +4336,7 @@
   "romaji": "koujou",
   "english": "factory",
   "speech": "こうじょう",
+  "english_speech": "factory",
   "example": "父は車の工場で働いています。",
   "example_kana": "ちちはくるまのこうじょうではたらいています。",
   "example_english": "My father works at a car factory."
@@ -4015,6 +4349,7 @@
   "romaji": "youji",
   "english": "something to do",
   "speech": "ようじ",
+  "english_speech": "something to do",
   "example": "午後は用事があるから、帰ります。",
   "example_kana": "ごごはようじがあるから、かえります。",
   "example_english": "I have something to do this afternoon, so I am going home."
@@ -4027,6 +4362,7 @@
   "romaji": "owari",
   "english": "the end",
   "speech": "おわり",
+  "english_speech": "the end",
   "example": "映画の終わりは悲しかったです。",
   "example_kana": "えいがのおわりはかなしかったです。",
   "example_english": "The end of the movie was sad."
@@ -4039,6 +4375,7 @@
   "romaji": "tochuu",
   "english": "on the way, in the middle",
   "speech": "とちゅう",
+  "english_speech": "on the way, in the middle",
   "example": "駅へ行く途中で雨が降りました。",
   "example_kana": "えきへいくとちゅうであめがふりました。",
   "example_english": "It rained on the way to the station."
@@ -4051,6 +4388,7 @@
   "romaji": "keiken",
   "english": "to experience (する)",
   "speech": "けいけん",
+  "english_speech": "to experience",
   "example": "去年、地震を経験しました。",
   "example_kana": "きょねん、じしんをけいけんしました。",
   "example_english": "I experienced an earthquake last year."
@@ -4063,6 +4401,7 @@
   "romaji": "soudan",
   "english": "to consult (する)",
   "speech": "そうだん",
+  "english_speech": "to consult",
   "example": "仕事のことを部長に相談します。",
   "example_kana": "しごとのことをぶちょうにそうだんします。",
   "example_english": "I will consult the manager about work."
@@ -4075,6 +4414,7 @@
   "romaji": "tsutaeru",
   "english": "to tell",
   "speech": "つたえる",
+  "english_speech": "to tell",
   "example": "母にこのことを伝えてください。",
   "example_kana": "ははにこのことをつたえてください。",
   "example_english": "Please tell my mother about this."
@@ -4087,6 +4427,7 @@
   "romaji": "okonau",
   "english": "to conduct, to hold",
   "speech": "おこなう",
+  "english_speech": "to conduct, to hold",
   "example": "土曜日に学校で試験を行います。",
   "example_kana": "どようびにがっこうでしけんをおこないます。",
   "example_english": "The exam will be held at school on Saturday."
@@ -4099,6 +4440,7 @@
   "romaji": "kazoeru",
   "english": "to count",
   "speech": "かぞえる",
+  "english_speech": "to count",
   "example": "お金を数えてから、払いました。",
   "example_kana": "おかねをかぞえてから、はらいました。",
   "example_english": "I counted the money and then paid."
@@ -4111,6 +4453,7 @@
   "romaji": "dame(na)",
   "english": "impossible",
   "speech": "だめ",
+  "english_speech": "impossible",
   "example": "雨だから、テニスはだめです。",
   "example_kana": "あめだから、テニスはだめです。",
   "example_english": "It is raining, so tennis is out of the question."
@@ -4123,6 +4466,7 @@
   "romaji": "kabe",
   "english": "wall",
   "speech": "かべ",
+  "english_speech": "wall",
   "example": "壁に家族の写真をかけました。",
   "example_kana": "かべにかぞくのしゃしんをかけました。",
   "example_english": "I hung a family photo on the wall."
@@ -4135,6 +4479,7 @@
   "romaji": "posutaa",
   "english": "poster",
   "speech": "ポスター",
+  "english_speech": "poster",
   "example": "駅で映画のポスターを見ました。",
   "example_kana": "えきでえいがのポスターをみました。",
   "example_english": "I saw a movie poster at the station."
@@ -4147,6 +4492,7 @@
   "romaji": "ha",
   "english": "leaf",
   "speech": "は",
+  "english_speech": "leaf",
   "example": "秋になって、葉が赤くなりました。",
   "example_kana": "あきになって、はがあかくなりました。",
   "example_english": "Autumn came and the leaves turned red."
@@ -4159,6 +4505,7 @@
   "romaji": "okujou",
   "english": "roof",
   "speech": "おくじょう",
+  "english_speech": "roof",
   "example": "屋上から東京の町が見えます。",
   "example_kana": "おくじょうからとうきょうのまちがみえます。",
   "example_english": "You can see the city of Tokyo from the roof."
@@ -4171,6 +4518,7 @@
   "romaji": "chika",
   "english": "basement",
   "speech": "ちか",
+  "english_speech": "basement",
   "example": "ビルの地下に駐車場があります。",
   "example_kana": "ビルのちかにちゅうしゃじょうがあります。",
   "example_english": "There is a parking lot in the basement of the building."
@@ -4183,6 +4531,7 @@
   "romaji": "yousu",
   "english": "state",
   "speech": "ようす",
+  "english_speech": "state",
   "example": "電話で娘の様子を聞きました。",
   "example_kana": "でんわでむすめのようすをききました。",
   "example_english": "I asked on the phone how my daughter was doing."
@@ -4195,6 +4544,7 @@
   "romaji": "mukashi",
   "english": "a long time ago",
   "speech": "むかし",
+  "english_speech": "a long time ago",
   "example": "昔、ここは海でした。",
   "example_kana": "むかし、ここはうみでした。",
   "example_english": "A long time ago, this was the sea."
@@ -4207,6 +4557,7 @@
   "romaji": "saikin",
   "english": "recently",
   "speech": "さいきん",
+  "english_speech": "recently",
   "example": "最近、雨の日が多いです。",
   "example_kana": "さいきん、あめのひがおおいです。",
   "example_english": "Recently there have been a lot of rainy days."
@@ -4219,6 +4570,7 @@
   "romaji": "kouji",
   "english": "to do construction work (する)",
   "speech": "こうじ",
+  "english_speech": "to do construction work",
   "example": "駅の前で道の工事をしています。",
   "example_kana": "えきのまえでみちのこうじをしています。",
   "example_english": "They are doing road construction in front of the station."
@@ -4231,6 +4583,7 @@
   "romaji": "haru",
   "english": "to put, to paste",
   "speech": "はる",
+  "english_speech": "to put, to paste",
   "example": "これは壁にはるポスターです。",
   "example_kana": "これはかべにはるポスターです。",
   "example_english": "This is a poster to put up on the wall."
@@ -4243,6 +4596,7 @@
   "romaji": "kawaru",
   "english": "to change (vi.)",
   "speech": "かわる",
+  "english_speech": "to change",
   "example": "この町はずいぶん変わりました。",
   "example_kana": "このまちはずいぶんかわりました。",
   "example_english": "This town has changed a lot."
@@ -4255,6 +4609,7 @@
   "romaji": "kaiwa",
   "english": "conversation",
   "speech": "かいわ",
+  "english_speech": "conversation",
   "example": "日本語で会話の練習をしました。",
   "example_kana": "にほんごでかいわのれんしゅうをしました。",
   "example_english": "I practiced conversation in Japanese."
@@ -4267,6 +4622,7 @@
   "romaji": "sewa",
   "english": "looking after",
   "speech": "せわ",
+  "english_speech": "looking after",
   "example": "毎日、犬の世話をしています。",
   "example_kana": "まいにち、いぬのせわをしています。",
   "example_english": "I take care of the dog every day."
@@ -4279,6 +4635,7 @@
   "romaji": "aite",
   "english": "partner, opponent",
   "speech": "あいて",
+  "english_speech": "partner, opponent",
   "example": "試合の相手は強いチームです。",
   "example_kana": "しあいのあいてはつよいチームです。",
   "example_english": "Our opponent in the match is a strong team."
@@ -4291,6 +4648,7 @@
   "romaji": "aisatsu",
   "english": "to greet (する)",
   "speech": "あいさつ",
+  "english_speech": "to greet",
   "example": "朝、近所の人にあいさつをします。",
   "example_kana": "あさ、きんじょのひとにあいさつをします。",
   "example_english": "In the morning I greet the people in my neighbourhood."
@@ -4303,6 +4661,7 @@
   "romaji": "shoutai",
   "english": "to invite (する)",
   "speech": "しょうたい",
+  "english_speech": "to invite",
   "example": "友達をうちに招待しました。",
   "example_kana": "ともだちをうちにしょうたいしました。",
   "example_english": "I invited a friend to my house."
@@ -4315,6 +4674,7 @@
   "romaji": "sansei",
   "english": "to agree (する)",
   "speech": "さんせい",
+  "english_speech": "to agree",
   "example": "私はその意見に賛成します。",
   "example_kana": "わたしはそのいけんにさんせいします。",
   "example_english": "I agree with that opinion."
@@ -4327,6 +4687,7 @@
   "romaji": "hantai",
   "english": "to oppose (する)",
   "speech": "はんたい",
+  "english_speech": "to oppose",
   "example": "父は私の結婚に反対しました。",
   "example_kana": "ちちはわたしのけっこんにはんたいしました。",
   "example_english": "My father opposed my marriage."
@@ -4339,6 +4700,7 @@
   "romaji": "todoku",
   "english": "to arrive",
   "speech": "とどく",
+  "english_speech": "to arrive",
   "example": "今朝、母から手紙が届きました。",
   "example_kana": "けさ、ははからてがみがとどきました。",
   "example_english": "A letter from my mother arrived this morning."
@@ -4351,6 +4713,7 @@
   "romaji": "irassharu",
   "english": "to come, to go, to be",
   "speech": "いらっしゃる",
+  "english_speech": "to come, to go, to be",
   "example": "先生は教室にいらっしゃいます。",
   "example_kana": "せんせいはきょうしつにいらっしゃいます。",
   "example_english": "The teacher is in the classroom."
@@ -4363,6 +4726,7 @@
   "romaji": "shinjiru",
   "english": "to believe",
   "speech": "しんじる",
+  "english_speech": "to believe",
   "example": "私は妻の話を信じます。",
   "example_kana": "わたしはつまのはなしをしんじます。",
   "example_english": "I believe what my wife says."
@@ -4375,6 +4739,7 @@
   "romaji": "wakareru",
   "english": "to break up, to part",
   "speech": "わかれる",
+  "english_speech": "to break up, to part",
   "example": "駅で友達と別れて、帰りました。",
   "example_kana": "えきでともだちとわかれて、かえりました。",
   "example_english": "I said goodbye to my friend at the station and went home."
@@ -4387,6 +4752,7 @@
   "romaji": "yasashii",
   "english": "kind",
   "speech": "やさしい",
+  "english_speech": "kind",
   "example": "祖母はいつも優しいです。",
   "example_kana": "そぼはいつもやさしいです。",
   "example_english": "My grandmother is always kind."
@@ -4399,6 +4765,7 @@
   "romaji": "kibishii",
   "english": "strict",
   "speech": "きびしい",
+  "english_speech": "strict",
   "example": "高校の先生は厳しかったです。",
   "example_kana": "こうこうのせんせいはきびしかったです。",
   "example_english": "My high school teacher was strict."
@@ -4411,6 +4778,7 @@
   "romaji": "himo",
   "english": "string",
   "speech": "ひも",
+  "english_speech": "string",
   "example": "ひもで箱を結びました。",
   "example_kana": "ひもではこをむすびました。",
   "example_english": "I tied the box with string."
@@ -4423,6 +4791,7 @@
   "romaji": "gasorin",
   "english": "petrol [gasoline]",
   "speech": "ガソリン",
+  "english_speech": "petrol",
   "example": "車にガソリンを入れました。",
   "example_kana": "くるまにガソリンをいれました。",
   "example_english": "I put petrol in the car."
@@ -4435,6 +4804,7 @@
   "romaji": "kyoumi",
   "english": "interest",
   "speech": "きょうみ",
+  "english_speech": "interest",
   "example": "日本の歴史に興味があります。",
   "example_kana": "にほんのれきしにきょうみがあります。",
   "example_english": "I am interested in Japanese history."
@@ -4447,6 +4817,7 @@
   "romaji": "kuuki",
   "english": "air",
   "speech": "くうき",
+  "english_speech": "air",
   "example": "田舎の空気はきれいです。",
   "example_kana": "いなかのくうきはきれいです。",
   "example_english": "The air in the countryside is clean."
@@ -4459,6 +4830,7 @@
   "romaji": "shizen",
   "english": "nature",
   "speech": "しぜん",
+  "english_speech": "nature",
   "example": "この村は自然が美しいです。",
   "example_kana": "このむらはしぜんがうつくしいです。",
   "example_english": "The nature in this village is beautiful."
@@ -4471,6 +4843,7 @@
   "romaji": "tanoshimi",
   "english": "pleasure, looking forward",
   "speech": "たのしみ",
+  "english_speech": "pleasure, looking forward",
   "example": "夏休みの旅行が楽しみです。",
   "example_kana": "なつやすみのりょこうがたのしみです。",
   "example_english": "I am looking forward to the summer holiday trip."
@@ -4483,6 +4856,7 @@
   "romaji": "marason",
   "english": "marathon",
   "speech": "マラソン",
+  "english_speech": "marathon",
   "example": "来月、東京でマラソンを走ります。",
   "example_kana": "らいげつ、とうきょうでマラソンをはしります。",
   "example_english": "Next month I will run a marathon in Tokyo."
@@ -4495,6 +4869,7 @@
   "romaji": "kyanpu",
   "english": "to go camping (する)",
   "speech": "キャンプ",
+  "english_speech": "to go camping",
   "example": "家族と山でキャンプをしました。",
   "example_kana": "かぞくとやまでキャンプをしました。",
   "example_english": "I went camping in the mountains with my family."
@@ -4507,6 +4882,7 @@
   "romaji": "sutaato",
   "english": "to start (する)",
   "speech": "スタート",
+  "english_speech": "to start",
   "example": "新しい生活がスタートします。",
   "example_kana": "あたらしいせいかつがスタートします。",
   "example_english": "A new life is starting."
@@ -4519,6 +4895,7 @@
   "romaji": "oru",
   "english": "to break, to fold (vt.)",
   "speech": "おる",
+  "english_speech": "to break, to fold",
   "example": "紙を半分に折ってください。",
   "example_kana": "かみをはんぶんにおってください。",
   "example_english": "Please fold the paper in half."
@@ -4531,6 +4908,7 @@
   "romaji": "suberu",
   "english": "to slip, to slide",
   "speech": "すべる",
+  "english_speech": "to slip, to slide",
   "example": "雪の日は道が滑ります。",
   "example_kana": "ゆきのひはみちがすべります。",
   "example_english": "On snowy days the roads are slippery."
@@ -4543,6 +4921,7 @@
   "romaji": "atsumaru",
   "english": "to gather (vi.)",
   "speech": "あつまる",
+  "english_speech": "to gather",
   "example": "公園に子供が集まっています。",
   "example_kana": "こうえんにこどもがあつまっています。",
   "example_english": "Children are gathering in the park."
@@ -4555,6 +4934,7 @@
   "romaji": "tanoshimu",
   "english": "to enjoy",
   "speech": "たのしむ",
+  "english_speech": "to enjoy",
   "example": "祖父は散歩を楽しんでいます。",
   "example_kana": "そふはさんぽをたのしんでいます。",
   "example_english": "My grandfather enjoys his walks."
@@ -4567,6 +4947,7 @@
   "romaji": "mezurashii",
   "english": "rare, unusual",
   "speech": "めずらしい",
+  "english_speech": "rare, unusual",
   "example": "この店に珍しい果物があります。",
   "example_kana": "このみせにめずらしいくだものがあります。",
   "example_english": "This shop has some unusual fruit."
@@ -4579,6 +4960,7 @@
   "romaji": "rusu",
   "english": "absence, being away from home",
   "speech": "るす",
+  "english_speech": "absence, being away from home",
   "example": "電話しましたが、留守でした。",
   "example_kana": "でんわしましたが、るすでした。",
   "example_english": "I called, but nobody was home."
@@ -4591,6 +4973,7 @@
   "romaji": "omocha",
   "english": "toy",
   "speech": "おもちゃ",
+  "english_speech": "toy",
   "example": "子供がおもちゃで遊んでいます。",
   "example_kana": "こどもがおもちゃであそんでいます。",
   "example_english": "The child is playing with a toy."
@@ -4603,6 +4986,7 @@
   "romaji": "nemuru",
   "english": "to sleep",
   "speech": "ねむる",
+  "english_speech": "to sleep",
   "example": "昨日の夜はよく眠りました。",
   "example_kana": "きのうのよるはよくねむりました。",
   "example_english": "I slept well last night."
@@ -4615,6 +4999,7 @@
   "romaji": "todokeru",
   "english": "to deliver, to send",
   "speech": "とどける",
+  "english_speech": "to deliver, to send",
   "example": "忘れ物を交番に届けました。",
   "example_kana": "わすれものをこうばんにとどけました。",
   "example_english": "I took the lost item to the police box."
@@ -4627,6 +5012,7 @@
   "romaji": "kowasu",
   "english": "to break (vt.)",
   "speech": "こわす",
+  "english_speech": "to break",
   "example": "弟が私のカメラを壊しました。",
   "example_kana": "おとうとがわたしのカメラをこわしました。",
   "example_english": "My little brother broke my camera."
@@ -4639,6 +5025,7 @@
   "romaji": "nureru",
   "english": "to get damp",
   "speech": "ぬれる",
+  "english_speech": "to get damp",
   "example": "雨で靴と服がぬれました。",
   "example_kana": "あめでくつとふくがぬれました。",
   "example_english": "My shoes and clothes got wet in the rain."
@@ -4651,6 +5038,7 @@
   "romaji": "kawaku",
   "english": "to get dry",
   "speech": "かわく",
+  "english_speech": "to get dry",
   "example": "タオルはまだ乾いていません。",
   "example_kana": "タオルはまだかわいていません。",
   "example_english": "The towel has not dried yet."
@@ -4663,6 +5051,7 @@
   "romaji": "sugiru",
   "english": "to pass",
   "speech": "すぎる",
+  "english_speech": "to pass",
   "example": "もう12時を過ぎました。",
   "example_kana": "もうじゅうにじをすぎました。",
   "example_english": "It is already past twelve o'clock."
@@ -4675,6 +5064,7 @@
   "romaji": "kireru",
   "english": "to break",
   "speech": "きれる",
+  "english_speech": "to break",
   "example": "靴のひもが切れました。",
   "example_kana": "くつのひもがきれました。",
   "example_english": "My shoelace broke."
@@ -4687,6 +5077,7 @@
   "romaji": "nakunaru",
   "english": "to be lost, to run out (vi.)",
   "speech": "なくなる",
+  "english_speech": "to be lost, to run out",
   "example": "牛乳がなくなったから、買います。",
   "example_kana": "ぎゅうにゅうがなくなったから、かいます。",
   "example_english": "We have run out of milk, so I will buy some."
@@ -4699,6 +5090,7 @@
   "romaji": "jiyuu(na)",
   "english": "free",
   "speech": "じゆう",
+  "english_speech": "free",
   "example": "午後は自由な時間があります。",
   "example_kana": "ごごはじゆうなじかんがあります。",
   "example_english": "I have free time in the afternoon."
@@ -4711,6 +5103,7 @@
   "romaji": "jama(na)",
   "english": "in the way",
   "speech": "じゃま",
+  "english_speech": "in the way",
   "example": "廊下の大きい箱が邪魔です。",
   "example_kana": "ろうかのおおきいはこがじゃまです。",
   "example_english": "The big box in the corridor is in the way."
@@ -4723,6 +5116,7 @@
   "romaji": "okazu",
   "english": "dishes to go with rice",
   "speech": "おかず",
+  "english_speech": "dishes to go with rice",
   "example": "今晩のおかずは魚です。",
   "example_kana": "こんばんのおかずはさかなです。",
   "example_english": "Tonight's main dish is fish."
@@ -4735,6 +5129,7 @@
   "romaji": "hi",
   "english": "fire",
   "speech": "ひ",
+  "english_speech": "fire",
   "example": "料理の後で、火を消してください。",
   "example_kana": "りょうりのあとで、ひをけしてください。",
   "example_english": "After cooking, please turn off the flame."
@@ -4747,6 +5142,7 @@
   "romaji": "nioi",
   "english": "smell",
   "speech": "におい",
+  "english_speech": "smell",
   "example": "台所からいいにおいがします。",
   "example_kana": "だいどころからいいにおいがします。",
   "example_english": "There is a nice smell coming from the kitchen."
@@ -4759,6 +5155,7 @@
   "romaji": "bai",
   "english": "double",
   "speech": "ばい",
+  "english_speech": "double",
   "example": "肉の値段が倍になりました。",
   "example_kana": "にくのねだんがばいになりました。",
   "example_english": "The price of meat doubled."
@@ -4771,6 +5168,7 @@
   "romaji": "ryou",
   "english": "amount",
   "speech": "りょう",
+  "english_speech": "amount",
   "example": "この店は料理の量が多いです。",
   "example_kana": "このみせはりょうりのりょうがおおいです。",
   "example_english": "This restaurant serves large portions."
@@ -4783,6 +5181,7 @@
   "romaji": "kazu",
   "english": "number",
   "speech": "かず",
+  "english_speech": "number",
   "example": "村の子供の数が減りました。",
   "example_kana": "むらのこどものかずがへりました。",
   "example_english": "The number of children in the village has decreased."
@@ -4795,6 +5194,7 @@
   "romaji": "tsutsumu",
   "english": "to wrap",
   "speech": "つつむ",
+  "english_speech": "to wrap",
   "example": "きれいな紙で包んでください。",
   "example_kana": "きれいなかみでつつんでください。",
   "example_english": "Please wrap it in pretty paper."
@@ -4807,6 +5207,7 @@
   "romaji": "yaku",
   "english": "to grill, to bake (vt.)",
   "speech": "やく",
+  "english_speech": "to grill, to bake",
   "example": "今夜は肉を焼いて、食べましょう。",
   "example_kana": "こんやはにくをやいて、たべましょう。",
   "example_english": "Let's grill some meat and eat it tonight."
@@ -4819,6 +5220,7 @@
   "romaji": "wakasu",
   "english": "to boil",
   "speech": "わかす",
+  "english_speech": "to boil",
   "example": "お湯を沸かして、お茶を入れます。",
   "example_kana": "おゆをわかして、おちゃをいれます。",
   "example_english": "I will boil water and make tea."
@@ -4831,6 +5233,7 @@
   "romaji": "koi",
   "english": "strong, dark",
   "speech": "こい",
+  "english_speech": "strong, dark",
   "example": "兄は濃いコーヒーが好きです。",
   "example_kana": "あにはこいコーヒーがすきです。",
   "example_english": "My older brother likes strong coffee."
@@ -4843,6 +5246,7 @@
   "romaji": "atsui",
   "english": "thick",
   "speech": "あつい",
+  "english_speech": "thick",
   "example": "この辞書は厚くて、重いです。",
   "example_kana": "このじしょはあつくて、おもいです。",
   "example_english": "This dictionary is thick and heavy."
@@ -4855,6 +5259,7 @@
   "romaji": "kagaku",
   "english": "science",
   "speech": "かがく",
+  "english_speech": "science",
   "example": "大学で科学を勉強しています。",
   "example_kana": "だいがくでかがくをべんきょうしています。",
   "example_english": "I am studying science at university."
@@ -4867,6 +5272,7 @@
   "romaji": "bungaku",
   "english": "literature",
   "speech": "ぶんがく",
+  "english_speech": "literature",
   "example": "姉は日本文学の先生です。",
   "example_kana": "あねはにほんぶんがくのせんせいです。",
   "example_english": "My older sister is a teacher of Japanese literature."
@@ -4879,6 +5285,7 @@
   "romaji": "ten",
   "english": "score, mark",
   "speech": "てん",
+  "english_speech": "score, mark",
   "example": "テストで90点を取りました。",
   "example_kana": "テストできゅうじゅってんをとりました。",
   "example_english": "I got 90 points on the test."
@@ -4891,6 +5298,7 @@
   "romaji": "sen",
   "english": "line",
   "speech": "せん",
+  "english_speech": "line",
   "example": "白い線の後ろで待ってください。",
   "example_kana": "しろいせんのうしろでまってください。",
   "example_english": "Please wait behind the white line."
@@ -4903,6 +5311,7 @@
   "romaji": "~ijou",
   "english": "～ or more",
   "speech": "いじょう",
+  "english_speech": "or more",
   "example": "このゲームは18歳以上です。",
   "example_kana": "このゲームはじゅうはっさいいじょうです。",
   "example_english": "This game is for ages 18 and over."
@@ -4915,6 +5324,7 @@
   "romaji": "~ika",
   "english": "～ or less",
   "speech": "いか",
+  "english_speech": "or less",
   "example": "500円以下の物を買います。",
   "example_kana": "ごひゃくえんいかのものをかいます。",
   "example_english": "I will buy something that costs 500 yen or less."
@@ -4927,6 +5337,7 @@
   "romaji": "kyouiku",
   "english": "to educate (する)",
   "speech": "きょういく",
+  "english_speech": "to educate",
   "example": "会社で新しい人を教育しました。",
   "example_kana": "かいしゃであたらしいひとをきょういくしました。",
   "example_english": "I trained the new people at the company."
@@ -4939,6 +5350,7 @@
   "romaji": "kinchou",
   "english": "to get nervous (する)",
   "speech": "きんちょう",
+  "english_speech": "to get nervous",
   "example": "試験の前に緊張しました。",
   "example_kana": "しけんのまえにきんちょうしました。",
   "example_english": "I got nervous before the exam."
@@ -4951,6 +5363,7 @@
   "romaji": "nyuugaku",
   "english": "to enter school (する)",
   "speech": "にゅうがく",
+  "english_speech": "to enter school",
   "example": "娘は4月に小学校に入学します。",
   "example_kana": "むすめはしがつにしょうがっこうににゅうがくします。",
   "example_english": "My daughter starts primary school in April."
@@ -4963,6 +5376,7 @@
   "romaji": "sotsugyou",
   "english": "to graduate (する)",
   "speech": "そつぎょう",
+  "english_speech": "to graduate",
   "example": "兄は去年大学を卒業しました。",
   "example_kana": "あにはきょねんだいがくをそつぎょうしました。",
   "example_english": "My older brother graduated from university last year."
@@ -4975,6 +5389,7 @@
   "romaji": "chuushi",
   "english": "to cancel (する)",
   "speech": "ちゅうし",
+  "english_speech": "to cancel",
   "example": "雨で試合を中止しました。",
   "example_kana": "あめでしあいをちゅうししました。",
   "example_english": "We cancelled the match because of the rain."
@@ -4987,6 +5402,7 @@
   "romaji": "hatsuon",
   "english": "to pronounce (する)",
   "speech": "はつおん",
+  "english_speech": "to pronounce",
   "example": "この言葉はどう発音しますか。",
   "example_kana": "このことばはどうはつおんしますか。",
   "example_english": "How do you pronounce this word?"
@@ -4999,6 +5415,7 @@
   "romaji": "goukaku",
   "english": "to pass (する)",
   "speech": "ごうかく",
+  "english_speech": "to pass",
   "example": "妹は試験に合格しました。",
   "example_kana": "いもうとはしけんにごうかくしました。",
   "example_english": "My younger sister passed the exam."
@@ -5011,6 +5428,7 @@
   "romaji": "ochiru",
   "english": "to drop, to fail (vi.)",
   "speech": "おちる",
+  "english_speech": "to drop, to fail",
   "example": "財布が机から落ちました。",
   "example_kana": "さいふがつくえからおちました。",
   "example_english": "The wallet fell off the desk."
@@ -5023,6 +5441,7 @@
   "romaji": "(o)mimai",
   "english": "visiting somebody who is ill",
   "speech": "みまい",
+  "english_speech": "visiting somebody who is ill",
   "example": "明日、友達のお見舞いに行きます。",
   "example_kana": "あした、ともだちのおみまいにいきます。",
   "example_english": "Tomorrow I am going to visit my friend in hospital."
@@ -5035,6 +5454,7 @@
   "romaji": "guai",
   "english": "condition",
   "speech": "ぐあい",
+  "english_speech": "condition",
   "example": "今日は体の具合が悪いです。",
   "example_kana": "きょうはからだのぐあいがわるいです。",
   "example_english": "I am not feeling well today."
@@ -5047,6 +5467,7 @@
   "romaji": "nyuuin",
   "english": "to go into hospital (する)",
   "speech": "にゅういん",
+  "english_speech": "to go into hospital",
   "example": "祖父は先週入院しました。",
   "example_kana": "そふはせんしゅうにゅういんしました。",
   "example_english": "My grandfather went into hospital last week."
@@ -5059,6 +5480,7 @@
   "romaji": "taiin",
   "english": "to leave hospital (する)",
   "speech": "たいいん",
+  "english_speech": "to leave hospital",
   "example": "父は来週退院します。",
   "example_kana": "ちちはらいしゅうたいいんします。",
   "example_english": "My father leaves hospital next week."
@@ -5071,6 +5493,7 @@
   "romaji": "naku",
   "english": "to cry",
   "speech": "なく",
+  "english_speech": "to cry",
   "example": "赤ちゃんがずっと泣いています。",
   "example_kana": "あかちゃんがずっとないています。",
   "example_english": "The baby has been crying the whole time."
@@ -5083,6 +5506,7 @@
   "romaji": "warau",
   "english": "to laugh",
   "speech": "わらう",
+  "english_speech": "to laugh",
   "example": "友達と映画を見て笑いました。",
   "example_kana": "ともだちとえいがをみてわらいました。",
   "example_english": "I watched a film with my friend and laughed."
@@ -5095,6 +5519,7 @@
   "romaji": "okashii",
   "english": "strange",
   "speech": "おかしい",
+  "english_speech": "strange",
   "example": "車の音がおかしいです。",
   "example_kana": "くるまのおとがおかしいです。",
   "example_english": "The car is making a strange sound."
@@ -5107,6 +5532,7 @@
   "romaji": "kowai",
   "english": "scary",
   "speech": "こわい",
+  "english_speech": "scary",
   "example": "夜の道は暗くて怖いです。",
   "example_kana": "よるのみちはくらくてこわいです。",
   "example_english": "The road at night is dark and scary."
@@ -5119,6 +5545,7 @@
   "romaji": "nemui",
   "english": "sleepy",
   "speech": "ねむい",
+  "english_speech": "sleepy",
   "example": "午後はいつも眠くなります。",
   "example_kana": "ごごはいつもねむくなります。",
   "example_english": "I always get sleepy in the afternoon."
@@ -5131,6 +5558,7 @@
   "romaji": "kyuuni",
   "english": "suddenly",
   "speech": "きゅうに",
+  "english_speech": "suddenly",
   "example": "急に電車が止まりました。",
   "example_kana": "きゅうにでんしゃがとまりました。",
   "example_english": "The train stopped suddenly."
@@ -5143,6 +5571,7 @@
   "romaji": "yatto",
   "english": "finally",
   "speech": "やっと",
+  "english_speech": "finally",
   "example": "やっと仕事が終わりました。",
   "example_kana": "やっとしごとがおわりました。",
   "example_english": "The work is finally finished."
@@ -5155,6 +5584,7 @@
   "romaji": "seiji",
   "english": "politics",
   "speech": "せいじ",
+  "english_speech": "politics",
   "example": "父は政治の話が好きです。",
   "example_kana": "ちちはせいじのはなしがすきです。",
   "example_english": "My father likes talking about politics."
@@ -5167,6 +5597,7 @@
   "romaji": "bunka",
   "english": "culture",
   "speech": "ぶんか",
+  "english_speech": "culture",
   "example": "日本の文化に興味があります。",
   "example_kana": "にほんのぶんかにきょうみがあります。",
   "example_english": "I am interested in Japanese culture."
@@ -5179,6 +5610,7 @@
   "romaji": "houritsu",
   "english": "law",
   "speech": "ほうりつ",
+  "english_speech": "law",
   "example": "この国の法律は厳しいです。",
   "example_kana": "このくにのほうりつはきびしいです。",
   "example_english": "This country's laws are strict."
@@ -5191,6 +5623,7 @@
   "romaji": "jinkou",
   "english": "population",
   "speech": "じんこう",
+  "english_speech": "population",
   "example": "この町の人口は5万人です。",
   "example_kana": "このまちのじんこうはごまんにんです。",
   "example_english": "The population of this town is 50,000."
@@ -5203,6 +5636,7 @@
   "romaji": "gen'in",
   "english": "cause",
   "speech": "げんいん",
+  "english_speech": "cause",
   "example": "事故の原因を調べています。",
   "example_kana": "じこのげんいんをしらべています。",
   "example_english": "They are investigating the cause of the accident."
@@ -5215,6 +5649,7 @@
   "romaji": "riyou",
   "english": "to use (する)",
   "speech": "りよう",
+  "english_speech": "to use",
   "example": "図書館をよく利用します。",
   "example_kana": "としょかんをよくりようします。",
   "example_english": "I often use the library."
@@ -5227,6 +5662,7 @@
   "romaji": "shiyou",
   "english": "to use (する)",
   "speech": "しよう",
+  "english_speech": "to use",
   "example": "明日会議室を使用します。",
   "example_kana": "あしたかいぎしつをしようします。",
   "example_english": "I will use the meeting room tomorrow."
@@ -5239,6 +5675,7 @@
   "romaji": "sensou",
   "english": "to go to war (する)",
   "speech": "せんそう",
+  "english_speech": "to go to war",
   "example": "昔、この国は戦争をしました。",
   "example_kana": "むかし、このくにはせんそうをしました。",
   "example_english": "Long ago, this country went to war."
@@ -5251,6 +5688,7 @@
   "romaji": "agaru",
   "english": "to increase, to rise, to improve (vi.)",
   "speech": "あがる",
+  "english_speech": "to increase, to rise, to improve",
   "example": "野菜の値段が上がりました。",
   "example_kana": "やさいのねだんがあがりました。",
   "example_english": "The price of vegetables went up."
@@ -5263,6 +5701,7 @@
   "romaji": "sagaru",
   "english": "to decrease, to drop, to get lower (vi.)",
   "speech": "さがる",
+  "english_speech": "to decrease, to drop, to get lower",
   "example": "今日は熱が下がりました。",
   "example_kana": "きょうはねつがさがりました。",
   "example_english": "My fever went down today."
@@ -5275,6 +5714,7 @@
   "romaji": "fueru",
   "english": "to increase",
   "speech": "ふえる",
+  "english_speech": "to increase",
   "example": "最近仕事が増えました。",
   "example_kana": "さいきんしごとがふえました。",
   "example_english": "My work has increased recently."
@@ -5287,6 +5727,7 @@
   "romaji": "heru",
   "english": "to decrease",
   "speech": "へる",
+  "english_speech": "to decrease",
   "example": "この村は子供が減っています。",
   "example_kana": "このむらはこどもがへっています。",
   "example_english": "The number of children in this village is decreasing."
@@ -5299,6 +5740,7 @@
   "romaji": "anzen(na)",
   "english": "safe",
   "speech": "あんぜん",
+  "english_speech": "safe",
   "example": "安全な所で待ちましょう。",
   "example_kana": "あんぜんなところでまちましょう。",
   "example_english": "Let's wait in a safe place."
@@ -5311,6 +5753,7 @@
   "romaji": "kiken(na)",
   "english": "dangerous",
   "speech": "きけん",
+  "english_speech": "dangerous",
   "example": "この川は深くて危険です。",
   "example_kana": "このかわはふかくてきけんです。",
   "example_english": "This river is deep and dangerous."
@@ -5323,6 +5766,7 @@
   "romaji": "kikai",
   "english": "chance",
   "speech": "きかい",
+  "english_speech": "chance",
   "example": "日本語を話す機会が少ないです。",
   "example_kana": "にほんごをはなすきかいがすくないです。",
   "example_english": "I have few chances to speak Japanese."
@@ -5335,6 +5779,7 @@
   "romaji": "jidai",
   "english": "period, time",
   "speech": "じだい",
+  "english_speech": "period, time",
   "example": "学生時代によく旅行しました。",
   "example_kana": "がくせいじだいによくりょこうしました。",
   "example_english": "I travelled a lot in my student days."
@@ -5347,6 +5792,7 @@
   "romaji": "hi",
   "english": "day",
   "speech": "ひ",
+  "english_speech": "day",
   "example": "雨の日は家で本を読みます。",
   "example_kana": "あめのひはいえでほんをよみます。",
   "example_english": "On rainy days I read books at home."
@@ -5359,6 +5805,7 @@
   "romaji": "korekara",
   "english": "from now",
   "speech": "これから",
+  "english_speech": "from now",
   "example": "これから買い物に行きます。",
   "example_kana": "これからかいものにいきます。",
   "example_english": "I am going shopping now."
@@ -5371,6 +5818,7 @@
   "romaji": "kondo",
   "english": "next time",
   "speech": "こんど",
+  "english_speech": "next time",
   "example": "今度一緒に映画を見ませんか。",
   "example_kana": "こんどいっしょにえいがをみませんか。",
   "example_english": "Shall we watch a film together next time?"
@@ -5383,6 +5831,7 @@
   "romaji": "tamani",
   "english": "sometimes",
   "speech": "たまに",
+  "english_speech": "sometimes",
   "example": "たまに友達とお酒を飲みます。",
   "example_kana": "たまにともだちとおさけをのみます。",
   "example_english": "I sometimes drink with friends."
@@ -5395,6 +5844,7 @@
   "romaji": "mazu",
   "english": "first of all",
   "speech": "まず",
+  "english_speech": "first of all",
   "example": "まず手を洗ってください。",
   "example_kana": "まずてをあらってください。",
   "example_english": "First of all, please wash your hands."
@@ -5407,6 +5857,7 @@
   "romaji": "konoaida",
   "english": "the other day",
   "speech": "このあいだ",
+  "english_speech": "the other day",
   "example": "この間、佐藤さんに会いました。",
   "example_kana": "このあいだ、さとうさんにあいました。",
   "example_english": "I met Mr. Sato the other day."
@@ -5419,6 +5870,7 @@
   "romaji": "sakki",
   "english": "a short while ago",
   "speech": "さっき",
+  "english_speech": "a short while ago",
   "example": "さっき電話がありました。",
   "example_kana": "さっきでんわがありました。",
   "example_english": "There was a phone call a short while ago."
@@ -5431,6 +5883,7 @@
   "romaji": "kau",
   "english": "to keep (a pet)",
   "speech": "かう",
+  "english_speech": "to keep a pet",
   "example": "うちで犬を2匹飼っています。",
   "example_kana": "うちでいぬをにひきかっています。",
   "example_english": "We keep two dogs at home."
@@ -5443,6 +5896,7 @@
   "romaji": "ojousan",
   "english": "(someone's) daughter",
   "speech": "おじょうさん",
+  "english_speech": "someone's daughter",
   "example": "田中さんのお嬢さんは医者です。",
   "example_kana": "たなかさんのおじょうさんはいしゃです。",
   "example_english": "Mr. Tanaka's daughter is a doctor."
@@ -5455,6 +5909,7 @@
   "romaji": "josei",
   "english": "woman",
   "speech": "じょせい",
+  "english_speech": "woman",
   "example": "女性のお客さんが多いです。",
   "example_kana": "じょせいのおきゃくさんがおおいです。",
   "example_english": "There are many female customers."
@@ -5467,6 +5922,7 @@
   "romaji": "dansei",
   "english": "man",
   "speech": "だんせい",
+  "english_speech": "man",
   "example": "あの背が高い男性は誰ですか。",
   "example_kana": "あのせがたかいだんせいはだれですか。",
   "example_english": "Who is that tall man?"
@@ -5479,6 +5935,7 @@
   "romaji": "katei",
   "english": "family",
   "speech": "かてい",
+  "english_speech": "family",
   "example": "家庭では英語を話しています。",
   "example_kana": "かていではえいごをはなしています。",
   "example_english": "At home, we speak English."
@@ -5491,6 +5948,7 @@
   "romaji": "okanemochi",
   "english": "rich person",
   "speech": "おかねもち",
+  "english_speech": "rich person",
   "example": "お金持ちになりたいです。",
   "example_kana": "おかねもちになりたいです。",
   "example_english": "I want to become rich."
@@ -5503,6 +5961,7 @@
   "romaji": "kokoro",
   "english": "heart, spirit",
   "speech": "こころ",
+  "english_speech": "heart, spirit",
   "example": "祖母は心が優しい人です。",
   "example_kana": "そぼはこころがやさしいひとです。",
   "example_english": "My grandmother is a kind-hearted person."
@@ -5515,6 +5974,7 @@
   "romaji": "guruupu",
   "english": "group",
   "speech": "グループ",
+  "english_speech": "group",
   "example": "5人のグループで勉強します。",
   "example_kana": "ごにんのグループでべんきょうします。",
   "example_english": "We study in a group of five."
@@ -5527,6 +5987,7 @@
   "romaji": "menbaa",
   "english": "member",
   "speech": "メンバー",
+  "english_speech": "member",
   "example": "チームのメンバーは10人です。",
   "example_kana": "チームのメンバーはじゅうにんです。",
   "example_english": "The team has ten members."
@@ -5539,6 +6000,7 @@
   "romaji": "taipu",
   "english": "type",
   "speech": "タイプ",
+  "english_speech": "type",
   "example": "どんなタイプの車が好きですか。",
   "example_kana": "どんなタイプのくるまがすきですか。",
   "example_english": "What type of car do you like?"
@@ -5551,6 +6013,7 @@
   "romaji": "ijimeru",
   "english": "to bully",
   "speech": "いじめる",
+  "english_speech": "to bully",
   "example": "弟をいじめないでください。",
   "example_kana": "おとうとをいじめないでください。",
   "example_english": "Please don't bully your little brother."
@@ -5563,6 +6026,7 @@
   "romaji": "niru",
   "english": "to look alike",
   "speech": "にる",
+  "english_speech": "to look alike",
   "example": "息子は私によく似ています。",
   "example_kana": "むすこはわたしによくにています。",
   "example_english": "My son looks a lot like me."
@@ -5575,6 +6039,7 @@
   "romaji": "umai",
   "english": "good, skilful",
   "speech": "うまい",
+  "english_speech": "good, skilful",
   "example": "山田さんは歌がうまいです。",
   "example_kana": "やまださんはうたがうまいです。",
   "example_english": "Mr. Yamada is good at singing."
@@ -5587,6 +6052,7 @@
   "romaji": "otonashii",
   "english": "quiet",
   "speech": "おとなしい",
+  "english_speech": "quiet",
   "example": "うちの猫はおとなしいです。",
   "example_kana": "うちのねこはおとなしいです。",
   "example_english": "Our cat is quiet."
@@ -5599,6 +6065,7 @@
   "romaji": "kankei",
   "english": "relationship",
   "speech": "かんけい",
+  "english_speech": "relationship",
   "example": "友達といい関係を続けたいです。",
   "example_kana": "ともだちといいかんけいをつづけたいです。",
   "example_english": "I want to keep a good relationship with my friends."
@@ -5611,6 +6078,7 @@
   "romaji": "orei",
   "english": "thanks",
   "speech": "おれい",
+  "english_speech": "thanks",
   "example": "先生にお礼を言いました。",
   "example_kana": "せんせいにおれいをいいました。",
   "example_english": "I thanked the teacher."
@@ -5623,6 +6091,7 @@
   "romaji": "okurimono",
   "english": "present",
   "speech": "おくりもの",
+  "english_speech": "present",
   "example": "友達から贈り物が届きました。",
   "example_kana": "ともだちからおくりものがとどきました。",
   "example_english": "A present arrived from my friend."
@@ -5635,6 +6104,7 @@
   "romaji": "betsu",
   "english": "different",
   "speech": "べつ",
+  "english_speech": "different",
   "example": "別の店で買いましょう。",
   "example_kana": "べつのみせでかいましょう。",
   "example_english": "Let's buy it at a different shop."
@@ -5647,6 +6117,7 @@
   "romaji": "komyunikeeshon",
   "english": "communication",
   "speech": "コミュニケーション",
+  "english_speech": "communication",
   "example": "コミュニケーションは大切です。",
   "example_kana": "コミュニケーションはたいせつです。",
   "example_english": "Communication is important."
@@ -5659,6 +6130,7 @@
   "romaji": "ojigi",
   "english": "to bow (する)",
   "speech": "おじぎ",
+  "english_speech": "to bow",
   "example": "社長におじぎをしました。",
   "example_kana": "しゃちょうにおじぎをしました。",
   "example_english": "I bowed to the company president."
@@ -5671,6 +6143,7 @@
   "romaji": "enryo",
   "english": "to be reserved (する)",
   "speech": "えんりょ",
+  "english_speech": "to be reserved",
   "example": "どうぞ、遠慮しないでください。",
   "example_kana": "どうぞ、えんりょしないでください。",
   "example_english": "Please, don't hold back."
@@ -5683,6 +6156,7 @@
   "romaji": "sashiageru",
   "english": "to give",
   "speech": "さしあげる",
+  "english_speech": "to give",
   "example": "先生にお土産を差し上げました。",
   "example_kana": "せんせいにおみやげをさしあげました。",
   "example_english": "I gave the teacher a souvenir."
@@ -5695,6 +6169,7 @@
   "romaji": "shiraseru",
   "english": "to let (someone) know",
   "speech": "しらせる",
+  "english_speech": "to let someone know",
   "example": "新しい住所を母に知らせました。",
   "example_kana": "あたらしいじゅうしょをははにしらせました。",
   "example_english": "I let my mother know my new address."
@@ -5707,6 +6182,7 @@
   "romaji": "tazuneru",
   "english": "to visit",
   "speech": "たずねる",
+  "english_speech": "to visit",
   "example": "日曜日におばさんを訪ねました。",
   "example_kana": "にちようびにおばさんをたずねました。",
   "example_english": "I visited my aunt on Sunday."
@@ -5719,6 +6195,7 @@
   "romaji": "ayamaru",
   "english": "to apologise",
   "speech": "あやまる",
+  "english_speech": "to apologise",
   "example": "遅れて、友達に謝りました。",
   "example_kana": "おくれて、ともだちにあやまりました。",
   "example_english": "I was late and apologised to my friend."
@@ -5731,6 +6208,7 @@
   "romaji": "okoru",
   "english": "to get angry",
   "speech": "おこる",
+  "english_speech": "to get angry",
   "example": "弟はすぐ怒ります。",
   "example_kana": "おとうとはすぐおこります。",
   "example_english": "My little brother gets angry easily."
@@ -5743,6 +6221,7 @@
   "romaji": "odoroku",
   "english": "to be surprised",
   "speech": "おどろく",
+  "english_speech": "to be surprised",
   "example": "手紙を読んで驚きました。",
   "example_kana": "てがみをよんでおどろきました。",
   "example_english": "I was surprised when I read the letter."
@@ -5755,6 +6234,7 @@
   "romaji": "teinei(na)",
   "english": "polite, thorough",
   "speech": "ていねい",
+  "english_speech": "polite, thorough",
   "example": "丁寧な言葉で話してください。",
   "example_kana": "ていねいなことばではなしてください。",
   "example_english": "Please speak with polite language."
@@ -5767,6 +6247,7 @@
   "romaji": "omoide",
   "english": "memories",
   "speech": "おもいで",
+  "english_speech": "memories",
   "example": "夏の旅行はいい思い出です。",
   "example_kana": "なつのりょこうはいいおもいでです。",
   "example_english": "The summer trip is a good memory."
@@ -5779,6 +6260,7 @@
   "romaji": "arubamu",
   "english": "album",
   "speech": "アルバム",
+  "english_speech": "album",
   "example": "写真をアルバムに入れました。",
   "example_kana": "しゃしんをアルバムにいれました。",
   "example_english": "I put the photos in an album."
@@ -5791,6 +6273,7 @@
   "romaji": "jimu",
   "english": "gym",
   "speech": "ジム",
+  "english_speech": "gym",
   "example": "毎週ジムで運動しています。",
   "example_kana": "まいしゅうジムでうんどうしています。",
   "example_english": "I work out at the gym every week."
@@ -5803,6 +6286,7 @@
   "romaji": "chiimu",
   "english": "team",
   "speech": "チーム",
+  "english_speech": "team",
   "example": "私のチームが試合に勝ちました。",
   "example_kana": "わたしのチームがしあいにかちました。",
   "example_english": "My team won the match."
@@ -5815,6 +6299,7 @@
   "romaji": "ruuru",
   "english": "rule",
   "speech": "ルール",
+  "english_speech": "rule",
   "example": "会社のルールを守ってください。",
   "example_kana": "かいしゃのルールをまもってください。",
   "example_english": "Please follow the company rules."
@@ -5827,6 +6312,7 @@
   "romaji": "sukuriin",
   "english": "screen",
   "speech": "スクリーン",
+  "english_speech": "screen",
   "example": "スクリーンの字が小さいです。",
   "example_kana": "スクリーンのじがちいさいです。",
   "example_english": "The letters on the screen are small."
@@ -5839,6 +6325,7 @@
   "romaji": "suutsukeesu",
   "english": "suitcase",
   "speech": "スーツケース",
+  "english_speech": "suitcase",
   "example": "重いスーツケースを運びました。",
   "example_kana": "おもいスーツケースをはこびました。",
   "example_english": "I carried the heavy suitcase."
@@ -5851,6 +6338,7 @@
   "romaji": "puroguramu",
   "english": "programme",
   "speech": "プログラム",
+  "english_speech": "programme",
   "example": "祭りのプログラムを見ました。",
   "example_kana": "まつりのプログラムをみました。",
   "example_english": "I looked at the festival programme."
@@ -5863,6 +6351,7 @@
   "romaji": "kyousou",
   "english": "to compete (する)",
   "speech": "きょうそう",
+  "english_speech": "to compete",
   "example": "弟と競争して泳ぎました。",
   "example_kana": "おとうとときょうそうしておよぎました。",
   "example_english": "I raced my little brother swimming."
@@ -5875,6 +6364,7 @@
   "romaji": "kenbutsu",
   "english": "to see the sights",
   "speech": "けんぶつ",
+  "english_speech": "to see the sights",
   "example": "東京でお寺を見物しました。",
   "example_kana": "とうきょうでおてらをけんぶつしました。",
   "example_english": "I went sightseeing at the temples in Tokyo."
@@ -5887,6 +6377,7 @@
   "romaji": "utsusu",
   "english": "to photograph, to copy",
   "speech": "うつす",
+  "english_speech": "to photograph, to copy",
   "example": "友達のノートを写しました。",
   "example_kana": "ともだちのノートをうつしました。",
   "example_english": "I copied my friend's notes."
@@ -5899,6 +6390,7 @@
   "romaji": "utsu",
   "english": "to hit",
   "speech": "うつ",
+  "english_speech": "to hit",
   "example": "机の角で頭を打ちました。",
   "example_kana": "つくえのかどであたまをうちました。",
   "example_english": "I hit my head on the corner of the desk."
@@ -5911,6 +6403,7 @@
   "romaji": "yorokobu",
   "english": "to be delighted",
   "speech": "よろこぶ",
+  "english_speech": "to be delighted",
   "example": "祖母は花を見て喜びました。",
   "example_kana": "そぼははなをみてよろこびました。",
   "example_english": "My grandmother was delighted to see the flowers."
@@ -5923,6 +6416,7 @@
   "romaji": "norimono",
   "english": "vehicle",
   "speech": "のりもの",
+  "english_speech": "vehicle",
   "example": "息子は乗り物が大好きです。",
   "example_kana": "むすこはのりものがだいすきです。",
   "example_english": "My son loves vehicles."
@@ -5935,6 +6429,7 @@
   "romaji": "tonneru",
   "english": "tunnel",
   "speech": "トンネル",
+  "english_speech": "tunnel",
   "example": "長いトンネルを通りました。",
   "example_kana": "ながいトンネルをとおりました。",
   "example_english": "We went through a long tunnel."
@@ -5947,6 +6442,7 @@
   "romaji": "saka",
   "english": "hill, slope",
   "speech": "さか",
+  "english_speech": "hill, slope",
   "example": "駅の前に長い坂があります。",
   "example_kana": "えきのまえにながいさかがあります。",
   "example_english": "There is a long hill in front of the station."
@@ -5959,6 +6455,7 @@
   "romaji": "untenshu",
   "english": "driver",
   "speech": "うんてんしゅ",
+  "english_speech": "driver",
   "example": "バスの運転手に道を聞きました。",
   "example_kana": "バスのうんてんしゅにみちをききました。",
   "example_english": "I asked the bus driver the way."
@@ -5971,6 +6468,7 @@
   "romaji": "ootobai",
   "english": "motorcycle",
   "speech": "オートバイ",
+  "english_speech": "motorcycle",
   "example": "兄はオートバイを買いました。",
   "example_kana": "あにはオートバイをかいました。",
   "example_english": "My older brother bought a motorcycle."
@@ -5983,6 +6481,7 @@
   "romaji": "booto",
   "english": "boat",
   "speech": "ボート",
+  "english_speech": "boat",
   "example": "公園の池でボートに乗りました。",
   "example_kana": "こうえんのいけでボートにのりました。",
   "example_english": "I rode a boat on the pond in the park."
@@ -5995,6 +6494,7 @@
   "romaji": "supiido",
   "english": "speed",
   "speech": "スピード",
+  "english_speech": "speed",
   "example": "車のスピードを下げました。",
   "example_kana": "くるまのスピードをさげました。",
   "example_english": "I reduced the speed of the car."
@@ -6007,6 +6507,7 @@
   "romaji": "riyuu",
   "english": "reason",
   "speech": "りゆう",
+  "english_speech": "reason",
   "example": "休んだ理由を教えてください。",
   "example_kana": "やすんだりゆうをおしえてください。",
   "example_english": "Please tell me the reason you were absent."
@@ -6019,6 +6520,7 @@
   "romaji": "tooku",
   "english": "great distance",
   "speech": "とおく",
+  "english_speech": "great distance",
   "example": "遠くに山が見えます。",
   "example_kana": "とおくにやまがみえます。",
   "example_english": "You can see mountains in the distance."
@@ -6031,6 +6533,7 @@
   "romaji": "sutoppu",
   "english": "to stop (する)",
   "speech": "ストップ",
+  "english_speech": "to stop",
   "example": "電車は急にストップしました。",
   "example_kana": "でんしゃはきゅうにストップしました。",
   "example_english": "The train stopped suddenly."
@@ -6043,6 +6546,7 @@
   "romaji": "aku",
   "english": "to be vacant [unoccupied]",
   "speech": "あく",
+  "english_speech": "to be vacant",
   "example": "この席は空いていますか。",
   "example_kana": "このせきはあいていますか。",
   "example_english": "Is this seat free?"
@@ -6055,6 +6559,7 @@
   "romaji": "yoru",
   "english": "to drop in, to visit",
   "speech": "よる",
+  "english_speech": "to drop in, to visit",
   "example": "帰りにスーパーに寄りました。",
   "example_kana": "かえりにスーパーによりました。",
   "example_english": "I dropped in at the supermarket on the way home."
@@ -6067,6 +6572,7 @@
   "romaji": "fasshon",
   "english": "fashion",
   "speech": "ファッション",
+  "english_speech": "fashion",
   "example": "妹はファッションが好きです。",
   "example_kana": "いもうとはファッションがすきです。",
   "example_english": "My younger sister likes fashion."
@@ -6079,6 +6585,7 @@
   "romaji": "akusesarii",
   "english": "accessory",
   "speech": "アクセサリー",
+  "english_speech": "accessory",
   "example": "母にアクセサリーをあげました。",
   "example_kana": "ははにアクセサリーをあげました。",
   "example_english": "I gave my mother an accessory."
@@ -6091,6 +6598,7 @@
   "romaji": "beruto",
   "english": "belt",
   "speech": "ベルト",
+  "english_speech": "belt",
   "example": "このベルトは少し長いです。",
   "example_kana": "このベルトはすこしながいです。",
   "example_english": "This belt is a little long."
@@ -6103,6 +6611,7 @@
   "romaji": "kakkou",
   "english": "appearance",
   "speech": "かっこう",
+  "english_speech": "appearance",
   "example": "その格好で会社に行きますか。",
   "example_kana": "そのかっこうでかいしゃにいきますか。",
   "example_english": "Are you going to work looking like that?"
@@ -6115,6 +6624,7 @@
   "romaji": "tokoya",
   "english": "barber",
   "speech": "とこや",
+  "english_speech": "barber",
   "example": "父は月に一度床屋へ行きます。",
   "example_kana": "ちちはつきにいちどとこやへいきます。",
   "example_english": "My father goes to the barber once a month."
@@ -6127,6 +6637,7 @@
   "romaji": "rokkaa",
   "english": "locker",
   "speech": "ロッカー",
+  "english_speech": "locker",
   "example": "かばんをロッカーに入れました。",
   "example_kana": "かばんをロッカーにいれました。",
   "example_english": "I put my bag in the locker."
@@ -6139,6 +6650,7 @@
   "romaji": "manaa",
   "english": "manner",
   "speech": "マナー",
+  "english_speech": "manner",
   "example": "食事のマナーを守ってください。",
   "example_kana": "しょくじのマナーをまもってください。",
   "example_english": "Please observe table manners."
@@ -6151,6 +6663,7 @@
   "romaji": "oopun",
   "english": "to open (する)",
   "speech": "オープン",
+  "english_speech": "to open",
   "example": "新しい店がオープンしました。",
   "example_kana": "あたらしいみせがオープンしました。",
   "example_english": "A new shop has opened."
@@ -6163,6 +6676,7 @@
   "romaji": "niau",
   "english": "to suit",
   "speech": "にあう",
+  "english_speech": "to suit",
   "example": "そのスーツはよく似合いますね。",
   "example_kana": "そのスーツはよくにあいますね。",
   "example_english": "That suit really suits you."
@@ -6175,6 +6689,7 @@
   "romaji": "nuru",
   "english": "to apply, to paint",
   "speech": "ぬる",
+  "english_speech": "to apply, to paint",
   "example": "壁を白く塗りました。",
   "example_kana": "かべをしろくぬりました。",
   "example_english": "I painted the wall white."
@@ -6187,6 +6702,7 @@
   "romaji": "kamau",
   "english": "to care, to matter",
   "speech": "かまう",
+  "english_speech": "to care, to matter",
   "example": "返事は明日でかまいません。",
   "example_kana": "へんじはあしたでかまいません。",
   "example_english": "It's fine if you reply tomorrow."
@@ -6199,6 +6715,7 @@
   "romaji": "hen(na)",
   "english": "strange",
   "speech": "へん",
+  "english_speech": "strange",
   "example": "外で変な音がします。",
   "example_kana": "そとでへんなおとがします。",
   "example_english": "There is a strange sound outside."
@@ -6211,6 +6728,7 @@
   "romaji": "sofaa",
   "english": "sofa",
   "speech": "ソファー",
+  "english_speech": "sofa",
   "example": "猫がソファーで寝ています。",
   "example_kana": "ねこがソファーでねています。",
   "example_english": "The cat is sleeping on the sofa."
@@ -6223,6 +6741,7 @@
   "romaji": "kuuraa",
   "english": "air conditioner",
   "speech": "クーラー",
+  "english_speech": "air conditioner",
   "example": "暑いからクーラーをつけました。",
   "example_kana": "あついからクーラーをつけました。",
   "example_english": "It was hot, so I turned on the air conditioner."
@@ -6235,6 +6754,7 @@
   "romaji": "rimokon",
   "english": "remote control",
   "speech": "リモコン",
+  "english_speech": "remote control",
   "example": "テレビのリモコンはどこですか。",
   "example_kana": "テレビのリモコンはどこですか。",
   "example_english": "Where is the TV remote?"
@@ -6247,6 +6767,7 @@
   "romaji": "raito",
   "english": "light",
   "speech": "ライト",
+  "english_speech": "light",
   "example": "夜は自転車のライトをつけます。",
   "example_kana": "よるはじてんしゃのライトをつけます。",
   "example_english": "At night I turn on my bicycle light."
@@ -6259,6 +6780,7 @@
   "romaji": "baketsu",
   "english": "bucket",
   "speech": "バケツ",
+  "english_speech": "bucket",
   "example": "バケツに水を入れました。",
   "example_kana": "バケツにみずをいれました。",
   "example_english": "I put water in the bucket."
@@ -6271,6 +6793,7 @@
   "romaji": "purasuchikku",
   "english": "plastic",
   "speech": "プラスチック",
+  "english_speech": "plastic",
   "example": "このコップはプラスチックです。",
   "example_kana": "このコップはプラスチックです。",
   "example_english": "This cup is plastic."
@@ -6283,6 +6806,7 @@
   "romaji": "kurasu",
   "english": "to live",
   "speech": "くらす",
+  "english_speech": "to live",
   "example": "祖父は田舎で暮らしています。",
   "example_kana": "そふはいなかでくらしています。",
   "example_english": "My grandfather lives in the countryside."
@@ -6295,6 +6819,7 @@
   "romaji": "wakeru",
   "english": "to separate, to share",
   "speech": "わける",
+  "english_speech": "to separate, to share",
   "example": "パンを半分に分けました。",
   "example_kana": "パンをはんぶんにわけました。",
   "example_english": "I divided the bread in half."
@@ -6307,6 +6832,7 @@
   "romaji": "moyasu",
   "english": "to burn",
   "speech": "もやす",
+  "english_speech": "to burn",
   "example": "庭で古い手紙を燃やしました。",
   "example_kana": "にわでふるいてがみをもやしました。",
   "example_english": "I burned old letters in the garden."
@@ -6319,6 +6845,7 @@
   "romaji": "waku",
   "english": "to boil",
   "speech": "わく",
+  "english_speech": "to boil",
   "example": "お湯が沸きましたよ。",
   "example_kana": "おゆがわきましたよ。",
   "example_english": "The water has boiled."
@@ -6331,6 +6858,7 @@
   "romaji": "hieru",
   "english": "to cool, to get cold (vi.)",
   "speech": "ひえる",
+  "english_speech": "to cool, to get cold",
   "example": "ビールがよく冷えています。",
   "example_kana": "ビールがよくひえています。",
   "example_english": "The beer is nicely chilled."
@@ -6343,6 +6871,7 @@
   "romaji": "kusai",
   "english": "smelly",
   "speech": "くさい",
+  "english_speech": "smelly",
   "example": "この魚は少し臭いです。",
   "example_kana": "このさかなはすこしくさいです。",
   "example_english": "This fish smells a bit."
@@ -6355,6 +6884,7 @@
   "romaji": "saisho",
   "english": "first",
   "speech": "さいしょ",
+  "english_speech": "first",
   "example": "最初に名前を書いてください。",
   "example_kana": "さいしょになまえをかいてください。",
   "example_english": "First, please write your name."
@@ -6367,6 +6897,7 @@
   "romaji": "saigo",
   "english": "last",
   "speech": "さいご",
+  "english_speech": "last",
   "example": "最後のバスは11時です。",
   "example_kana": "さいごのバスはじゅういちじです。",
   "example_english": "The last bus is at 11 o'clock."
@@ -6379,6 +6910,7 @@
   "romaji": "ryouhou",
   "english": "both",
   "speech": "りょうほう",
+  "english_speech": "both",
   "example": "コーヒーと紅茶、両方飲みます。",
   "example_kana": "コーヒーとこうちゃ、りょうほうのみます。",
   "example_english": "I drink both coffee and tea."
@@ -6391,6 +6923,7 @@
   "romaji": "shokuryouhin",
   "english": "groceries",
   "speech": "しょくりょうひん",
+  "english_speech": "groceries",
   "example": "スーパーで食料品を買いました。",
   "example_kana": "スーパーでしょくりょうひんをかいました。",
   "example_english": "I bought groceries at the supermarket."
@@ -6403,6 +6936,7 @@
   "romaji": "youi",
   "english": "to prepare (する)",
   "speech": "ようい",
+  "english_speech": "to prepare",
   "example": "母が晩ご飯を用意しました。",
   "example_kana": "ははがばんごはんをよういしました。",
   "example_english": "My mother prepared dinner."
@@ -6415,6 +6949,7 @@
   "romaji": "kubaru",
   "english": "to distribute, to hand out, to deliver",
   "speech": "くばる",
+  "english_speech": "to distribute, to hand out, to deliver",
   "example": "先生はテストを配りました。",
   "example_kana": "せんせいはテストをくばりました。",
   "example_english": "The teacher handed out the tests."
@@ -6427,6 +6962,7 @@
   "romaji": "nusumu",
   "english": "to steal",
   "speech": "ぬすむ",
+  "english_speech": "to steal",
   "example": "誰かが私の自転車を盗みました。",
   "example_kana": "だれかがわたしのじてんしゃをぬすみました。",
   "example_english": "Someone stole my bicycle."
@@ -6439,6 +6975,7 @@
   "romaji": "naru",
   "english": "to ring",
   "speech": "なる",
+  "english_speech": "to ring",
   "example": "朝早く電話が鳴りました。",
   "example_kana": "あさはやくでんわがなりました。",
   "example_english": "The phone rang early in the morning."
@@ -6451,6 +6988,7 @@
   "romaji": "okosu",
   "english": "to wake (someone) up",
   "speech": "おこす",
+  "english_speech": "to wake someone up",
   "example": "毎朝7時に息子を起こします。",
   "example_kana": "まいあさしちじにむすこをおこします。",
   "example_english": "I wake my son up at seven every morning."
@@ -6463,6 +7001,7 @@
   "romaji": "inoru",
   "english": "to pray",
   "speech": "いのる",
+  "english_speech": "to pray",
   "example": "神社で合格を祈りました。",
   "example_kana": "じんじゃでごうかくをいのりました。",
   "example_english": "I prayed at the shrine to pass the exam."
@@ -6475,6 +7014,7 @@
   "romaji": "senmon",
   "english": "speciality",
   "speech": "せんもん",
+  "english_speech": "speciality",
   "example": "田中さんの専門は何ですか。",
   "example_kana": "たなかさんのせんもんはなんですか。",
   "example_english": "What is Mr. Tanaka's speciality?"
@@ -6487,6 +7027,7 @@
   "romaji": "tekisuto",
   "english": "textbook",
   "speech": "テキスト",
+  "english_speech": "textbook",
   "example": "家にテキストを忘れました。",
   "example_kana": "いえにテキストをわすれました。",
   "example_english": "I left my textbook at home."
@@ -6499,6 +7040,7 @@
   "romaji": "reberu",
   "english": "level",
   "speech": "レベル",
+  "english_speech": "level",
   "example": "このクラスのレベルは高いです。",
   "example_kana": "このクラスのレベルはたかいです。",
   "example_english": "The level of this class is high."
@@ -6511,6 +7053,7 @@
   "romaji": "wariai",
   "english": "percentage",
   "speech": "わりあい",
+  "english_speech": "percentage",
   "example": "学生の割合が増えました。",
   "example_kana": "がくせいのわりあいがふえました。",
   "example_english": "The percentage of students has increased."
@@ -6523,6 +7066,7 @@
   "romaji": "shikata",
   "english": "way",
   "speech": "しかた",
+  "english_speech": "way",
   "example": "勉強の仕方が分かりません。",
   "example_kana": "べんきょうのしかたがわかりません。",
   "example_english": "I don't know how to study."
@@ -6535,6 +7079,7 @@
   "romaji": "senpai",
   "english": "senior",
   "speech": "せんぱい",
+  "english_speech": "senior",
   "example": "先輩と昼ご飯を食べました。",
   "example_kana": "せんぱいとひるごはんをたべました。",
   "example_english": "I had lunch with a senior colleague."
@@ -6547,6 +7092,7 @@
   "romaji": "~igai",
   "english": "apart from ～, except for ～",
   "speech": "いがい",
+  "english_speech": "apart from, except for",
   "example": "日曜日以外は毎日働きます。",
   "example_kana": "にちようびいがいはまいにちはたらきます。",
   "example_english": "I work every day except Sunday."
@@ -6559,6 +7105,7 @@
   "romaji": "~inai",
   "english": "within ～",
   "speech": "いない",
+  "english_speech": "within",
   "example": "30分以内に戻ります。",
   "example_kana": "さんじゅっぷんいないにもどります。",
   "example_english": "I'll be back within 30 minutes."
@@ -6571,6 +7118,7 @@
   "romaji": "kimaru",
   "english": "to be decided (vi.)",
   "speech": "きまる",
+  "english_speech": "to be decided",
   "example": "旅行の日が決まりました。",
   "example_kana": "りょこうのひがきまりました。",
   "example_english": "The date of the trip has been decided."
@@ -6583,6 +7131,7 @@
   "romaji": "kuraberu",
   "english": "to compare",
   "speech": "くらべる",
+  "english_speech": "to compare",
   "example": "去年と比べて、今年は暑いです。",
   "example_kana": "きょねんとくらべて、ことしはあついです。",
   "example_english": "Compared with last year, this year is hot."
@@ -6595,6 +7144,7 @@
   "romaji": "daiji(na)",
   "english": "important",
   "speech": "だいじ",
+  "english_speech": "important",
   "example": "大事な話があります。",
   "example_kana": "だいじなはなしがあります。",
   "example_english": "I have something important to tell you."
@@ -6607,6 +7157,7 @@
   "romaji": "chittomo",
   "english": "not a bit",
   "speech": "ちっとも",
+  "english_speech": "not a bit",
   "example": "英語がちっとも分かりません。",
   "example_kana": "えいごがちっともわかりません。",
   "example_english": "I don't understand English one bit."
@@ -6619,6 +7170,7 @@
   "romaji": "dondon",
   "english": "more and more",
   "speech": "どんどん",
+  "english_speech": "more and more",
   "example": "値段がどんどん上がっています。",
   "example_kana": "ねだんがどんどんあがっています。",
   "example_english": "Prices keep going up and up."
@@ -6631,6 +7183,7 @@
   "romaji": "gijutsu",
   "english": "technology",
   "speech": "ぎじゅつ",
+  "english_speech": "technology",
   "example": "日本の技術はすばらしいです。",
   "example_kana": "にほんのぎじゅつはすばらしいです。",
   "example_english": "Japanese technology is wonderful."
@@ -6643,6 +7196,7 @@
   "romaji": "sangyou",
   "english": "industry",
   "speech": "さんぎょう",
+  "english_speech": "industry",
   "example": "この県は車の産業が有名です。",
   "example_kana": "このけんはくるまのさんぎょうがゆうめいです。",
   "example_english": "This prefecture is famous for its car industry."
@@ -6655,6 +7209,7 @@
   "romaji": "kokusai",
   "english": "international",
   "speech": "こくさい",
+  "english_speech": "international",
   "example": "国際会議に出席しました。",
   "example_kana": "こくさいかいぎにしゅっせきしました。",
   "example_english": "I attended an international conference."
@@ -6667,6 +7222,7 @@
   "romaji": "boueki",
   "english": "trade",
   "speech": "ぼうえき",
+  "english_speech": "trade",
   "example": "父は貿易の仕事をしています。",
   "example_kana": "ちちはぼうえきのしごとをしています。",
   "example_english": "My father works in trade."
@@ -6679,6 +7235,7 @@
   "romaji": "paatotaimu",
   "english": "part-time",
   "speech": "パートタイム",
+  "english_speech": "part-time",
   "example": "パートタイムで働いています。",
   "example_kana": "パートタイムではたらいています。",
   "example_english": "I work part-time."
@@ -6691,6 +7248,7 @@
   "romaji": "keikaku",
   "english": "to make a plan (する)",
   "speech": "けいかく",
+  "english_speech": "to make a plan",
   "example": "家族で旅行を計画しました。",
   "example_kana": "かぞくでりょこうをけいかくしました。",
   "example_english": "We planned a trip as a family."
@@ -6703,6 +7261,7 @@
   "romaji": "seisan",
   "english": "to produce (する)",
   "speech": "せいさん",
+  "english_speech": "to produce",
   "example": "工場で車を生産しています。",
   "example_kana": "こうじょうでくるまをせいさんしています。",
   "example_english": "They produce cars at the factory."
@@ -6715,6 +7274,7 @@
   "romaji": "shouchi",
   "english": "to understand, to consent (する)",
   "speech": "しょうち",
+  "english_speech": "to understand, to consent",
   "example": "はい、承知しました。",
   "example_kana": "はい、しょうちしました。",
   "example_english": "Yes, understood."
@@ -6727,6 +7287,7 @@
   "romaji": "susumu",
   "english": "to progress, to go along",
   "speech": "すすむ",
+  "english_speech": "to progress, to go along",
   "example": "日本語の勉強が進んでいます。",
   "example_kana": "にほんごのべんきょうがすすんでいます。",
   "example_english": "My Japanese studies are progressing."
@@ -6739,6 +7300,7 @@
   "romaji": "sumu",
   "english": "to be finished",
   "speech": "すむ",
+  "english_speech": "to be finished",
   "example": "仕事が済んでから、帰ります。",
   "example_kana": "しごとがすんでから、かえります。",
   "example_english": "I'll go home after work is finished."
@@ -6751,6 +7313,7 @@
   "romaji": "sakan(na)",
   "english": "thriving",
   "speech": "さかん",
+  "english_speech": "thriving",
   "example": "ここは貿易が盛んな町です。",
   "example_kana": "ここはぼうえきがさかんなまちです。",
   "example_english": "This is a town where trade is thriving."
@@ -6763,6 +7326,7 @@
   "romaji": "raku(na)",
   "english": "easy, comfortable",
   "speech": "らく",
+  "english_speech": "easy, comfortable",
   "example": "電車より車のほうが楽です。",
   "example_kana": "でんしゃよりくるまのほうがらくです。",
   "example_english": "The car is more comfortable than the train."
@@ -6775,6 +7339,7 @@
   "romaji": "hotondo",
   "english": "hardly",
   "speech": "ほとんど",
+  "english_speech": "hardly",
   "example": "朝ご飯はほとんど食べません。",
   "example_kana": "あさごはんはほとんどたべません。",
   "example_english": "I hardly eat breakfast."
@@ -6787,6 +7352,7 @@
   "romaji": "ude",
   "english": "arm",
   "speech": "うで",
+  "english_speech": "arm",
   "example": "テニスをして、腕が痛いです。",
   "example_kana": "テニスをして、うでがいたいです。",
   "example_english": "I played tennis and my arms hurt."
@@ -6799,6 +7365,7 @@
   "romaji": "kubi",
   "english": "neck",
   "speech": "くび",
+  "english_speech": "neck",
   "example": "首が痛いから、病院へ行きます。",
   "example_kana": "くびがいたいから、びょういんへいきます。",
   "example_english": "My neck hurts, so I'm going to the hospital."
@@ -6811,6 +7378,7 @@
   "romaji": "senaka",
   "english": "back",
   "speech": "せなか",
+  "english_speech": "back",
   "example": "祖母の背中を洗いました。",
   "example_kana": "そぼのせなかをあらいました。",
   "example_english": "I washed my grandmother's back."
@@ -6823,6 +7391,7 @@
   "romaji": "yubi",
   "english": "finger",
   "speech": "ゆび",
+  "english_speech": "finger",
   "example": "指を少し切りました。",
   "example_kana": "ゆびをすこしきりました。",
   "example_english": "I cut my finger a little."
@@ -6835,6 +7404,7 @@
   "romaji": "tsume",
   "english": "nail",
   "speech": "つめ",
+  "english_speech": "nail",
   "example": "毎週日曜日に爪を切ります。",
   "example_kana": "まいしゅうにちようびにつめをきります。",
   "example_english": "I cut my nails every Sunday."
@@ -6847,6 +7417,7 @@
   "romaji": "ke",
   "english": "hair",
   "speech": "け",
+  "english_speech": "hair",
   "example": "この犬は毛が長いです。",
   "example_kana": "このいぬはけがながいです。",
   "example_english": "This dog has long hair."
@@ -6859,6 +7430,7 @@
   "romaji": "hige",
   "english": "beard, moustache",
   "speech": "ひげ",
+  "english_speech": "beard, moustache",
   "example": "祖父は白いひげがあります。",
   "example_kana": "そふはしろいひげがあります。",
   "example_english": "My grandfather has a white beard."
@@ -6871,6 +7443,7 @@
   "romaji": "chi",
   "english": "blood",
   "speech": "ち",
+  "english_speech": "blood",
   "example": "けがをして、血が出ました。",
   "example_kana": "けがをして、ちがでました。",
   "example_english": "I got injured and bled."
@@ -6883,6 +7456,7 @@
   "romaji": "masuku",
   "english": "mask",
   "speech": "マスク",
+  "english_speech": "mask",
   "example": "風邪ですから、マスクをします。",
   "example_kana": "かぜですから、マスクをします。",
   "example_english": "I have a cold, so I'll wear a mask."
@@ -6895,6 +7469,7 @@
   "romaji": "chuusha",
   "english": "to inject (する)",
   "speech": "ちゅうしゃ",
+  "english_speech": "to inject",
   "example": "医者は子どもに注射をしました。",
   "example_kana": "いしゃはこどもにちゅうしゃをしました。",
   "example_english": "The doctor gave the child an injection."
@@ -6907,6 +7482,7 @@
   "romaji": "ikiru",
   "english": "to live",
   "speech": "いきる",
+  "english_speech": "to live",
   "example": "祖母は100歳まで生きました。",
   "example_kana": "そぼはひゃくさいまでいきました。",
   "example_english": "My grandmother lived to be 100."
@@ -6919,6 +7495,7 @@
   "romaji": "hidoi",
   "english": "terrible, bad",
   "speech": "ひどい",
+  "english_speech": "terrible, bad",
   "example": "今日はひどい雨ですね。",
   "example_kana": "きょうはひどいあめですね。",
   "example_english": "The rain is terrible today."
@@ -6931,6 +7508,7 @@
   "romaji": "kusa",
   "english": "grass",
   "speech": "くさ",
+  "english_speech": "grass",
   "example": "公園の草の上に座りました。",
   "example_kana": "こうえんのくさのうえにすわりました。",
   "example_english": "I sat on the grass in the park."
@@ -6943,6 +7521,7 @@
   "romaji": "ishi",
   "english": "stone",
   "speech": "いし",
+  "english_speech": "stone",
   "example": "川で白い石を拾いました。",
   "example_kana": "かわでしろいいしをひろいました。",
   "example_english": "I picked up a white stone at the river."
@@ -6955,6 +7534,7 @@
   "romaji": "suna",
   "english": "sand",
   "speech": "すな",
+  "english_speech": "sand",
   "example": "靴の中に砂が入りました。",
   "example_kana": "くつのなかにすながはいりました。",
   "example_english": "Sand got into my shoes."
@@ -6967,6 +7547,7 @@
   "romaji": "mushi",
   "english": "insect",
   "speech": "むし",
+  "english_speech": "insect",
   "example": "娘は虫が嫌いです。",
   "example_kana": "むすめはむしがきらいです。",
   "example_english": "My daughter hates insects."
@@ -6979,6 +7560,7 @@
   "romaji": "mori",
   "english": "forest",
   "speech": "もり",
+  "english_speech": "forest",
   "example": "森の中を散歩しました。",
   "example_kana": "もりのなかをさんぽしました。",
   "example_english": "I took a walk in the forest."
@@ -6991,6 +7573,7 @@
   "romaji": "kumo",
   "english": "cloud",
   "speech": "くも",
+  "english_speech": "cloud",
   "example": "今日は雲が多いですね。",
   "example_kana": "きょうはくもがおおいですね。",
   "example_english": "There are a lot of clouds today, aren't there?"
@@ -7003,6 +7586,7 @@
   "romaji": "nagareru",
   "english": "to flow",
   "speech": "ながれる",
+  "english_speech": "to flow",
   "example": "この川はゆっくり流れています。",
   "example_kana": "このかわはゆっくりながれています。",
   "example_english": "This river flows slowly."
@@ -7015,6 +7599,7 @@
   "romaji": "mawaru",
   "english": "to go round, to rotate",
   "speech": "まわる",
+  "english_speech": "to go round, to rotate",
   "example": "祖父と町のお寺を回りました。",
   "example_kana": "そふとまちのおてらをまわりました。",
   "example_english": "I went around the town's temples with my grandfather."
@@ -7027,6 +7612,7 @@
   "romaji": "yureru",
   "english": "to sway, to shake",
   "speech": "ゆれる",
+  "english_speech": "to sway, to shake",
   "example": "地震で家が揺れました。",
   "example_kana": "じしんでいえがゆれました。",
   "example_english": "The house shook in the earthquake."
@@ -7039,6 +7625,7 @@
   "romaji": "hikaru",
   "english": "to shine, to glow, to flash",
   "speech": "ひかる",
+  "english_speech": "to shine, to glow, to flash",
   "example": "星がきれいに光っています。",
   "example_kana": "ほしがきれいにひかっています。",
   "example_english": "The stars are shining beautifully."
@@ -7051,6 +7638,7 @@
   "romaji": "tsumoru",
   "english": "to accumulate, to pile up",
   "speech": "つもる",
+  "english_speech": "to accumulate, to pile up",
   "example": "昨日の夜、雪が積もりました。",
   "example_kana": "きのうのよる、ゆきがつもりました。",
   "example_english": "Snow piled up last night."
@@ -7063,6 +7651,7 @@
   "romaji": "tsukamaeru",
   "english": "to catch, to arrest",
   "speech": "つかまえる",
+  "english_speech": "to catch, to arrest",
   "example": "警察が泥棒を捕まえました。",
   "example_kana": "けいさつがどろぼうをつかまえました。",
   "example_english": "The police caught the thief."
@@ -7075,6 +7664,7 @@
   "romaji": "asai",
   "english": "shallow",
   "speech": "あさい",
+  "english_speech": "shallow",
   "example": "子供のプールは浅いです。",
   "example_kana": "こどものプールはあさいです。",
   "example_english": "The children's pool is shallow."
@@ -7087,6 +7677,7 @@
   "romaji": "fukai",
   "english": "deep",
   "speech": "ふかい",
+  "english_speech": "deep",
   "example": "この池は深いですか。",
   "example_kana": "このいけはふかいですか。",
   "example_english": "Is this pond deep?"
@@ -7099,6 +7690,7 @@
   "romaji": "~paasento",
   "english": "～ percent",
   "speech": "パーセント",
+  "english_speech": "percent",
   "example": "服が20パーセント安いです。",
   "example_kana": "ふくがにじゅっパーセントやすいです。",
   "example_english": "The clothes are 20 percent off."
@@ -7111,6 +7703,7 @@
   "romaji": "~ten",
   "english": "～ point",
   "speech": "てん",
+  "english_speech": "points, as a score",
   "example": "漢字のテストは85点でした。",
   "example_kana": "かんじのテストははちじゅうごてんでした。",
   "example_english": "I got 85 on the kanji test."
@@ -7123,6 +7716,7 @@
   "romaji": "~do",
   "english": "～ degree",
   "speech": "ど",
+  "english_speech": "degrees",
   "example": "熱が38度あります。",
   "example_kana": "ねつがさんじゅうはちどあります。",
   "example_english": "I have a fever of 38 degrees."
@@ -7135,6 +7729,7 @@
   "romaji": "~senchi",
   "english": "～ centimetre",
   "speech": "センチ",
+  "english_speech": "centimetres",
   "example": "息子の背は170センチです。",
   "example_kana": "むすこのせはひゃくななじゅっセンチです。",
   "example_english": "My son is 170 centimetres tall."
@@ -7147,6 +7742,7 @@
   "romaji": "~ken,~gen",
   "english": "～ house",
   "speech": "けん、げん",
+  "english_speech": "counter for houses",
   "example": "町に本屋が3軒あります。",
   "example_kana": "まちにほんやがさんげんあります。",
   "example_english": "There are three bookshops in town."
@@ -7159,6 +7755,7 @@
   "romaji": "~me",
   "english": "～ st [nd, rd, etc.]",
   "speech": "め",
+  "english_speech": "ordinal suffix: first, second, third",
   "example": "今日は日本に来て3日目です。",
   "example_kana": "きょうはにほんにきてみっかめです。",
   "example_english": "Today is my third day in Japan."
@@ -7171,6 +7768,7 @@
   "romaji": "~nenkan",
   "english": "for ～ year",
   "speech": "ねんかん",
+  "english_speech": "for a number of years",
   "example": "3年間、大阪に住んでいました。",
   "example_kana": "さんねんかん、おおさかにすんでいました。",
   "example_english": "I lived in Osaka for three years."
@@ -7183,6 +7781,7 @@
   "romaji": "~haku,~paku",
   "english": "～ night's [nights'] stay",
   "speech": "はく、ぱく",
+  "english_speech": "counter for nights of a stay",
   "example": "旅館に1泊するつもりです。",
   "example_kana": "りょかんにいっぱくするつもりです。",
   "example_english": "I plan to stay one night at a Japanese inn."
@@ -7195,6 +7794,7 @@
   "romaji": "~kun",
   "english": "(informal title used after names of boys)",
   "speech": "くん",
+  "english_speech": "informal title after a boy's name",
   "example": "田中くんは私の弟の友達です。",
   "example_kana": "たなかくんはわたしのおとうとのともだちです。",
   "example_english": "Tanaka-kun is my little brother's friend."
@@ -7207,6 +7807,7 @@
   "romaji": "~chan",
   "english": "(informal [affectionate] title used after names of children, mainly used for girls)",
   "speech": "ちゃん",
+  "english_speech": "affectionate title after a child's name",
   "example": "花子ちゃんは5歳です。",
   "example_kana": "はなこちゃんはごさいです。",
   "example_english": "Hanako-chan is five years old."
@@ -7219,6 +7820,7 @@
   "romaji": "~sama",
   "english": "Mr. [Ms.] ～ (formal)",
   "speech": "さま",
+  "english_speech": "formal Mr or Ms",
   "example": "山田様、お電話です。",
   "example_kana": "やまださま、おでんわです。",
   "example_english": "Mr. Yamada, there is a phone call for you."
@@ -7231,6 +7833,7 @@
   "romaji": "~nensei",
   "english": "～ grade [year]",
   "speech": "ねんせい",
+  "english_speech": "school year, grade",
   "example": "弟は高校の1年生です。",
   "example_kana": "おとうとはこうこうのいちねんせいです。",
   "example_english": "My younger brother is in his first year of high school."
@@ -7243,6 +7846,7 @@
   "romaji": "~in",
   "english": "～ employee",
   "speech": "いん",
+  "english_speech": "employee, member",
   "example": "駅員に道を聞きました。",
   "example_kana": "えきいんにみちをききました。",
   "example_english": "I asked a station employee the way."
@@ -7255,6 +7859,7 @@
   "romaji": "~ka",
   "english": "～ ist [ian]",
   "speech": "か",
+  "english_speech": "suffix for a specialist, as in musician",
   "example": "父は有名な音楽家です。",
   "example_kana": "ちちはゆうめいなおんがくかです。",
   "example_english": "My father is a famous musician."
@@ -7267,6 +7872,7 @@
   "romaji": "~shiki",
   "english": "～ ceremony",
   "speech": "しき",
+  "english_speech": "ceremony",
   "example": "来週、姉の結婚式があります。",
   "example_kana": "らいしゅう、あねのけっこんしきがあります。",
   "example_english": "My older sister's wedding ceremony is next week."
@@ -7279,6 +7885,7 @@
   "romaji": "~ban",
   "english": "～ st [nd, rd, etc.]",
   "speech": "ばん",
+  "english_speech": "number, as in number three",
   "example": "3番のバスに乗ってください。",
   "example_kana": "さんばんのバスにのってください。",
   "example_english": "Please take the number 3 bus."
@@ -7291,6 +7898,7 @@
   "romaji": "~zutsu",
   "english": "～ each",
   "speech": "ずつ",
+  "english_speech": "each, at a time",
   "example": "毎日、漢字を5つずつ覚えます。",
   "example_kana": "まいにち、かんじをいつつずつおぼえます。",
   "example_english": "I memorise five kanji each day."
@@ -7303,6 +7911,7 @@
   "romaji": "~sei",
   "english": "made in ～",
   "speech": "せい",
+  "english_speech": "made in",
   "example": "この時計は日本製ですか。",
   "example_kana": "このとけいはにほんせいですか。",
   "example_english": "Is this watch made in Japan?"
@@ -7315,6 +7924,7 @@
   "romaji": "~kata",
   "english": "how to ～",
   "speech": "かた",
+  "english_speech": "how to, the way of doing",
   "example": "この字の読み方が分かりません。",
   "example_kana": "このじのよみかたがわかりません。",
   "example_english": "I don't know how to read this character."
@@ -7327,6 +7937,7 @@
   "romaji": "~juu",
   "english": "all ～",
   "speech": "じゅう",
+  "english_speech": "all, throughout",
   "example": "一日中、雨が降っていました。",
   "example_kana": "いちにちじゅう、あめがふっていました。",
   "example_english": "It was raining all day long."
@@ -7339,6 +7950,7 @@
   "romaji": "~dai",
   "english": "～ fare [bill]",
   "speech": "だい",
+  "english_speech": "fare, bill",
   "example": "今月は電気代が高かったです。",
   "example_kana": "こんげつはでんきだいがたかかったです。",
   "example_english": "The electricity bill was high this month."
@@ -7351,6 +7963,7 @@
   "romaji": "~you",
   "english": "for ～",
   "speech": "よう",
+  "english_speech": "for the use of",
   "example": "これは子供用の椅子です。",
   "example_kana": "これはこどもようのいすです。",
   "example_english": "This is a chair for children."
@@ -7363,6 +7976,7 @@
   "romaji": "~hajimeru",
   "english": "start to ～",
   "speech": "はじめる",
+  "english_speech": "start to do",
   "example": "赤ちゃんが泣き始めました。",
   "example_kana": "あかちゃんがなきはじめました。",
   "example_english": "The baby started to cry."
@@ -7375,6 +7989,7 @@
   "romaji": "~owaru",
   "english": "finish ～ing",
   "speech": "おわる",
+  "english_speech": "finish doing",
   "example": "この本はもう読み終わりました。",
   "example_kana": "このほんはもうよみおわりました。",
   "example_english": "I have already finished reading this book."
@@ -7387,6 +8002,7 @@
   "romaji": "gozonji",
   "english": "to know",
   "speech": "ごぞんじ",
+  "english_speech": "to know",
   "example": "佐藤さんの住所をご存じですか。",
   "example_kana": "さとうさんのじゅうしょをごぞんじですか。",
   "example_english": "Do you know Mr. Sato's address?"
@@ -7399,6 +8015,7 @@
   "romaji": "ossharu",
   "english": "to say",
   "speech": "おっしゃる",
+  "english_speech": "to say",
   "example": "先生は何とおっしゃいましたか。",
   "example_kana": "せんせいはなんとおっしゃいましたか。",
   "example_english": "What did the teacher say?"
@@ -7411,6 +8028,7 @@
   "romaji": "meshiagaru",
   "english": "to eat, to drink",
   "speech": "めしあがる",
+  "english_speech": "to eat, to drink",
   "example": "どうぞ、召し上がってください。",
   "example_kana": "どうぞ、めしあがってください。",
   "example_english": "Please, go ahead and eat."
@@ -7423,6 +8041,7 @@
   "romaji": "goranninaru",
   "english": "to look at, to see",
   "speech": "ごらんになる",
+  "english_speech": "to look at, to see",
   "example": "この写真をご覧になりましたか。",
   "example_kana": "このしゃしんをごらんになりましたか。",
   "example_english": "Have you seen this photo?"
@@ -7435,6 +8054,7 @@
   "romaji": "nasaru",
   "english": "to do",
   "speech": "なさる",
+  "english_speech": "to do",
   "example": "週末は何をなさいますか。",
   "example_kana": "しゅうまつはなにをなさいますか。",
   "example_english": "What will you do at the weekend?"
@@ -7447,6 +8067,7 @@
   "romaji": "oideninaru",
   "english": "to come, to go, to be",
   "speech": "おいでになる",
+  "english_speech": "to come, to go, to be",
   "example": "社長は3時においでになります。",
   "example_kana": "しゃちょうはさんじにおいでになります。",
   "example_english": "The president will come at three o'clock."
@@ -7459,6 +8080,7 @@
   "romaji": "moushiageru",
   "english": "to tell",
   "speech": "もうしあげる",
+  "english_speech": "to tell",
   "example": "お客様にお礼を申し上げます。",
   "example_kana": "おきゃくさまにおれいをもうしあげます。",
   "example_english": "I express my thanks to our customers."
@@ -7471,6 +8093,7 @@
   "romaji": "haiken",
   "english": "to read, to see (する)",
   "speech": "はいけん",
+  "english_speech": "to read, to see",
   "example": "お手紙を拝見しました。",
   "example_kana": "おてがみをはいけんしました。",
   "example_english": "I read your letter."
@@ -7483,6 +8106,7 @@
   "romaji": "itasu",
   "english": "to do",
   "speech": "いたす",
+  "english_speech": "to do",
   "example": "私が案内いたします。",
   "example_kana": "わたしがあんないいたします。",
   "example_english": "I will show you around."
@@ -7495,6 +8119,7 @@
   "romaji": "mousu",
   "english": "to say [tell] (one's name) is",
   "speech": "もうす",
+  "english_speech": "to say, humbly; my name is",
   "example": "私は山田と申します。",
   "example_kana": "わたしはやまだともうします。",
   "example_english": "My name is Yamada."
@@ -7507,6 +8132,7 @@
   "romaji": "mairu",
   "english": "to come, to go",
   "speech": "まいる",
+  "english_speech": "to come, to go",
   "example": "明日、そちらに参ります。",
   "example_kana": "あした、そちらにまいります。",
   "example_english": "I will come to your place tomorrow."
@@ -7519,6 +8145,7 @@
   "romaji": "oru",
   "english": "to be, to have",
   "speech": "おる",
+  "english_speech": "to be, to have",
   "example": "田中は今、会社におると思います。",
   "example_kana": "たなかはいま、かいしゃにおるとおもいます。",
   "example_english": "I believe Tanaka is at the office now."
@@ -7531,6 +8158,7 @@
   "romaji": "hisho",
   "english": "secretary",
   "speech": "ひしょ",
+  "english_speech": "secretary",
   "example": "社長の秘書は英語が上手です。",
   "example_kana": "しゃちょうのひしょはえいごがじょうずです。",
   "example_english": "The president's secretary is good at English."
@@ -7543,6 +8171,7 @@
   "romaji": "toutou",
   "english": "in the end",
   "speech": "とうとう",
+  "english_speech": "in the end",
   "example": "とうとう新しい車を買いました。",
   "example_kana": "とうとうあたらしいくるまをかいました。",
   "example_english": "In the end, I bought a new car."
@@ -7555,6 +8184,7 @@
   "romaji": "narubeku",
   "english": "as much as possible",
   "speech": "なるべく",
+  "english_speech": "as much as possible",
   "example": "なるべく早く来てください。",
   "example_kana": "なるべくはやくきてください。",
   "example_english": "Please come as early as possible."
@@ -7567,6 +8197,7 @@
   "romaji": "daibu",
   "english": "considerably",
   "speech": "だいぶ",
+  "english_speech": "considerably",
   "example": "風邪はだいぶよくなりました。",
   "example_kana": "かぜはだいぶよくなりました。",
   "example_english": "My cold has gotten considerably better."
@@ -7579,6 +8210,7 @@
   "romaji": "sorehodo",
   "english": "that much",
   "speech": "それほど",
+  "english_speech": "that much",
   "example": "今日はそれほど寒くないです。",
   "example_kana": "きょうはそれほどさむくないです。",
   "example_english": "It's not that cold today."
@@ -7591,6 +8223,7 @@
   "romaji": "sukkari",
   "english": "completely",
   "speech": "すっかり",
+  "english_speech": "completely",
   "example": "宿題をすっかり忘れていました。",
   "example_kana": "しゅくだいをすっかりわすれていました。",
   "example_english": "I had completely forgotten about my homework."
@@ -7603,6 +8236,7 @@
   "romaji": "kesshite",
   "english": "never, by no means",
   "speech": "けっして",
+  "english_speech": "never, by no means",
   "example": "私はけっしてうそを言いません。",
   "example_kana": "わたしはけっしてうそをいいません。",
   "example_english": "I never tell lies."
@@ -7615,6 +8249,7 @@
   "romaji": "hijouni",
   "english": "very",
   "speech": "ひじょうに",
+  "english_speech": "very",
   "example": "この問題は非常に難しいです。",
   "example_kana": "このもんだいはひじょうにむずかしいです。",
   "example_english": "This problem is extremely difficult."
@@ -7627,6 +8262,7 @@
   "romaji": "yahari",
   "english": "as expected, after all",
   "speech": "やはり",
+  "english_speech": "as expected, after all",
   "example": "やはり日本の夏は暑いです。",
   "example_kana": "やはりにほんのなつはあついです。",
   "example_english": "As expected, Japanese summers are hot."
@@ -7639,6 +8275,7 @@
   "romaji": "chanto",
   "english": "properly",
   "speech": "ちゃんと",
+  "english_speech": "properly",
   "example": "息子はちゃんと歯を磨きました。",
   "example_kana": "むすこはちゃんとはをみがきました。",
   "example_english": "My son brushed his teeth properly."
@@ -7651,6 +8288,7 @@
   "romaji": "kekkou",
   "english": "quite, more than expected",
   "speech": "けっこう",
+  "english_speech": "quite, more than expected",
   "example": "駅までけっこう遠いですね。",
   "example_kana": "えきまでけっこうとおいですね。",
   "example_english": "It's quite far to the station, isn't it?"
@@ -7663,6 +8301,7 @@
   "romaji": "tokuni",
   "english": "particularly",
   "speech": "とくに",
+  "english_speech": "particularly",
   "example": "私は特に魚の料理が好きです。",
   "example_kana": "わたしはとくにさかなのりょうりがすきです。",
   "example_english": "I particularly like fish dishes."
@@ -7675,6 +8314,7 @@
   "romaji": "sonnani",
   "english": "that much",
   "speech": "そんなに",
+  "english_speech": "that much",
   "example": "そんなに急がないでください。",
   "example_kana": "そんなにいそがないでください。",
   "example_english": "Please don't rush so much."
@@ -7687,6 +8327,7 @@
   "romaji": "mochiron",
   "english": "of course",
   "speech": "もちろん",
+  "english_speech": "of course",
   "example": "もちろん私も行きます。",
   "example_kana": "もちろんわたしもいきます。",
   "example_english": "Of course I'm going too."
@@ -7699,6 +8340,7 @@
   "romaji": "zuibun",
   "english": "really, quite",
   "speech": "ずいぶん",
+  "english_speech": "really, quite",
   "example": "町がずいぶん変わりましたね。",
   "example_kana": "まちがずいぶんかわりましたね。",
   "example_english": "The town has changed a lot, hasn't it?"
@@ -7711,6 +8353,7 @@
   "romaji": "kitto",
   "english": "surely",
   "speech": "きっと",
+  "english_speech": "surely",
   "example": "田中さんはきっと合格します。",
   "example_kana": "たなかさんはきっとごうかくします。",
   "example_english": "Tanaka will surely pass."
@@ -7723,6 +8366,7 @@
   "romaji": "kanari",
   "english": "quite",
   "speech": "かなり",
+  "english_speech": "quite",
   "example": "昨日はかなり疲れました。",
   "example_kana": "きのうはかなりつかれました。",
   "example_english": "I was quite tired yesterday."
@@ -7735,6 +8379,7 @@
   "romaji": "aidea",
   "english": "idea",
   "speech": "アイデア",
+  "english_speech": "idea",
   "example": "それはいいアイデアですね。",
   "example_kana": "それはいいアイデアですね。",
   "example_english": "That's a good idea."
@@ -7747,6 +8392,7 @@
   "romaji": "teema",
   "english": "theme",
   "speech": "テーマ",
+  "english_speech": "theme",
   "example": "今日の会議のテーマは何ですか。",
   "example_kana": "きょうのかいぎのテーマはなんですか。",
   "example_english": "What is the theme of today's meeting?"
@@ -7759,6 +8405,7 @@
   "romaji": "chekku",
   "english": "to check (する)",
   "speech": "チェック",
+  "english_speech": "to check",
   "example": "答えをもう一度チェックします。",
   "example_kana": "こたえをもういちどチェックします。",
   "example_english": "I will check the answers once more."
@@ -7771,6 +8418,7 @@
   "romaji": "musubu",
   "english": "to tie",
   "speech": "むすぶ",
+  "english_speech": "to tie",
   "example": "靴のひもを結びました。",
   "example_kana": "くつのひもをむすびました。",
   "example_english": "I tied my shoelaces."
@@ -7783,6 +8431,7 @@
   "romaji": "tasu",
   "english": "to add",
   "speech": "たす",
+  "english_speech": "to add",
   "example": "料理に塩を少し足しました。",
   "example_kana": "りょうりにしおをすこしたしました。",
   "example_english": "I added a little salt to the dish."
@@ -7795,6 +8444,7 @@
   "romaji": "ugokasu",
   "english": "to move",
   "speech": "うごかす",
+  "english_speech": "to move",
   "example": "机を窓の近くに動かしました。",
   "example_kana": "つくえをまどのちかくにうごかしました。",
   "example_english": "I moved the desk near the window."
@@ -7807,6 +8457,7 @@
   "romaji": "waru",
   "english": "to break, to crack open",
   "speech": "わる",
+  "english_speech": "to break, to crack open",
   "example": "卵を2つ割ってください。",
   "example_kana": "たまごをふたつわってください。",
   "example_english": "Please crack two eggs."
@@ -7819,6 +8470,7 @@
   "romaji": "utsuru",
   "english": "to catch, to infect",
   "speech": "うつる",
+  "english_speech": "to catch, to infect",
   "example": "弟の風邪が私にうつりました。",
   "example_kana": "おとうとのかぜがわたしにうつりました。",
   "example_english": "I caught my brother's cold."
@@ -7831,6 +8483,7 @@
   "romaji": "tasukeru",
   "english": "to rescue, to help",
   "speech": "たすける",
+  "english_speech": "to rescue, to help",
   "example": "困っている友達を助けました。",
   "example_kana": "こまっているともだちをたすけました。",
   "example_english": "I helped a friend who was in trouble."
@@ -7843,6 +8496,7 @@
   "romaji": "tekitou(na)",
   "english": "suitable",
   "speech": "てきとう",
+  "english_speech": "suitable",
   "example": "適当な言葉を選んでください。",
   "example_kana": "てきとうなことばをえらんでください。",
   "example_english": "Please choose a suitable word."
@@ -7855,6 +8509,7 @@
   "romaji": "fushigi(na)",
   "english": "strange",
   "speech": "ふしぎ",
+  "english_speech": "strange",
   "example": "昨日、不思議な夢を見ました。",
   "example_kana": "きのう、ふしぎなゆめをみました。",
   "example_english": "I had a strange dream yesterday."
@@ -7867,6 +8522,7 @@
   "romaji": "mataha",
   "english": "or",
   "speech": "または",
+  "english_speech": "or",
   "example": "月曜日または火曜日に行きます。",
   "example_kana": "げつようびまたはかようびにいきます。",
   "example_english": "I will go on Monday or Tuesday."
@@ -7879,6 +8535,7 @@
   "romaji": "naruhodo",
   "english": "I see.",
   "speech": "なるほど",
+  "english_speech": "I see.",
   "example": "なるほど、よく分かりました。",
   "example_kana": "なるほど、よくわかりました。",
   "example_english": "I see, now I understand."

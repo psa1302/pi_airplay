@@ -61,8 +61,8 @@ LCD or browser, next tweak. Reverts are common and expected. Be quick.
   (`again` / `next`, consumed by the dashboard).
 - Vocabulary: `display/vocab.py` (schedule + SRS, imported by dashboard.py
   and webui.py — both live flat in /opt/pi-speakers/), data in
-  `/opt/pi-speakers/vocab/n4.json` + `audio/NNNN.wav` (word, 3 s, sentence;
-  22 kHz mono, ~180 MB, gitignored — rendered by `assets/vocab/generate.sh`
+  `/opt/pi-speakers/vocab/n4.json` + `audio/NNNN.wav` (all Kyoko: word, 1 s,
+  English meaning, 2.5 s, sentence; 22 kHz mono, ~180 MB, gitignored — rendered by `assets/vocab/generate.sh`
   and rsync'd, see README). Sentences are hand-authored in
   `assets/vocab/examples/part-NN.json` and must pass `build.py --lint`
   (N5 + list vocabulary, initial-N4 grammar only); `n5.txt` lists the
